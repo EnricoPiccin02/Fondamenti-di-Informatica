@@ -7,7 +7,7 @@
 \usepackage{circuitikz}
 \usetikzlibrary{positioning, circuits.logic.US}
 \usetikzlibrary {shapes.gates.logic.US, shapes.gates.logic.IEC, calc}
-\tikzset {branch/.style={fill, shape = circle, minimum size = 3 pt, inner sep = 0pt}}
+\tikzset {branch/.style={fill, shape = circle, minimum size = 3pt, inner sep = 0pt}}
 \usetikzlibrary{matrix,calc}
 \usepackage{multirow}
 \usepackage{float}
@@ -1153,13 +1153,10 @@ Come anticipato, data l’estrema importanza, in ambito circuitale, delle funzio
     &
     {
         \begin{tikzpicture}
-            \node (A) at (0,0.8) {$x$};
-            \node (B) at (0,-0.5) {$y$};
-            \node (Y) at (2.2,0.18) {$x \cdot y$};
-            \node [and gate US , draw , logic gate inputs =nn] at ($(and.input 1 -| and.input 2)+(.5,0)$) (and){};
-            \draw (A) |- node  {}(and.input 1);
-            \draw (B) |- node  {}(and.input 2);
-            \draw (Y) -- node  {}(and.output);
+            \node [and gate US, draw, logic gate inputs =nn] (and){};
+            \draw (and.input 1) -- node[at end, above left]{$x$} ++(left:4mm);
+            \draw (and.input 2) -- node[at end, below left]{$y$} ++(left:4mm);
+            \draw (and.output) -- node[at end,right]{$x \cdot y$} ++(right:4mm);
         \end{tikzpicture}
     }
     &
@@ -1196,15 +1193,12 @@ Come anticipato, data l’estrema importanza, in ambito circuitale, delle funzio
     }
     &
     {
-        \begin{tikzpicture}
-            \node (A) at (0,0.8) {$x$};
-            \node (B) at (0,-0.5) {$y$};
-            \node (Y) at (2.4,0.18) {$x + y$};
-            \node [or gate US , draw , logic gate inputs =nn] at ($(or.input 1 -| or.input 2)+(.5,0)$) (or){};
-            \draw (A) |- node  {}(or.input 1);
-            \draw (B) |- node  {}(or.input 2);
-            \draw (Y) -- node  {}(or.output);
-        \end{tikzpicture}
+    \begin{tikzpicture}
+        \node [or gate US, draw, logic gate inputs =nn] (or){};
+        \draw (or.input 1) -- node[at end, above left]{$x$} ++(left:4mm);
+        \draw (or.input 2) -- node[at end, below left]{$y$} ++(left:4mm);
+        \draw (or.output) -- node[at end,right]{$x + y$} ++(right:4mm);
+    \end{tikzpicture}
     }
     &
     {
@@ -1240,15 +1234,12 @@ Come anticipato, data l’estrema importanza, in ambito circuitale, delle funzio
     }
     &
     {
-        \begin{tikzpicture}
-            \node (A) at (0,0.8) {$x$};
-            \node (B) at (0,-0.5) {$y$};
-            \node (Y) at (2.3,0.18) {$x \oplus y$};
-            \node [xor gate US , draw , logic gate inputs =nn] at ($(xor.input 1 -| xor.input 2)+(.5,0)$) (xor){};
-            \draw (A) |- node  {}(xor.input 1);
-            \draw (B) |- node  {}(xor.input 2);
-            \draw (Y) -- node  {}(xor.output);
-        \end{tikzpicture}
+      \begin{tikzpicture}
+          \node [xor gate US, draw, logic gate inputs =nn] (xor){};
+          \draw (xor.input 1) -- node[at end, above left]{$x$} ++(left:4mm);
+          \draw (xor.input 2) -- node[at end, below left]{$y$} ++(left:4mm);
+          \draw (xor.output) -- node[at end,right]{$x \oplus y$} ++(right:4mm);
+      \end{tikzpicture}
     }
     &
     {
@@ -1274,13 +1265,11 @@ Come anticipato, data l’estrema importanza, in ambito circuitale, delle funzio
 \subsection{Riassunto}
 L'algebra booleana è l'apparato teorico che costituisce le fondamenta della logica binaria. Attraverso il teorema di De Morgan, in particolare, l'insieme minimo dei connettivi in grado di esprimere le \(16\) espressioni booleane può essere ristretto a AND, NOT oppure a OR, NOT.\\
 Non solo, ma impiegando i connettivi universali NOR e NAND è possibile impiegare un solo connettivo per costruire ogni funzione logica.\\
-Gli assiomi che si pongono alla base dell'algebra booleana sono verità assolute, incontestabili e non dimostrabili e costituiscono le fondamenta della teoria assiomatica quale quella booleana.\\
-L'algebra booleana non è solo quella delle porte logiche, ma anche quella delle operazioni insiemistiche, secondo \textbf{Kantor}; esse, infatti, rispettano i dettami dell'algebra booleana.\\
-A partire dagli assiomi fondamentali si possono formulare dei teoremi che permettono la semplificazione di espressioni logiche, tramite il \textbf{principio di inferenza}. Il \textbf{principio di dualità}, invece, permette di trasformare una proposizione vera con la congiunzione in un'altra proposizione vera con la disgiunzione. Naturalmente, si ottiene una seconda espressione sempre vera, ma che risulta comunque differente rispetto alla funzione di partenza.\\
+Gli assiomi che si pongono alla base dell'algebra booleana sono verità assolute, incontestabili e non dimostrabili e costituiscono le fondamenta della teoria assiomatica quale quella booleana. L'algebra booleana, tuttavia, non è solo quella delle porte logiche, ma anche quella delle operazioni insiemistiche, secondo \textbf{Kantor}; esse, infatti, rispettano tutti i dettami dell'algebra booleana.\\
+A partire dagli assiomi fondamentali si possono, poi, formulare dei teoremi che permettono la semplificazione di espressioni logiche, tramite il \textbf{principio di inferenza}. Il \textbf{principio di dualità}, invece, permette di trasformare una proposizione vera con la congiunzione in un'altra proposizione vera con la disgiunzione. Naturalmente, si ottiene una seconda espressione sempre vera, ma che risulta comunque differente rispetto alla funzione di partenza.\\
 Le funzioni booleane vanno da \(2^n \rightarrow 2\), ovvero ad ogni n-upla viene associato uno dei \(2\) possibili valori (VERO o FALSO).\\
-Con \(n = 1\), si possono avere solamente \(2^2 = 4\) funzioni unarie del tipo \(y = f(x)\).\\
-Con \(n = 2\) ci sono \(2^{2^2} = 16\) funzioni booleane di-arie del tipo \(z = f(x, y)\). Tali funzioni sono le \(16\) funzioni logiche precedentemente esposte, ma che presentano dei simboli circuitali differenti rispetto ai connettivi analizzati.\\
-Sono state discusse ampiamente le due porte principali dell'Algebra Booleana (AND e OR), mentre meritano una maggiore importanza delle porte solo in apparenza secondarie:
+Con \(n = 1\), si possono avere solamente \(2^2 = 4\) funzioni unarie del tipo \(y = f(x)\), mentre con \(n = 2\) ci sono \(2^{2^2} = 16\) funzioni booleane di-arie del tipo \(z = f(x, y)\). Tali funzioni sono le \(16\) funzioni logiche precedentemente esposte, ma che presentano dei simboli circuitali differenti rispetto ai connettivi analizzati.\\
+Pertanto, dopo aver discusso ampiamente le due porte principali dell'Algebra Booleana (AND e OR), è doveroso rivolgere un'importante attenzione alle porte solo in apparenza secondarie, di seguito esposte:
 
 \begin{itemize}
     \item \textbf{Porta XOR}\\
@@ -1302,14 +1291,12 @@ Sono state discusse ampiamente le due porte principali dell'Algebra Booleana (AN
     }
     &
     {
-        \begin{tikzpicture}
-            \node (A) at (0,0.8) {$x$};
-            \node (B) at (0,-0.5) {$y$};
-            \node [xor gate US , draw , logic gate inputs =nn] at ($(xor.input 1 -| xor.input 2)+(.5,-0.08)$) (xor){};
-            \draw (A) |- node  {}(xor.input 1);
-            \draw (B) |- node  {}(xor.input 2);
-            \draw (xor.output) -- ([xshift=0.5cm] xor.output) node [right] {{$x \oplus y$}};
-        \end{tikzpicture}
+      \begin{tikzpicture}
+          \node [xor gate US, draw, logic gate inputs =nn] (xor){};
+          \draw (xor.input 1) -- node[at end, above left]{$x$} ++(left:4mm);
+          \draw (xor.input 2) -- node[at end, below left]{$y$} ++(left:4mm);
+          \draw (xor.output) -- node[at end,right]{$x \oplus y$} ++(right:4mm);
+      \end{tikzpicture}
     }
     &
     {
@@ -1338,41 +1325,33 @@ Sono state discusse ampiamente le due porte principali dell'Algebra Booleana (AN
             \begin{figure}[H]
                 \centering
                 \begin{tikzpicture}
-                    \node (A) at (-0.5,0.5) {$x$};
-                    \node (B) at (0,0.5) {$y$};
-                    \node [and gate US , draw , logic gate inputs =ni, anchor = input 1] at ($(and1.input 1 |- and1.input 2)+(.5,-0.08)$) (and1){};
-                    \node [and gate US , draw , logic gate inputs =in, anchor = input 2] at ($(and2.input 1 |- and2.input 2)+(.5,-1.08)$) (and2){};
-                    \node [or gate US , draw , logic gate inputs =nn, anchor = input 1] at ($(or.input 1 |- or.input 2)+(1,-0.58)$) (or){};
-                    \draw (A) |- node {}(and1.input 1);
-                    \draw (B) |- node {}(and2.input 2);
-                    \draw (A) |- node [branch] {}(and2.input 1);
-                    \draw (B) |- node [branch] {}(and1.input 2);
+                    \coordinate (start) at (-1.5,0);
+                    \node [and gate US, draw, logic gate inputs=ni] (and1){};
+                    \node [and gate US, draw, below=of and1, yshift=5.5mm, logic gate inputs=in] (and2){};
+                    \node [or gate US, draw, right=of and1, xshift=-3mm, yshift=-5mm, logic gate inputs=nn] (or){};
 
+                    \draw (and1.input 1) -- node[at end, left]{$x$} (and1.input 1 -| start);
+                    \draw (and2.input 2) -- node[at end, left]{$y$} (and2.input 2 -| start);
+                    \draw (and1.input 1) ++(-0.8,0) node [branch]{} |- (and2.input 1);
+                    \draw (and2.input 2) ++(-0.5,0) node [branch]{} |- (and1.input 2);
                     \draw (and1.output) -- ([xshift=0.3cm] and1.output) |- (or.input 1);
                     \draw (and2.output) -- ([xshift=0.3cm] and2.output) |- (or.input 2);
-                    \draw (or.output) -- ([xshift=0.5cm] or.output) node [right] {{$x \overline{y} + \overline{x} y$}};
-
-                    \node () at (1.5,0.1) {$x\overline{y}$};
-                    \node () at (1.5,-1.3) {$\overline{x}y$};
+                    \draw (or.output) -- ([xshift=0.5cm] or.output) node [right] {{$x\overline{y} + \overline{x}y$}};
                 \end{tikzpicture}
                 \hspace{3em}
                 \begin{tikzpicture}
-                    \node (A) at (-0.5,0.5) {$x$};
-                    \node (B) at (0,0.5) {$y$};
-                    \node [or gate US , draw , logic gate inputs =ii, anchor = input 1] at ($(or1.input 1 |- or1.input 2)+(.5,-0.08)$) (or1){};
-                    \node [or gate US , draw , logic gate inputs =nn, anchor = input 2] at ($(or2.input 1 |- or2.input 2)+(.65,-1.08)$) (or2){};
-                    \node [and gate US , draw , logic gate inputs =nn, anchor = input 1] at ($(and.input 1 |- and.input 2)+(1.3,-0.58)$) (and){};
-                    \draw (A) |- node {}(or1.input 1);
-                    \draw (B) |- node {}(or2.input 2);
-                    \draw (A) |- node [branch] {}(or2.input 1);
-                    \draw (B) |- node [branch] {}(or1.input 2);
+                  \coordinate (start) at (-1.5,0);
+                  \node [or gate US, draw, logic gate inputs=ii] (or1){};
+                  \node [or gate US, draw, below=of or1, yshift=5.5mm, logic gate inputs=nn] (or2){};
+                  \node [and gate US, draw, right=of and1, xshift=-3mm, yshift=-5mm, logic gate inputs=nn] (and){};
 
-                    \draw (or1.output) -- ([xshift=0.3cm] or1.output) |- (and.input 1);
-                    \draw (or2.output) -- ([xshift=0.3cm] or2.output) |- (and.input 2);
-                    \draw (and.output) -- ([xshift=0.5cm] and.output) node [right] {{$(x + y) \cdot (\overline{x} + \overline{y})$}};
-
-                    \node () at (1.7,0.1) {$\overline{x} + \overline{y}$};
-                    \node () at (1.7,-1.3) {$x + y$};
+                  \draw (or1.input 1) -- node[at end, left]{$x$} (or1.input 1 -| start);
+                  \draw (or2.input 2) -- node[at end, left]{$y$} (or2.input 2 -| start);
+                  \draw (or1.input 1) ++(-0.8,0) node [branch]{} |- (or2.input 1);
+                  \draw (or2.input 2) ++(-0.5,0) node [branch]{} |- (or1.input 2);
+                  \draw (or1.output) -- ([xshift=0.3cm] or1.output) |- (and.input 1);
+                  \draw (or2.output) -- ([xshift=0.3cm] or2.output) |- (and.input 2);
+                  \draw (and.output) -- ([xshift=0.5cm] and.output) node [right] {{$(x + y) \cdot (\overline{x} + \overline{y})$}};
                 \end{tikzpicture}
                 \caption{La funzione XOR realizzata mediante porte AND e OR}
                 \label{fig:XOR_espressa_AND_OR}
