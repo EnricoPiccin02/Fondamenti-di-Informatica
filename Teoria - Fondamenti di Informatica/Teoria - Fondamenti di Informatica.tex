@@ -1715,7 +1715,7 @@ Naturalmente, la funzione AND vale \(1\) solo quando tutte le variabili in ingre
 \subsection{Realizzazione circuitale delle porte logiche}
 Le funzioni logiche di base, a \(1\) e \(2\) variabili, possono essere facilmente realizzate impiegando i transistor. Tuttavia, in fase di realizzazione è necessario tenere conto di alcuni fondamentali obiettivi:
 \begin{enumerate}
-    \item Minimizzazione della potenza dissipata. Infatti, la deriva termica dei transistor rappresenta un esito deleterio per il dispositivo, in quanto verso i \(200 ^{°}C\) il cristallino di silicio si fonde e il transistor si brucia.
+    \item Minimizzazione della potenza dissipata. Infatti, la deriva termica dei transistor rappresenta un esito deleterio per il dispositivo, in quanto verso i \(200 ^{\circ}\)C il cristallino di silicio si fonde e il transistor si brucia.
 
     \item Minimizzazione dei tempi di risposta. Infatti, la variazione di tensione dei transistor determina la generazione di un impulso che deve transitare per il circuito e deve essere validato dalle porte logiche, anche in cascata. Non è ammissibile che vi siano tempi di risposta differenti in quanto la validazione delle variabili logiche ne potrebbe risentire.
 
@@ -1726,17 +1726,17 @@ Le funzioni logiche di base, a \(1\) e \(2\) variabili, possono essere facilment
 
 \noindent
 Nel tempo si sono succedute numerose \textbf{famiglie logiche}, che a seconda del periodo in cui sono state introdotte e dello sviluppo tecnologico corrente hanno privilegiato l’uso di uno o dell’altro dei vari dispositivi a semiconduttore per la realizzazione delle funzioni di base, quali diodi, transistor, CMOS, ecc...\\
-Anche se in pratica sono molte di piu, le principali famiglie logiche sono le seguenti (in ordine cronologico):
+Anche se in pratica sono molte di più, le principali famiglie logiche sono le seguenti (in ordine cronologico):
 
 \begin{itemize}
-    \item Resistor-Transistor Logic (RTL) e una classe di porte logiche costruite usando resistenze nella rete d’ingresso e transistori bipolari a giunzione (BJT) come dispositivi di commutazione. La RTL e stata la prima classe di circuito logico digitale basata sull’impiego dei transistor. Le prime porte RTL furono costruite con elementi discreti, ma nel 1961 divenne la prima famiglia logica a esser realizzata su un circuito integrato monolitico. Circuiti integrati RTL sono stati utilizzati nel computer Apollo Guidance, il cui progetto risale al 1961 con un primo volo fatto nel 1966.
+    \item Resistor-Transistor Logic (RTL) è una classe di porte logiche costruite usando resistenze nella rete d’ingresso e transistors bipolari a giunzione (BJT) come dispositivi di commutazione. La RTL è stata la prima classe di circuito logico digitale basata sull’impiego dei transistor. Le prime porte RTL furono costruite con elementi discreti, ma nel 1961 divenne la prima famiglia logica a esser realizzata su un circuito integrato monolitico. Circuiti integrati RTL sono stati utilizzati nel computer Apollo Guidance, il cui progetto risale al 1961 con un primo volo fatto nel 1966.
 
-    \item Diode-Transistor Logic (DTL) e la classe di di porte logiche che precede la grande famiglia TTL. Si chiama così perché la funzione logica viene eseguita da una rete di diodi, mentre la funzione di inversione-amplificazione viene eseguita da un transistore.
+    \item Diode-Transistor Logic (DTL) è la classe di porte logiche che precede la grande famiglia TTL. Si chiama così perché la funzione logica viene eseguita da una rete di diodi, mentre la funzione di inversione-amplificazione viene eseguita da un transistor.
 
-    \item Transistor-Transistor Logic (TTL) e senza dubbio la classe pi ` u nota e famosa, poiché e ha avuto un larghissimo impiego. Fa uso di transistori bipolari a giunzione (BJT) e resistenze. Si chiama logica transistor-transistor perché il transistor svolge sia la funzione logica che la funzione di inversione-amplificazione. I circuiti integrati basati sulla famiglia TTL sono stati ampiamente usati in applicazioni quali computer, controlli industriali, apparecchiature di prova, strumentazione elettronica, elettronica di consumo, sintetizzatori e molto altro. Dopo la loro introduzione come circuito integrato a opera di Sylvania nel 1963, i circuiti integrati TTL sono stati prodotti da diverse aziende di semiconduttori. La serie 7400 (chiamato anche 74xx) della Texas Instruments e diventata particolarmente popolare. I produttori di porte basati sulla tecnologia TTL hanno offerto una vasta gamma di porte logiche, flip-flop, contatori, multiplexer e altri circuiti.
+    \item Transistor-Transistor Logic (TTL) è senza dubbio la classe più nota e famosa, poiché ha avuto un larghissimo impiego. Fa uso di transistors bipolari a giunzione (BJT) e resistenze. Si chiama logica transistor-transistor perché il transistor svolge sia la funzione logica che la funzione di inversione-amplificazione. I circuiti integrati basati sulla famiglia TTL sono stati ampiamente usati in applicazioni quali computer, controlli industriali, apparecchiature di prova, strumentazione elettronica, elettronica di consumo, sintetizzatori e molto altro. Dopo la loro introduzione come circuito integrato a opera di Sylvania nel 1963, i circuiti integrati TTL sono stati prodotti da diverse aziende di semiconduttori. La serie 7400 (chiamato anche 74xx) della Texas Instruments e diventata particolarmente popolare. I produttori di porte basati sulla tecnologia TTL hanno offerto una vasta gamma di porte logiche, flip-flop, contatori, multiplexer e altri circuiti.
 
-    \item Complementary Metal-Oxide-Semiconductor (CMOS) e la tecnologia pi ` u recente per la costruzione di porte logiche inserite in circuiti integrati. La tecnologia CMOS e usata in microprocessori, microcontrollori, nella RAM statica e in molti altri circuiti logici digitali. E’ la tecnologia piu raffinata, che consente un abbattimento dei consumi e dei tempi di risposta, congiuntamente alla possibilita di realizzare un’altissima densita di integrazione.\\
-    I transistor CMOS sono chiamati transistor MOS-FET a effetti di campo ..., richiedono molta meno potenza e non dissipano potenza in ingresso, sono molto più piccoli e garantiscono un minore tempo di risposta e sono diversi dai transistor a giunzione (VJT).
+    \item Complementary Metal-Oxide-Semiconductor (CMOS) è la tecnologia più recente per la costruzione di porte logiche inserite in circuiti integrati. La tecnologia CMOS viee usata in microprocessori, microcontrollori, nella RAM statica e in molti altri circuiti logici digitali. È la tecnologia piu raffinata, che consente un abbattimento dei consumi e dei tempi di risposta, congiuntamente alla possibilità di realizzare un’altissima densità di integrazione.\\
+    I transistor CMOS sono chiamati transistor MOS-FET a effetto di campo (dall'inglese FET - Field Effect Transistor), richiedono molta meno potenza e non dissipano potenza in ingresso, sono molto più piccoli e garantiscono un minore tempo di risposta e sono diversi dai transistor a giunzione (VJT).
 \end{itemize}
 
 \noindent
@@ -1744,18 +1744,53 @@ Si consideri la realizzazione tramite transistor delle principali porte logiche.
 
 \begin{itemize}
     \item \textbf{Porta NOT}\\
-    \[circuito\]
-    Nella porta NOT bisogna realizzare un’inversione del valore logico. Questa funzione si realizza mediante un singolo transistor, nel quale la variabile d’ingresso va ad alimentare la base, mentre quella di uscita si ricava sul collettore del transistor. Se si associ la costante 1 a un livello alto di tensione, p.es. la VCC di figura 4.18a, e la costante 0 a un livello basso, cioè la tensione di massa pari a 0V , il funzionamento dell’invertitore e il seguente: quando la variabile ` x assume valore logico 1, e cioe viene portata a tensione ` VCC , il transistor si polarizza direttamente ed entra in piena conduzione. Tale condizione corrisponde alla saturazione vista in figura 3.252; la tensione VCE crolla idealmente a 0 V , portando la variabile y in uscita nello stato logico 03. Quando viceversa la variabile x assume valore logico 0, e cioe viene portata a tensione ` 0 V (connessione a massa), il transistor blocca la conduzione e la IC diventa (praticamente) nulla. Tale condizione corrisponde all’interdizione vista in figura 3.25; la tensione VCE diventa pari alla VCC , portando a 1 logico il valore dell’uscita.
-    Infatti, con corrente in ingresso, il transistor va in saturazione, per cui la tensione è nulla.\\
-    Se la corrente in ingresso è nulla, il transistor va in interdizione, per cui la tensione è massima.\\
+
+    % Contenitore per immagini
+    \begin{figure}[H]
+        \centering
+        \begin{circuitikz}[]
+          \ctikzset{transistors/thickness=4, transistors/fill=cyan!30, transistor circle/relative thickness=0.25,}
+          \draw (0,0) node[npn, tr circle](Q1){};
+          \draw (Q1.B) to[R, l_=$R_0$] ++(-2,0) node[circ]{\hspace{-1em}$x$};
+          \draw (Q1.C) node[circ](y){} to[R, l_=$R_1$] ++(0,2) node[vcc]{$+V_{CC}$};
+          \draw (Q1.E) -- ++(0,-0.5) node[ground](GND){};
+          \draw (y) -- ++(1,0) node[flowarrow]{$y = \overline{x}$};
+        \end{circuitikz}
+        \caption{Porta NOT realizzata tramite transistor}
+        \label{fig:NOT_tramite_transistor}
+    \end{figure}
+
+    Nella porta NOT bisogna realizzare un’inversione del valore logico. Questa funzione si realizza mediante un singolo transistor, nel quale la variabile d’ingresso va ad alimentare la base, mentre quella di uscita si ricava sul collettore del transistor. Se si associa la costante 1 a un livello alto di tensione, come la tensione di alimentazione \(V_{CC}\) di Figura \ref{fig:NOT_tramite_transistor}, e la costante \(0\) a un livello basso, cioè la tensione di massa pari a \(0\)V, il funzionamento dell’invertitore è il seguente: quando la variabile \(x\) assume valore logico 1, e cioè viene portata a tensione \(V_{CC}\), il transistor si polarizza direttamente ed entra in piena conduzione. Tale condizione corrisponde alla saturazione del transistor; in questa configurazione la tensione \(V_{CE}\) crolla idealmente a \(0\)V, portando la variabile \(y\) in uscita nello stato logico \(0\).\\
+    Quando, viceversa, la variabile \(x\) assume valore logico \(0\), e cioè viene portata a tensione \(0\)V (connessione a massa), il transistor blocca la conduzione e la \(I_{C}\) diventa (praticamente) nulla. Tale condizione corrisponde all’interdizione del transistor; in questa configurazione, pertanto, la tensione \(V_{CE}\) diventa pari alla \(V_{CC}\), quindi viene portato all'\(1\) logico il valore dell’uscita.
+    Infatti, con corrente in ingresso, il transistor va in saturazione, per cui la tensione è nulla; se, invece, la corrente in ingresso è nulla, il transistor va in interdizione, per cui la tensione è massima.\\
     La resistenza in ingresso deve essere ovviamene commisurata per non bruciare il circuito, così come è fondamentale il ruolo della \textbf{resistenza di carico} che permette di separare la tensione di alimentazione e avere una corrente variabile.\\
     La tensione di saturazione \(V_{SAT}\) non è mai nulla, nella realtà, ma se la corrente in ingresso è significativamente maggiore di \(0\), allora in uscita si avrà il valore logico \(0\), a causa di un \textbf{cortocircuito} che si viene a determinare.\\
-    Se, invece, la corrente in ingresso è nulla, allora il transistor va in \textbf{interdizione}, per cui la corrente in uscita viene \textbf{interdetta}, pertanto la tensione in uscita sarà pari a quella di alimentazione. Pertanto, l'uscita corrisponde al valore ALTO.\\
-    In questo modo si sta usando il transistor in modo digitale, come se fosse un vero interruttore, in quanto si opera ai suoi valori estremi, \(0\) e \(1\).\\
-    Un transistor che opera, invece, in modo analogico, viene usato come amplificatore, e può assumere anche valori intermedi.\\
-    Se si utilizzasse un transistor CMOS, il funzionamento sarebbe esattamente analogico, solo che viene comandato in tensione, con significativi vantaggi in termini di \textbf{dissipazione di potenza}. Inoltre, i CMOS possono essere anche realizzati in modo molto più microscopico.
+    Se, invece, la corrente in ingresso è nulla, allora il transistor va in \textbf{interdizione}, per cui la corrente in uscita viene \textbf{interdetta}, pertanto la tensione in uscita sarà pari a quella di alimentazione. Pertanto, l'uscita corrisponde al valore \(1\) logico.\\
+    In questo modo si sta usando il transistor in modo digitale, come se fosse un vero interruttore, in quanto si opera ai suoi valori estremi, \(0\) e \(1\); un transistor che opera, invece, in modo analogico, viene usato come amplificatore, e può assumere anche valori intermedi.\\
+    Se si utilizzasse un transistor CMOS, per esempio, il funzionamento sarebbe esattamente analogico, solo che viene comandato in tensione, con significativi vantaggi in termini di \textbf{dissipazione di potenza}. Inoltre, i CMOS possono essere anche realizzati in modo molto più microscopico.
 
-    \item \textbf{Porta AND}
+    \item \textbf{Porta AND}\\
+
+    % Contenitore per immagini
+    \begin{figure}[H]
+        \centering
+        \begin{circuitikz}[]
+          \ctikzset{transistors/thickness=4, transistors/fill=cyan!30, transistor circle/relative thickness=0.25,}
+          \draw (0,0) node[npn, tr circle](Q1){};
+          \ctikzset{transistors/thickness=4, transistors/fill=cyan!30, transistor circle/relative thickness=0.25,}
+          \draw (0,-2) node[npn, tr circle](Q2){};
+
+          \draw (Q1.B) to[R, l_=$R_0$] ++(-2,0) node[circ]{\hspace{-1em}$x$};
+          \draw (Q2.B) to[R, l_=$R_1$] ++(-2,0) node[circ]{\hspace{-1em}$y$};
+          \draw (Q1.C) -- ++(0,0.5) node[vcc]{$+V_{CC}$};
+          \draw (Q1.E) -- (Q2.C);
+          \draw (Q2.E) node[circ](y){} to[R, l_={$R_2$}] ++(0,-2) node[ground](GND){};
+          \draw (y) -- ++(1,0) node[flowarrow]{$z = x \cdot y$};
+        \end{circuitikz}
+        \caption{Porta NOT realizzata tramite transistor}
+        \label{fig:NOT_tramite_transistor}
+    \end{figure}
+
     Nella porta AND bisogna fare in modo che se anche uno solo degli ingressi e a ` 0, l’uscita resti a 0. Il circuito di figura 4.18b realizza questa condizione. Poiche l’uscita a  ́ 1 significa livello alto di tensione, per realizzarla bisogna che entrambi i due transistor associati ai due ingressi, che sono posti in serie, siano in piena conduzione. Per realizzare cio` e necessario portare le variabili ` x e y d’ingresso a VCC . Se anche uno solo dei due ingressi rimane a livello basso, uno dei due transistor va in interdizione e la tensione di uscita resta a livello basso, il che corrisponde a 0 logico.
     Se in ingresso \(x\) e \(y\) sono a valore logico \(1\), allora entrambi i transistor vanno in saturazione, pertanto diventano dei cortocircuiti, e lasciano passare la tensione di alimentazione, quindi l'uscita avrà valore \(1\).\\
     Se almeno uno dei due transistor va in interdizione, allora si forma un circuito aperto e quindi l'uscita ha valore \(0\).

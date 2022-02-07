@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.1.27)  7 FEB 2022 09:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.1.27)  7 FEB 2022 10:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -543,6 +543,9 @@ LaTeX Warning: Label `fig:transistor' multiply defined.
 
 
 LaTeX Warning: Label `fig:transistor' multiply defined.
+
+
+LaTeX Warning: Label `fig:NOT_tramite_transistor' multiply defined.
 
 
 LaTeX Warning: Label `fig:mappa_karnaugh_8_1' multiply defined.
@@ -2414,74 +2417,71 @@ Overfull \hbox (6.73883pt too wide) in paragraph at lines 1659--1659
  []|[] 
  []
 
-[25]
+[25] [26]
+Underfull \hbox (badness 10000) in paragraph at lines 1746--1747
 
-LaTeX Warning: Command \textdegree invalid in math mode on input line 1719.
+ []
 
-
-LaTeX Warning: Command \textdegree invalid in math mode on input line 1719.
-
-Missing character: There is no � in font cmr7!
-[26]
-Underfull \hbox (badness 10000) in paragraph at lines 1747--1748
+[27]
+Underfull \hbox (badness 10000) in paragraph at lines 1772--1773
 
  []
 
 
-./Teoria - Fondamenti di Informatica.tex:1760: Package inputenc Error: Unicode character ́ (U+0301)
+./Teoria - Fondamenti di Informatica.tex:1794: Package inputenc Error: Unicode character ́ (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1760 ...esta condizione. Poiche l’uscita a  ́
-                                                   1 significa livello alto ...
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-[27]
-
-./Teoria - Fondamenti di Informatica.tex:1764: Package inputenc Error: Unicode character ́ (U+0301)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1764 ...esta condizione. Poiche l’uscita a  ́
+l.1794 ...esta condizione. Poiche l’uscita a  ́
                                                    1 significa livello alto ...
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./Teoria - Fondamenti di Informatica.tex:1769: Package inputenc Error: Unicode character ́ (U+0301)
+./Teoria - Fondamenti di Informatica.tex:1798: Package inputenc Error: Unicode character ́ (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1769 ...R2 di carico dall’emettitore di T2  ́
+l.1798 ...esta condizione. Poiche l’uscita a  ́
+                                                   1 significa livello alto ...
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+[28]
+
+./Teoria - Fondamenti di Informatica.tex:1803: Package inputenc Error: Unicode character ́ (U+0301)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1803 ...R2 di carico dall’emettitore di T2  ́
                                                    T1 al collettore di T2   ...
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
-[28] [29] [30]
-Overfull \hbox (39.44662pt too wide) detected at line 1867
+[29] [30] [31]
+Overfull \hbox (39.44662pt too wide) detected at line 1901
 [] [] []
  []
 
 
-Overfull \hbox (25.01929pt too wide) detected at line 1870
+Overfull \hbox (25.01929pt too wide) detected at line 1904
 [] [] [] [] [] [] [] \OMS/cmsy/m/n/10 ^^A [] [] \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 y\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^A \OT1/cmr/m/n/10 ([] + \OML/cmm/m/it/10 z\OT1/cmr/m/n/10 ) [] []\OML/cmm/m/it/10 y \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 xz
  []
 
-[31] [32] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42] [43] [44] [45]
-./Teoria - Fondamenti di Informatica.tex:2513: Undefined control sequence.
+[32] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42] [43] [44] [45] [46]
+./Teoria - Fondamenti di Informatica.tex:2547: Undefined control sequence.
 <recently read> \bm 
                     
-l.2513     \end{tabularx}
+l.2547     \end{tabularx}
                          
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2489,10 +2489,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Teoria - Fondamenti di Informatica.tex:2513: Missing $ inserted.
+./Teoria - Fondamenti di Informatica.tex:2547: Missing $ inserted.
 <inserted text> 
                 $
-l.2513     \end{tabularx}
+l.2547     \end{tabularx}
                          
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2500,10 +2500,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./Teoria - Fondamenti di Informatica.tex:2513: Undefined control sequence.
+./Teoria - Fondamenti di Informatica.tex:2547: Undefined control sequence.
 <recently read> \bm 
                     
-l.2513     \end{tabularx}
+l.2547     \end{tabularx}
                          
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2511,10 +2511,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Teoria - Fondamenti di Informatica.tex:2513: Missing $ inserted.
+./Teoria - Fondamenti di Informatica.tex:2547: Missing $ inserted.
 <inserted text> 
                 $
-l.2513     \end{tabularx}
+l.2547     \end{tabularx}
                          
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2522,10 +2522,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./Teoria - Fondamenti di Informatica.tex:2513: Undefined control sequence.
+./Teoria - Fondamenti di Informatica.tex:2547: Undefined control sequence.
 <recently read> \bm 
                     
-l.2513     \end{tabularx}
+l.2547     \end{tabularx}
                          
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2533,10 +2533,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Teoria - Fondamenti di Informatica.tex:2513: Missing $ inserted.
+./Teoria - Fondamenti di Informatica.tex:2547: Missing $ inserted.
 <inserted text> 
                 $
-l.2513     \end{tabularx}
+l.2547     \end{tabularx}
                          
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2544,10 +2544,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./Teoria - Fondamenti di Informatica.tex:2513: Undefined control sequence.
+./Teoria - Fondamenti di Informatica.tex:2547: Undefined control sequence.
 <recently read> \bm 
                     
-l.2513     \end{tabularx}
+l.2547     \end{tabularx}
                          
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2555,10 +2555,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Teoria - Fondamenti di Informatica.tex:2513: Missing $ inserted.
+./Teoria - Fondamenti di Informatica.tex:2547: Missing $ inserted.
 <inserted text> 
                 $
-l.2513     \end{tabularx}
+l.2547     \end{tabularx}
                          
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2566,10 +2566,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./Teoria - Fondamenti di Informatica.tex:2513: Undefined control sequence.
+./Teoria - Fondamenti di Informatica.tex:2547: Undefined control sequence.
 <recently read> \bm 
                     
-l.2513     \end{tabularx}
+l.2547     \end{tabularx}
                          
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2577,10 +2577,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Teoria - Fondamenti di Informatica.tex:2513: Missing $ inserted.
+./Teoria - Fondamenti di Informatica.tex:2547: Missing $ inserted.
 <inserted text> 
                 $
-l.2513     \end{tabularx}
+l.2547     \end{tabularx}
                          
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2588,10 +2588,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./Teoria - Fondamenti di Informatica.tex:2513: Undefined control sequence.
+./Teoria - Fondamenti di Informatica.tex:2547: Undefined control sequence.
 <recently read> \bm 
                     
-l.2513     \end{tabularx}
+l.2547     \end{tabularx}
                          
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2599,10 +2599,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Teoria - Fondamenti di Informatica.tex:2513: Missing $ inserted.
+./Teoria - Fondamenti di Informatica.tex:2547: Missing $ inserted.
 <inserted text> 
                 $
-l.2513     \end{tabularx}
+l.2547     \end{tabularx}
                          
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2610,10 +2610,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./Teoria - Fondamenti di Informatica.tex:2513: Undefined control sequence.
+./Teoria - Fondamenti di Informatica.tex:2547: Undefined control sequence.
 <recently read> \bm 
                     
-l.2513     \end{tabularx}
+l.2547     \end{tabularx}
                          
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2621,10 +2621,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Teoria - Fondamenti di Informatica.tex:2513: Missing $ inserted.
+./Teoria - Fondamenti di Informatica.tex:2547: Missing $ inserted.
 <inserted text> 
                 $
-l.2513     \end{tabularx}
+l.2547     \end{tabularx}
                          
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2632,10 +2632,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./Teoria - Fondamenti di Informatica.tex:2513: Undefined control sequence.
+./Teoria - Fondamenti di Informatica.tex:2547: Undefined control sequence.
 <recently read> \bm 
                     
-l.2513     \end{tabularx}
+l.2547     \end{tabularx}
                          
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2643,10 +2643,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Teoria - Fondamenti di Informatica.tex:2513: Missing $ inserted.
+./Teoria - Fondamenti di Informatica.tex:2547: Missing $ inserted.
 <inserted text> 
                 $
-l.2513     \end{tabularx}
+l.2547     \end{tabularx}
                          
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2654,10 +2654,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./Teoria - Fondamenti di Informatica.tex:2513: Undefined control sequence.
+./Teoria - Fondamenti di Informatica.tex:2547: Undefined control sequence.
 <recently read> \bm 
                     
-l.2513     \end{tabularx}
+l.2547     \end{tabularx}
                          
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2665,10 +2665,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Teoria - Fondamenti di Informatica.tex:2513: Missing $ inserted.
+./Teoria - Fondamenti di Informatica.tex:2547: Missing $ inserted.
 <inserted text> 
                 $
-l.2513     \end{tabularx}
+l.2547     \end{tabularx}
                          
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2676,10 +2676,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./Teoria - Fondamenti di Informatica.tex:2513: Undefined control sequence.
+./Teoria - Fondamenti di Informatica.tex:2547: Undefined control sequence.
 <recently read> \bm 
                     
-l.2513     \end{tabularx}
+l.2547     \end{tabularx}
                          
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2687,10 +2687,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Teoria - Fondamenti di Informatica.tex:2513: Missing $ inserted.
+./Teoria - Fondamenti di Informatica.tex:2547: Missing $ inserted.
 <inserted text> 
                 $
-l.2513     \end{tabularx}
+l.2547     \end{tabularx}
                          
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2698,10 +2698,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./Teoria - Fondamenti di Informatica.tex:2513: Undefined control sequence.
+./Teoria - Fondamenti di Informatica.tex:2547: Undefined control sequence.
 <recently read> \bm 
                     
-l.2513     \end{tabularx}
+l.2547     \end{tabularx}
                          
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2709,10 +2709,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Teoria - Fondamenti di Informatica.tex:2513: Missing $ inserted.
+./Teoria - Fondamenti di Informatica.tex:2547: Missing $ inserted.
 <inserted text> 
                 $
-l.2513     \end{tabularx}
+l.2547     \end{tabularx}
                          
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2720,10 +2720,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./Teoria - Fondamenti di Informatica.tex:2513: Undefined control sequence.
+./Teoria - Fondamenti di Informatica.tex:2547: Undefined control sequence.
 <recently read> \bm 
                     
-l.2513     \end{tabularx}
+l.2547     \end{tabularx}
                          
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2731,10 +2731,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Teoria - Fondamenti di Informatica.tex:2513: Missing $ inserted.
+./Teoria - Fondamenti di Informatica.tex:2547: Missing $ inserted.
 <inserted text> 
                 $
-l.2513     \end{tabularx}
+l.2547     \end{tabularx}
                          
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2743,376 +2743,376 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-Overfull \hbox (9.46974pt too wide) in alignment at lines 2513--2513
+Overfull \hbox (9.46974pt too wide) in alignment at lines 2547--2547
 [][][] 
  []
 
-[46] [47] [48] [49] [50] [51]
-Underfull \hbox (badness 10000) in paragraph at lines 2825--2831
+[47] [48] [49] [50] [51] [52]
+Underfull \hbox (badness 10000) in paragraph at lines 2859--2865
 
  []
 
-[52] [53] [54] [55]
-Underfull \hbox (badness 10000) in paragraph at lines 2967--2969
+[53] [54] [55] [56]
+Underfull \hbox (badness 10000) in paragraph at lines 3001--3003
 
  []
 
 
-LaTeX Warning: Command \textquoteright invalid in math mode on input line 2981.
+LaTeX Warning: Command \textquoteright invalid in math mode on input line 3015.
 
-[56] [57] [58] [59]
+[57] [58] [59] [60]
 
-./Teoria - Fondamenti di Informatica.tex:3136: Package inputenc Error: Unicode character ̃ (U+0303)
+./Teoria - Fondamenti di Informatica.tex:3170: Package inputenc Error: Unicode character ̃ (U+0303)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3136 ...lo la ` VAK di saturazione, pari 0, 3 ̃
+l.3170 ...lo la ` VAK di saturazione, pari 0, 3 ̃
                                                   0, 6 V ). Le linee z3
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
-[60] [61]
-Underfull \hbox (badness 10000) in paragraph at lines 3192--3195
+[61] [62]
+Underfull \hbox (badness 10000) in paragraph at lines 3226--3229
 
  []
 
-[62]
+[63]
 
-./Teoria - Fondamenti di Informatica.tex:3219: Package inputenc Error: Unicode character ́ (U+0301)
+./Teoria - Fondamenti di Informatica.tex:3253: Package inputenc Error: Unicode character ́ (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3219 ...\(0\) e che se l’ultimo riporto, Rn ́
+l.3253 ...\(0\) e che se l’ultimo riporto, Rn ́
                                                   1
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./Teoria - Fondamenti di Informatica.tex:3222: Package inputenc Error: Unicode character ́ (U+0301)
+./Teoria - Fondamenti di Informatica.tex:3256: Package inputenc Error: Unicode character ́ (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3222 Ri ́
+l.3256 Ri ́
             1 del riporto del passo precedente. In questo modo si ottiene il...
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./Teoria - Fondamenti di Informatica.tex:3223: Package inputenc Error: Unicode character ́ (U+0301)
+./Teoria - Fondamenti di Informatica.tex:3257: Package inputenc Error: Unicode character ́ (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3223 ...gura 5.31a. La somma di ` Ai, Bi e Ri ́
+l.3257 ...gura 5.31a. La somma di ` Ai, Bi e Ri ́
                                                   1 vale 1 solo quando c’e...
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./Teoria - Fondamenti di Informatica.tex:3225: Package inputenc Error: Unicode character ́ (U+0301)
+./Teoria - Fondamenti di Informatica.tex:3259: Package inputenc Error: Unicode character ́ (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3225 valore di Ri ́
+l.3259 valore di Ri ́
                       1), oppure quando Ri ́1 “ 1 e Ai ‘ Bi “ 1. Per ...
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./Teoria - Fondamenti di Informatica.tex:3225: Package inputenc Error: Unicode character ́ (U+0301)
+./Teoria - Fondamenti di Informatica.tex:3259: Package inputenc Error: Unicode character ́ (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3225 valore di Ri ́1), oppure quando Ri ́
+l.3259 valore di Ri ́1), oppure quando Ri ́
                                              1 “ 1 e Ai ‘ Bi “ 1. Per ...
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
-[63]
-./Teoria - Fondamenti di Informatica.tex:3262: Extra alignment tab has been changed to \cr.
+[64]
+./Teoria - Fondamenti di Informatica.tex:3296: Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.3262          &
+l.3296          &
                   & & 0 & 0 & 1 & 1 &
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
 So I'll assume that you meant to type \cr instead.
 
-./Teoria - Fondamenti di Informatica.tex:3262: Extra alignment tab has been changed to \cr.
+./Teoria - Fondamenti di Informatica.tex:3296: Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.3262          & & & 0 & 0 & 1 & 1 &
+l.3296          & & & 0 & 0 & 1 & 1 &
                                      
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
 So I'll assume that you meant to type \cr instead.
 
-[64]
-Underfull \hbox (badness 10000) in paragraph at lines 3293--3295
+[65]
+Underfull \hbox (badness 10000) in paragraph at lines 3327--3329
 
  []
 
-[65] [66]
+[66] [67]
 
-LaTeX Warning: File `img/circuiti_sequenziali/image1.png' not found on input line 3314.
+LaTeX Warning: File `img/circuiti_sequenziali/image1.png' not found on input line 3348.
 
 
-./Teoria - Fondamenti di Informatica.tex:3314: Package pdftex.def Error: File `img/circuiti_sequenziali/image1.png' not found: using draft setting.
+./Teoria - Fondamenti di Informatica.tex:3348: Package pdftex.def Error: File `img/circuiti_sequenziali/image1.png' not found: using draft setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3314 ....4]{img/circuiti_sequenziali/image1.png}
+l.3348 ....4]{img/circuiti_sequenziali/image1.png}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-[67]
+[68]
 
-./Teoria - Fondamenti di Informatica.tex:3368: Package inputenc Error: Unicode character ⌧ (U+2327)
+./Teoria - Fondamenti di Informatica.tex:3402: Package inputenc Error: Unicode character ⌧ (U+2327)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3368 ...mmuta a X “ 0 con un certo ritardo ⌧
+l.3402 ...mmuta a X “ 0 con un certo ritardo ⌧
                                                    , legato ai tempi di comm...
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./Teoria - Fondamenti di Informatica.tex:3369: Package inputenc Error: Unicode character ⌧ (U+2327)
+./Teoria - Fondamenti di Informatica.tex:3403: Package inputenc Error: Unicode character ⌧ (U+2327)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3369 ...mmutare Y a 1 con un ritardo pari a 2⌧
+l.3403 ...mmutare Y a 1 con un ritardo pari a 2⌧
                                                    .
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./Teoria - Fondamenti di Informatica.tex:3371: Package inputenc Error: Unicode character ́ (U+0301)
+./Teoria - Fondamenti di Informatica.tex:3405: Package inputenc Error: Unicode character ́ (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3371 e Y “ 1, poiche essa  ́
+l.3405 e Y “ 1, poiche essa  ́
                                   e stabile rispetto a ` R “ S “ 0, a no...
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
-[68] [69]
+[69] [70]
 
-LaTeX Warning: File `img/circuiti_combinatori/image22.png' not found on input line 3400.
+LaTeX Warning: File `img/circuiti_combinatori/image22.png' not found on input line 3434.
 
 
-./Teoria - Fondamenti di Informatica.tex:3400: Package pdftex.def Error: File `img/circuiti_combinatori/image22.png' not found: using draft setting.
+./Teoria - Fondamenti di Informatica.tex:3434: Package pdftex.def Error: File `img/circuiti_combinatori/image22.png' not found: using draft setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3400 ...4]{img/circuiti_combinatori/image22.png}
+l.3434 ...4]{img/circuiti_combinatori/image22.png}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-LaTeX Warning: File `img/circuiti_sequenziali/image3.png' not found on input line 3413.
+LaTeX Warning: File `img/circuiti_sequenziali/image3.png' not found on input line 3447.
 
 
-./Teoria - Fondamenti di Informatica.tex:3413: Package pdftex.def Error: File `img/circuiti_sequenziali/image3.png' not found: using draft setting.
+./Teoria - Fondamenti di Informatica.tex:3447: Package pdftex.def Error: File `img/circuiti_sequenziali/image3.png' not found: using draft setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3413 ...{img/circuiti_sequenziali/image3.png} }}
+l.3447 ...{img/circuiti_sequenziali/image3.png} }}
                                                   %
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (12.75018pt too wide) in paragraph at lines 3413--3413
+Overfull \hbox (12.75018pt too wide) in paragraph at lines 3447--3447
 []\OT1/cmr/m/n/8 (a) |$[]$| 
  []
 
 
-LaTeX Warning: File `img/circuiti_sequenziali/image4.png' not found on input line 3415.
+LaTeX Warning: File `img/circuiti_sequenziali/image4.png' not found on input line 3449.
 
 
-./Teoria - Fondamenti di Informatica.tex:3415: Package pdftex.def Error: File `img/circuiti_sequenziali/image4.png' not found: using draft setting.
+./Teoria - Fondamenti di Informatica.tex:3449: Package pdftex.def Error: File `img/circuiti_sequenziali/image4.png' not found: using draft setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3415 ...{img/circuiti_sequenziali/image4.png} }}
+l.3449 ...{img/circuiti_sequenziali/image4.png} }}
                                                   %
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (13.22241pt too wide) in paragraph at lines 3415--3415
+Overfull \hbox (13.22241pt too wide) in paragraph at lines 3449--3449
 []\OT1/cmr/m/n/8 (b) |$[]$
  []
 
-[70]
-Underfull \hbox (badness 10000) in paragraph at lines 3424--3430
+[71]
+Underfull \hbox (badness 10000) in paragraph at lines 3458--3464
 
  []
 
-./Teoria - Fondamenti di Informatica.tex:3449: Package pdftex.def Error: File `img/circuiti_sequenziali/image10.png' not found: using draft setting.
+./Teoria - Fondamenti di Informatica.tex:3483: Package pdftex.def Error: File `img/circuiti_sequenziali/image10.png' not found: using draft setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3449     \end{tabularx}
+l.3483     \end{tabularx}
                          
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-./Teoria - Fondamenti di Informatica.tex:3449: Package pdftex.def Error: File `img/circuiti_sequenziali/image10.png' not found: using draft setting.
+./Teoria - Fondamenti di Informatica.tex:3483: Package pdftex.def Error: File `img/circuiti_sequenziali/image10.png' not found: using draft setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3449     \end{tabularx}
+l.3483     \end{tabularx}
                          
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
 Package tabularx Warning: X Columns too narrow (table too wide)
-(tabularx)                 on input line 3449.
+(tabularx)                 on input line 3483.
 
 
-LaTeX Warning: File `img/circuiti_sequenziali/image10.png' not found on input line 3449.
+LaTeX Warning: File `img/circuiti_sequenziali/image10.png' not found on input line 3483.
 
 
-./Teoria - Fondamenti di Informatica.tex:3449: Package pdftex.def Error: File `img/circuiti_sequenziali/image10.png' not found: using draft setting.
+./Teoria - Fondamenti di Informatica.tex:3483: Package pdftex.def Error: File `img/circuiti_sequenziali/image10.png' not found: using draft setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3449     \end{tabularx}
+l.3483     \end{tabularx}
                          
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (50.00002pt too wide) in alignment at lines 3449--3449
+Overfull \hbox (50.00002pt too wide) in alignment at lines 3483--3483
 [][] 
  []
 
 
-./Teoria - Fondamenti di Informatica.tex:3459: LaTeX Error: There's no line here to end.
+./Teoria - Fondamenti di Informatica.tex:3493: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3459 D
+l.3493 D
         i seguito il funzionamento: Con il vincolo che uno dei due input \(R...
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-[71]
-
-./Teoria - Fondamenti di Informatica.tex:3473: LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.3473 \\F
-          unzionamento: Con il vincolo che \(R + S = 1\), con un impulso \(0...
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 [72]
 
-LaTeX Warning: File `img/circuiti_sequenziali/image10.png' not found on input line 3516.
+./Teoria - Fondamenti di Informatica.tex:3507: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3507 \\F
+          unzionamento: Con il vincolo che \(R + S = 1\), con un impulso \(0...
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[73]
+
+LaTeX Warning: File `img/circuiti_sequenziali/image10.png' not found on input line 3550.
 
 
-./Teoria - Fondamenti di Informatica.tex:3516: Package pdftex.def Error: File `img/circuiti_sequenziali/image10.png' not found: using draft setting.
+./Teoria - Fondamenti di Informatica.tex:3550: Package pdftex.def Error: File `img/circuiti_sequenziali/image10.png' not found: using draft setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3516 ...4]{img/circuiti_sequenziali/image10.png}
+l.3550 ...4]{img/circuiti_sequenziali/image10.png}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-LaTeX Warning: File `img/circuiti_sequenziali/image11.png' not found on input line 3528.
+LaTeX Warning: File `img/circuiti_sequenziali/image11.png' not found on input line 3562.
 
 
-./Teoria - Fondamenti di Informatica.tex:3528: Package pdftex.def Error: File `img/circuiti_sequenziali/image11.png' not found: using draft setting.
+./Teoria - Fondamenti di Informatica.tex:3562: Package pdftex.def Error: File `img/circuiti_sequenziali/image11.png' not found: using draft setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3528 ...4]{img/circuiti_sequenziali/image11.png}
+l.3562 ...4]{img/circuiti_sequenziali/image11.png}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-[73] [74] [75]
-Overfull \hbox (8.01457pt too wide) in paragraph at lines 3602--3605
+[74] [75] [76]
+Overfull \hbox (8.01457pt too wide) in paragraph at lines 3636--3639
 \OT1/cmr/m/n/10 ben pre-sto, al-la co-di-fi-ca dei ca-rat-te-ri at-tra-ver-so lo stan-dard $\OML/cmm/m/it/10 UTF\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 UnicodeTransformationFormat\OT1/cmr/m/n/10 )$,
  []
 
-[76] [77]
-Underfull \hbox (badness 10000) in paragraph at lines 3649--3652
+[77] [78]
+Underfull \hbox (badness 10000) in paragraph at lines 3683--3686
 
  []
 
-[78] [79] [80]
-Underfull \hbox (badness 10000) in paragraph at lines 3704--3708
+[79] [80] [81]
+Underfull \hbox (badness 10000) in paragraph at lines 3738--3742
 
  []
 
-[81] [82] [83] [84] [85] [86]
-Underfull \hbox (badness 10000) in paragraph at lines 3834--3837
+[82] [83] [84] [85] [86] [87]
+Underfull \hbox (badness 10000) in paragraph at lines 3868--3871
 
  []
 
-[87] [88] [89] [90] [91] [92] [93]
-./Teoria - Fondamenti di Informatica.tex:4065: Undefined control sequence.
-l.4065 \[f(x) = x \overdotline
+[88] [89] [90] [91] [92] [93] [94]
+./Teoria - Fondamenti di Informatica.tex:4099: Undefined control sequence.
+l.4099 \[f(x) = x \overdotline
                                1 = \left\{
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3120,69 +3120,69 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[94] [95] [96]
-./Teoria - Fondamenti di Informatica.tex:4181: Missing $ inserted.
+[95] [96] [97]
+./Teoria - Fondamenti di Informatica.tex:4215: Missing $ inserted.
 <inserted text> 
                 $
-l.4181         \item istruzione \leftarrow
+l.4215         \item istruzione \leftarrow
                                            memoria \([PC]\)
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-./Teoria - Fondamenti di Informatica.tex:4181: LaTeX Error: Bad math environment delimiter.
+./Teoria - Fondamenti di Informatica.tex:4215: LaTeX Error: Bad math environment delimiter.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.4181 ...  \item istruzione \leftarrow memoria \(
+l.4215 ...  \item istruzione \leftarrow memoria \(
                                                   [PC]\)
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[97]
-./Teoria - Fondamenti di Informatica.tex:4201: Missing $ inserted.
+[98]
+./Teoria - Fondamenti di Informatica.tex:4235: Missing $ inserted.
 <inserted text> 
                 $
-l.4201         \item istruzione \leftarrow
+l.4235         \item istruzione \leftarrow
                                            memoria \([PC]\)
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-./Teoria - Fondamenti di Informatica.tex:4201: LaTeX Error: Bad math environment delimiter.
+./Teoria - Fondamenti di Informatica.tex:4235: LaTeX Error: Bad math environment delimiter.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.4201 ...  \item istruzione \leftarrow memoria \(
+l.4235 ...  \item istruzione \leftarrow memoria \(
                                                   [PC]\)
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[98] [99] [100] [101] (build/Teoria - Fondamenti di Informatica.aux)
+[99] [100] [101] [102] (build/Teoria - Fondamenti di Informatica.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 33170 strings out of 480445
- 815060 string characters out of 5892391
- 1424860 words of memory out of 5000000
- 49991 multiletter control sequences out of 15000+600000
+ 33535 strings out of 480445
+ 825143 string characters out of 5892391
+ 1424937 words of memory out of 5000000
+ 50356 multiletter control sequences out of 15000+600000
  415149 words of font info for 70 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 128i,21n,130p,1205b,1027s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 128i,21n,130p,1096b,1027s stack positions out of 5000i,500n,10000p,200000b,80000s
  </Users/enricopiccin/Library/texlive/2021basic/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmr7.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "build/Teoria - Fondamenti di Informatica.pdf" (101 pages, 577766 bytes).
+Output written on "build/Teoria - Fondamenti di Informatica.pdf" (102 pages, 581982 bytes).
 PDF statistics:
- 417 PDF objects out of 1000 (max. 8388607)
- 288 compressed objects within 3 object streams
+ 420 PDF objects out of 1000 (max. 8388607)
+ 290 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
