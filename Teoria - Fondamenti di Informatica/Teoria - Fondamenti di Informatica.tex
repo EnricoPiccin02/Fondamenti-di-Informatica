@@ -1889,61 +1889,184 @@ Si consideri la realizzazione tramite transistor delle principali porte logiche.
 \subsection{Riassunto}
 Una funzione a \(3\) variabili è una funzione che va dall'insieme \(2^3\) a \(2\), pertanto il numero di funzioni che si possono costruire con \(n\) variabili cresce molto velocemente, in quanto è dato da:
 \[2^{2^n}\]
-Considerando le funzioni più semplici, ad una sola variabile, si considerano \(4\) sole possibile funzioni, quella \textbf{nulla}, quella \textbf{identica}, la funzione \textbf{buffer} che trasmette a distanza il valore della variabile \(x\), mentre la funzione \textbf{complementare} trasmette a distanza il valore complementare della variabile \(x\).\\
-Le funzioni a due variabili sono \(2^{2^2} = 16\) e sono le più comuni e importanti, tali da giustificarne una dignità circuitale.\\
-In particolare si considerano le porte AND e OR, a cui si aggiungono:
+Considerando le funzioni più semplici, ad una sola variabile, si distinguono \(4\) sole possibile funzioni, quella \textbf{nulla}, quella \textbf{identica}, la funzione \textbf{buffer} che trasmette a distanza il valore della variabile \(x\), mentre la funzione \textbf{complementare} trasmette a distanza il valore complementare della variabile \(x\).\\
+Le funzioni a due variabili sono \(2^{2^2} = 16\) e sono le più comuni e importanti, tali da giustificarne una dignità circuitale. In particolare si considerano le porte AND e OR, a cui si aggiungono:
 \begin{itemize}
     \item XOR, la quale può essere espressa come:
     \[x \oplus y = (A \cap \overline{B}) \cup (\overline{A} \cap B)\]
     che, in termini di logica binaria si esprime anche come
     \[x \oplus y = x\overline{y} + \overline{x}y \]
     ma anche
-    \[x \oplus y = x\overline{y} + \overline{x}y = x\overline{y} + \overline{x}y + x\overline{x} + y \overline{y} = (x + y) + (\overline{x} + \overline{y})\]
+    \[x \oplus y = x\overline{y} + \overline{x}y = x\overline{y} + \overline{x}y + x\overline{x} + y \overline{y} = (x + y) \cdot (\overline{x} + \overline{y})\]
     che, dal punto di vista logico, circuitale ed economico sono perfettamente equivalenti.
 
     \item XNOR, ovvero la negazione della porta XOR, la quale può essere espressa come:
-    \[x \odot y = \overline{x \oplus y} = \overline{\overline{x}y + x \overline{y}} = \overline{(\overline{x}y)}\]
-    ... continua...
+    \[x \odot y = \overline{x \oplus y} = \overline{\overline{x}y + x \overline{y}} = \overline{\overline{x}y} \cdot \overline{x\overline{y}} = (x + \overline{y}) \cdot (\overline{x} + y)\]
+    ma anche
+    \[x \odot y = \overline{(x + y) \cdot (\overline{x} + \overline{y})} = \overline{x + y} + \overline{\overline{x} + \overline{y}} = \overline{x} \overline{y} + xy\]
 
-    \item NAND
+    \item NAND, ovvero la negazione della porta AND.
 
-    \item NOR
-
-    che sono definiti connettivi universali, in quanto da sole sono in grado di costruire tutte e \(16\) le possibili funzioni logiche a \(2\) variabili.
+    \item NOR, ovvero la negazione della porta OR.
 \end{itemize}
 
-\vspace{1em}
 \noindent
-\textbf{Osservazione}: Il principio di funzionamento della porta NOT prevede l'utilizzo di un solo transistor, il quale viene polarizzato con una corrente (opportunamente commisurata alle caratteristiche tecniche del transistor stesso), pertanto va in \textbf{saturazione} e la tensione in uscita collassa al valore \(0\).\\
-Se il transitors non viene polarizzato, allora il transistor va in \textbf{interdizione} e la tensione sul collettore si trova allo stesso valore della tensione di alimentazione (\(V_{CC}\)), per cui la tensione di uscita ha valore \(1\).
+Queste ultime due funzioni logiche sono definite connettivi universali, in quanto da soli sono in grado di costruire tutte e \(16\) le possibili funzioni logiche a \(2\) variabili.
 
 \vspace{1em}
 \noindent
-\textbf{Osservazione}: Il principio di funzionamento della porta AND si prevede l'utilizzo di due transistors a giunzione, o anche di tipo MOS, o MOS FET, con un princpio di funzionamento analogo.
+\textbf{Osservazione}: Il principio di funzionamento della porta NOT prevede l'utilizzo di un solo transistor, il quale, quando viene polarizzato direttamente con una corrente (opportunamente commisurata alle caratteristiche tecniche del transistor stesso) va in \textbf{saturazione} e la tensione \(V_{CE}\), ovvero la differenza di potenziale tra collettore ed emettitore, in uscita collassa al valore \(0\).\\
+Se il transitors, invece, non viene polarizzato, allora esso va in \textbf{interdizione} e la tensione sul collettore si trova allo stesso valore della tensione di alimentazione (\(V_{CC}\)), per cui la tensione di uscita ha valore \(1\).
 
 \vspace{1em}
 \noindent
-\textbf{Osservazione}: Il principio di funzionamento della porta OR si prevede l'utlizzo di due transistors posti in parallelo, pertanto solamente quando ambedue i transistors sono in saturazione allora la tensione in uscita avrà valore alto.\\
-Altrimenti, se almeno uno dei due è in \textbf{interdizione}, allora la tensione in uscita sarà a valore alto.
+\textbf{Osservazione}: Il principio di funzionamento della porta AND si prevede l'utilizzo di due transistors a giunzione posti in serie, o anche di tipo MOS, o MOS FET, con un principio di funzionamento analogo. Solamente quando entrambi i transistor sono in piena conduzione, ossia in saturazione, allora la tensione in uscita assume il valore \(1\) logico; in tutti gli altri casi, quando anche un solo transistor viene interdetto, a causa di una tensione di alimentazione pressoché nulla, la tensione in uscita assume il valore \(0\) logico.
+
+\vspace{1em}
+\noindent
+\textbf{Osservazione}: Il principio di funzionamento della porta OR prevede l'utlizzo di due transistors posti in parallelo, pertanto solamente quando ambedue i transistors sono in interdizione allora la tensione in uscita avrà valore basso.\\
+Altrimenti, se almeno uno dei due è in \textbf{saturazione}, allora la tensione in uscita sarà a valore alto.
 
 \subsection{Forme canoniche: \textit{minterm}}
-L'obiettivo di questa sezione si traduce nel formulare una struttura logica tale da poter semplificare nei minimi termini una funzione logica, riducendo il numero di connettivi (e porte) logiche per la realizzazione la rete logica, con significativi vantaggi in termini di latenza e tempi di risposta.\\
-Le modalità per raggiungere tali fini sono \(3\): la prima di tipo squisitamente algebrico e dal risultato dubbio (o incerto), in quanto vi possono essere diverse linee di semplificazione che producono espressioni booleane diverse, ma perfettamente equivalenti dal punto di vista algebrico. Dopodiché vi è la \textbf{mappa di Karnaugh} e il \textbf{metodo tabella di Quine-McCluskey}.\\
+L'obiettivo di questa sezione si traduce nel formulare una struttura logica tale da poter semplificare nei minimi termini una funzione logica, riducendo il numero di connettivi (e porte) logiche necessari per la realizzazione di una rete logica, con significativi vantaggi in termini di latenza e tempi di risposta.\\
+Le modalità per raggiungere tali fini sono \(3\): la prima di tipo squisitamente algebrico e dal risultato dubbio (o incerto), in quanto vi possono essere diverse linee di semplificazione che producono espressioni booleane diverse, ma perfettamente equivalenti dal punto di vista algebrico. Dopodiché vi è la \textbf{mappa di Karnaugh} e infine il \textbf{metodo tabellare di Quine-McCluskey}.\\
 Ricapitolando, l'obiettivo di questa sezione è quello di poter manipolare e gestire qualunque tipo di funzione logica, con qualunque numero di variabili.\\
 Si consideri, per semplciità, la seguente funzione
 \[f = (x + z) \cdot (\overline{x} + z)\]
-che assumerà il valore in uscita \(1\) solamente in corrispondenza di specifiche terne di valori delle variabili in ingresso, ovvero \(010\), \(011\), \(101\) e \(111\) che prendono il nome di \textbf{termini minimi}.\\
-Per poterli comporre in una funzione, bisogna sommarli logicamente, in modo tale che la funzione risultante produca il valore logico \(1\) solamente in una di tali \(4\) possibili casi. Infatti:
+di cui si espone, per chiarezza, la tavola di verità corrispondente nella Tabella \ref{tab:esempio_funzione_boolena}:
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{ccc|c}
+    $x$ & $y$ & $z$ & $f = (x + z) \cdot (\overline{x} + z)$\\
+    \hline
+    $0$ & $0$ & $0$ & $0$\\
+    $0$ & $0$ & $1$ & $0$\\
+    $0$ & $1$ & $0$ & $1$\\
+    $0$ & $1$ & $1$ & $1$\\
+    $1$ & $0$ & $0$ & $0$\\
+    $1$ & $0$ & $1$ & $1$\\
+    $1$ & $1$ & $0$ & $0$\\
+    $1$ & $1$ & $1$ & $1$\\
+  \end{tabular}
+  \caption{Esempio di funzione booleana}
+  \label{tab:esempio_funzione_boolena}
+\end{table}
+
+\noindent
+Com'è evidente, tale funzione assumerà il valore in uscita \(1\) solamente in corrispondenza di specifiche terne di valori delle variabili in ingresso, ovvero \(010\), \(011\), \(101\) e \(111\) che prendono il nome di \textbf{termini minimi}, o \textbf{minterm}: ciò consente di costruire la funzione considerata in principio a partire dalla somma logica di funzioni elementari, cioè quelle funzioni che valgono \(1\) esattamente in corrispondenza di una e una sola configurazione d’ingresso, precisamente quella che entra nella somma logica.\\
+Per poter comporre in una funzione tali \textbf{minterm} bisogna sommarli logicamente, in modo tale che la funzione risultante produca il valore logico \(1\) solamente in una di tali \(4\) possibili casi (per la funzione oggetto di studio, ovviamente). La funzione di partenza, allora, si può esprimere come somma di prodotti delle variabili d’ingresso, nella forma
 \[f = \overline{x}y\overline{z} + \overline{x}yz + x\overline{y}z + xyz\]
-ovvero si è costruita la \textbf{somma dei termini minimi}, ovvero una \textbf{somma logica dei \textit{minterm}}, che è in grado di rappresentare una qualunque funzione logica.\\
-In altre parole:
+ovvero si è costruita la \textbf{somma dei termini minimi}, ovvero una \textbf{somma logica dei \textit{minterm}}, ovverosia uan funzione che vale sempre \(0\), tranne che per le configurazioni per le quali vale \(1\). La \textbf{somma di \textit{minterm}} è in grado di rappresentare una qualunque funzione logica. Infatti, la tecnica esposta può essere generalizzata a qualunque funzione \(y = f(x_1, x_2, ..., x_n)\)
+di \(n\) variabili, tenuto conto che i termini minimi \(m_i\) sono in tutto tanti quante sono le possibili configurazioni
+d’ingresso, cioè \(2^n\). Se si codificano le $n$-ple d’ingresso associate a ciascun termine minimo con il corrispondente
+intero rappresentato in notazione posizionale in base 2, è possibile indicare i termini minimi che compongono la
+sommatoria usando gli interi compresi tra \(0\) e \(2^{n-1}\).\\
+Pertanto la generica funzione si rappresenta come segue
 \[f(x_1, x_2, ..., x_n) = \underset{i = 0}{\overset{2^n - 1}{\sum}} \mu_i m_i = \underset{i: \mu_i = 1}{\sum} m_i\]
 dove \(\mu_i\) è il valore assunto dalla funzione in corrispondenza del termine minimo \(m_i\) e \(0 \leq i \leq 2^n -1\).\\
-Nel caso analizzato, si ha \(m_2 = \overline{x}y\overline{z}, m_3 = \overline{x}yz, m_5 = x\overline{y}z, m_7 = xyz, \mu_2 = \mu_3 = \mu_5 = \mu_7 = 1, \mu_0 = \mu_1 = \mu_4 = \mu6 = 0\). La formula (4.16) rappresenta la funzione nei termini della cosiddetta prima forma canonica (o somma di prodotti). Se nella tavola di verità della funzione si pone in evidenza la codifica dei termini minimi si ottiene:
+Nel caso analizzato, si ha \(m_2 = \overline{x}y\overline{z}, m_3 = \overline{x}yz, m_5 = x\overline{y}z, m_7 = xyz, \mu_2 = \mu_3 = \mu_5 = \mu_7 = 1, \mu_0 = \mu_1 = \mu_4 = \mu_6 = 0\).\\
+La sommatoria così ottenuta rappresenta la funzione nei termini della cosiddetta \textbf{prima forma canonica} (o \textbf{somma di prodotti}). Se nella tavola di verità della funzione si pone in evidenza la codifica dei termini minimi si ottiene:
 
-\[Tabella di verita\]
+\begin{table}[H]
+  \centering
+  \begin{tabular}{c|c||ccc||c|c}
+    $ $ & $ $ & $x$ & $y$ & $z$ & $f$\\
+    \hline
+    $m_0$ & $\overline{x}\overline{y}\overline{z}$ & $0$ & $0$ & $0$ & $0$ & $\mu_0$\\
+    $m_1$ & $\overline{x}\overline{y}z$ & $0$ & $0$ & $1$ & $0$ & $\mu_1$\\
+    $m_2$ & $\overline{x}y\overline{z}$ & $0$ & $1$ & $0$ & $1$ & $\mu_2$\\
+    $m_3$ & $\overline{x}yz$ & $0$ & $1$ & $1$ & $1$ & $\mu_3$\\
+    $m_4$ & $x\overline{y}\overline{z}$ & $1$ & $0$ & $0$ & $0$ & $\mu_4$\\
+    $m_5$ & $x\overline{y}z$ & $1$ & $0$ & $1$ & $1$ & $\mu_5$\\
+    $m_6$ & $xy\overline{z}$ & $1$ & $1$ & $0$ & $0$ & $\mu_6$\\
+    $m_7$ & $xyz$ & $1$ & $1$ & $1$ & $1$ & $\mu_7$\\
+  \end{tabular}
+  \caption{Codifica dei termini minimi}
+  \label{tab:codifica_termini_minimi}
+\end{table}
 
+\noindent
+Per cui si ottiene
+\[f(x, y, z) = \sum_{i \in \{2, 3, 5, 7\}} m_i = m_2 + m_3 + m_5 + m_7 = \overline{x}y\overline{z} + \overline{x}yz + x\overline{y}z + xyz\]
+poiché \(2, 3, 5\) e \(7\) sono le codifiche in base \(2\) di \(010, 011, 101\) e \(111\).\\
 Dal punto di vista circuitale, la somma di \textit{minterm} si rappresenta come segue:
+
+% Contenitore per immagini
+\rowcolors{1}{white}{white}
+\noindent
+\begin{table}[H]
+    \centering
+    \noindent
+    \begin{tikzpicture}
+      \coordinate (start) at (-0.7,0);
+      \node [nor gate US, draw, logic gate inputs=nn] (nor1){};
+      \node [nor gate US, draw, right=of nor1, logic gate inputs=nn] (nor2){};
+
+      \draw (nor1.input 1) -- node[at end, above left]{$x$} (nor1.input 1 -| start);
+      \draw (nor1.input 2) -- node[at end, below left]{$y$} (nor1.input 2 -| start);
+
+      \draw (nor1.output) -- ([xshift=0.3cm] nor1.output) node [branch]{} |- (nor2.input 1);
+      \draw (nor1.output) -- ([xshift=0.3cm] nor1.output) node []{} |- (nor2.input 2);
+
+      \draw (nor2.output) -- ([xshift=0.3cm] nor2.output) node [right] {{$x + y$}};
+    \end{tikzpicture}
+
+    
+
+    \begin{tabularx}{\textwidth}{PPP}
+         {
+           \begin{tikzpicture}
+               \coordinate (start) at (-1.5,-0.8);
+               \node [nor gate US, draw, logic gate inputs=nn] (nor){};
+
+               \draw (-0.6,0) -- node[at end, left]{$x$} (-0.8,0);
+               \draw (nor.input 2) ++(-0.3,0.08) node [branch]{} |- (nor.input 1);
+               \draw (nor.input 1) ++(-0.3,-0.08) node []{} |- (nor.input 2);
+               \draw (nor.output) -- ([xshift=0.3cm] nor.output) node [right] {{$\overline{x}$}};
+           \end{tikzpicture}
+         }
+         &
+         {
+           \hspace{-3em}
+           \begin{tikzpicture}
+             \coordinate (start) at (-0.7,0);
+             \node [nor gate US, draw, logic gate inputs=nn] (nor1){};
+             \node [nor gate US, draw, right=of nor1, logic gate inputs=nn] (nor2){};
+
+             \draw (nor1.input 1) -- node[at end, above left]{$x$} (nor1.input 1 -| start);
+             \draw (nor1.input 2) -- node[at end, below left]{$y$} (nor1.input 2 -| start);
+
+             \draw (nor1.output) -- ([xshift=0.3cm] nor1.output) node [branch]{} |- (nor2.input 1);
+             \draw (nor1.output) -- ([xshift=0.3cm] nor1.output) node []{} |- (nor2.input 2);
+
+             \draw (nor2.output) -- ([xshift=0.3cm] nor2.output) node [right] {{$x + y$}};
+           \end{tikzpicture}
+         }
+         &
+         {
+           \begin{tikzpicture}
+             \node [nor gate US, draw, logic gate inputs=nn] (nor1){};
+             \node [nor gate US, draw, below=of nand1, yshift=5.5mm, logic gate inputs=nn] (nor2){};
+             \node [nor gate US, draw, right=of nand1, xshift=-3mm, yshift=-5mm, logic gate inputs=nn] (nor3){};
+
+             \draw (-0.6,0) -- node[at end, left]{$x$} (-0.8,0);
+             \draw (nor1.input 2) ++(-0.3,0.08) node [branch]{} |- (nor1.input 1);
+             \draw (nor1.input 1) ++(-0.3,-0.08) node []{} |- (nor1.input 2);
+
+             \draw (-0.6,-0.97) -- node[at end, left]{$y$} (-0.8,-0.97);
+             \draw (nor2.input 2) ++(-0.3,0.08) node [branch]{} |- (nor2.input 1);
+             \draw (nor2.input 1) ++(-0.3,-0.08) node []{} |- (nor2.input 2);
+
+             \draw (nor1.output) -- ([xshift=0.3cm] nor1.output) |- (nor3.input 1);
+             \draw (nor2.output) -- ([xshift=0.3cm] nor2.output) |- (nor3.input 2);
+             \draw (nor3.output) -- ([xshift=0.3cm] nor3.output) node [right] {{$x \cdot y$}};
+           \end{tikzpicture}
+         }
+    \end{tabularx}\\
+    \caption{Funzioni NOT, OR e AND realizzazate mediante la porta universale NOR}
+    \label{tab:NOT_OR_AND_tramite_NOR}
+\end{table}
 
 \subsection{Forme canoniche: \textit{maxterm}}
 Un discorso del tutto analogo si può formulare procedendo per dualità, e realizzando un \textbf{prodotto di somme}. Ciò richiede di analizzare i termini per i quali la funzione vale 0; dalla figura 4.20a si osserva che ciò accade in corrispondenza delle terne \(000, 001, 100\) e \(110\), cioè \(0, 1, 4\) e \(6\) con la codifica impiegata in precedenza.\\
