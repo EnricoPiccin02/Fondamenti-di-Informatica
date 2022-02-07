@@ -1322,40 +1322,41 @@ Pertanto, dopo aver discusso ampiamente le due porte principali dell'Algebra Boo
     che corrisponde a un AND di due OR. Si possono pertanto realizzare due circuiti del tutto equivalenti, visibili in Figura \ref{fig:XOR_espressa_AND_OR}:
 
     % Contenitore per immagini
-            \begin{figure}[H]
-                \centering
-                \begin{tikzpicture}
-                    \coordinate (start) at (-1.5,0);
-                    \node [and gate US, draw, logic gate inputs=ni] (and1){};
-                    \node [and gate US, draw, below=of and1, yshift=5.5mm, logic gate inputs=in] (and2){};
-                    \node [or gate US, draw, right=of and1, xshift=-3mm, yshift=-5mm, logic gate inputs=nn] (or){};
+    \begin{figure}[H]
+        \centering
+        \hspace{2.5em}
+        \begin{tikzpicture}
+            \coordinate (start) at (-1.5,0);
+            \node [and gate US, draw, logic gate inputs=ni] (and1){};
+            \node [and gate US, draw, below=of and1, yshift=5.5mm, logic gate inputs=in] (and2){};
+            \node [or gate US, draw, right=of and1, xshift=-3mm, yshift=-5mm, logic gate inputs=nn] (or){};
 
-                    \draw (and1.input 1) -- node[at end, left]{$x$} (and1.input 1 -| start);
-                    \draw (and2.input 2) -- node[at end, left]{$y$} (and2.input 2 -| start);
-                    \draw (and1.input 1) ++(-0.8,0) node [branch]{} |- (and2.input 1);
-                    \draw (and2.input 2) ++(-0.5,0) node [branch]{} |- (and1.input 2);
-                    \draw (and1.output) -- ([xshift=0.3cm] and1.output) |- (or.input 1);
-                    \draw (and2.output) -- ([xshift=0.3cm] and2.output) |- (or.input 2);
-                    \draw (or.output) -- ([xshift=0.5cm] or.output) node [right] {{$x\overline{y} + \overline{x}y$}};
-                \end{tikzpicture}
-                \hspace{3em}
-                \begin{tikzpicture}
-                  \coordinate (start) at (-1.5,0);
-                  \node [or gate US, draw, logic gate inputs=ii] (or1){};
-                  \node [or gate US, draw, below=of or1, yshift=5.5mm, logic gate inputs=nn] (or2){};
-                  \node [and gate US, draw, right=of and1, xshift=-3mm, yshift=-5mm, logic gate inputs=nn] (and){};
+            \draw (and1.input 1) -- node[at end, left]{$x$} (and1.input 1 -| start);
+            \draw (and2.input 2) -- node[at end, left]{$y$} (and2.input 2 -| start);
+            \draw (and1.input 1) ++(-0.8,0) node [branch]{} |- (and2.input 1);
+            \draw (and2.input 2) ++(-0.5,0) node [branch]{} |- (and1.input 2);
+            \draw (and1.output) -- ([xshift=0.3cm] and1.output) |- (or.input 1);
+            \draw (and2.output) -- ([xshift=0.3cm] and2.output) |- (or.input 2);
+            \draw (or.output) -- ([xshift=0.5cm] or.output) node [right] {{$x\overline{y} + \overline{x}y$}};
+        \end{tikzpicture}
+        \hspace{3em}
+        \begin{tikzpicture}
+          \coordinate (start) at (-1.5,0);
+          \node [or gate US, draw, logic gate inputs=ii] (or1){};
+          \node [or gate US, draw, below=of or1, yshift=5.5mm, logic gate inputs=nn] (or2){};
+          \node [and gate US, draw, right=of and1, xshift=-3mm, yshift=-5mm, logic gate inputs=nn] (and){};
 
-                  \draw (or1.input 1) -- node[at end, left]{$x$} (or1.input 1 -| start);
-                  \draw (or2.input 2) -- node[at end, left]{$y$} (or2.input 2 -| start);
-                  \draw (or1.input 1) ++(-0.8,0) node [branch]{} |- (or2.input 1);
-                  \draw (or2.input 2) ++(-0.5,0) node [branch]{} |- (or1.input 2);
-                  \draw (or1.output) -- ([xshift=0.3cm] or1.output) |- (and.input 1);
-                  \draw (or2.output) -- ([xshift=0.3cm] or2.output) |- (and.input 2);
-                  \draw (and.output) -- ([xshift=0.5cm] and.output) node [right] {{$(x + y) \cdot (\overline{x} + \overline{y})$}};
-                \end{tikzpicture}
-                \caption{La funzione XOR realizzata mediante porte AND e OR}
-                \label{fig:XOR_espressa_AND_OR}
-            \end{figure}
+          \draw (or1.input 1) -- node[at end, left]{$x$} (or1.input 1 -| start);
+          \draw (or2.input 2) -- node[at end, left]{$y$} (or2.input 2 -| start);
+          \draw (or1.input 1) ++(-0.8,0) node [branch]{} |- (or2.input 1);
+          \draw (or2.input 2) ++(-0.5,0) node [branch]{} |- (or1.input 2);
+          \draw (or1.output) -- ([xshift=0.3cm] or1.output) |- (and.input 1);
+          \draw (or2.output) -- ([xshift=0.3cm] or2.output) |- (and.input 2);
+          \draw (and.output) -- ([xshift=0.5cm] and.output) node [right] {{$(x + y) \cdot (\overline{x} + \overline{y})$}};
+        \end{tikzpicture}
+        \caption{La funzione XOR realizzata mediante porte AND e OR}
+        \label{fig:XOR_espressa_AND_OR}
+    \end{figure}
 
     \item \textbf{Porta XNOR}\\
     È la negazione della porta XOR. La porta XNOR restituisce \(1\) in uscita solo quando entrambe le variabili d'ingresso hanno lo stesso valore, o entrambe a \(0\) oppure entrambe a \(1\). Il simbolo circuitale si ottiene concatenando la porta XOR con la porta NOT:
@@ -1376,14 +1377,12 @@ Pertanto, dopo aver discusso ampiamente le due porte principali dell'Algebra Boo
     }
     &
     {
-        \begin{tikzpicture}
-            \node (A) at (0,0.5) {$x$};
-            \node (B) at (0,-0.7) {$y$};
-            \node [xnor gate US , draw , logic gate inputs =nn] at ($(xnor.input 1 -| xnor.input 2)+(.5,-0.08)$) (xnor){};
-            \draw (A) |- node  {}(xnor.input 1);
-            \draw (B) |- node  {}(xnor.input 2);
-            \draw (xnor.output) -- ([xshift=0.5cm] xnor.output) node [right] {{$x \odot y$}};
-        \end{tikzpicture}
+      \begin{tikzpicture}
+          \node [xnor gate US, draw, logic gate inputs =nn] (xnor){};
+          \draw (xnor.input 1) -- node[at end, above left]{$x$} ++(left:4mm);
+          \draw (xnor.input 2) -- node[at end, below left]{$y$} ++(left:4mm);
+          \draw (xnor.output) -- node[at end,right]{$x \odot y$} ++(right:4mm);
+      \end{tikzpicture}
     }
     &
     {
@@ -1405,48 +1404,41 @@ Pertanto, dopo aver discusso ampiamente le due porte principali dell'Algebra Boo
     Nella prima parte dello svolgimento si ottiene \((x + \overline{y}) \cdot (\overline{x} + y)\), e quindi l’AND di due OR, mentre nella seconda parte si ottiene \(xy + \overline{x} \overline{y}\) le quali portano alla realizzazione circuitale seguente
 
     % Contenitore per immagini
-            \begin{figure}[H]
-                \centering
-                \begin{tikzpicture}
-                    \node (A) at (-0.5,0.3) {$x$};
-                    \node (B) at (0,0.3) {$y$};
-                    \node [and gate US, draw, logic gate inputs=ii, anchor=input 1] at ($(and1.input 1 |- and1.input 2)+(.1,-0.08)$) (and1){};
-                    \node [and gate US, draw, logic gate inputs=nn, anchor=input 2] at ($(and2.input 1 |- and2.input 2)+(.38,-0.58)$) (and2){};
-                    \node [or gate US, draw, logic gate inputs=nn, anchor=input 1] at ($(or.input 1 |- or.input 2)+(.35,-0.25)$) (or){};
-                    \draw (A) |- node {}(and1.input 1);
-                    \draw (B) |- node {}(and2.input 2);
-                    \draw (A) |- node [branch] {}(and2.input 1);
-                    \draw (B) |- node [branch] {}(and1.input 2);
+    \begin{figure}[H]
+        \centering
+        \hspace{2.5em}
+        \begin{tikzpicture}
+            \coordinate (start) at (-1.5,0);
+            \node [and gate US, draw, logic gate inputs=ii] (and1){};
+            \node [and gate US, draw, below=of and1, yshift=5.5mm, logic gate inputs=nn] (and2){};
+            \node [or gate US, draw, right=of and1, xshift=-3mm, yshift=-5mm, logic gate inputs=nn] (or){};
 
-                    \draw (and1.output) -- ([xshift=0.3cm] and1.output) |- (or.input 1);
-                    \draw (and2.output) -- ([xshift=0.3cm] and2.output) |- (or.input 2);
-                    \draw (or.output)   -- ([xshift=0.3cm] or.output) node [right] {{$xy + \overline{x}\overline{y}$}};
+            \draw (and1.input 1) -- node[at end, left]{$x$} (and1.input 1 -| start);
+            \draw (and2.input 2) -- node[at end, left]{$y$} (and2.input 2 -| start);
+            \draw (and1.input 1) ++(-0.8,0) node [branch]{} |- (and2.input 1);
+            \draw (and2.input 2) ++(-0.5,0) node [branch]{} |- (and1.input 2);
+            \draw (and1.output) -- ([xshift=0.3cm] and1.output) |- (or.input 1);
+            \draw (and2.output) -- ([xshift=0.3cm] and2.output) |- (or.input 2);
+            \draw (or.output) -- ([xshift=0.5cm] or.output) node [right] {{$xy + \overline{xy}$}};
+        \end{tikzpicture}
+        \hspace{3em}
+        \begin{tikzpicture}
+            \coordinate (start) at (-1.5,0);
+            \node [or gate US, draw, logic gate inputs=ni] (or1){};
+            \node [or gate US, draw, below=of and1, yshift=5.5mm, logic gate inputs=in] (or2){};
+            \node [and gate US, draw, right=of and1, xshift=-3mm, yshift=-5mm, logic gate inputs=nn] (and){};
 
-                    \node () at (1.65,0.1) {$\overline{x}\overline{y}$};
-                    \node () at (1.65,-1.95) {$xy$};
-                \end{tikzpicture}
-                \hspace{1em}
-                \begin{tikzpicture}
-                    \node (A) at (-0.5,0.3) {$x$};
-                    \node (B) at (0,0.3) {$y$};
-                    \node [or gate US, draw, logic gate inputs=ni, anchor=input 1] at ($(or1.input 1 |- or1.input 2)+(.1,-0.08)$) (or1){};
-                    \node [or gate US, draw, logic gate inputs=in, anchor=input 2] at ($(or2.input 1 |- or2.input 2)+(-.05,-0.58)$) (or2){};
-                    \node [and gate US, draw, logic gate inputs=nn, anchor=input 1] at ($(and.input 1 |- and.input 2)+(.35,-0.25)$) (and){};
-                    \draw (A) |- node {}(or1.input 1);
-                    \draw (B) |- node {}(or2.input 2);
-                    \draw (A) |- node [branch] {}(or2.input 1);
-                    \draw (B) |- node [branch] {}(or1.input 2);
-
-                    \draw (or1.output) -- ([xshift=0.3cm] or1.output) |- (and.input 1);
-                    \draw (or2.output) -- ([xshift=0.3cm] or2.output) |- (and.input 2);
-                    \draw (and.output)   -- ([xshift=0.3cm] and.output) node [right] {$(x + \overline{y}) \cdot (\overline{x} + y)$};
-
-                    \node () at (1.65,0.1) {$x + \overline{y}$};
-                    \node () at (1.65,-1.95) {$\overline{x} + y$};
-                \end{tikzpicture}
-                \caption{La funzione XNOR realizzata mediante porte AND e OR}
-                \label{fig:XNOR_espressa_AND_OR}
-            \end{figure}
+            \draw (or1.input 1) -- node[at end, left]{$x$} (or1.input 1 -| start);
+            \draw (or2.input 2) -- node[at end, left]{$y$} (or2.input 2 -| start);
+            \draw (or1.input 1) ++(-0.8,0) node [branch]{} |- (or2.input 1);
+            \draw (or2.input 2) ++(-0.5,0) node [branch]{} |- (or1.input 2);
+            \draw (or1.output) -- ([xshift=0.3cm] or1.output) |- (and.input 1);
+            \draw (or2.output) -- ([xshift=0.3cm] or2.output) |- (and.input 2);
+            \draw (and.output) -- ([xshift=0.5cm] and.output) node [right] {{$(x + \overline{y}) \cdot (\overline{x} + y)$}};
+        \end{tikzpicture}
+        \caption{La funzione XNOR realizzata mediante porte AND e OR}
+        \label{fig:XNOR_espressa_AND_OR}
+    \end{figure}
 
     \noindent
     Dal punto di vista ingegneristico, non vi è una sostanziale differenza tra le due, dal momento che il numero di operazioni binarie e di negazioni sono esattamente identici.
@@ -1471,13 +1463,10 @@ Pertanto, dopo aver discusso ampiamente le due porte principali dell'Algebra Boo
     &
     {
       \begin{tikzpicture}
-          \node (A) at (0,0.8) {$x$};
-          \node (B) at (0,-0.5) {$y$};
-          \node (Y) at (2.2,0.18) {$x \vert y$};
-          \node [nand gate US , draw , logic gate inputs =nn] at ($(nand.input 1 -| nand.input 2)+(.5,0)$) (nand){};
-          \draw (A) |- node  {}(nand.input 1);
-          \draw (B) |- node  {}(nand.input 2);
-          \draw (Y) -- node  {}(nand.output);
+          \node [nand gate US, draw, logic gate inputs =nn] (nand){};
+          \draw (nand.input 1) -- node[at end, above left]{$x$} ++(left:4mm);
+          \draw (nand.input 2) -- node[at end, below left]{$y$} ++(left:4mm);
+          \draw (nand.output) -- node[at end,right]{$x \vert y$} ++(right:4mm);
       \end{tikzpicture}
     }
     &
@@ -1501,9 +1490,107 @@ Pertanto, dopo aver discusso ampiamente le due porte principali dell'Algebra Boo
         x + y = \overline{\overline{x} \cdot \overline{y}} = \overline{x} | \overline{y}\\
         x \cdot y = \overline{\overline{x \cdot y}} = \overline{x | y}
      \end{align*}
+     Da cui derivano le seguenti rappresentazioni circuitali:
 
-     \item \textbf{Porta NOR}\\
+     % Contenitore per immagini
+     \rowcolors{1}{white}{white}
+     \noindent
+     \begin{table}[H]
+         \centering
+         \noindent
+         \begin{tabularx}{\textwidth}{PPP}
+              {
+                \begin{tikzpicture}
+                    \coordinate (start) at (-1.5,-0.8);
+                    \node [nand gate US, draw, logic gate inputs=nn] (nand){};
+
+                    \draw (-0.6,0) -- node[at end, left]{$x$} (-0.8,0);
+                    \draw (nand.input 2) ++(-0.3,0.08) node [branch]{} |- (nand.input 1);
+                    \draw (nand.input 1) ++(-0.3,-0.08) node []{} |- (nand.input 2);
+                    \draw (nand.output) -- ([xshift=0.3cm] nand.output) node [right] {{$\overline{x}$}};
+                \end{tikzpicture}
+              }
+              &
+              {
+                \hspace{-2em}
+                \begin{tikzpicture}
+                  \node [nand gate US, draw, logic gate inputs=nn] (nand1){};
+                  \node [nand gate US, draw, below=of nand1, yshift=5.5mm, logic gate inputs=nn] (nand2){};
+                  \node [nand gate US, draw, right=of nand1, xshift=-3mm, yshift=-5mm, logic gate inputs=nn] (nand3){};
+
+                  \draw (-0.6,0) -- node[at end, left]{$x$} (-0.8,0);
+                  \draw (nand1.input 2) ++(-0.3,0.08) node [branch]{} |- (nand1.input 1);
+                  \draw (nand1.input 1) ++(-0.3,-0.08) node []{} |- (nand1.input 2);
+
+                  \draw (-0.6,-0.97) -- node[at end, left]{$y$} (-0.8,-0.97);
+                  \draw (nand2.input 2) ++(-0.3,0.08) node [branch]{} |- (nand2.input 1);
+                  \draw (nand2.input 1) ++(-0.3,-0.08) node []{} |- (nand2.input 2);
+
+                  \draw (nand1.output) -- ([xshift=0.3cm] nand1.output) |- (nand3.input 1);
+                  \draw (nand2.output) -- ([xshift=0.3cm] nand2.output) |- (nand3.input 2);
+                  \draw (nand3.output) -- ([xshift=0.3cm] nand3.output) node [right] {{$x + y$}};
+                \end{tikzpicture}
+              }
+              &
+              {
+                \begin{tikzpicture}
+                  \coordinate (start) at (-0.7,0);
+                  \node [nand gate US, draw, logic gate inputs=nn] (nand1){};
+                  \node [nand gate US, draw, right=of nand1, logic gate inputs=nn] (nand2){};
+
+                  \draw (nand1.input 1) -- node[at end, above left]{$x$} (nand1.input 1 -| start);
+                  \draw (nand1.input 2) -- node[at end, below left]{$y$} (nand1.input 2 -| start);
+
+                  \draw (nand1.output) -- ([xshift=0.3cm] nand1.output) node [branch]{} |- (nand2.input 1);
+                  \draw (nand1.output) -- ([xshift=0.3cm] nand1.output) node []{} |- (nand2.input 2);
+
+                  \draw (nand2.output) -- ([xshift=0.3cm] nand2.output) node [right] {{$x \cdot y$}};
+                \end{tikzpicture}
+              }
+         \end{tabularx}\\
+         \caption{Funzioni NOT, OR e AND realizzazate mediante la porta universale NAND}
+         \label{tab:NOT_OR_AND_tramite_NAND}
+     \end{table}
+
+    \item \textbf{Porta NOR}\\
     È la negazione della porta OR, rappresentata dal seguente simbolo circuitale:
+
+    \vspace{1em}
+    \rowcolors{1}{white}{white}
+    \noindent
+    \begin{tabularx}{\textwidth}{PPP}
+    {
+        \begin{tabular}{c|c}
+             \(x\) & \(y\)\\
+             \hline
+             $0$ & $0$\\
+             $0$ & $1$\\
+             $1$ & $0$\\
+             $1$ & $1$
+        \end{tabular}
+    }
+    &
+    {
+      \begin{tikzpicture}
+          \node [nor gate US, draw, logic gate inputs =nn] (nor){};
+          \draw (nor.input 1) -- node[at end, above left]{$x$} ++(left:4mm);
+          \draw (nor.input 2) -- node[at end, below left]{$y$} ++(left:4mm);
+          \draw (nor.output) -- node[at end,right]{$x \downarrow y$} ++(right:4mm);
+      \end{tikzpicture}
+    }
+    &
+    {
+        \begin{tabular}{c}
+             \(x \downarrow y\)\\
+             \hline
+             $1$\\
+             $0$\\
+             $0$\\
+             $0$
+        \end{tabular}
+    }\\
+    \end{tabularx}
+    \vspace{1em}
 
     \noindent
     Com'è noto, anche la porta OR è un \textbf{operatore universale}, nel senso che da sola consente di costruire una qualunque tra le \(16\) possibili funzioni. Per declinare le relazioni succitate nei termini del linguaggio dell'Algebra Booleana è sufficiente usare gli assiomi e i teoremi visti in precedenza:
@@ -1512,11 +1599,118 @@ Pertanto, dopo aver discusso ampiamente le due porte principali dell'Algebra Boo
         x + y = \overline{\overline{x + y}} = \overline{x \downarrow y}\\
         x \cdot y = \overline{\overline{x} + \overline{y}} = \overline{x} \downarrow \overline{y}
      \end{align*}
+     Da cui derivano le seguenti rappresentazioni circuitali:
+
+     % Contenitore per immagini
+     \rowcolors{1}{white}{white}
+     \noindent
+     \begin{table}[H]
+         \centering
+         \noindent
+         \begin{tabularx}{\textwidth}{PPP}
+              {
+                \begin{tikzpicture}
+                    \coordinate (start) at (-1.5,-0.8);
+                    \node [nor gate US, draw, logic gate inputs=nn] (nor){};
+
+                    \draw (-0.6,0) -- node[at end, left]{$x$} (-0.8,0);
+                    \draw (nor.input 2) ++(-0.3,0.08) node [branch]{} |- (nor.input 1);
+                    \draw (nor.input 1) ++(-0.3,-0.08) node []{} |- (nor.input 2);
+                    \draw (nor.output) -- ([xshift=0.3cm] nor.output) node [right] {{$\overline{x}$}};
+                \end{tikzpicture}
+              }
+              &
+              {
+                \hspace{-3em}
+                \begin{tikzpicture}
+                  \coordinate (start) at (-0.7,0);
+                  \node [nor gate US, draw, logic gate inputs=nn] (nor1){};
+                  \node [nor gate US, draw, right=of nor1, logic gate inputs=nn] (nor2){};
+
+                  \draw (nor1.input 1) -- node[at end, above left]{$x$} (nor1.input 1 -| start);
+                  \draw (nor1.input 2) -- node[at end, below left]{$y$} (nor1.input 2 -| start);
+
+                  \draw (nor1.output) -- ([xshift=0.3cm] nor1.output) node [branch]{} |- (nor2.input 1);
+                  \draw (nor1.output) -- ([xshift=0.3cm] nor1.output) node []{} |- (nor2.input 2);
+
+                  \draw (nor2.output) -- ([xshift=0.3cm] nor2.output) node [right] {{$x + y$}};
+                \end{tikzpicture}
+              }
+              &
+              {
+                \begin{tikzpicture}
+                  \node [nor gate US, draw, logic gate inputs=nn] (nor1){};
+                  \node [nor gate US, draw, below=of nand1, yshift=5.5mm, logic gate inputs=nn] (nor2){};
+                  \node [nor gate US, draw, right=of nand1, xshift=-3mm, yshift=-5mm, logic gate inputs=nn] (nor3){};
+
+                  \draw (-0.6,0) -- node[at end, left]{$x$} (-0.8,0);
+                  \draw (nor1.input 2) ++(-0.3,0.08) node [branch]{} |- (nor1.input 1);
+                  \draw (nor1.input 1) ++(-0.3,-0.08) node []{} |- (nor1.input 2);
+
+                  \draw (-0.6,-0.97) -- node[at end, left]{$y$} (-0.8,-0.97);
+                  \draw (nor2.input 2) ++(-0.3,0.08) node [branch]{} |- (nor2.input 1);
+                  \draw (nor2.input 1) ++(-0.3,-0.08) node []{} |- (nor2.input 2);
+
+                  \draw (nor1.output) -- ([xshift=0.3cm] nor1.output) |- (nor3.input 1);
+                  \draw (nor2.output) -- ([xshift=0.3cm] nor2.output) |- (nor3.input 2);
+                  \draw (nor3.output) -- ([xshift=0.3cm] nor3.output) node [right] {{$x \cdot y$}};
+                \end{tikzpicture}
+              }
+         \end{tabularx}\\
+         \caption{Funzioni NOT, OR e AND realizzazate mediante la porta universale NOR}
+         \label{tab:NOT_OR_AND_tramite_NOR}
+     \end{table}
+
+
 \end{itemize}
 E questo è un risultato molto importante dal punto di vista tecnico industriale, dal momento che potrebbero comportare significativi vantaggi dal punto di vista economico-produttivo.
 
 \subsubsection{Funzioni a tre variabili}
-Finora sono state trattate solamente porte associate a funzioni a due variabili. La generalizzazione a \(n\) variabili ha pieno senso solo per le porte AND e OR; si tratterà per esteso il caso con \(n = 3\), poiché gli altri sono la banale generalizzazione di questo. Le tavole di verità delle funzioni AND e OR a \(3\) variabili sono riportate nella successiva Tabella ; la funzione AND vale \(1\) solo quando tutte le variabili in ingresso hanno valore \(1\); la funzione OR vale \(0\) solo quando tutte le variabili in ingresso hanno valore \(0\).
+Finora sono state trattate solamente porte associate a funzioni a due variabili. La generalizzazione a \(n\) variabili ha pieno senso solo per le porte AND e OR; si tratterà per esteso il caso con \(n = 3\), poiché gli altri sono la banale generalizzazione di questo. Le tavole di verità delle funzioni AND e OR a \(3\) variabili sono riportate nella successiva Tabella \ref{tab:AND_OR_3_variabili}:
+
+\rowcolors{1}{white}{white}
+\noindent
+\begin{table}[H]
+    \centering
+    \noindent
+    \rowcolors{1}{white}{white}
+    \begin{tabularx}{\textwidth}{PP}
+    {
+        \begin{tabular}{c|c|c|c}
+             \(x\) & \(y\) & \(z\) & AND\\
+             \hline
+             $0$ & $0$ & $0$ & $0$\\
+             $0$ & $0$ & $1$ & $1$\\
+             $0$ & $1$ & $0$ & $0$\\
+             $1$ & $0$ & $0$ & $1$\\
+             $1$ & $0$ & $1$ & $0$\\
+             $1$ & $1$ & $0$ & $0$\\
+             $1$ & $1$ & $1$ & $0$\\
+             $1$ & $1$ & $1$ & $1$
+        \end{tabular}
+    }
+    &
+    {
+        \begin{tabular}{c|c|c|c}
+             \(x\) & \(y\) & \(z\) & OR\\
+             \hline
+             $0$ & $0$ & $0$ & $0$\\
+             $0$ & $0$ & $1$ & $1$\\
+             $0$ & $1$ & $0$ & $1$\\
+             $1$ & $0$ & $0$ & $1$\\
+             $1$ & $0$ & $1$ & $1$\\
+             $1$ & $1$ & $0$ & $1$\\
+             $1$ & $1$ & $1$ & $1$\\
+             $1$ & $1$ & $1$ & $1$
+        \end{tabular}
+    }\\
+    \end{tabularx}
+    \caption{Funzioni AND e OR  a $3$ variabili}
+    \label{tab:AND_OR_3_variabili}
+\end{table}
+
+\noindent
+Naturalmente, la funzione AND vale \(1\) solo quando tutte le variabili in ingresso hanno valore \(1\); la funzione OR vale \(0\) solo quando tutte le variabili in ingresso hanno valore \(0\).
 
 \subsection{Realizzazione circuitale delle porte logiche}
 Le funzioni logiche di base, a \(1\) e \(2\) variabili, possono essere facilmente realizzate impiegando i transistor.\\
