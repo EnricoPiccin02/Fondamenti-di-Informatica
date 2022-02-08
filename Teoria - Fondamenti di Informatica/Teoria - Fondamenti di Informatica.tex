@@ -2130,7 +2130,6 @@ OR e $3$ porte AND a $2$ ingressi; in entrambi i casi servono dunque $11$ porte 
     \label{tab:somme_minterm_prodotti_maxterm_circuito}
 \end{table}
 
-\vspace{1em}
 \noindent
 \textbf{Osservazione}: Naturalmente la \emph{somma di prodotti} e il \emph{prodotto di somme} rappresentano la stessa funzione, come si può verificare facilmente.\\
 Infatti, prendendo in considerazione la somma di prodotti, impiegando gli assiomi e i teoremi introdotti in precedenza, si perviene facilmente al risultato seguente:
@@ -2138,21 +2137,116 @@ Infatti, prendendo in considerazione la somma di prodotti, impiegando gli assiom
 Se, invece, si considera il prodotto di somme si ottiene:
 \[(x + y + z) \cdot (x + y + \overline{z}) \cdot (\overline{x} + y + z) \cdot (\overline{x} + \overline{y} + z) \overset{(T9)}{=} (x + y) \cdot (\overline{x} + z) \overset{(T10)}{=} \overline{x}z + xz\]
 In questo caso si è ottenuta la medesima espressione, anche dal punto di vista formale, ma potrebbe accadere che, con funzioni più complesse e, con un maggior numero di variabili si ottenga un risultato logicamente equivalente, ma formalmente differente. A tal proposito, sempre sfruttando i teoremi precedentemente esplicati, si dovrà dimostrare che sono equivalenti anche formalmente.\\
-A seguito della semplificazione la complessità del circuito associato alla funzione si riduce drasticamente, come si può notare dalla figura 4.25; servono in tutto \(3\) porte a \(2\) ingressi al posto di \(11\) porte a \(2\) ingressi.\\
-La semplificazione certamente apporta vantaggi enormi alla rete logica ottenuta, in quanto si riduce la dissipazione (che comunque non sarà mai nulla) e anche una minore probabilità di guasto. Naturalmente, maggiore è il numero di porte, maggiori saranno le transizioni a cui la rete logica sarà soggetta. Ad ogni transizione corrisponde una commutazione di stato del transistor, e quindi per una frazione di secondo si avrà sia tensione che corrente e quindi si rilevano dei picchi di dissipazione deleteri per le componenti circuitali.\\
-Le formule (4.17) e (4.19), che portano entrambe alla forma semplificata \(\overline{x}y + xz\) per la funzione appena analizzata, aprono il problema della ricerca della forma algebrica minima, che consenta, cioè, di realizzare la funzione usando il minimo numero possibile di porte logiche.\\
-Tanto per inquadrare la questione, si tenga conto che la (4.17) richiederebbe quattro porte AND con tre ingressi e una porta OR a quattro ingressi, più tutti i NOT che servono alla complementazione delle varie variabili; nel caso della (4.19) servono invece quattro porte OR con tre ingressi e una porta AND a quattro ingressi; se invece usiamo la funzione semplificata bastano due AND e un OR a due ingressi.\\ Affronteremo nel seguito il problema della minimazione delle espressioni. Si osservi inoltre che e sempre possibile passare dal prodotto di somme (4.21) alla somma di prodotti (4.20) e viceversa, sfruttando il Teorema di De Morgan a partire dalla doppia negazione T3
-\[\overline{\overline{(x + y + z) \cdot (x + y + \overline{z}) \cdot (\overline{x} + y + z) \cdot (\overline{x} + \overline{y} + z)}} \overset{(T7)}{=} \overline{\overline{(x + y + z)} + \overline{(x + y + \overline{z})} + \overline{(\overline{x} + y + z)} + \overline{(\overline{x} + \overline{y} + z)}}\]
-\[\overset{(T7)}{=} \overline{\overline{x} \overline{y} \overline{z} + \overline{x} \overline{y} z + x \overline{y} \overline{z} + x y \overline{z}}\]
-La semplificazione si può a questo punto concludere nel modo seguente
-\[\overline{\overline{x} \overline{y} \overline{z} + \overline{x} \overline{y} z + x \overline{y} \overline{z} + x y \overline{z}} \overset{(A6)}{=} \overline{\overline{x} \overline{y}(z + \overline{z}) + x \overline{z}(y + \overline{y})} \overset{(A7)}{=} \overline{\overline{x} \overline{y} + x \overline{z}} \overset{(T7)}{=} \overline{\overline{x} \overline{y}} \cdot \overline{x \overline{z}} \overset{(T7)}{=} (x + y) \cdot (\overline{x} + z) \overset{(T10)}{=} \overline{x}y + xz\]
+A seguito della semplificazione, tuttavia, la complessità del circuito associato alla funzione si riduce drasticamente, come si può notare dalla Figura \ref{fig:circuito_semplificato}; servono in tutto \(3\) porte a \(2\) ingressi al posto di \(11\) porte a \(2\) ingressi.\\
 
+\begin{figure}[H]
+    \centering
+    \scalebox{1.2}{
+        \begin{tikzpicture}[circuit logic US, scale=1]
+          % Variabili
+          \coordinate (x) at (0,0);
+          \coordinate (y) at (0.5,0);
+          \coordinate (z) at (1,0);
+
+          % Porte logiche
+          \node [and gate US, draw, logic gate inputs=in] (and1) at (2,-1){};
+          \node [and gate US, draw, below=of and1, yshift=5.5mm, logic gate inputs=nn] (and2){};
+          \node [or gate US, draw, right=of and1, xshift=3mm, yshift=-4.5mm, logic gate inputs=nn] (or){};
+
+          % INPUT
+          \draw (x) ++(0,-2.5) -- node[at end, above]{$x$} (x);
+          \draw (y) ++(0,-2.5) -- node[at end, above]{$y$} (y);
+          \draw (z) ++(0,-2.5) -- node[at end, above]{$z$} (z);
+
+          % AND 1
+          \draw (and1.input 1) -- (and1.input 1 -| x) node [branch]{};
+          \draw (and1.input 2) -- (and1.input 2 -| y) node [branch]{};
+
+          % AND 2
+          \draw (and2.input 1) -- (and2.input 1 -| x) node [branch]{};
+          \draw (and2.input 2) -- (and2.input 2 -| z) node [branch]{};
+
+          % OUTPUT
+          \draw (and1.output) node [above right] {{$\overline{x}y$}} -- ([xshift=0.7cm] and1.output) |- (or.input 1);
+          \draw (and2.output) node [above right] {{$xz$}} -- ([xshift=0.7cm] and2.output) |- (or.input 2);
+          \draw (or.output) -- ([xshift=0.3cm] or.output);
+        \end{tikzpicture}
+    }
+    \caption{Circuito semplificato equivalente ai circuiti precedenti}
+    \label{fig:circuito_semplificato}
+\end{figure}
+
+\noindent
+La semplificazione certamente apporta vantaggi enormi alla rete logica ottenuta, in quanto viene \textbf{ridotta la dissipazione} (che comunque non sarà mai nulla), così come si \textbf{riduce la probabilità di un guasto alla rete}, grazie alla minor quantità di componenti impiegati nella sua realizzazione: naturalmente, infatti, maggiore è il numero di porte, maggiori saranno le transizioni a cui la rete logica sarà soggetta; ad ogni transizione corrisponde una commutazione di stato del transistor, e quindi per una frazione di secondo si avrà sia tensione che corrente e quindi si rilevano dei picchi di dissipazione deleteri per le componenti circuitali.\\
+La \emph{somma di prodotti} e il \emph{prodotto di somme}, che portano entrambe alla forma semplificata \(\overline{x}y + xz\) per la funzione appena analizzata, aprono il problema della ricerca della forma algebrica minima, che consenta, cioè, di realizzare la funzione usando il minimo numero possibile di porte logiche.\\
+Si osservi inoltre che è sempre possibile passare dal prodotto di somme alla somma di prodotti e viceversa, sfruttando il Teorema di De Morgan (§ \ref{sec:teorema_de_morgan}), a partire dalla doppia negazione T3
+\begin{align*}
+  \overline{\overline{(x + y + z) \cdot (x + y + \overline{z}) \cdot (\overline{x} + y + z) \cdot (\overline{x} + \overline{y} + z)}} \overset{(T7)}{=}\\
+  \overset{(T7)}{=} \overline{\overline{(x + y + z)} + \overline{(x + y + \overline{z})} + \overline{(\overline{x} + y + z)} + \overline{(\overline{x} + \overline{y} + z)}} \overset{(T7)}{=} \overline{\overline{x} \overline{y} \overline{z} + \overline{x} \overline{y} z + x \overline{y} \overline{z} + x y \overline{z}}
+\end{align*}
+La semplificazione si può a questo punto concludere nel modo seguente
+\begin{align*}
+  \overline{\overline{x} \overline{y} \overline{z} + \overline{x} \overline{y} z + x \overline{y} \overline{z} + x y \overline{z}} \overset{(A6)}{=} \overline{\overline{x} \overline{y}(z + \overline{z}) + x \overline{z}(y + \overline{y})} \overset{(A7)}{=} \overline{\overline{x} \overline{y} + x \overline{z}} \overset{(T7)}{=} \overline{\overline{x} \overline{y}} \cdot \overline{x \overline{z}} \overset{(T7)}{=}\\
+  \overset{(T7)}{=} (x + y) \cdot (\overline{x} + z) \overset{(T10)}{=} \overline{x}y + xz
+\end{align*}
+
+\vspace{1em}
 \subsection{Interpretazione circuitale}
-Come già accennato in precedenza, la prima applicazione circuitale dell’Algebra Booleana si deve a Shannon, che la usò nella progettazione di circuiti complessi per la commutazione a contatti. Questo tipo di applicazione e ancora largamente usata, anche se i contatti dei rel ` e sono oggi sostituiti da dispositivi a stato solido (SCR, TRIAC). Tuttavia l’importanza dell’Algebra Booleana e legata soprattutto all’impiego nell’ambito dei circuiti logici, il cui peso e oggidì preponderante.\\
-Nello stesso periodo di Shannon, Bush stava progettando un calcolatore analogico che viene utilizzata per la risoluzione di equazioni differenziali mediante la progettazione di circuiti di resistenze retti proprio dall'equazione differenziale di interesse. L'evoluzione del circuito, poi, permetterà di rilevare tutte le soluzioni dell'equazione analizzata.
+Come già accennato in precedenza, la prima applicazione circuitale dell’Algebra Booleana si deve a Shannon, che la usò nella progettazione di circuiti complessi per la commutazione a contatti. Questo tipo di applicazione è ancora largamente usata, anche se i contatti dei relè sono oggi sostituiti da dispositivi a stato solido (SCR, TRIAC). Tuttavia l’importanza dell’Algebra Booleana è legata soprattutto all’impiego nell’ambito dei circuiti logici, il cui peso e oggidì preponderante.\\
+Nello stesso periodo di Shannon, Bush stava progettando un calcolatore analogico che venne utilizzato per la risoluzione di equazioni differenziali mediante la progettazione di circuiti di resistenze retti proprio dall'equazione differenziale di interesse. L'evoluzione del circuito, poi, avrebbe permesso di rilevare tutte le soluzioni dell'equazione analizzata.\\
 Nell'interpretazione di Shannon le costanti logiche \(0\) e \(1\) indicano rispettivamente un circuito aperto o uno chiuso (mediante, per esempio, un interruttore), mentre le variabili indicano il contatto di un interrutore o di un relè.\\
-Con i simboli \(x\) e \(\overline{x}\) si indicano due contati azionati contemporaneamente, me sempre tali che quando uno è aperto, l'altro è chiuso e viceversa.\\
-Se si pongono degli interruttori in parallelo, si ottiene un circuito che simula una porta logica OR, mentre se gli interrutori vengono posti in serie si ottiene un circuito perfettamemte equivalente ad una porta logica AND.\\
+Con i simboli \(x\) e \(\overline{x}\) si indicano due contati azionati contemporaneamente, me sempre tali che quando uno è aperto, l'altro è chiuso e viceversa. Si consideri, ora un assieme di contatti \(x_1, x_2, ..., x_n\) in parallelo tra loro, come illustrato in Figura \ref{fig:contatti_parallelo}:
+
+\begin{figure}[H]
+    \centering
+    \scalebox{1.2}{
+        \begin{tikzpicture}[circuit logic US, scale=1]
+          % Variabili
+          \coordinate (start) at (0,0);
+
+          \draw (start) -- ++(1,0) node [branch](dot){} -- ++(0,1) |- ++(1,0) node[at end, above left]{$x_1$} node [branch]{} -- ++(0.5,0.5) ++(0,-0.5) node [branch]{} -- ++(1,0) -- ++(0,-1) node [branch]{} -- ++(1,0);
+
+          \draw (dot) ++(0,0.3) |- ++(1,0) node[at end, above left]{$x_2$} node [branch](etc){} -- ++(0.5,0.5) ++(0,-0.5) node [branch]{} -- ++(1,0);
+
+          \draw (etc) ++(0,-0.35) node[under]{$\cdot$};
+          \draw (etc) ++(0,-0.45) node[under]{$\cdot$};
+          \draw (etc) ++(0,-0.85) node[under]{$\cdot$};
+          \draw (etc) ++(0,-0.95) node[under]{$\cdot$};
+
+          \draw (dot) -- ++(0,-1) |- ++(1,0) node[at end, above left]{$x_n$} node [branch]{} -- ++(0.5,0.5) ++(0,-0.5) node [branch]{} -- ++(1,0) -- ++(0,1);
+
+        \end{tikzpicture}
+    }
+    \caption{$n$ contatti in parallelo realizzano la funzione Booleana \(x_1 + x_2 + ... + x_n\)}
+    \label{fig:contatti_parallelo}
+\end{figure}
+
+\noindent
+Il circuito presentera continuità elettrica tra i punti $a$ e $b$ quando almeno uno dei contatti è chiuso. Ne consegue che la somma logica
+\[x_1 + x_2 + .. + x_n\]
+descrive, secondo l’analogia di Shannon, il comportamento elettrico di $n$ contatti in parallelo.
+Se invece i contatti \(x_1, x_2, ..., x_n\) sono in serie tra loro, come illustrato in Figura \ref{contatti_serie}:
+
+\begin{figure}[H]
+    \centering
+    \scalebox{1.2}{
+        \begin{tikzpicture}[circuit logic US, scale=1]
+          % Variabili
+          \coordinate (start) at (0,0);
+
+          \draw (start) -- ++(1,0) node[at end, above left]{$x_1$} node [branch]{} -- ++(0.5,0.5) ++(0,-0.5) node [branch]{} -- ++(1,0) node[at end, above left]{$x_2$} node [branch]{} -- ++(0.5,0.5) ++(0,-0.5) node [branch]{} -- ++(1,0) ++(0.2,0) -- ++(0.2,0) ++(0.2,0) -- ++(0.2,0) ++(0.2,0) -- ++(1,0) node[at end, above left]{$x_n$} node [branch]{} -- ++(0.5,0.5) ++(0,-0.5) node [branch]{} -- ++(1,0);
+        \end{tikzpicture}
+    }
+    \caption{$n$ contatti in serie realizzano la funzione Booleana \(x_1 \cdot x_2 \cdot ... \cdot x_n\)}
+    \label{fig:contatti_serie}
+\end{figure}
+
+\noindent
+il circuito presenterà continuità elettrica tra i punti $a$ e $b$ solo quando tutti i contatti sono chiusi. Ne consegue che il prodotto logico
+\[x_1 \cdot x_2 \cdot ... \cdot x_n\]
+descrive, secondo l’analogia di Shannon, il comportamento elettrico di $n$ contatti in serie.\\
+L’associazione tra stato di apertura di un contatto e variabile Booleana apre alla possibilità di progettare reti complesse ricorrendo all’Algebra Booleana.\\
+Pertanto, se si pongono degli interruttori in parallelo, si ottiene un circuito che simula una porta logica OR, mentre se gli interrutori vengono posti in serie si ottiene un circuito perfettamemte equivalente ad una porta logica AND.\\
 La stessa cosa accade con un circuito deviatore che permette di ottenere la negazione di una variabile.\\
 In questo modo è possibile esprimere una funzione logica complicata che sia attraverso la realizzazione di un circuito equivalente, e viceversa.
 
