@@ -39,7 +39,7 @@
 \contentsline {subsection}{\numberline {2.15}Riassunto}{32}{}%
 \contentsline {subsection}{\numberline {2.16}Forme canoniche: \textit {minterm}}{33}{}%
 \contentsline {subsection}{\numberline {2.17}Forme canoniche: \textit {maxterm}}{34}{}%
-\contentsline {subsection}{\numberline {2.18}Interpretazione circuitale}{35}{}%
+\contentsline {subsection}{\numberline {2.18}Interpretazione circuitale}{36}{}%
 \contentsline {subsection}{\numberline {2.19}Riassunto}{37}{}%
 \contentsline {subsection}{\numberline {2.20}Semplificazione delle espressioni Booleane}{39}{}%
 \contentsline {subsubsection}{\numberline {2.20.1}Mappe di Karnaugh}{39}{}%

@@ -1989,8 +1989,42 @@ La sommatoria così ottenuta rappresenta la funzione nei termini della cosiddett
 \noindent
 Per cui si ottiene
 \[f(x, y, z) = \sum_{i \in \{2, 3, 5, 7\}} m_i = m_2 + m_3 + m_5 + m_7 = \overline{x}y\overline{z} + \overline{x}yz + x\overline{y}z + xyz\]
-poiché \(2, 3, 5\) e \(7\) sono le codifiche in base \(2\) di \(010, 011, 101\) e \(111\).\\
-Dal punto di vista circuitale, la somma di \textit{minterm} si rappresenta come segue:
+poiché \(2, 3, 5\) e \(7\) sono le codifiche in base \(2\) di \(010, 011, 101\) e \(111\).
+
+\vspace{1em}
+\subsection{Forme canoniche: \textit{maxterm}}
+Un discorso del tutto analogo si può formulare procedendo per dualità, e realizzando un \textbf{prodotto di somme}. Ciò richiede di analizzare i termini per i quali la funzione vale 0; dalla Tabella \ref{tab:esempio_funzione_boolena} si osserva che ciò accade in corrispondenza delle terne \(000, 001, 100\) e \(110\), cioè \(0, 1, 4\) e \(6\) con la codifica impiegata in precedenza.\\
+L’idea è quella di esprimere il valore della funzione come prodotto di somme che sono sempre a 1, tranne che per una singola configurazione che le manda a 0; una funzione che soddisfa tale condizione (ossia vale sempre 1, tranne che per una singola configurazione per la quale vale 0) si chiama \textbf{termine massimo} (o \textbf{\textit{maxterm}}), e viene indicata con \(M_i\).\\
+Il modo più semplice per esprimere un termine massimo è quello di ricorrere alla somma logica di variabili dirette e negate, le prime in corrispondenza delle variabili che in ingresso valgono 0, le seconde in corrispondenza delle variabili che in ingresso valgono 1.\\
+Tenendo presente quanto già esposo, si perviene alla \textbf{seconda forma canonica} (o \textbf{prodotti di somme}), nella quale la generica funzione si rappresenta come
+\[f(x_1, x_2, ..., x_n) = \prod_{i = 0}^{2^n - 1} (\mu_i + M_i) = \prod_{i : \mu_i = 0} M_i\]
+dove \(0 \leq i \leq 2^n - 1\), mentre \(\mu_i\) è il valore della funzione in corrispondenza del termine massimo \(M_i\), il quale si codifica secondo la procedura prima descritta: nel caso analizzato si ha \(M_0 = x + y + z, M_1 = x + y + \overline{z}, M_4 = \overline{x} + y + z, M_6 = \overline{x} + \overline{y} + z\) e così via.\\
+Se nella tavola di verità della funzione si pone in evidenza la codifica dei termini massimi si ottiene:
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{c|c||ccc||c|c}
+    $ $ & $ $ & $x$ & $y$ & $z$ & $f$\\
+    \hline
+    $M_0$ & $x + y + z$ & $0$ & $0$ & $0$ & $0$ & $\mu_0$\\
+    $M_1$ & $x + y + \overline{z}$ & $0$ & $0$ & $1$ & $0$ & $\mu_1$\\
+    $M_2$ & $x + \overline{y} + z$ & $0$ & $1$ & $0$ & $1$ & $\mu_2$\\
+    $M_3$ & $x + \overline{y} + \overline{z}$ & $0$ & $1$ & $1$ & $1$ & $\mu_3$\\
+    $M_4$ & $\overline{x} + y + z$ & $1$ & $0$ & $0$ & $0$ & $\mu_4$\\
+    $M_5$ & $\overline{x} + y + \overline{z}$ & $1$ & $0$ & $1$ & $1$ & $\mu_5$\\
+    $M_6$ & $\overline{x} + \overline{y} + z$ & $1$ & $1$ & $0$ & $0$ & $\mu_6$\\
+    $M_7$ & $\overline{x} + \overline{y} + \overline{z}$ & $1$ & $1$ & $1$ & $1$ & $\mu_7$\\
+  \end{tabular}
+  \caption{Codifica dei termini minimi}
+  \label{tab:codifica_termini_minimi}
+\end{table}
+
+\noindent
+Per cui si ottiene
+\[f(x, y, z) = \prod_{i \in \{0, 1, 4, 6\}} M_i = M_0 \cdot M_1  \cdot M_4 \cdot M_6 = (x + y + z) \cdot (x + y + \overline{z}) \cdot (\overline{x} + y + z) \cdot (\overline{x} + \overline{y} + z)\]
+poiché \(0, 1, 4\) e \(6\) sono le codifiche in base \(2\) di \(000, 001, 100\) e \(110\).\\
+La realizzazione operativa delle funzioni di cui sopra (\emph{somma di minterm} e \emph{prodotto di maxterm}) mediante porte AND, OR, NOT e basata sui circuiti di Tabella \ref{tab:somme_minterm_prodotti_maxterm_circuito}. Poichè ogni porta AND, OR a $n$ ingressi richiede $n - 1$ porte a $2$ ingressi, per il circuito rappresentante somme di prodotti servono \(2 \cdot 4 = 8\) porte AND e $3$ porte OR a $2$ ingressi; per l’altro circuito, rappresentante prodotti di somme, servono \(2 \cdot 4 = 8\) porte
+OR e $3$ porte AND a $2$ ingressi; in entrambi i casi servono dunque $11$ porte a $2$ ingressi:
 
 % Contenitore per immagini
 \rowcolors{1}{white}{white}
@@ -1998,92 +2032,108 @@ Dal punto di vista circuitale, la somma di \textit{minterm} si rappresenta come 
 \begin{table}[H]
     \centering
     \noindent
-    \begin{tikzpicture}
-      \coordinate (start) at (-0.7,0);
-      \node [nor gate US, draw, logic gate inputs=nn] (nor1){};
-      \node [nor gate US, draw, right=of nor1, logic gate inputs=nn] (nor2){};
+    \begin{tabularx}{\textwidth}{PP} {
+        \begin{tikzpicture}
+          % Variabili
+          \coordinate (x) at (0,0);
+          \coordinate (y) at (0.5,0);
+          \coordinate (z) at (1,0);
 
-      \draw (nor1.input 1) -- node[at end, above left]{$x$} (nor1.input 1 -| start);
-      \draw (nor1.input 2) -- node[at end, below left]{$y$} (nor1.input 2 -| start);
+          % Porte logiche
+          \node [and gate US, draw, logic gate inputs=ini] (and1) at (2,-1){};
+          \node [and gate US, draw, below=of and1, yshift=5.5mm, logic gate inputs=inn] (and2){};
+          \node [and gate US, draw, below=of and2, yshift=5.5mm, logic gate inputs=nin] (and3){};
+          \node [and gate US, draw, below=of and3, yshift=5.5mm, logic gate inputs=nnn] (and4){};
+          \node [or gate US, draw, right=of and2, xshift=7mm, yshift=-5mm, logic gate inputs=nnnn] (or){};
 
-      \draw (nor1.output) -- ([xshift=0.3cm] nor1.output) node [branch]{} |- (nor2.input 1);
-      \draw (nor1.output) -- ([xshift=0.3cm] nor1.output) node []{} |- (nor2.input 2);
+          % INPUT
+          \draw (x) ++(0,-5) -- node[at end, above]{$x$} (x);
+          \draw (y) ++(0,-5) -- node[at end, above]{$y$} (y);
+          \draw (z) ++(0,-5) -- node[at end, above]{$z$} (z);
 
-      \draw (nor2.output) -- ([xshift=0.3cm] nor2.output) node [right] {{$x + y$}};
-    \end{tikzpicture}
+          % AND 1
+          \draw (and1.input 1) -- (and1.input 1 -| x) node [branch]{};
+          \draw (and1.input 2) -- (and1.input 2 -| y) node [branch]{};
+          \draw (and1.input 3) -- (and1.input 3 -| z) node [branch]{};
 
-    
+          % AND 2
+          \draw (and2.input 1) -- (and2.input 1 -| x) node [branch]{};
+          \draw (and2.input 2) -- (and2.input 2 -| y) node [branch]{};
+          \draw (and2.input 3) -- (and2.input 3 -| z) node [branch]{};
 
-    \begin{tabularx}{\textwidth}{PPP}
-         {
-           \begin{tikzpicture}
-               \coordinate (start) at (-1.5,-0.8);
-               \node [nor gate US, draw, logic gate inputs=nn] (nor){};
+          % AND 3
+          \draw (and3.input 1) -- (and3.input 1 -| x) node [branch]{};
+          \draw (and3.input 2) -- (and3.input 2 -| y) node [branch]{};
+          \draw (and3.input 3) -- (and3.input 3 -| z) node [branch]{};
 
-               \draw (-0.6,0) -- node[at end, left]{$x$} (-0.8,0);
-               \draw (nor.input 2) ++(-0.3,0.08) node [branch]{} |- (nor.input 1);
-               \draw (nor.input 1) ++(-0.3,-0.08) node []{} |- (nor.input 2);
-               \draw (nor.output) -- ([xshift=0.3cm] nor.output) node [right] {{$\overline{x}$}};
-           \end{tikzpicture}
-         }
-         &
-         {
-           \hspace{-3em}
-           \begin{tikzpicture}
-             \coordinate (start) at (-0.7,0);
-             \node [nor gate US, draw, logic gate inputs=nn] (nor1){};
-             \node [nor gate US, draw, right=of nor1, logic gate inputs=nn] (nor2){};
+          % AND 4
+          \draw (and4.input 1) -- (and4.input 1 -| x) node [branch]{};
+          \draw (and4.input 2) -- (and4.input 2 -| y) node [branch]{};
+          \draw (and4.input 3) -- (and4.input 3 -| z) node [branch]{};
 
-             \draw (nor1.input 1) -- node[at end, above left]{$x$} (nor1.input 1 -| start);
-             \draw (nor1.input 2) -- node[at end, below left]{$y$} (nor1.input 2 -| start);
+          % OUTPUT
+          \draw (and1.output) node [above right] {{$\overline{x}y\overline{z}$}} -- ([xshift=1.1cm] and1.output) |- (or.input 1);
+          \draw (and2.output) node [above right] {{$\overline{x}yz$}} -- ([xshift=0.9cm] and2.output) |- (or.input 2);
+          \draw (and3.output) node [above right] {{$x\overline{y}z$}} -- ([xshift=0.9cm] and3.output) |- (or.input 3);
+          \draw (and4.output) node [above right] {{$xyz$}} -- ([xshift=1.1cm] and4.output) |- (or.input 4);
+          \draw (or.output) -- ([xshift=0.3cm] or.output);
+        \end{tikzpicture}
+    } & {
+        \begin{tikzpicture}
+          % Variabili
+          \coordinate (x) at (0,0);
+          \coordinate (y) at (0.5,0);
+          \coordinate (z) at (1,0);
 
-             \draw (nor1.output) -- ([xshift=0.3cm] nor1.output) node [branch]{} |- (nor2.input 1);
-             \draw (nor1.output) -- ([xshift=0.3cm] nor1.output) node []{} |- (nor2.input 2);
+          % Porte logiche
+          \node [or gate US, draw, logic gate inputs=nnn] (or1) at (2,-1){};
+          \node [or gate US, draw, below=of or1, yshift=5.5mm, logic gate inputs=nni] (or2){};
+          \node [or gate US, draw, below=of or2, yshift=5.5mm, logic gate inputs=inn] (or3){};
+          \node [or gate US, draw, below=of or3, yshift=5.5mm, logic gate inputs=iin] (or4){};
+          \node [and gate US, draw, right=of or2, xshift=14mm, yshift=-5mm, logic gate inputs=nnnn] (and){};
 
-             \draw (nor2.output) -- ([xshift=0.3cm] nor2.output) node [right] {{$x + y$}};
-           \end{tikzpicture}
-         }
-         &
-         {
-           \begin{tikzpicture}
-             \node [nor gate US, draw, logic gate inputs=nn] (nor1){};
-             \node [nor gate US, draw, below=of nand1, yshift=5.5mm, logic gate inputs=nn] (nor2){};
-             \node [nor gate US, draw, right=of nand1, xshift=-3mm, yshift=-5mm, logic gate inputs=nn] (nor3){};
+          % INPUT
+          \draw (x) ++(0,-5) -- node[at end, above]{$x$} (x);
+          \draw (y) ++(0,-5) -- node[at end, above]{$y$} (y);
+          \draw (z) ++(0,-5) -- node[at end, above]{$z$} (z);
 
-             \draw (-0.6,0) -- node[at end, left]{$x$} (-0.8,0);
-             \draw (nor1.input 2) ++(-0.3,0.08) node [branch]{} |- (nor1.input 1);
-             \draw (nor1.input 1) ++(-0.3,-0.08) node []{} |- (nor1.input 2);
+          % OR 1
+          \draw (or1.input 1) -- (or1.input 1 -| x) node [branch]{};
+          \draw (or1.input 2) -- (or1.input 2 -| y) node [branch]{};
+          \draw (or1.input 3) -- (or1.input 3 -| z) node [branch]{};
 
-             \draw (-0.6,-0.97) -- node[at end, left]{$y$} (-0.8,-0.97);
-             \draw (nor2.input 2) ++(-0.3,0.08) node [branch]{} |- (nor2.input 1);
-             \draw (nor2.input 1) ++(-0.3,-0.08) node []{} |- (nor2.input 2);
+          % OR 2
+          \draw (or2.input 1) -- (or2.input 1 -| x) node [branch]{};
+          \draw (or2.input 2) -- (or2.input 2 -| y) node [branch]{};
+          \draw (or2.input 3) -- (or2.input 3 -| z) node [branch]{};
 
-             \draw (nor1.output) -- ([xshift=0.3cm] nor1.output) |- (nor3.input 1);
-             \draw (nor2.output) -- ([xshift=0.3cm] nor2.output) |- (nor3.input 2);
-             \draw (nor3.output) -- ([xshift=0.3cm] nor3.output) node [right] {{$x \cdot y$}};
-           \end{tikzpicture}
-         }
-    \end{tabularx}\\
-    \caption{Funzioni NOT, OR e AND realizzazate mediante la porta universale NOR}
-    \label{tab:NOT_OR_AND_tramite_NOR}
+          % OR 3
+          \draw (or3.input 1) -- (or3.input 1 -| x) node [branch]{};
+          \draw (or3.input 2) -- (or3.input 2 -| y) node [branch]{};
+          \draw (or3.input 3) -- (or3.input 3 -| z) node [branch]{};
+
+          % OR 4
+          \draw (or4.input 1) -- (or4.input 1 -| x) node [branch]{};
+          \draw (or4.input 2) -- (or4.input 2 -| y) node [branch]{};
+          \draw (or4.input 3) -- (or4.input 3 -| z) node [branch]{};
+
+          % OUTPUT
+          \draw (or1.output) node [above right] {{$x + y + z$}} -- ([xshift=1.9cm] or1.output) |- (and.input 1);
+          \draw (or2.output) node [above right] {{$x + y + \overline{z}$}} -- ([xshift=1.7cm] or2.output) |- (and.input 2);
+          \draw (or3.output) node [above right] {{$\overline{x} + y + z$}} -- ([xshift=1.7cm] or3.output) |- (and.input 3);
+          \draw (or4.output) node [above right] {{$\overline{x} + \overline{y} + z$}} -- ([xshift=1.9cm] or4.output) |- (and.input 4);
+          \draw (and.output) -- ([xshift=0.3cm] and.output);
+        \end{tikzpicture}
+    }\\
+    \end{tabularx}
+    \caption{Porte NOT, AND e OR per realizzare la funzione studiata secondo \emph{minterm} e \emph{maxterm}}
+    \label{tab:somme_minterm_prodotti_maxterm_circuito}
 \end{table}
-
-\subsection{Forme canoniche: \textit{maxterm}}
-Un discorso del tutto analogo si può formulare procedendo per dualità, e realizzando un \textbf{prodotto di somme}. Ciò richiede di analizzare i termini per i quali la funzione vale 0; dalla figura 4.20a si osserva che ciò accade in corrispondenza delle terne \(000, 001, 100\) e \(110\), cioè \(0, 1, 4\) e \(6\) con la codifica impiegata in precedenza.\\
-L’idea e quella di esprimere il valore della funzione come prodotto di somme che sono sempre a 1, tranne che per una singola configurazione che le manda a 0; una funzione che vale sempre 1, tranne che per una singola configurazione per la quale vale 0 si chiama \textbf{termine massimo} (o \textbf{\textit{maxterm}}), e viene indicata con \(M_1\). In figura 4.22 viene rappresentato \(M_1\); il modo più semplice per esprimere un termine massimo è quello di ricorrere alla somma logica di variabili dirette e negate, le prime in corrispondenza delle variabili che in ingresso valgono 0, le seconde in corrispondenza delle variabili che in ingresso valgono 1. Nel caso di figura 4.22 si tratta della funzione \(x + y + \overline{z}\)
-
-\[Tabella di verita\]
-
-Tenendo conto di tutto ciò si perviene alla \textit{seconda forma canonica} (o prodotti di somme), nella quale la generica funzione si rappresenta come
-\[f(x_1, x_2, ..., x_n) = \prod_{i = 0}^{2^n - 1} (\mu_i + M_i) = \prod_{i : \mu_i = 0} M_i\]
-Dove \(0 \leq i \leq 2^n - 1\), \(\mu_i\) è il valore della funzione in corrispondenza del termine massimo \(M_i\), il quale si codifica secondo la procedura prima descritta: nel caso analizzato si ha \(M_0 = x + y + z, M_1 = x + y + \overline{z}, M_4 = \overline{x} + y + z, M_6 = \overline{x} + \overline{y} + z\) e così via.
-Dal punto di vista circuitale, il prodotto dei \textit{maxterm} si rappresenta come segue:
 
 \vspace{1em}
 \noindent
-\textbf{Osservazione}: Si verifichi che:
-\[\overline{x}y\overline{z} + \overline{x}yz + x\overline{y}z + xyz = (x + y + z) \cdot (x + y + \overline{z}) \cdot (\overline{x} + y + z) \cdot (\overline{x} + \overline{y} + z)\]
-Infatti:
+\textbf{Osservazione}: Naturalmente la \emph{somma di prodotti} e il \emph{prodotto di somme} rappresentano la stessa funzione, come si può verificare facilmente.\\
+Infatti, prendendo in considerazione la somma di prodotti, impiegando gli assiomi e i teoremi introdotti in precedenza, si perviene facilmente al risultato seguente:
 \[\overline{x}y\overline{z} + \overline{x}yz + x\overline{y}z + xyz \overset{(A6)}{=} \overline{x}y(\overline{z} + z) + xz(\overline{y} + y) \overset{(A7)}{=} \overline{x}y \cdot 1 + xz \cdot 1 \overset{(A3)}{=} \overline{x}y + xz\]
 Se, invece, si considera il prodotto di somme si ottiene:
 \[(x + y + z) \cdot (x + y + \overline{z}) \cdot (\overline{x} + y + z) \cdot (\overline{x} + \overline{y} + z) \overset{(T9)}{=} (x + y) \cdot (\overline{x} + z) \overset{(T10)}{=} \overline{x}z + xz\]
