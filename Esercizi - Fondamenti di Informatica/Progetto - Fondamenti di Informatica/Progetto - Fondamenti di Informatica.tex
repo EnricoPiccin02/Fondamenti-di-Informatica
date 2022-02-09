@@ -1,0 +1,416 @@
+\documentclass[a4paper]{extarticle}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\selectlanguage{italian}
+\usepackage[table]{xcolor}
+\usepackage{xcolor}
+\usepackage{circuitikz}
+\usetikzlibrary{positioning, circuits.logic.US}
+\usetikzlibrary {shapes.gates.logic.US, shapes.gates.logic.IEC, calc}
+\tikzset {branch/.style={fill, shape = circle, minimum size = 3pt, inner sep = 0pt}}
+\usetikzlibrary{matrix,calc}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{geometry}
+\usepackage{tabularx}
+\usepackage{pgf-pie}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{color, soul}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{subfig}
+\graphicspath{ {./img/} }
+\newtheorem{theorem}{Teorema}[section]
+\newtheorem{corollary}{Corollario}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+
+% Specifiche
+\geometry{
+ a4paper,
+ top=20mm,
+ left=30mm,
+ right=30mm,
+ bottom=30mm
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LO]{\nouppercase{\leftmark}}
+\fancyfoot[CE, CO]{\thepage}
+\addtolength{\headheight}{1em}
+\addtolength{\footskip}{-0.5em}
+
+\newcommand{\quotes}[1]{``#1''}
+\renewcommand\tabularxcolumn[1]{>{\vspace{\fill}}m{#1}<{\vspace{\fill}}}
+\renewcommand\arraystretch{}
+\newcolumntype{P}{>{\centering\arraybackslash}X}
+
+\newcommand{\horrule}[1]{\noindent\rule{\linewidth}{#1}}
+
+\title{
+\normalfont \normalsize
+\textsc{Università degli Studi di Trieste - Dipartimento di Ingegneria e Architettura} \\[25pt]
+\horrule{0.5pt} \\ [0.4cm] % Thin top horizontal rule
+\huge Progetto - Fondamenti d'Informatica  \\ % The assignment title
+\horrule{2pt} \\ [0.4cm]% Thick bottom horizontal rule
+}
+\author{Enrico Piccin - IN0501089}
+\date{Anno Accademico 2021/2022}
+
+%isolated term
+%#1 - Optional. Space between node and grouping line. Default=0
+%#2 - node
+%#3 - filling color
+\newcommand{\implicantsol}[3][0]{
+    \draw[rounded corners=3pt, fill=#3, opacity=0.3] ($(#2.north west)+(135:#1)$) rectangle ($(#2.south east)+(-45:#1)$);
+    }
+
+
+%internal group
+%#1 - Optional. Space between node and grouping line. Default=0
+%#2 - top left node
+%#3 - bottom right node
+%#4 - filling color
+\newcommand{\implicant}[4][0]{
+    \draw[rounded corners=3pt, fill=#4, opacity=0.3] ($(#2.north west)+(135:#1)$) rectangle ($(#3.south east)+(-45:#1)$);
+    }
+
+%group lateral borders
+%#1 - Optional. Space between node and grouping line. Default=0
+%#2 - top left node
+%#3 - bottom right node
+%#4 - filling color
+\newcommand{\implicantcostats}[4][0]{
+    \draw[rounded corners=3pt, fill=#4, opacity=0.3] ($(rf.east |- #2.north)+(90:#1)$)-| ($(#2.east)+(0:#1)$) |- ($(rf.east |- #3.south)+(-90:#1)$);
+    \draw[rounded corners=3pt, fill=#4, opacity=0.3] ($(cf.west |- #2.north)+(90:#1)$) -| ($(#3.west)+(180:#1)$) |- ($(cf.west |- #3.south)+(-90:#1)$);
+}
+
+%group top-bottom borders
+%#1 - Optional. Space between node and grouping line. Default=0
+%#2 - top left node
+%#3 - bottom right node
+%#4 - filling color
+\newcommand{\implicantdaltbaix}[4][0]{
+    \draw[rounded corners=3pt, fill=#4, opacity=0.3] ($(cf.south -| #2.west)+(180:#1)$) |- ($(#2.south)+(-90:#1)$) -| ($(cf.south -| #3.east)+(0:#1)$);
+    \draw[rounded corners=3pt, fill=#4, opacity=0.3] ($(rf.north -| #2.west)+(180:#1)$) |- ($(#3.north)+(90:#1)$) -| ($(rf.north -| #3.east)+(0:#1)$);
+}
+
+%group corners
+%#1 - Optional. Space between node and grouping line. Default=0
+%#2 - filling color
+\newcommand{\implicantcantons}[2][0]{
+    \draw[rounded corners=3pt, opacity=.3] ($(rf.east |- 0.south)+(-90:#1)$) -| ($(0.east |- cf.south)+(0:#1)$);
+    \draw[rounded corners=3pt, opacity=.3] ($(rf.east |- 8.north)+(90:#1)$) -| ($(8.east |- rf.north)+(0:#1)$);
+    \draw[rounded corners=3pt, opacity=.3] ($(cf.west |- 2.south)+(-90:#1)$) -| ($(2.west |- cf.south)+(180:#1)$);
+    \draw[rounded corners=3pt, opacity=.3] ($(cf.west |- 10.north)+(90:#1)$) -| ($(10.west |- rf.north)+(180:#1)$);
+    \fill[rounded corners=3pt, fill=#2, opacity=.3] ($(rf.east |- 0.south)+(-90:#1)$) -|  ($(0.east |- cf.south)+(0:#1)$) [sharp corners] ($(rf.east |- 0.south)+(-90:#1)$) |-  ($(0.east |- cf.south)+(0:#1)$) ;
+    \fill[rounded corners=3pt, fill=#2, opacity=.3] ($(rf.east |- 8.north)+(90:#1)$) -| ($(8.east |- rf.north)+(0:#1)$) [sharp corners] ($(rf.east |- 8.north)+(90:#1)$) |- ($(8.east |- rf.north)+(0:#1)$) ;
+    \fill[rounded corners=3pt, fill=#2, opacity=.3] ($(cf.west |- 2.south)+(-90:#1)$) -| ($(2.west |- cf.south)+(180:#1)$) [sharp corners]($(cf.west |- 2.south)+(-90:#1)$) |- ($(2.west |- cf.south)+(180:#1)$) ;
+    \fill[rounded corners=3pt, fill=#2, opacity=.3] ($(cf.west |- 10.north)+(90:#1)$) -| ($(10.west |- rf.north)+(180:#1)$) [sharp corners] ($(cf.west |- 10.north)+(90:#1)$) |- ($(10.west |- rf.north)+(180:#1)$) ;
+}
+
+%Empty Karnaugh map 4x4
+\newenvironment{Karnaugh}%
+{
+\begin{tikzpicture}[baseline=(current bounding box.north),scale=0.8]
+\draw (0,0) grid (4,4);
+\draw (0,4) -- node [pos=0.7,above right,anchor=south west] {$xy$} node [pos=0.7,below left,anchor=north east] {$zw$} ++(135:1);
+%
+\matrix (mapa) [matrix of nodes,
+        column sep={0.8cm,between origins},
+        row sep={0.8cm,between origins},
+        every node/.style={minimum size=0.3mm},
+        anchor=8.center,
+        ampersand replacement=\&] at (0.5,0.5)
+{
+                       \& |(c00)| $00$         \& |(c01)| $01$         \& |(c11)| $11$         \& |(c10)| $10$         \& |(cf)| \phantom{00} \\
+|(r00)| $00$             \& |(0)|  \phantom{0} \& |(1)|  \phantom{0} \& |(3)|  \phantom{0} \& |(2)|  \phantom{0} \&                     \\
+|(r01)| $01$             \& |(4)|  \phantom{0} \& |(5)|  \phantom{0} \& |(7)|  \phantom{0} \& |(6)|  \phantom{0} \&                     \\
+|(r11)| $11$             \& |(12)| \phantom{0} \& |(13)| \phantom{0} \& |(15)| \phantom{0} \& |(14)| \phantom{0} \&                     \\
+|(r10)| $10$             \& |(8)|  \phantom{0} \& |(9)|  \phantom{0} \& |(11)| \phantom{0} \& |(10)| \phantom{0} \&                     \\
+|(rf) | \phantom{00}   \&                    \&                    \&                    \&                    \&                     \\
+};
+}%
+{
+\end{tikzpicture}
+}
+
+%Empty Karnaugh map 2x4
+\newenvironment{Karnaughvuit}%
+{
+\begin{tikzpicture}[baseline=(current bounding box.north),scale=0.8]
+\draw (0,0) grid (4,2);
+\draw (0,2) -- node [pos=0.7,above right,anchor=south west] {$xy$} node [pos=0.7,below left,anchor=north east] {$z$} ++(135:1);
+%
+\matrix (mapa) [matrix of nodes,
+        column sep={0.8cm,between origins},
+        row sep={0.8cm,between origins},
+        every node/.style={minimum size=0.3mm},
+        anchor=4.center,
+        ampersand replacement=\&] at (0.5,0.5)
+{
+                      \& |(c00)| $00$         \& |(c01)| $01$         \& |(c11)| $11$         \& |(c10)| $10$         \& |(cf)| \phantom{00} \\
+|(r00)| $0$             \& |(0)|  \phantom{0} \& |(1)|  \phantom{0} \& |(3)|  \phantom{0} \& |(2)|  \phantom{0} \&                     \\
+|(r01)| $1$             \& |(4)|  \phantom{0} \& |(5)|  \phantom{0} \& |(7)|  \phantom{0} \& |(6)|  \phantom{0} \&                     \\
+|(rf) | \phantom{00}  \&                    \&                    \&                    \&                    \&                     \\
+};
+}%
+{
+\end{tikzpicture}
+}
+
+%Empty Karnaugh map 2x2
+\newenvironment{Karnaughquatre}%
+{
+\begin{tikzpicture}[baseline=(current bounding box.north),scale=0.8]
+\draw (0,0) grid (2,2);
+\draw (0,2) -- node [pos=0.7,above right,anchor=south west] {$x$} node [pos=0.7,below left,anchor=north east] {$y$} ++(135:1);
+%
+\matrix (mapa) [matrix of nodes,
+        column sep={0.8cm,between origins},
+        row sep={0.8cm,between origins},
+        every node/.style={minimum size=0.3mm},
+        anchor=2.center,
+        ampersand replacement=\&] at (0.5,0.5)
+{
+          \& |(c00)| $0$          \& |(c01)| $1$  \\
+|(r00)| $0$ \& |(0)|  \phantom{0} \& |(1)|  \phantom{0} \\
+|(r01)| $1$ \& |(2)|  \phantom{0} \& |(3)|  \phantom{0} \\
+};
+}%
+{
+\end{tikzpicture}
+}
+
+%Defines 8 or 16 values (0,1,X)
+\newcommand{\contingut}[1]{%
+\foreach \x [count=\xi from 0]  in {#1}
+     \path (\xi) node {$\x$};
+}
+
+%Places 1 in listed positions
+\newcommand{\minterms}[1]{%
+    \foreach \x in {#1}
+        \path (\x) node {1};
+}
+
+%Places 0 in listed positions
+\newcommand{\maxterms}[1]{%
+    \foreach \x in {#1}
+        \path (\x) node {0};
+}
+
+%Places X in listed positions
+\newcommand{\indeterminats}[1]{%
+    \foreach \x in {#1}
+        \path (\x) node {X};
+}
+
+\begin{document}
+
+\vspace{-10mm}
+\maketitle
+
+\tableofcontents
+\newpage
+
+\section{Individuazione della funzione Booleana}
+A partire dalla matricola IN0501089, si procede elidenndo il prefisso IN ed individuando il numero di matricola associato: \textbf{0501089}.\\
+Dividendo tale numero per \(2^{2^4} = 65536\) si perviene al risultato seguente:
+\[\frac{501089}{65536} = 7 + \textbf{42337}\]
+Avendo ricavato il resto $42337$, si procede a codificarlo in binario, impiegando $16$ bit, tramite succcessive divisioni del numero ottenuto per $2$, come illustrato di seguito:
+
+\begin{table}[H]
+  \centering
+  \begin{align*}
+    42337 = 21168 \cdot 2 + \boxed{1}\\
+    21164 = 10584 \cdot 2 + \boxed{0}\\
+    10584 = 5298  \cdot 2 + \boxed{0}\\
+     5298 = 2646  \cdot 2 + \boxed{0}\\
+     2646 = 1323  \cdot 2 + \boxed{0}\\
+     1323 = 661   \cdot 2 + \boxed{1}\\
+      661 = 330   \cdot 2 + \boxed{1}\\
+      330 = 165   \cdot 2 + \boxed{0}\\
+      165 = 82    \cdot 2 + \boxed{1}\\
+       82 = 41    \cdot 2 + \boxed{0}\\
+       41 = 20    \cdot 2 + \boxed{1}\\
+       20 = 10    \cdot 2 + \boxed{0}\\
+       10 = 5     \cdot 2 + \boxed{0}\\
+        5 = 2     \cdot 2 + \boxed{1}\\
+        2 = 1     \cdot 2 + \boxed{0}\\
+        1 = 0     \cdot 2 + \boxed{1}
+  \end{align*}
+  \begin{tabular}{c}
+    \[42337_{10} = \boldsymbol{1010010101100001_2}\]
+  \end{tabular}
+  \caption{Rappresentazione del resto $42337$ in binario}
+  \label{tab:rappresentazione_resto_binario}
+\end{table}
+
+\newpage
+\noindent
+Pertanto, la funzione Booleana a \(4\) associata corrisponde alla stringa binaria di cui sopra, da cui si evincono i seguenti termini minimi (\emph{minterm}) e massimi (\emph{maxterm}):
+
+\noindent
+\begin{table}[H]
+  \setlength{\tabcolsep}{5.6pt}
+  \hspace{-1em}
+  \begin{tabularx}{\textwidth}{ll}
+    {
+        \noindent
+        \begin{tabular}{c|c||cccc||c|c}
+          $ $ & $ $ & $x$ & $y$ & $z$ & $w$ & $\boldsymbol{f}$\\
+          \hline
+          $m_0$ & $\overline{x}\overline{y}\overline{z}\overline{w}$ & $0$ & $0$ & $0$ & $0$ & $\boldsymbol{1}$ & $\mu_0$\\
+          $m_1$ & $\overline{x}\overline{y}\overline{z}w$ & $0$ & $0$ & $0$ & $1$ & $\boldsymbol{0}$ & $\mu_1$\\
+          $m_2$ & $\overline{x}\overline{y}z\overline{w}$ & $0$ & $0$ & $1$ & $0$ & $\boldsymbol{1}$ & $\mu_2$\\
+          $m_3$ & $\overline{x}\overline{y}zw$ & $0$ & $0$ & $0$ & $1$ & $\boldsymbol{0}$ & $\mu_3$\\
+          $m_4$ & $\overline{x}y\overline{z}\overline{w}$ & $0$ & $1$ & $0$ & $0$ & $\boldsymbol{0}$ & $\mu_4$\\
+          $m_5$ & $\overline{x}y\overline{z}w$ & $0$ & $1$ & $0$ & $1$ & $\boldsymbol{1}$ & $\mu_5$\\
+          $m_6$ & $\overline{x}yz\overline{w}$ & $0$ & $1$ & $1$ & $0$ & $\boldsymbol{0}$ & $\mu_6$\\
+          $m_7$ & $\overline{x}yzw$ & $0$ & $1$ & $1$ & $1$ & $\boldsymbol{1}$ & $\mu_7$\\
+          $m_8$ & $x\overline{y}\overline{z}\overline{w}$ & $1$ & $0$ & $0$ & $0$ & $\boldsymbol{0}$ & $\mu_8$\\
+          $m_9$ & $x\overline{y}\overline{z}w$ & $1$ & $0$ & $0$ & $1$ & $\boldsymbol{1}$ & $\mu_9$\\
+          $m_{10}$ & $x\overline{y}z\overline{w}$ & $1$ & $0$ & $1$ & $0$ & $\boldsymbol{1}$ & $\mu_{10}$\\
+          $m_{11}$ & $x\overline{y}zw$ & $1$ & $0$ & $1$ & $1$ & $\boldsymbol{0}$ & $\mu_{11}$\\
+          $m_{12}$ & $xy\overline{z}\overline{w}$ & $1$ & $1$ & $0$ & $0$ & $\boldsymbol{0}$ & $\mu_{12}$\\
+          $m_{13}$ & $xy\overline{z}w$ & $1$ & $1$ & $0$ & $1$ & $\boldsymbol{0}$ & $\mu_{13}$\\
+          $m_{14}$ & $xyz\overline{w}$ & $1$ & $1$ & $1$ & $0$ & $\boldsymbol{0}$ & $\mu_{14}$\\
+          $m_{15}$ & $xyzw$ & $1$ & $1$ & $1$ & $1$ & $\boldsymbol{1}$ & $\mu_{15}$\\
+        \end{tabular}
+    }
+    &
+    {
+        \noindent
+        \begin{tabular}{c|c||cccc||c|c}
+          $ $ & $ $ & $x$ & $y$ & $z$ & $w$ & $\boldsymbol{f}$\\
+          \hline
+          $M_0$ & $x + y + z + w$ & $0$ & $0$ & $0$ & $0$ & $\boldsymbol{1}$ & $\mu_0$\\
+          $M_1$ & $x + y + z + \overline{w}$ & $0$ & $0$ & $0$ & $1$ & $\boldsymbol{0}$ & $\mu_1$\\
+          $M_2$ & $x + y + \overline{z} + w$ & $0$ & $0$ & $1$ & $0$ & $\boldsymbol{1}$ & $\mu_2$\\
+          $M_3$ & $x + y + \overline{z} + \overline{w}$ & $0$ & $0$ & $0$ & $1$ & $\boldsymbol{0}$ & $\mu_3$\\
+          $M_4$ & $x + \overline{y} + z + w$ & $0$ & $1$ & $0$ & $0$ & $\boldsymbol{0}$ & $\mu_4$\\
+          $M_5$ & $x + \overline{y} + z + \overline{w}$ & $0$ & $1$ & $0$ & $1$ & $\boldsymbol{1}$ & $\mu_5$\\
+          $M_6$ & $x + \overline{y} + \overline{z} + w$ & $0$ & $1$ & $1$ & $0$ & $\boldsymbol{0}$ & $\mu_6$\\
+          $M_7$ & $x + \overline{y} + \overline{z} + \overline{w}$ & $0$ & $1$ & $1$ & $1$ & $\boldsymbol{1}$ & $\mu_7$\\
+          $M_8$ & $\overline{x} + y + z + w$ & $1$ & $0$ & $0$ & $0$ & $\boldsymbol{0}$ & $\mu_8$\\
+          $M_9$ & $\overline{x} + y + z + \overline{w}$ & $1$ & $0$ & $0$ & $1$ & $\boldsymbol{1}$ & $\mu_9$\\
+          $M_{10}$ & $\overline{x} + y + \overline{z} + w$ & $1$ & $0$ & $1$ & $0$ & $\boldsymbol{1}$ & $\mu_{10}$\\
+          $M_{11}$ & $\overline{x} + y + \overline{z} + \overline{w}$ & $1$ & $0$ & $1$ & $1$ & $\boldsymbol{0}$ & $\mu_{11}$\\
+          $M_{12}$ & $\overline{x} + \overline{y} + z + w$ & $1$ & $1$ & $0$ & $0$ & $\boldsymbol{0}$ & $\mu_{12}$\\
+          $M_{13}$ & $\overline{x} + \overline{y} + z + \overline{w}$ & $1$ & $1$ & $0$ & $1$ & $\boldsymbol{0}$ & $\mu_{13}$\\
+          $M_{14}$ & $\overline{x} + \overline{y} + \overline{z} + w$ & $1$ & $1$ & $1$ & $0$ & $\boldsymbol{0}$ & $\mu_{14}$\\
+          $M_{15}$ & $\overline{x} + \overline{y} + \overline{z} + \overline{w}$ & $1$ & $1$ & $1$ & $1$ & $\boldsymbol{1}$ & $\mu_{15}$\\
+        \end{tabular}
+    }
+  \end{tabularx}
+  \caption{Funzione Booleana a $4$ variabili associata alla stringa $1010010101100001_2$}
+  \label{tab:funzione_booleana_associata_stringa}
+\end{table}
+
+\subsection{Codifica dei termini minimi (\emph{minterm})}
+Se nella tavola di verità della funzione $f$ considerata si pone in evidenza la codifica dei termini minimi si ottiene:
+
+\begin{table}[H]
+  \centering
+  \noindent
+  \begin{tabular}{c|c||cccc||c|c}
+    $ $ & $ $ & $x$ & $y$ & $z$ & $w$ & $\boldsymbol{f}$\\
+    \hline
+    $m_0$ & $\overline{x}\overline{y}\overline{z}\overline{w}$ & $0$ & $0$ & $0$ & $0$ & $\boldsymbol{1}$ & $\mu_0$\\
+    $m_1$ & $\overline{x}\overline{y}\overline{z}w$ & $0$ & $0$ & $0$ & $1$ & $\boldsymbol{0}$ & $\mu_1$\\
+    $m_2$ & $\overline{x}\overline{y}z\overline{w}$ & $0$ & $0$ & $1$ & $0$ & $\boldsymbol{1}$ & $\mu_2$\\
+    $m_3$ & $\overline{x}\overline{y}zw$ & $0$ & $0$ & $0$ & $1$ & $\boldsymbol{0}$ & $\mu_3$\\
+    $m_4$ & $\overline{x}y\overline{z}\overline{w}$ & $0$ & $1$ & $0$ & $0$ & $\boldsymbol{0}$ & $\mu_4$\\
+    $m_5$ & $\overline{x}y\overline{z}w$ & $0$ & $1$ & $0$ & $1$ & $\boldsymbol{1}$ & $\mu_5$\\
+    $m_6$ & $\overline{x}yz\overline{w}$ & $0$ & $1$ & $1$ & $0$ & $\boldsymbol{0}$ & $\mu_6$\\
+    $m_7$ & $\overline{x}yzw$ & $0$ & $1$ & $1$ & $1$ & $\boldsymbol{1}$ & $\mu_7$\\
+    $m_8$ & $x\overline{y}\overline{z}\overline{w}$ & $1$ & $0$ & $0$ & $0$ & $\boldsymbol{0}$ & $\mu_8$\\
+    $m_9$ & $x\overline{y}\overline{z}w$ & $1$ & $0$ & $0$ & $1$ & $\boldsymbol{1}$ & $\mu_9$\\
+    $m_{10}$ & $x\overline{y}z\overline{w}$ & $1$ & $0$ & $1$ & $0$ & $\boldsymbol{1}$ & $\mu_{10}$\\
+    $m_{11}$ & $x\overline{y}zw$ & $1$ & $0$ & $1$ & $1$ & $\boldsymbol{0}$ & $\mu_{11}$\\
+    $m_{12}$ & $xy\overline{z}\overline{w}$ & $1$ & $1$ & $0$ & $0$ & $\boldsymbol{0}$ & $\mu_{12}$\\
+    $m_{13}$ & $xy\overline{z}w$ & $1$ & $1$ & $0$ & $1$ & $\boldsymbol{0}$ & $\mu_{13}$\\
+    $m_{14}$ & $xyz\overline{w}$ & $1$ & $1$ & $1$ & $0$ & $\boldsymbol{0}$ & $\mu_{14}$\\
+    $m_{15}$ & $xyzw$ & $1$ & $1$ & $1$ & $1$ & $\boldsymbol{1}$ & $\mu_{15}$\\
+  \end{tabular}
+  \caption{Codifica dei termini minimi}
+  \label{tab:codifica_termini_minimi}
+\end{table}
+
+\noindent
+Pertanto, se si codificano le quaterne d’ingresso associate a ciascun termine minimo con il corrispondente intero rappresentato in notazione posizionale in base $2$, è possibile indicare i termini minimi che compongono la sommatoria di prodotti usando gli interi compresi tra $0$ e $2^{4} - 1$, come illustrato di seguito:
+\[f(x, y, z, w) = \underset{i = 0}{\overset{2^4 - 1}{\sum}} \mu_i \cdot m_i = \underset{i: \mu_i = 1}{\sum} m_i\]
+dove \(\mu_i\) è il valore assunto dalla funzione in corrispondenza del termine minimo \(m_i\) e \(0 \leq i \leq 2^n -1\).\\
+Nel caso analizzato, si ha \(m_0 = \overline{x}\overline{y}\overline{z}\overline{w}, m_2 = \overline{x}\overline{y}z\overline{w}, m_5 = \overline{x}y\overline{z}w, m_7 = \overline{x}yzw, m_9 = x\overline{y}\overline{z}w, m_{10} = x\overline{y}z\overline{w}, m_{15} = xyzw, \mu_0 = \mu_2 = \mu_5 = \mu_7 = \mu_9 = \mu_{10} = \mu_{15} = 1, \mu_1 = \mu_3 = \mu_4 = \mu_6 = \mu_8 = \mu_{11} = \mu_{12} = \mu_{13} = \mu_{14} = 0\).\\
+Per cui si perviene al risultato seguente
+\[f(x, y, z, w) = \sum_{i \in \{0, 2, 5, 7, 9, 10, 15\}} m_i = m_0 + m_2 + m_5 + m_7 + m_9 + m_{10} + m_{15}\]
+Quindi l'espressione dei \emph{minterm} è:
+\[f(x,y,z,w) = \overline{x}\overline{y}\overline{z}\overline{w} + \overline{x}\overline{y}z\overline{w} + \overline{x}y\overline{z}w + \overline{x}yzw + x\overline{y}\overline{z}w + x\overline{y}z\overline{w} + xyzw\]
+poiché \(0, 2, 5, 7, 9, 10\) e \(15\) sono le codifiche in base \(2\) di \(0000\), \(0010\), \(0101\), \(0111\), \(1001\), \(1010\) e \(1111\).
+
+\vspace{1em}
+\subsection{Codifica dei termini massimi (\emph{maxterm})}
+Analogamente, procedendo per dualità, se nella tavola di verità della funzione $f$ considerata si pone in evidenza la codifica dei termini massimi si ottiene:
+
+\begin{table}[H]
+  \centering
+  \noindent
+  \begin{tabular}{c|c||cccc||c|c}
+    $ $ & $ $ & $x$ & $y$ & $z$ & $w$ & $\boldsymbol{f}$\\
+    \hline
+    $M_0$ & $x + y + z + w$ & $0$ & $0$ & $0$ & $0$ & $\boldsymbol{1}$ & $\mu_0$\\
+    $M_1$ & $x + y + z + \overline{w}$ & $0$ & $0$ & $0$ & $1$ & $\boldsymbol{0}$ & $\mu_1$\\
+    $M_2$ & $x + y + \overline{z} + w$ & $0$ & $0$ & $1$ & $0$ & $\boldsymbol{1}$ & $\mu_2$\\
+    $M_3$ & $x + y + \overline{z} + \overline{w}$ & $0$ & $0$ & $0$ & $1$ & $\boldsymbol{0}$ & $\mu_3$\\
+    $M_4$ & $x + \overline{y} + z + w$ & $0$ & $1$ & $0$ & $0$ & $\boldsymbol{0}$ & $\mu_4$\\
+    $M_5$ & $x + \overline{y} + z + \overline{w}$ & $0$ & $1$ & $0$ & $1$ & $\boldsymbol{1}$ & $\mu_5$\\
+    $M_6$ & $x + \overline{y} + \overline{z} + w$ & $0$ & $1$ & $1$ & $0$ & $\boldsymbol{0}$ & $\mu_6$\\
+    $M_7$ & $x + \overline{y} + \overline{z} + \overline{w}$ & $0$ & $1$ & $1$ & $1$ & $\boldsymbol{1}$ & $\mu_7$\\
+    $M_8$ & $\overline{x} + y + z + w$ & $1$ & $0$ & $0$ & $0$ & $\boldsymbol{0}$ & $\mu_8$\\
+    $M_9$ & $\overline{x} + y + z + \overline{w}$ & $1$ & $0$ & $0$ & $1$ & $\boldsymbol{1}$ & $\mu_9$\\
+    $M_{10}$ & $\overline{x} + y + \overline{z} + w$ & $1$ & $0$ & $1$ & $0$ & $\boldsymbol{1}$ & $\mu_{10}$\\
+    $M_{11}$ & $\overline{x} + y + \overline{z} + \overline{w}$ & $1$ & $0$ & $1$ & $1$ & $\boldsymbol{0}$ & $\mu_{11}$\\
+    $M_{12}$ & $\overline{x} + \overline{y} + z + w$ & $1$ & $1$ & $0$ & $0$ & $\boldsymbol{0}$ & $\mu_{12}$\\
+    $M_{13}$ & $\overline{x} + \overline{y} + z + \overline{w}$ & $1$ & $1$ & $0$ & $1$ & $\boldsymbol{0}$ & $\mu_{13}$\\
+    $M_{14}$ & $\overline{x} + \overline{y} + \overline{z} + w$ & $1$ & $1$ & $1$ & $0$ & $\boldsymbol{0}$ & $\mu_{14}$\\
+    $M_{15}$ & $\overline{x} + \overline{y} + \overline{z} + \overline{w}$ & $1$ & $1$ & $1$ & $1$ & $\boldsymbol{1}$ & $\mu_{15}$\\
+  \end{tabular}
+  \caption{Codifica dei termini massimi}
+  \label{tab:codifica_termini_massimi}
+\end{table}
+
+\noindent
+Analogamente a quanto già esposto, se ora si codificano le quaterne d’ingresso associate a ciascun termine massimo con il corrispondente intero rappresentato in notazione posizionale in base $2$, è possibile indicare i termini massimi che compongono il prodotto di somme usando gli interi compresi tra $0$ e $2^{4} - 1$, come illustrato di seguito:
+\[f(x, y, z, w) = \underset{i = 0}{\overset{2^4 - 1}{\prod}} \mu_i \cdot M_i = \underset{i: \mu_i = 1}{\prod} M_i\]
+dove \(\mu_i\) è il valore assunto dalla funzione in corrispondenza del termine massimo \(M_i\) e \(0 \leq i \leq 2^n -1\).\\
+Nel caso analizzato, si ha \(M_1 = x + y + z + \overline{w}, M_3 = x + y + \overline{z} + \overline{w}, M_4 = x + \overline{y} + z + w, M_6 = x + \overline{y} + \overline{z} + w, M_8 = \overline{x} + y + z + w, M_{11} = \overline{x} + y + \overline{z} + \overline{w}, M_{12} = \overline{x} + \overline{y} + z + w, M_{13} \overline{x} + \overline{y} + z + \overline{w}, M_{14} = \overline{x} + \overline{y} + \overline{z} + w, \mu_0 = \mu_2 = \mu_5 = \mu_7 = \mu_9 = \mu_{10} = \mu_{15} = 1, \mu_1 = \mu_3 = \mu_4 = \mu_6 = \mu_8 = \mu_{11} = \mu_{12} = \mu_{13} = \mu_{14} = 0\).\\
+Per cui si perviene al risultato seguente
+\[f(x, y, z, w) = \prod_{i \in \{1, 3, 4, 6, 8, 11, 12, 13, 14\}} M_i = M_1 \cdot M_3 \cdot M_4 \cdot M_8 \cdot M_{11} \cdot M_{12} \cdot M_{13} \cdot M_{14}\]
+Quindi l'espressione dei \emph{maxterm} è:
+\begin{align*}
+  f(x,y,z,w) = \left(x + y + z + \overline{w}\right) \cdot \left(x + y + \overline{z} + \overline{w}\right) \cdot \left(x + \overline{y} + z + w\right) \cdot \left(x + \overline{y} + \overline{z} + w\right) \cdot \left(\overline{x} + y + z + w\right)\\
+  \cdot \left(\overline{x} + y + \overline{z} + \overline{w}\right) \cdot \left(\overline{x} + \overline{y} + z + w\right) \cdot \left(\overline{x} + \overline{y} + z + \overline{w}\right) \cdot \left(\overline{x} + \overline{y} + \overline{z} + w\right)
+\end{align*}
+poiché \(1, 3, 4, 6, 8, 11, 12, 13\) e \(14\) sono le codifiche in base \(2\) di \(0001\), \(0011\), \(0100\), \(0110\), \(1000\), \(1011\), \(1100\), \(1101\) e \(1110\).
+
+\newpage
+\section{Semplificazione dell'espressione Booleana}
+Di seguito si espongono i $3$ diversi procedimenti di semplificazione dell'espressione Booleana precedentemente ottenuta, ricondotta alla forma minima tramite l'\emph{applicazione delle relazioni fondamentali dell'Algebra Booleana} (assiomi e teoremi), tramite le \emph{mappe di Karnaugh} e attraverso il \emph{metodo tabellare di Quine - Mc Cluskey}.
+
+\vspace{1em}
+\subsection{Semplificazione per via algebrica}
+Si procede, ora, alla semplificazione delle espressioni ottenute per via diretta, facendo uso degli assiomi A1-A7 e dei teoremi T1-T10 dell’Algebra Booleana.
+
+\vspace{1em}
+\subsubsection{Semplificazione dei \emph{minterm}}
+\begin{align*}
+  f(x,y,z,w) = \overline{x}\overline{y}\overline{z}\overline{w} + \overline{x}\overline{y}z\overline{w} + \overline{x}y\overline{z}w + \overline{x}yzw + x\overline{y}\overline{z}w + x\overline{y}z\overline{w} + xyzw
+\end{align*}
+
+
+
+\end{document}
