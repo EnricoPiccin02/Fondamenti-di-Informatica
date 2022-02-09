@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1644339327 "Teoria - Fondamenti di Informatica.tex" "build/Teoria - Fondamenti di Informatica.pdf" "Teoria - Fondamenti di Informatica" 1644339332
+["pdflatex"] 1644394429 "Teoria - Fondamenti di Informatica.tex" "build/Teoria - Fondamenti di Informatica.pdf" "Teoria - Fondamenti di Informatica" 1644394433
   "/Users/enricopiccin/Library/texlive/2021basic/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk" 1643364959 11524 2df7d3388477aff28c2fab5169faa2c5 ""
   "/usr/local/texlive/2021basic/texmf-dist/fonts/tfm/jknappen/ec/ectt1000.tfm" 1136768653 1536 06717a2b50de47d4087ac0e6cd759455 ""
   "/usr/local/texlive/2021basic/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -200,9 +200,9 @@
   "/usr/local/texlive/2021basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1616691443 79187 72c3adcacc8085f6390cf80c64ac00e5 ""
   "/usr/local/texlive/2021basic/texmf-var/web2c/pdftex/pdflatex.fmt" 1643302228 2057433 28863b3cbca3a1e9d798e67601f03c47 ""
   "/usr/local/texlive/2021basic/texmf.cnf" 1616691442 628 e23d78b1be89c53495d66eec94d2300d ""
-  "Teoria - Fondamenti di Informatica.tex" 1644339327 353958 64819bfcc0e953f5dd901b4b1346c8e5 ""
-  "build/Teoria - Fondamenti di Informatica.aux" 1644339331 31398 925cc1fad205f87b969e5e2f67987fc5 "pdflatex"
-  "build/Teoria - Fondamenti di Informatica.toc" 1644339331 10412 7872dd9e847ba2be0499f54402272bf1 "pdflatex"
+  "Teoria - Fondamenti di Informatica.tex" 1644394425 354099 e5c9fae613432b6f41ea8ae780a5f120 ""
+  "build/Teoria - Fondamenti di Informatica.aux" 1644394433 31398 94050f95a5e27b9f870747d3bf7aa4d8 "pdflatex"
+  "build/Teoria - Fondamenti di Informatica.toc" 1644394433 10412 7872dd9e847ba2be0499f54402272bf1 "pdflatex"
   "build/img/circuiti_combinatori/image22.png" 0 -1 0 ""
   "build/img/circuiti_sequenziali/image1.png" 0 -1 0 ""
   "build/img/circuiti_sequenziali/image10.png" 0 -1 0 ""

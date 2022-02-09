@@ -2225,7 +2225,7 @@ Con i simboli \(x\) e \(\overline{x}\) si indicano due contati azionati contempo
 Il circuito presentera continuità elettrica tra i punti $a$ e $b$ quando almeno uno dei contatti è chiuso. Ne consegue che la somma logica
 \[x_1 + x_2 + .. + x_n\]
 descrive, secondo l’analogia di Shannon, il comportamento elettrico di $n$ contatti in parallelo.
-Se invece i contatti \(x_1, x_2, ..., x_n\) sono in serie tra loro, come illustrato in Figura \ref{contatti_serie}:
+Se invece i contatti \(x_1, x_2, ..., x_n\) sono in serie tra loro, come illustrato in Figura \ref{fig:contatti_serie}:
 
 \begin{figure}[H]
     \centering
@@ -2257,19 +2257,18 @@ In questo modo è possibile esprimere una funzione logica complicata che sia att
 
 \subsection{Riassunto}
 È stata precedentemente introdotta una duplice modalità per manipolare le espressioni logiche, ovvero la \textbf{prodotto dei termini massimi} (o \textit{maxterm}, che valgono sempre \(1\), tranne che per una sola combinazione per cui valgono \(0\)) e \textbf{somma dei termini minimi} (o \textit{minterm}, che valgono sempre \(0\) tranne che per una sola combinazione per la quale valgono \(1\)).\\
-Naturalmente, le espressioni sono \textbf{mutuamente escludenti}, per cui è chiaro che in ambedue i casi è ovvio che in ingresso si presenti solamente uno solo dei \textit{minterm} (o \textit{maxterm}) individuati.\\
-Il discernimento tra una o l'altra configurazione è assolutamente ininfluente: certo è che, se la funzione logica da semplificare assume maggiori \(1\) rispetto allo \(0\), allora sarà più conveniente procedere alla trasformazione della funzione in \textbf{prodotti di somme}, o di \textit{maxterm}.\\
-Naturalmente, però, se, come si è detto, i due procedimenti conducono al medesimo risultato, pertanto sarà sempre possibile ricondurre una somma di \textit{minterm} ad un prodotto di \textit{maxterm}. È chiaro che è possibile che vi siano più forme minime equivalenti, che differiscono solamente dal punto di vista formale.\\
-Un procedimento atto a passare dal prodotto di somme alla somma di prodotti e viceversa, sfruttando il Teorema di De Morgan \ref{sec:teorema_de_morgan} a partire dalla doppia negazione.
+Naturalmente, le espressioni sono \textbf{mutuamente escludenti}, per cui è chiaro che in ambedue i casi, sia che si considerino i \emph{maxterm} o i \emph{minterm}, in ingresso si può presentare solamente una combinazione possibile, ossia uno solo dei \textit{minterm} (o \textit{maxterm}) individuati.\\
+Il discernimento tra una o l'altra configurazione è assolutamente ininfluente: certo è che, se la funzione logica da semplificare assume un numero maggiore \(1\) rispetto allo \(0\), allora sarà più conveniente procedere alla trasformazione della funzione in \textbf{prodotti di somme}, o di \textit{maxterm}.\\
+Naturalmente, però, come si è detto, i due procedimenti conducono al medesimo risultato, pertanto sarà sempre possibile ricondurre una somma di \textit{minterm} ad un prodotto di \textit{maxterm} e viceversa. È chiaro che è possibile che vi siano più forme minime equivalenti, che differiscono solamente dal punto di vista formale: in tale circostanza, un procedimento atto a passare dal prodotto di somme alla somma di prodotti e viceversa, è proprio il Teorema di De Morgan (§ \ref{sec:teorema_de_morgan}) a partire dalla doppia negazione T3.
 
 \vspace{1em}
 \noindent
 \textbf{Osservazione}: L'interpretazione circuitale dell'algebra booleana si deve a Claude Shannon, il quale osservò, molto semplicemente che:
 
 \begin{itemize}
-    \item Interruttori posti in serie simulano il funzionamento di una porta AND
-    \item Interruttori posti in parallelo simulano il funzionamento di una porta OR
-    \item Un deviatore permette di simulare il funzionamento di una porta NOT
+    \item Interruttori posti in serie simulano il funzionamento di una porta AND;
+    \item Interruttori posti in parallelo simulano il funzionamento di una porta OR;
+    \item Un deviatore permette di simulare il funzionamento di una porta NOT;
 \end{itemize}
 
 \vspace{1em}
