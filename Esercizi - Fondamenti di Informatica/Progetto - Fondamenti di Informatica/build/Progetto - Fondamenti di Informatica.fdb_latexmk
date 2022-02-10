@@ -1,11 +1,12 @@
 # Fdb version 3
-["pdflatex"] 1644421516 "Progetto - Fondamenti di Informatica.tex" "build/Progetto - Fondamenti di Informatica.pdf" "Progetto - Fondamenti di Informatica" 1644421517
+["pdflatex"] 1644489434 "Progetto - Fondamenti di Informatica.tex" "build/Progetto - Fondamenti di Informatica.pdf" "Progetto - Fondamenti di Informatica" 1644489435
   "/Users/enricopiccin/Library/texlive/2021basic/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbi1000.600pk" 1644421485 34088 3d8268d5e80df7fad6361b9f5123c273 ""
   "/Users/enricopiccin/Library/texlive/2021basic/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbi1200.600pk" 1644402991 42704 f987c4409a76f37d91b09ce7a086330c ""
   "/Users/enricopiccin/Library/texlive/2021basic/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk" 1644396998 25396 ea4b315e2378eee82a980da70dbf4e5c ""
   "/Users/enricopiccin/Library/texlive/2021basic/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk" 1644402991 31928 552bef5683f6d9cea420e60731197ef0 ""
   "/Users/enricopiccin/Library/texlive/2021basic/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk" 1644395251 40112 f9af83b3fd5a1cbbeecf6874edf9222d ""
   "/Users/enricopiccin/Library/texlive/2021basic/texmf-var/fonts/pk/ljfour/jknappen/ec/eccc1000.600pk" 1644395397 25076 b55752c5315835cd0d66ddd615621311 ""
+  "/Users/enricopiccin/Library/texlive/2021basic/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0700.600pk" 1644481192 16976 e8f77c76af8dd6f888df9bc9661af036 ""
   "/Users/enricopiccin/Library/texlive/2021basic/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk" 1644395250 23784 648f35346c33bd328e3110c5797d69f6 ""
   "/Users/enricopiccin/Library/texlive/2021basic/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk" 1644395252 28416 ad1ad9fba5e5396015c70adc5f88ce86 ""
   "/Users/enricopiccin/Library/texlive/2021basic/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm2074.600pk" 1644395397 53712 8e1a7039b4796ab2a9737a99fe0667e5 ""
@@ -217,9 +218,9 @@
   "/usr/local/texlive/2021basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1616691443 79187 72c3adcacc8085f6390cf80c64ac00e5 ""
   "/usr/local/texlive/2021basic/texmf-var/web2c/pdftex/pdflatex.fmt" 1643302228 2057433 28863b3cbca3a1e9d798e67601f03c47 ""
   "/usr/local/texlive/2021basic/texmf.cnf" 1616691442 628 e23d78b1be89c53495d66eec94d2300d ""
-  "Progetto - Fondamenti di Informatica.tex" 1644421516 23089 04290dc275a6ed8110a8929863e10629 ""
-  "build/Progetto - Fondamenti di Informatica.aux" 1644421517 1835 3caaf33aef1f851d6a6ab5733dc0994f "pdflatex"
-  "build/Progetto - Fondamenti di Informatica.toc" 1644421517 614 57d36b784e20af4a4eafb5c9c0ae2a00 "pdflatex"
+  "Progetto - Fondamenti di Informatica.tex" 1644489434 26921 598468b1868d09767c7ca949da18aaa4 ""
+  "build/Progetto - Fondamenti di Informatica.aux" 1644489435 1969 91cb859780634405630b737783341ed6 "pdflatex"
+  "build/Progetto - Fondamenti di Informatica.toc" 1644489435 706 4e490bfcfea0675336583f3a8c0c616f "pdflatex"
   (generated)
   "build/Progetto - Fondamenti di Informatica.aux"
   "build/Progetto - Fondamenti di Informatica.log"

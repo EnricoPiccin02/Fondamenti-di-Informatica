@@ -407,10 +407,29 @@ Si procede, ora, alla semplificazione delle espressioni ottenute per via diretta
 
 \vspace{1em}
 \subsubsection{Semplificazione dei \emph{minterm}}
-\begin{align*}
-  f(x,y,z,w) = \overline{x}\overline{y}\overline{z}\overline{w} + \overline{x}\overline{y}z\overline{w} + \overline{x}y\overline{z}w + \overline{x}yzw + x\overline{y}\overline{z}w + x\overline{y}z\overline{w} + xyzw
-\end{align*}
+\begin{eqnarray*}
+  f(x,y,z,w) &=& \overline{x}\overline{y}\overline{z}\overline{w} + \overline{x}\overline{y}z\overline{w} + \overline{x}y\overline{z}w + \overline{x}yzw + x\overline{y}\overline{z}w + x\overline{y}z\overline{w} + xyzw\\
+  &\overset{\left(A4 \text{ e } A5\right)}{=}& \left(\overline{x}\overline{y}\overline{z}\overline{w} + \overline{x}\overline{y}z\overline{w}\right) + \left(\overline{x}y\overline{z}w + \overline{x}yzw\right) + x\overline{y}\overline{z}w + x\overline{y}z\overline{w} + xyzw\\
+  &\overset{\left(T9\right)}{=}& \overline{x}\overline{y}\overline{w} + \overline{x}yw + x\overline{y}\overline{z}w + x\overline{y}z\overline{w} + xyzw\\
+  &\overset{\left(A4\right)}{=}& \overline{x}\overline{y}\overline{w} + x\overline{y}z\overline{w} + \overline{x}yw + xyzw + x\overline{y}\overline{z}w\\
+  &\overset{\left(A4 \text{ e } A6\right)}{=}& \overline{y}\overline{w} \cdot \left(\overline{x} + xz\right) + yw \cdot \left(\overline{x} + xz\right) + x\overline{y}\overline{z}w\\
+  &\overset{\left(T5\right)}{=}& \overline{y}\overline{w} \cdot \left(\overline{x} + z\right) + yw \cdot \left(\overline{x} + z\right) + x\overline{y}\overline{z}w\\
+  &\overset{\left(A4 \text{ e } A6\right)}{=}& \overline{x}\overline{y}\overline{w} + \overline{y}z\overline{w} + \overline{x}yw + yzw + x\overline{y}\overline{z}w\\
+\end{eqnarray*}
 
+\vspace{1em}
+\subsubsection{Semplificazione dei \emph{maxterm}}
+\begin{eqnarray*}
+  f(x,y,z,w) &=& \left(x + y + z + \overline{w}\right) \cdot \left(x + y + \overline{z} + \overline{w}\right) \cdot \left(x + \overline{y} + z + w\right) \cdot \left(x + \overline{y} + \overline{z} + w\right) \cdot \left(\overline{x} + y + z + w\right)\\
+  & & \cdot \left(\overline{x} + y + \overline{z} + \overline{w}\right) \cdot \left(\overline{x} + \overline{y} + z + w\right) \cdot \left(\overline{x} + \overline{y} + z + \overline{w}\right) \cdot \left(\overline{x} + \overline{y} + \overline{z} + w\right)\\
+  &\overset{\left(A4 \text{ e } A5\right)}{=}& \left[\left(x + y + z + \overline{w}\right) \cdot \left(x + y + \overline{z} + \overline{w}\right) \right] \cdot \left[\left(x + \overline{y} + z + w\right) \cdot \left(x + \overline{y} + \overline{z} + w\right) \right] \cdot \left[\left(\overline{x} + y + z + w\right)\right.\\
+  & & \cdot \left.\left(\overline{x} + \overline{y} + z + w\right) \right] \cdot \left(\overline{x} + y + \overline{z} + \overline{w}\right) \cdot \left(\overline{x} + \overline{y} + z + \overline{w}\right) \cdot \left(\overline{x} + \overline{y} + \overline{z} + w\right)\\
+  &\overset{\left(T9\right)}{=}& \left(x + y + \overline{w}\right) \cdot \left(x + \overline{y} + w\right) \cdot \left(\overline{x} + z + w\right) \cdot \left(\overline{x} + y + \overline{z} + \overline{w}\right) \cdot \left(\overline{x} + \overline{y} + z + \overline{w}\right) \cdot \left(\overline{x} + \overline{y} + \overline{z} + w\right)\\
+  &\overset{\left(A4\right)}{=}& \left(x + \overline{y} + w\right) \cdot \left(\overline{x} + \overline{y} + \overline{z} + w\right) \cdot \left(\overline{x} + z + w\right) \cdot \left(\overline{x} + \overline{y} + z + \overline{w}\right) \cdot \left(x + y + \overline{w}\right) \cdot \left(\overline{x} + y + \overline{z} + \overline{w}\right)\\
+  &\overset{\left(A4 \text{ e } A6\right)}{=}& \left[\overline{y} + w + x \cdot \left(\overline{x} + \overline{z}\right) \right] \cdot \left[\overline{x} + z + w \cdot \left( \overline{y} + \overline{w}\right) \right] \cdot \left[y + \overline{w} + x \cdot \left(\overline{x} + \overline{z} \right)\right]\\
+  &\overset{\left(A4 \text{ e } T5\right)}{=}& \left(\overline{y} + w + x\overline{z}\right) \cdot \left(\overline{x} + z + \overline{y}w \right) \cdot \left(y + \overline{w} + x\overline{z}\right)\\
+  &\overset{\left(A4 \text{ e } A6\right)}{=}& \left(x + y + \overline{w}\right) \cdot \left(x + \overline{y} + w\right) \cdot \left( \overline{y} + \overline{z} + w\right) \cdot \left(\overline{x} + \overline{y} + z \right) \cdot \left(x + y + \overline{w}\right) \cdot (y + \overline{z} + \overline{w})\\
+\end{eqnarray*}
 
 
 \end{document}
