@@ -8,3 +8,6 @@
 \contentsline {subsection}{\numberline {2.1}Semplificazione per via algebrica}{5}{}%
 \contentsline {subsubsection}{\numberline {2.1.1}Semplificazione dei \emph {minterm}}{5}{}%
 \contentsline {subsubsection}{\numberline {2.1.2}Semplificazione dei \emph {maxterm}}{5}{}%
+\contentsline {subsubsection}{\numberline {2.1.3}Equivalenza delle forme canoniche}{6}{}%
+\contentsline {subsubsection}{\numberline {2.1.4}Mappa di Karnaugh}{6}{}%
+\contentsline {subsubsection}{\numberline {2.1.5}Metodo tabellare di Quine-Mc Cluskey}{6}{}%
