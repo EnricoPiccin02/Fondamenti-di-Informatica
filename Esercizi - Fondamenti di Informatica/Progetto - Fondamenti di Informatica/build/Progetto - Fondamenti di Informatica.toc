@@ -15,3 +15,4 @@
 \contentsline {subsection}{\numberline {3.1}Funzione ottenuta dai \emph {minterm}}{9}{}%
 \contentsline {subsection}{\numberline {3.2}Funzione ottenuta dai \emph {maxterm}}{10}{}%
 \contentsline {subsection}{\numberline {3.3}Funzione semplificata}{11}{}%
+\contentsline {section}{\numberline {4}Dichiarazione finale}{12}{}%
