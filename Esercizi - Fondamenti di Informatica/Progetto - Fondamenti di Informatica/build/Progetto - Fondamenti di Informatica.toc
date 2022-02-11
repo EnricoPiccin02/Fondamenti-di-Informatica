@@ -12,3 +12,6 @@
 \contentsline {subsubsection}{\numberline {2.1.4}Mappa di Karnaugh}{6}{}%
 \contentsline {subsubsection}{\numberline {2.1.5}Metodo tabellare di Quine-Mc Cluskey}{7}{}%
 \contentsline {section}{\numberline {3}Interpretazione circuitale}{9}{}%
+\contentsline {subsection}{\numberline {3.1}Funzione ottenuta dai \emph {minterm}}{9}{}%
+\contentsline {subsection}{\numberline {3.2}Funzione ottenuta dai \emph {maxterm}}{10}{}%
+\contentsline {subsection}{\numberline {3.3}Funzione semplificata}{11}{}%

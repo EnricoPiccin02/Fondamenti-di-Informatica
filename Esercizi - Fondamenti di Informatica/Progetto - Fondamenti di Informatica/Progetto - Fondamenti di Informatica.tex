@@ -658,77 +658,334 @@ Di seguito si espone lo schema logico, basato su porte AND, OR e NOT, delle segu
   \item della funzione semplificata, ottenuta nelle sezioni §\ref{sec:semplificazione_algebrica}, §\ref{sec:semplificazione_mappa_karnaugh} e §\ref{sec:semplificazione_tabella_quine-mc_cluskey}.
 \end{itemize}
 
-\begin{tikzpicture}
-  % Variabili
-  \coordinate (x) at (0,0);
-  \coordinate (y) at (1.3,0);
-  \coordinate (z) at (2.6,0);
-  \coordinate (w) at (3.9,0);
+\vspace{1em}
+\subsection{Funzione ottenuta dai \emph{minterm}}
 
-  % Porte logiche
-  \node [not gate US, draw, rotate=270] (notx) at ([xshift=6mm,yshift=-6mm]x),-0.6){};
-  \node [not gate US, draw, rotate=270] (noty) at ([xshift=6mm,yshift=-6mm]y),-0.6){};
-  \node [not gate US, draw, rotate=270] (notz) at ([xshift=6mm,yshift=-6mm]z),-0.6){};
-  \node [not gate US, draw, rotate=270] (notw) at ([xshift=6mm,yshift=-6mm]w),-0.6){};
+\begin{figure}[H]
+    \centering
+    \scalebox{1.25}{
+        \centering
+        \begin{tikzpicture}
+          % Variabili
+          \coordinate (x) at (0,0);
+          \coordinate (y) at (1.5,0);
+          \coordinate (z) at (3,0);
+          \coordinate (w) at (4.5,0);
 
+          % Porte logiche
+          \node [not gate US, draw, rotate=270] (notx) at ([xshift=6mm,yshift=-8mm]x){};
+          \node [not gate US, draw, rotate=270] (noty) at ([xshift=6mm,yshift=-8mm]y){};
+          \node [not gate US, draw, rotate=270] (notz) at ([xshift=6mm,yshift=-8mm]z){};
+          \node [not gate US, draw, rotate=270] (notw) at ([xshift=6mm,yshift=-8mm]w){};
 
-  \node [and gate US, draw, logic gate inputs=nnnn] (and1) at (6,-2.5){$\overline{x}\overline{y}\overline{z}\overline{w}$};
-  \node [and gate US, draw, below=of and1, yshift=3.5mm, logic gate inputs=nnnn] (and2){$\overline{x}\overline{y}z\overline{w}$};
-  \node [and gate US, draw, below=of and2, yshift=3.5mm, logic gate inputs=nnnn] (and3){$\overline{x}y\overline{z}w$};
-  \node [and gate US, draw, below=of and3, yshift=3.5mm, logic gate inputs=nnnn] (and4){$\overline{x}yzw$};
-  \node [and gate US, draw, below=of and4, yshift=3.5mm, logic gate inputs=nnnn] (and5){$x\overline{y}\overline{z}w$};
-  \node [and gate US, draw, below=of and5, yshift=3.5mm, logic gate inputs=nnnn] (and6){$x\overline{y}z\overline{w}$};
-  \node [and gate US, draw, below=of and6, yshift=3.5mm, logic gate inputs=nnnn] (and7){$xyzw$};
-  \node [or gate US, draw, right=of and4, xshift=7mm, yshift=-5mm, logic gate inputs=nnnnnnn] (or){};
+          \node [and gate US, draw, logic gate inputs=nnnn] (and1) at (6.5,-2.5){$\overline{x}\overline{y}\overline{z}\overline{w}$};
+          \node [and gate US, draw, below=of and1, yshift=3.5mm, logic gate inputs=nnnn] (and2){$\overline{x}\overline{y}z\overline{w}$};
+          \node [and gate US, draw, below=of and2, yshift=3.5mm, logic gate inputs=nnnn] (and3){$\overline{x}y\overline{z}w$};
+          \node [and gate US, draw, below=of and3, yshift=3.5mm, logic gate inputs=nnnn] (and4){$\overline{x}yzw$};
+          \node [and gate US, draw, below=of and4, yshift=3.5mm, logic gate inputs=nnnn] (and5){$x\overline{y}\overline{z}w$};
+          \node [and gate US, draw, below=of and5, yshift=3.5mm, logic gate inputs=nnnn] (and6){$x\overline{y}z\overline{w}$};
+          \node [and gate US, draw, below=of and6, yshift=3.5mm, logic gate inputs=nnnn] (and7){$xyzw$};
+          \node [or gate US, draw, right=of and4, xshift=5mm, logic gate inputs=nnnnnnn] (or){};
 
-  % INPUT
-  \draw (x) ++(0,-14) node[](xend) -- node[at end, above]{$x$} (x);
-  \draw (y) ++(0,-14) -- node[at end, above]{$y$} (y);
-  \draw (z) ++(0,-14) -- node[at end, above]{$z$} (z);
-  \draw (w) ++(0,-14) -- node[at end, above]{$w$} (w);
+          % INPUT
+          \draw (x) ++(0,-14) node[](xend){} -- node[at end, above]{$x$} (x);
+          \draw (y) ++(0,-14) -- node[at end, above]{$y$} (y);
+          \draw (z) ++(0,-14) -- node[at end, above]{$z$} (z);
+          \draw (w) ++(0,-14) -- node[at end, above]{$w$} (w);
 
-  % NOT
-  \draw (notx.input) -- ++(0,3mm) -- ([yshift=3mm] notx.input -| x) node [branch]{};
-  \draw (notx.output) -- (notx.output |- xend);
+          % NOT
+          \draw (notx.input) -- ++(0,3mm) -- ([yshift=3mm] notx.input -| x) node [branch]{};
+          \draw (notx.output) -- (notx.output |- xend);
 
-  \draw (noty.input) -- ++(0,3mm) -- ([yshift=3mm] noty.input -| y) node [branch]{};
-  \draw (noty.output) -- (noty.output |- xend);
+          \draw (noty.input) -- ++(0,3mm) -- ([yshift=3mm] noty.input -| y) node [branch]{};
+          \draw (noty.output) -- (noty.output |- xend);
 
-  \draw (notz.input) -- ++(0,3mm) -- ([yshift=3mm] notz.input -| z) node [branch]{};
-  \draw (notz.output) -- (notz.output |- xend);
+          \draw (notz.input) -- ++(0,3mm) -- ([yshift=3mm] notz.input -| z) node [branch]{};
+          \draw (notz.output) -- (notz.output |- xend);
 
-  \draw (notw.input) -- ++(0,3mm) -- ([yshift=3mm] notw.input -| w) node [branch]{};
-  \draw (notw.output) -- (notw.output |- xend);
+          \draw (notw.input) -- ++(0,3mm) -- ([yshift=3mm] notw.input -| w) node [branch]{};
+          \draw (notw.output) -- (notw.output |- xend);
 
+          % AND 1
+          \draw (and1.input 1) -- (and1.input 1 -| notx.output) node [branch]{};
+          \draw (and1.input 2) -- (and1.input 2 -| noty.output) node [branch]{};
+          \draw (and1.input 3) -- (and1.input 3 -| notz.output) node [branch]{};
+          \draw (and1.input 4) -- (and1.input 4 -| notw.output) node [branch]{};
 
-  % AND 1
-  \draw (and1.input 1) -- (and1.input 1 -| x) node [branch]{};
-  \draw (and1.input 2) -- (and1.input 2 -| y) node [branch]{};
-  \draw (and1.input 3) -- (and1.input 3 -| z) node [branch]{};
+          % AND 2
+          \draw (and2.input 1) -- (and2.input 1 -| notx.output) node [branch]{};
+          \draw (and2.input 2) -- (and2.input 2 -| noty.output) node [branch]{};
+          \draw (and2.input 3) -- (and2.input 3 -| z) node [branch]{};
+          \draw (and2.input 4) -- (and2.input 4 -| notw.output) node [branch]{};
 
-  % AND 2
-  \draw (and2.input 1) -- (and2.input 1 -| x) node [branch]{};
-  \draw (and2.input 2) -- (and2.input 2 -| y) node [branch]{};
-  \draw (and2.input 3) -- (and2.input 3 -| z) node [branch]{};
+          % AND 3
+          \draw (and3.input 1) -- (and3.input 1 -| notx.output) node [branch]{};
+          \draw (and3.input 2) -- (and3.input 2 -| y) node [branch]{};
+          \draw (and3.input 3) -- (and3.input 3 -| notz.output) node [branch]{};
+          \draw (and3.input 4) -- (and3.input 4 -| w) node [branch]{};
 
-  % AND 3
-  \draw (and3.input 1) -- (and3.input 1 -| x) node [branch]{};
-  \draw (and3.input 2) -- (and3.input 2 -| y) node [branch]{};
-  \draw (and3.input 3) -- (and3.input 3 -| z) node [branch]{};
+          % AND 4
+          \draw (and4.input 1) -- (and4.input 1 -| notx.output) node [branch]{};
+          \draw (and4.input 2) -- (and4.input 2 -| y) node [branch]{};
+          \draw (and4.input 3) -- (and4.input 3 -| z) node [branch]{};
+          \draw (and4.input 4) -- (and4.input 4 -| w) node [branch]{};
 
-  % AND 4
-  \draw (and4.input 1) -- (and4.input 1 -| x) node [branch]{};
-  \draw (and4.input 2) -- (and4.input 2 -| y) node [branch]{};
-  \draw (and4.input 3) -- (and4.input 3 -| z) node [branch]{};
+          % AND 5
+          \draw (and5.input 1) -- (and5.input 1 -| x) node [branch]{};
+          \draw (and5.input 2) -- (and5.input 2 -| noty.output) node [branch]{};
+          \draw (and5.input 3) -- (and5.input 3 -| notz.output) node [branch]{};
+          \draw (and5.input 4) -- (and5.input 4 -| w) node [branch]{};
 
-  % OUTPUT
-  \draw (and1.output) node [above right] {{$\overline{x}y\overline{z}$}} -- ([xshift=1.1cm] and1.output) |- (or.input 1);
-  \draw (and2.output) node [above right] {{$\overline{x}yz$}} -- ([xshift=0.9cm] and2.output) |- (or.input 2);
-  \draw (and3.output) node [above right] {{$x\overline{y}z$}} -- ([xshift=0.9cm] and3.output) |- (or.input 3);
-  \draw (and4.output) node [above right] {{$xyz$}} -- ([xshift=1.1cm] and4.output) |- (or.input 4);
-  \draw (or.output) -- ([xshift=0.3cm] or.output);
-\end{tikzpicture}
+          % AND 6
+          \draw (and6.input 1) -- (and6.input 1 -| x) node [branch]{};
+          \draw (and6.input 2) -- (and6.input 2 -| noty.output) node [branch]{};
+          \draw (and6.input 3) -- (and6.input 3 -| z) node [branch]{};
+          \draw (and6.input 4) -- (and6.input 4 -| notw.output) node [branch]{};
 
+          % AND 7
+          \draw (and7.input 1) -- (and7.input 1 -| x) node [branch]{};
+          \draw (and7.input 2) -- (and7.input 2 -| y) node [branch]{};
+          \draw (and7.input 3) -- (and7.input 3 -| z) node [branch]{};
+          \draw (and7.input 4) -- (and7.input 4 -| w) node [branch]{};
 
+          % OUTPUT
+          \draw (and1.output) -- ([xshift=0.7cm] and1.output) |- (or.input 1);
+          \draw (and2.output) -- ([xshift=0.5cm] and2.output) |- (or.input 2);
+          \draw (and3.output) -- ([xshift=0.3cm] and3.output) |- (or.input 3);
+          \draw (and4.output) -- (and4.output) |- (or.input 4);
+          \draw (and5.output) -- ([xshift=0.3cm] and5.output) |- (or.input 5);
+          \draw (and6.output) -- ([xshift=0.5cm] and6.output) |- (or.input 6);
+          \draw (and7.output) -- ([xshift=0.7cm] and7.output) |- (or.input 7);
+          \draw (or.output) -- node [above] {$f$} ([xshift=0.5cm] or.output);
+        \end{tikzpicture}
+    }
+    \caption{Funzione ottenuta dai \emph{minterm}}
+    \label{fig:funzione_ottenuta_minterm}
+\end{figure}
+
+\vspace{1em}
+\subsection{Funzione ottenuta dai \emph{maxterm}}
+
+\begin{figure}[H]
+    \centering
+    \scalebox{1.25}{
+        \centering
+        \begin{tikzpicture}
+          % Variabili
+          \coordinate (x) at (0,0);
+          \coordinate (y) at (1.5,0);
+          \coordinate (z) at (3,0);
+          \coordinate (w) at (4.5,0);
+
+          % Porte logiche
+          \node [not gate US, draw, rotate=270] (notx) at ([xshift=6mm,yshift=-8mm]x){};
+          \node [not gate US, draw, rotate=270] (noty) at ([xshift=6mm,yshift=-8mm]y){};
+          \node [not gate US, draw, rotate=270] (notz) at ([xshift=6mm,yshift=-8mm]z){};
+          \node [not gate US, draw, rotate=270] (notw) at ([xshift=6mm,yshift=-8mm]w){};
+
+          \node [or gate US, draw, logic gate inputs=nnnn] (or1) at (6.5,-2.5){};
+          \node [or gate US, draw, below=of or1, yshift=1.5mm, logic gate inputs=nnnn] (or2){};
+          \node [or gate US, draw, below=of or2, yshift=1.5mm, logic gate inputs=nnnn] (or3){};
+          \node [or gate US, draw, below=of or3, yshift=1.5mm, logic gate inputs=nnnn] (or4){};
+          \node [or gate US, draw, below=of or4, yshift=1.5mm, logic gate inputs=nnnn] (or5){};
+          \node [or gate US, draw, below=of or5, yshift=1.5mm, logic gate inputs=nnnn] (or6){};
+          \node [or gate US, draw, below=of or6, yshift=1.5mm, logic gate inputs=nnnn] (or7){};
+          \node [or gate US, draw, below=of or7, yshift=1.5mm, logic gate inputs=nnnn] (or8){};
+          \node [or gate US, draw, below=of or8, yshift=1.5mm, logic gate inputs=nnnn] (or9){};
+          \node [and gate US, draw, right=of or5, xshift=8mm, logic gate inputs=nnnnnnnnn] (and){};
+
+          % INPUT
+          \draw (x) ++(0,-17) node[](xend){} -- node[at end, above]{$x$} (x);
+          \draw (y) ++(0,-17) -- node[at end, above]{$y$} (y);
+          \draw (z) ++(0,-17) -- node[at end, above]{$z$} (z);
+          \draw (w) ++(0,-17) -- node[at end, above]{$w$} (w);
+
+          % NOT
+          \draw (notx.input) -- ++(0,3mm) -- ([yshift=3mm] notx.input -| x) node [branch]{};
+          \draw (notx.output) -- (notx.output |- xend);
+
+          \draw (noty.input) -- ++(0,3mm) -- ([yshift=3mm] noty.input -| y) node [branch]{};
+          \draw (noty.output) -- (noty.output |- xend);
+
+          \draw (notz.input) -- ++(0,3mm) -- ([yshift=3mm] notz.input -| z) node [branch]{};
+          \draw (notz.output) -- (notz.output |- xend);
+
+          \draw (notw.input) -- ++(0,3mm) -- ([yshift=3mm] notw.input -| w) node [branch]{};
+          \draw (notw.output) -- (notw.output |- xend);
+
+          % OR 1
+          \draw (or1.input 1) -- (or1.input 1 -| x) node [branch]{};
+          \draw (or1.input 2) -- (or1.input 2 -| y) node [branch]{};
+          \draw (or1.input 3) -- (or1.input 3 -| z) node [branch]{};
+          \draw (or1.input 4) -- (or1.input 4 -| notw.output) node [branch]{};
+
+          % OR 2
+          \draw (or2.input 1) -- (or2.input 1 -| x) node [branch]{};
+          \draw (or2.input 2) -- (or2.input 2 -| y) node [branch]{};
+          \draw (or2.input 3) -- (or2.input 3 -| notz.output) node [branch]{};
+          \draw (or2.input 4) -- (or2.input 4 -| notw.output) node [branch]{};
+
+          % OR 3
+          \draw (or3.input 1) -- (or3.input 1 -| x) node [branch]{};
+          \draw (or3.input 2) -- (or3.input 2 -| noty.output) node [branch]{};
+          \draw (or3.input 3) -- (or3.input 3 -| z) node [branch]{};
+          \draw (or3.input 4) -- (or3.input 4 -| w) node [branch]{};
+
+          % OR 4
+          \draw (or4.input 1) -- (or4.input 1 -| x) node [branch]{};
+          \draw (or4.input 2) -- (or4.input 2 -| noty.output) node [branch]{};
+          \draw (or4.input 3) -- (or4.input 3 -| notz.output) node [branch]{};
+          \draw (or4.input 4) -- (or4.input 4 -| w) node [branch]{};
+
+          % OR 5
+          \draw (or5.input 1) -- (or5.input 1 -| notx.output) node [branch]{};
+          \draw (or5.input 2) -- (or5.input 2 -| y) node [branch]{};
+          \draw (or5.input 3) -- (or5.input 3 -| z) node [branch]{};
+          \draw (or5.input 4) -- (or5.input 4 -| w) node [branch]{};
+
+          % OR 6
+          \draw (or6.input 1) -- (or6.input 1 -| notx.output) node [branch]{};
+          \draw (or6.input 2) -- (or6.input 2 -| y) node [branch]{};
+          \draw (or6.input 3) -- (or6.input 3 -| notz.output) node [branch]{};
+          \draw (or6.input 4) -- (or6.input 4 -| notw.output) node [branch]{};
+
+          % OR 7
+          \draw (or7.input 1) -- (or7.input 1 -| notx.output) node [branch]{};
+          \draw (or7.input 2) -- (or7.input 2 -| noty.output) node [branch]{};
+          \draw (or7.input 3) -- (or7.input 3 -| z) node [branch]{};
+          \draw (or7.input 4) -- (or7.input 4 -| w) node [branch]{};
+
+          % OR 8
+          \draw (or8.input 1) -- (or8.input 1 -| notx.output) node [branch]{};
+          \draw (or8.input 2) -- (or8.input 2 -| noty.output) node [branch]{};
+          \draw (or8.input 3) -- (or8.input 3 -| z) node [branch]{};
+          \draw (or8.input 4) -- (or8.input 4 -| notw.output) node [branch]{};
+
+          % OR 9
+          \draw (or9.input 1) -- (or9.input 1 -| notx.output) node [branch]{};
+          \draw (or9.input 2) -- (or9.input 2 -| noty.output) node [branch]{};
+          \draw (or9.input 3) -- (or9.input 3 -| notz.output) node [branch]{};
+          \draw (or9.input 4) -- (or9.input 4 -| w) node [branch]{};
+
+          % OUTPUT
+          \draw ([xshift=4mm, yshift=4mm] or1.output) node [above left] {$x + y + z + \overline{w}$} (or1.output) -- ([xshift=1.2cm] or1.output) |- (and.input 1);
+          \draw ([xshift=4mm, yshift=4mm] or2.output) node [above left] {$x + y + \overline{z} + \overline{w}$} (or2.output) -- ([xshift=1cm] or2.output) |- (and.input 2);
+          \draw ([xshift=4mm, yshift=4mm] or3.output) node [above left] {$x + \overline{y} + z + w$} (or3.output) -- ([xshift=0.8cm] or3.output) |- (and.input 3);
+          \draw ([xshift=4mm, yshift=4mm] or4.output) node [above left] {$x + \overline{y} + \overline{z} + w$} (or4.output) -- ([xshift=0.6cm] or4.output) |- (and.input 4);
+          \draw ([xshift=4mm, yshift=4mm] or5.output) node [above left] {$\overline{x} + y + z + w$} (or5.output) -- (or5.output) |- (and.input 5);
+          \draw ([xshift=4mm, yshift=4mm] or6.output) node [above left] {$\overline{x} + y + \overline{z} + \overline{w}$} (or6.output) -- ([xshift=0.6cm] or6.output) |- (and.input 6);
+          \draw ([xshift=4mm, yshift=4mm] or7.output) node [above left] {$\overline{x} + \overline{y} + z + w$} (or7.output) -- ([xshift=0.8cm] or7.output) |- (and.input 7);
+          \draw ([xshift=4mm, yshift=4mm] or8.output) node [above left] {$\overline{x} + \overline{y} + z + \overline{w}$} (or8.output) -- ([xshift=1cm] or8.output) |- (and.input 8);
+          \draw ([xshift=4mm, yshift=4mm] or9.output) node [above left] {$\overline{x} + \overline{y} + \overline{z} + w$} (or9.output) -- ([xshift=1.2cm] or9.output) |- (and.input 9);
+          \draw (and.output) -- node [above] {$f$} ([xshift=0.5cm] and.output);
+        \end{tikzpicture}
+    }
+    \caption{Funzione ottenuta dai \emph{maxterm}}
+    \label{fig:funzione_ottenuta_maxterm}
+\end{figure}
+
+\subsection{Funzione semplificata}
+
+\begin{figure}[H]
+    \centering
+    \scalebox{1.25}{
+        \centering
+        \begin{tikzpicture}
+          % Variabili
+          \coordinate (x) at (0,0);
+          \coordinate (y) at (1.5,0);
+          \coordinate (z) at (3,0);
+          \coordinate (w) at (4.5,0);
+
+          % Porte logiche
+          \node [not gate US, draw, rotate=270] (notx) at ([xshift=6mm,yshift=-8mm]x){};
+          \node [not gate US, draw, rotate=270] (noty) at ([xshift=6mm,yshift=-8mm]y){};
+          \node [not gate US, draw, rotate=270] (notz) at ([xshift=6mm,yshift=-8mm]z){};
+          \node [not gate US, draw, rotate=270] (notw) at ([xshift=6mm,yshift=-8mm]w){};
+
+          \node [and gate US, draw, logic gate inputs=nnnn] (and1) at (6.5,-2.5){$\overline{x}\overline{y}\overline{z}\overline{w}$};
+          \node [and gate US, draw, below=of and1, yshift=3.5mm, logic gate inputs=nnnn] (and2){$\overline{x}\overline{y}z\overline{w}$};
+          \node [and gate US, draw, below=of and2, yshift=3.5mm, logic gate inputs=nnnn] (and3){$\overline{x}y\overline{z}w$};
+          \node [and gate US, draw, below=of and3, yshift=3.5mm, logic gate inputs=nnnn] (and4){$\overline{x}yzw$};
+          \node [and gate US, draw, below=of and4, yshift=3.5mm, logic gate inputs=nnnn] (and5){$x\overline{y}\overline{z}w$};
+          \node [and gate US, draw, below=of and5, yshift=3.5mm, logic gate inputs=nnnn] (and6){$x\overline{y}z\overline{w}$};
+          \node [and gate US, draw, below=of and6, yshift=3.5mm, logic gate inputs=nnnn] (and7){$xyzw$};
+          \node [or gate US, draw, right=of and4, xshift=5mm, logic gate inputs=nnnnnnn] (or){};
+
+          % INPUT
+          \draw (x) ++(0,-14) node[](xend){} -- node[at end, above]{$x$} (x);
+          \draw (y) ++(0,-14) -- node[at end, above]{$y$} (y);
+          \draw (z) ++(0,-14) -- node[at end, above]{$z$} (z);
+          \draw (w) ++(0,-14) -- node[at end, above]{$w$} (w);
+
+          % NOT
+          \draw (notx.input) -- ++(0,3mm) -- ([yshift=3mm] notx.input -| x) node [branch]{};
+          \draw (notx.output) -- (notx.output |- xend);
+
+          \draw (noty.input) -- ++(0,3mm) -- ([yshift=3mm] noty.input -| y) node [branch]{};
+          \draw (noty.output) -- (noty.output |- xend);
+
+          \draw (notz.input) -- ++(0,3mm) -- ([yshift=3mm] notz.input -| z) node [branch]{};
+          \draw (notz.output) -- (notz.output |- xend);
+
+          \draw (notw.input) -- ++(0,3mm) -- ([yshift=3mm] notw.input -| w) node [branch]{};
+          \draw (notw.output) -- (notw.output |- xend);
+
+          % AND 1
+          \draw (and1.input 1) -- (and1.input 1 -| notx.output) node [branch]{};
+          \draw (and1.input 2) -- (and1.input 2 -| noty.output) node [branch]{};
+          \draw (and1.input 3) -- (and1.input 3 -| notz.output) node [branch]{};
+          \draw (and1.input 4) -- (and1.input 4 -| notw.output) node [branch]{};
+
+          % AND 2
+          \draw (and2.input 1) -- (and2.input 1 -| notx.output) node [branch]{};
+          \draw (and2.input 2) -- (and2.input 2 -| noty.output) node [branch]{};
+          \draw (and2.input 3) -- (and2.input 3 -| z) node [branch]{};
+          \draw (and2.input 4) -- (and2.input 4 -| notw.output) node [branch]{};
+
+          % AND 3
+          \draw (and3.input 1) -- (and3.input 1 -| notx.output) node [branch]{};
+          \draw (and3.input 2) -- (and3.input 2 -| y) node [branch]{};
+          \draw (and3.input 3) -- (and3.input 3 -| notz.output) node [branch]{};
+          \draw (and3.input 4) -- (and3.input 4 -| w) node [branch]{};
+
+          % AND 4
+          \draw (and4.input 1) -- (and4.input 1 -| notx.output) node [branch]{};
+          \draw (and4.input 2) -- (and4.input 2 -| y) node [branch]{};
+          \draw (and4.input 3) -- (and4.input 3 -| z) node [branch]{};
+          \draw (and4.input 4) -- (and4.input 4 -| w) node [branch]{};
+
+          % AND 5
+          \draw (and5.input 1) -- (and5.input 1 -| x) node [branch]{};
+          \draw (and5.input 2) -- (and5.input 2 -| noty.output) node [branch]{};
+          \draw (and5.input 3) -- (and5.input 3 -| notz.output) node [branch]{};
+          \draw (and5.input 4) -- (and5.input 4 -| w) node [branch]{};
+
+          % AND 6
+          \draw (and6.input 1) -- (and6.input 1 -| x) node [branch]{};
+          \draw (and6.input 2) -- (and6.input 2 -| noty.output) node [branch]{};
+          \draw (and6.input 3) -- (and6.input 3 -| z) node [branch]{};
+          \draw (and6.input 4) -- (and6.input 4 -| notw.output) node [branch]{};
+
+          % AND 7
+          \draw (and7.input 1) -- (and7.input 1 -| x) node [branch]{};
+          \draw (and7.input 2) -- (and7.input 2 -| y) node [branch]{};
+          \draw (and7.input 3) -- (and7.input 3 -| z) node [branch]{};
+          \draw (and7.input 4) -- (and7.input 4 -| w) node [branch]{};
+
+          % OUTPUT
+          \draw (and1.output) -- ([xshift=0.7cm] and1.output) |- (or.input 1);
+          \draw (and2.output) -- ([xshift=0.5cm] and2.output) |- (or.input 2);
+          \draw (and3.output) -- ([xshift=0.3cm] and3.output) |- (or.input 3);
+          \draw (and4.output) -- (and4.output) |- (or.input 4);
+          \draw (and5.output) -- ([xshift=0.3cm] and5.output) |- (or.input 5);
+          \draw (and6.output) -- ([xshift=0.5cm] and6.output) |- (or.input 6);
+          \draw (and7.output) -- ([xshift=0.7cm] and7.output) |- (or.input 7);
+          \draw (or.output) -- node [above] {$f$} ([xshift=0.5cm] or.output);
+        \end{tikzpicture}
+    }
+    \caption{Funzione semplificata}
+    \label{fig:funzione_semplificata}
+\end{figure}
 
 \end{document}
