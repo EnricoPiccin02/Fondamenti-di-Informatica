@@ -312,6 +312,7 @@ Pertanto, la funzione Booleana a \(4\) associata corrisponde alla stringa binari
 \end{table}
 
 \subsection{Codifica dei termini minimi (\emph{minterm})}
+\label{sec:codifica_minterm}
 Se nella tavola di verità della funzione $f$ considerata si pone in evidenza la codifica dei termini minimi si ottiene:
 
 \begin{table}[H]
@@ -354,6 +355,7 @@ poiché \(0, 2, 5, 7, 9, 10\) e \(15\) sono le codifiche in base \(2\) di \(0000
 
 \vspace{1em}
 \subsection{Codifica dei termini massimi (\emph{maxterm})}
+\label{sec:codifica_maxterm}
 Analogamente, procedendo per dualità, se nella tavola di verità della funzione $f$ considerata si pone in evidenza la codifica dei termini massimi si ottiene:
 
 \begin{table}[H]
@@ -403,6 +405,7 @@ Di seguito si espongono i $3$ diversi procedimenti di semplificazione dell'espre
 
 \vspace{1em}
 \subsection{Semplificazione per via algebrica}
+\label{sec:semplificazione_algebrica}
 Si procede, ora, alla semplificazione delle espressioni ottenute per via diretta, facendo uso degli assiomi A1-A7 e dei teoremi T1-T10 dell’Algebra Booleana.
 
 \vspace{1em}
@@ -444,6 +447,7 @@ Naturalmente è noto che la \emph{somma di prodotti} e il \emph{prodotto di somm
 
 \vspace{1em}
 \subsubsection{Mappa di Karnaugh}
+\label{sec:semplificazione_mappa_karnaugh}
 A partire dai \emph{minterm}, si espone di seguito la semplificazione della funzione considerata tramite la mappa di Karnaugh:
 
 % Contenitore per immagini
@@ -467,16 +471,17 @@ Ricordando che, all'interno della mappa di Karnaugh, due caselle adiacenti diffe
 \[f(x,y,z,w) = \overline{x}\overline{y}\overline{w} + \overline{y}z\overline{w} + \overline{x}yw + yzw + x\overline{y}\overline{z}w\]
 Ancora una volta, la funzione ottenuta dalla semplificazione tramite mappa di Karnaugh corrisponde alla funzione ottenuta nei passi precedenti.
 
-\vspace{1em}
+\newpage
 \subsubsection{Metodo tabellare di Quine-Mc Cluskey}
+\label{sec:semplificazione_tabella_quine-mc_cluskey}
 A partire dai \emph{minterm}, si espone di seguito la semplificazione della funzione considerata tramite il metodo tabellare di Quine-Mc Cluskey:
 
 \begin{table}[H]
     \centering
-    \setlength{\tabcolsep}{5pt}
+    \setlength{\tabcolsep}{2pt}
     \begin{tabularx}{\textwidth}{ccc}
     {
-        \setlength{\tabcolsep}{3.5pt}
+        \setlength{\tabcolsep}{2pt}
         \begin{tabular}{c|c|cccc|cl}
           $ $ & $ $ & $x$ & $y$ & $z$ & $w$ & $f$\\
           \hline
@@ -500,48 +505,230 @@ A partire dai \emph{minterm}, si espone di seguito la semplificazione della funz
     }
     &
     {
-        \setlength{\tabcolsep}{3.5pt}
-        \begin{tabular}{c|c|cccc|cl}
-          \textbf{Livello} & $ $ & $x$ & $y$ & $z$ & $w$ & $f$\\
+        \setlength{\tabcolsep}{2pt}
+        \begin{tabular}{c|c|c|cccc|cl}
+          \textbf{Livello} & $ $ & $ $ & $x$ & $y$ & $z$ & $w$ & $f$\\
           \hline
-          $0$ & $\overline{x}\overline{y}\overline{z}\overline{w}$ & $0$ & $0$ & $0$ & $0$ & $1$ & $\textcolor{red}{\ast}$\\
-          $1$ & $\overline{x}\overline{y}\overline{z}w$ & $0$ & $0$ & $0$ & $1$ & $0$ & $$\\
-          $2$ & $\overline{x}\overline{y}z\overline{w}$ & $0$ & $0$ & $1$ & $0$ & $1$ & $\textcolor{red}{\ast}$\\
-          $3$ & $\overline{x}\overline{y}zw$ & $0$ & $0$ & $1$ & $1$ & $0$ & $$\\
-          $4$ & $\overline{x}y\overline{z}\overline{w}$ & $0$ & $1$ & $0$ & $0$ & $0$ & $$\\
-          $5$ & $\overline{x}y\overline{z}w$ & $0$ & $1$ & $0$ & $1$ & $1$ & $\textcolor{blue}{\ast}$\\
-          $6$ & $\overline{x}yz\overline{w}$ & $0$ & $1$ & $1$ & $0$ & $0$ & $$\\
-          $7$ & $\overline{x}yzw$ & $0$ & $1$ & $1$ & $1$ & $1$ & $\textcolor{blue}{\ast}$\\
-          $8$ & $x\overline{y}\overline{z}\overline{w}$ & $1$ & $0$ & $0$ & $0$ & $0$ & $ $\\
-          $9$ & $x\overline{y}\overline{z}w$ & $1$ & $0$ & $0$ & $1$ & $1$ & $\textcolor{magenta}{\ast}$\\
-          $10$ & $x\overline{y}z\overline{w}$ & $1$ & $0$ & $1$ & $0$ & $1$ & $\textcolor{orange}{\ast}$\\
-          $11$ & $x\overline{y}zw$ & $1$ & $0$ & $1$ & $1$ & $0$ & $ $\\
-          $12$ & $xy\overline{z}\overline{w}$ & $1$ & $1$ & $0$ & $0$ & $0$ & $ $\\
-          $13$ & $xy\overline{z}w$ & $1$ & $1$ & $0$ & $1$ & $0$ & $ $\\
-          $14$ & $xyz\overline{w}$ & $1$ & $1$ & $1$ & $0$ & $0$ & $ $\\
-          $15$ & $xyzw$ & $1$ & $1$ & $1$ & $1$ & $1$ & $\textcolor{violet}{\ast}$\\
+          $0$ & $0$ & $\overline{x}\overline{y}\overline{z}\overline{w}$ & $0$ & $0$ & $0$ & $0$ & $1$ & $\textcolor{red}{\ast}$\\
+          \hline
+          \multirow{4}{*}{$1$} & $1$ & $\overline{x}\overline{y}\overline{z}w$ & $0$ & $0$ & $0$ & $1$ & $0$ & $$\\
+          & $2$ & $\overline{x}\overline{y}z\overline{w}$ & $0$ & $0$ & $1$ & $0$ & $1$ & $\textcolor{red}{\ast}$\\
+          & $4$ & $\overline{x}y\overline{z}\overline{w}$ & $0$ & $1$ & $0$ & $0$ & $0$ & $$\\
+          & $8$ & $x\overline{y}\overline{z}\overline{w}$ & $1$ & $0$ & $0$ & $0$ & $0$ & $ $\\
+          \hline
+          \multirow{6}{*}{$2$} & $3$ & $\overline{x}\overline{y}zw$ & $0$ & $0$ & $1$ & $1$ & $0$ & $$\\
+          & $5$ & $\overline{x}y\overline{z}w$ & $0$ & $1$ & $0$ & $1$ & $1$ & $\textcolor{blue}{\ast}$\\
+          & $6$ & $\overline{x}yz\overline{w}$ & $0$ & $1$ & $1$ & $0$ & $0$ & $$\\
+          & $9$ & $x\overline{y}\overline{z}w$ & $1$ & $0$ & $0$ & $1$ & $1$ & $\textcolor{magenta}{\ast}$\\
+          & $10$ & $x\overline{y}z\overline{w}$ & $1$ & $0$ & $1$ & $0$ & $1$ & $\textcolor{orange}{\ast}$\\
+          & $12$ & $xy\overline{z}\overline{w}$ & $1$ & $1$ & $0$ & $0$ & $0$ & $ $\\
+          \hline
+          \multirow{4}{*}{$3$} & $7$ & $\overline{x}yzw$ & $0$ & $1$ & $1$ & $1$ & $1$ & $\textcolor{blue}{\ast}$\\
+          & $11$ & $x\overline{y}zw$ & $1$ & $0$ & $1$ & $1$ & $0$ & $ $\\
+          & $13$ & $xy\overline{z}w$ & $1$ & $1$ & $0$ & $1$ & $0$ & $ $\\
+          & $14$ & $xyz\overline{w}$ & $1$ & $1$ & $1$ & $0$ & $0$ & $ $\\
+          \hline
+          $4$ & $15$ & $xyzw$ & $1$ & $1$ & $1$ & $1$ & $1$ & $\textcolor{violet}{\ast}$\\
         \end{tabular}
     }
     &
     {
-        \setlength{\tabcolsep}{3.5pt}
-        \begin{tabular}{c|c|c|ccc|cc}
-             \textbf{Livello} & & & $x$ & $y$ & $z$ & $f$\\
-             \hline
-             $1$ & $2$ & $\overline{x}y\overline{z}$ & $0$ & $1$ & $0$ & $1$ & \textcolor{red}{*}\\
-             \hline
-             \parbox{3em}{\multirow{2}{3em}{\centering \(2\)}} &
-             $3$ & $\overline{x}yz$ & $0$ & $1$ & $1$ & $1$ & \textcolor{red}{*}\\
-             & $5$ & $x\overline{y}z$ & $1$ & $0$ & $1$ & $1$ & \textcolor{blue}{*}\\
-             \hline
-             $3$ & $7$ & $xyz$ & $1$ & $1$ & $1$ & $1$ & \textcolor{blue}{*}\\
+        \setlength{\tabcolsep}{2pt}
+        \begin{tabular}{c|c|c|cccc|cl}
+          \textbf{Livello} & $ $ & $ $ & $x$ & $y$ & $z$ & $w$ & $f$\\
+          \hline
+          $0$ & $0$ & $\overline{x}\overline{y}\overline{z}\overline{w}$ & $0$ & $0$ & $0$ & $0$ & $1$ & $\textcolor{red}{\ast}$\\
+          \hline
+          $1$ & $2$ & $\overline{x}\overline{y}z\overline{w}$ & $0$ & $0$ & $1$ & $0$ & $1$ & $\textcolor{red}{\ast}$\\
+          \hline
+          \multirow{3}{*}{$2$} & $5$ & $\overline{x}y\overline{z}w$ & $0$ & $1$ & $0$ & $1$ & $1$ & $\textcolor{blue}{\ast}$\\
+          & $9$ & $x\overline{y}\overline{z}w$ & $1$ & $0$ & $0$ & $1$ & $1$ & $\textcolor{magenta}{\ast}$\\
+          & $10$ & $x\overline{y}z\overline{w}$ & $1$ & $0$ & $1$ & $0$ & $1$ & $\textcolor{orange}{\ast}$\\
+          \hline
+          $3$ & $7$ & $\overline{x}yzw$ & $0$ & $1$ & $1$ & $1$ & $1$ & $\textcolor{blue}{\ast}$\\
+          \hline
+          $4$ & $15$ & $xyzw$ & $1$ & $1$ & $1$ & $1$ & $1$ & $\textcolor{violet}{\ast}$\\
         \end{tabular}
     }
     \end{tabularx}
-
-
     \caption{Trasformazione della tavola di verità della funzione logica \(f\) per ottenere la tabella di Quine-Mc Cuskey}
     \label{tab:tavola_verita_Quine_Mc_Cuskey}
 \end{table}
+
+\noindent
+La tabella di Quine-Mc Cuskey così ottenuta può essere rappresentata, in maniera più, schematica, nella tabella seguente
+
+\begin{table}[H]
+    \centering
+    \setlength{\tabcolsep}{3.5pt}
+    \begin{tabular}{c|c|c|c}
+      $ $ & \text{Livello} & \text{Numero} & \text{Termine minimo}\\
+      \hline
+      $\sqrt{}$ & $0$ & $0$ & $0000$\\
+      \hline
+      $\sqrt{}$ & $1$ & $2$ & $0010$\\
+      \hline
+      $\sqrt{}$ & $2$ & $5$ & $0101$\\
+      $\sqrt{}$ & $2$ & $9$ & $1001$\\
+      $\sqrt{}$ & $2$ & $10$ & $1010$\\
+      \hline
+      $\sqrt{}$ & $3$ & $7$ & $0111$\\
+      \hline
+      $\sqrt{}$ & $4$ & $15$ & $1111$\\
+    \end{tabular}
+    \caption{Divisione dei termini minimi in livelli e riordinamento degli stessi}
+    \label{tab:divisione_minterm_livello}
+\end{table}
+
+\noindent
+Si può procedere, ora, alle semplificazioni opportune, partendo dal primo termine minimo del primo livello disponibile e confrontando tutti i termini minimi del livello $k$ con tutti quelli del livello $k + 1$, semplificando tra loro i termini che differiscono per un solo bit.\\
+Tale procedimento genera la Tabella \ref{tab:tabella_seplificazione}, in cui le semplificazioni avvenute si indicano con una lineetta, mentre gli implicanti vengono contraddistinti con i numeri dei termini minimi che li hanno generati:
+
+\begin{table}[H]
+    \centering
+    \setlength{\tabcolsep}{3.5pt}
+    \begin{tabular}{c|c|cccc|c}
+      $\sqrt{}$ & $0,2$ & $0$ & $0$ & $-$ & $0$ & \text{A}\\
+      \hline
+      $\sqrt{}$ & $2,10$ & $-$ & $0$ & $1$ & $0$ & \text{B}\\
+      \hline
+      $\sqrt{}$ & $5,7$ & $0$ & $1$ & $-$ & $1$ & \text{C}\\
+      \hline
+      $\sqrt{}$ & $7,15$ & $-$ & $1$ & $1$ & $1$ & \text{D}\\
+    \end{tabular}
+    \caption{Tabella di semplificazione}
+    \label{tab:tabella_seplificazione}
+\end{table}
+
+\noindent
+Da tale semplificazione è evidente che il termine minimo $1001$ non ha portato ad alcuna semplificazione, pertanto si contrassegna anch'esso con la lettera E, proseguendo la progressione alfabetica adottata in fase di semplificazione.\\
+Si procede, infine, alla costruzione del cosiddetto \emph{reticolo del metodo}, avente i termini minimi sulle colonne e gli implicanti primi sulle righe. Su ogni riga, cioè in corrispondenza di ciascun implicante, si contrassegnano opportunamente i termini minimi implicati. Per la funzione considerata si ottiene
+
+% Contenitore per immagini
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+    \tikzset{dot/.style={fill=black,circle}}
+
+    \foreach \l [count=\y] in {E,...,A} {
+      \draw (0,\y) -- (8,\y);
+      \node at (-0.5,\y){\l};
+    }
+
+    \foreach \x [count=\i] in {0,2,5,7,9,10,15} {
+        \draw (\i,0) -- (\i,6);
+        \node at (\i,-0.5){\x};
+    }
+
+    % A
+    \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (1,5){};
+    \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (2,5){};
+
+    % B
+    \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (2,4){};
+    \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (6,4){};
+
+    % C
+    \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (3,3){};
+    \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (4,3){};
+
+    % D
+    \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (4,2){};
+    \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (7,2){};
+
+    % E
+    \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (5,1){};
+    \end{tikzpicture}
+    \caption{Reticolo di semplificazione}
+    \label{fig:reticolo_semplificazione}
+\end{figure}
+
+\noindent
+Dall’esame del reticolo in Figura \ref{fig:reticolo_semplificazione} si individuano facilmente i termini minimi che sono implicati da un unico implicante primo. Nel caso della funzione considerata, è facile osservare come gli implicanti primi A, B, C, D ed E sono tutti e cinque essenziali; l’espressione semplificata è allora
+\[f = A + B + C + D + E = \overline{x}\overline{y}\overline{w} + \overline{y}z\overline{w} + \overline{x}yw + yzw + x\overline{y}\overline{z}w\]
+Ancora una volta, la funzione ottenuta dalla semplificazione tramite il metodo tabellare
+di Quine-Mc Cluskey corrisponde alla funzione ottenuta nei passi precedenti.
+
+\newpage
+\section{Interpretazione circuitale}
+Di seguito si espone lo schema logico, basato su porte AND, OR e NOT, delle seguenti funzioni:
+\begin{itemize}
+  \item della funzione ottenuta dai \emph{minterm}, nella sezione §\ref{sec:codifica_minterm};
+  \item della funzione ottenuta dai \emph{maxterm}, nella sezione §\ref{sec:codifica_maxterm};
+  \item della funzione semplificata, ottenuta nelle sezioni §\ref{sec:semplificazione_algebrica}, §\ref{sec:semplificazione_mappa_karnaugh} e §\ref{sec:semplificazione_tabella_quine-mc_cluskey}.
+\end{itemize}
+
+\begin{tikzpicture}
+  % Variabili
+  \coordinate (x) at (0,0);
+  \coordinate (y) at (1.3,0);
+  \coordinate (z) at (2.6,0);
+  \coordinate (w) at (3.9,0);
+
+  % Porte logiche
+  \node [not gate US, draw, rotate=270] (notx) at ([xshift=6mm,yshift=-6mm]x),-0.6){};
+  \node [not gate US, draw, rotate=270] (noty) at ([xshift=6mm,yshift=-6mm]y),-0.6){};
+  \node [not gate US, draw, rotate=270] (notz) at ([xshift=6mm,yshift=-6mm]z),-0.6){};
+  \node [not gate US, draw, rotate=270] (notw) at ([xshift=6mm,yshift=-6mm]w),-0.6){};
+
+
+  \node [and gate US, draw, logic gate inputs=nnnn] (and1) at (6,-2.5){$\overline{x}\overline{y}\overline{z}\overline{w}$};
+  \node [and gate US, draw, below=of and1, yshift=3.5mm, logic gate inputs=nnnn] (and2){$\overline{x}\overline{y}z\overline{w}$};
+  \node [and gate US, draw, below=of and2, yshift=3.5mm, logic gate inputs=nnnn] (and3){$\overline{x}y\overline{z}w$};
+  \node [and gate US, draw, below=of and3, yshift=3.5mm, logic gate inputs=nnnn] (and4){$\overline{x}yzw$};
+  \node [and gate US, draw, below=of and4, yshift=3.5mm, logic gate inputs=nnnn] (and5){$x\overline{y}\overline{z}w$};
+  \node [and gate US, draw, below=of and5, yshift=3.5mm, logic gate inputs=nnnn] (and6){$x\overline{y}z\overline{w}$};
+  \node [and gate US, draw, below=of and6, yshift=3.5mm, logic gate inputs=nnnn] (and7){$xyzw$};
+  \node [or gate US, draw, right=of and4, xshift=7mm, yshift=-5mm, logic gate inputs=nnnnnnn] (or){};
+
+  % INPUT
+  \draw (x) ++(0,-14) node[](xend) -- node[at end, above]{$x$} (x);
+  \draw (y) ++(0,-14) -- node[at end, above]{$y$} (y);
+  \draw (z) ++(0,-14) -- node[at end, above]{$z$} (z);
+  \draw (w) ++(0,-14) -- node[at end, above]{$w$} (w);
+
+  % NOT
+  \draw (notx.input) -- ++(0,3mm) -- ([yshift=3mm] notx.input -| x) node [branch]{};
+  \draw (notx.output) -- (notx.output |- xend);
+
+  \draw (noty.input) -- ++(0,3mm) -- ([yshift=3mm] noty.input -| y) node [branch]{};
+  \draw (noty.output) -- (noty.output |- xend);
+
+  \draw (notz.input) -- ++(0,3mm) -- ([yshift=3mm] notz.input -| z) node [branch]{};
+  \draw (notz.output) -- (notz.output |- xend);
+
+  \draw (notw.input) -- ++(0,3mm) -- ([yshift=3mm] notw.input -| w) node [branch]{};
+  \draw (notw.output) -- (notw.output |- xend);
+
+
+  % AND 1
+  \draw (and1.input 1) -- (and1.input 1 -| x) node [branch]{};
+  \draw (and1.input 2) -- (and1.input 2 -| y) node [branch]{};
+  \draw (and1.input 3) -- (and1.input 3 -| z) node [branch]{};
+
+  % AND 2
+  \draw (and2.input 1) -- (and2.input 1 -| x) node [branch]{};
+  \draw (and2.input 2) -- (and2.input 2 -| y) node [branch]{};
+  \draw (and2.input 3) -- (and2.input 3 -| z) node [branch]{};
+
+  % AND 3
+  \draw (and3.input 1) -- (and3.input 1 -| x) node [branch]{};
+  \draw (and3.input 2) -- (and3.input 2 -| y) node [branch]{};
+  \draw (and3.input 3) -- (and3.input 3 -| z) node [branch]{};
+
+  % AND 4
+  \draw (and4.input 1) -- (and4.input 1 -| x) node [branch]{};
+  \draw (and4.input 2) -- (and4.input 2 -| y) node [branch]{};
+  \draw (and4.input 3) -- (and4.input 3 -| z) node [branch]{};
+
+  % OUTPUT
+  \draw (and1.output) node [above right] {{$\overline{x}y\overline{z}$}} -- ([xshift=1.1cm] and1.output) |- (or.input 1);
+  \draw (and2.output) node [above right] {{$\overline{x}yz$}} -- ([xshift=0.9cm] and2.output) |- (or.input 2);
+  \draw (and3.output) node [above right] {{$x\overline{y}z$}} -- ([xshift=0.9cm] and3.output) |- (or.input 3);
+  \draw (and4.output) node [above right] {{$xyz$}} -- ([xshift=1.1cm] and4.output) |- (or.input 4);
+  \draw (or.output) -- ([xshift=0.3cm] or.output);
+\end{tikzpicture}
+
+
 
 \end{document}
