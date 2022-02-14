@@ -2273,46 +2273,117 @@ Naturalmente, però, come si è detto, i due procedimenti conducono al medesimo 
 
 \vspace{1em}
 \noindent
-\textbf{Esempio}: Tale osservazione può avere dei risvolti particolarmente interessanti dal punto di vista pratico.\\
-Si consideri, come esempio concreto, il problema seguente: in un appartamento c’e un corridoio; quando si entra si vuole accendere la luce dall’interruttore \(x\) prossimo all’ingresso, che si supponga sia a destra nel disegno di figura 4.31). Uscendo si vuole spegnere la luce dall’interruttore \(y\) prossimo all’uscita sulla sinistra.\\
-Dal momento che si hanno due variabili binarie \(x\) e \(y\), è possibile costruire una tavola di verità che permetta di rappresentare tutti i possibili stati della luce (accesa o spenta) in funzione del valore delle variabili in ingresso.\\
-Pertanto:
+\textbf{Esempio 1}: Tale osservazione può avere dei risvolti particolarmente interessanti dal punto di vista pratico. Si consideri, come esempio concreto, il problema seguente: in un appartamento c’e un corridoio; quando si entra si vuole accendere la luce dall’interruttore \(x\) prossimo all’ingresso, sulla destra. Uscendo, invece, si vuole spegnere la luce dall’interruttore \(y\) prossimo all’uscita sulla sinistra.\\
+Dal momento che si hanno due variabili binarie \(x\) e \(y\), è possibile costruire una tavola di verità che permetta di rappresentare tutti i possibili stati della luce (accesa o spenta) in funzione del valore delle variabili in ingresso, come illustrato nella Tabella \ref{tab:circuito_comando_luce_due_punti_e_tavola_verita} seguente:
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{cc|c}
-         \(x\) & \(y\) & \(L\)\\
-         \hline
-         \(0\) & \(0\) & \(0\)\\
-         \(0\) & \(1\) & \(1\)\\
-         \(1\) & \(0\) & \(1\)\\
-         \(1\) & \(1\) & \(0\)\\
-    \end{tabular}
+    \begin{tabularx}{\textwidth}{PP}
+      {
+          \begin{circuitikz}[]
+            \draw (1,0) node[draw,minimum width=5mm,minimum height=5mm](x){$x$} ++(1,0) node[draw,minimum width=5mm,minimum height=5mm](y){$y$} ++(1,0) ++(0,-1) node[lampshape](L){\hspace{4em}$L$};
+            \draw (0,0) -- (x.west) (x.east) -- (y.west) (y.est) -| (L.north) (L.south) -- ++(0,-0.6) -- ++(-3,0);
+          \end{circuitikz}
+      } & {
+          \begin{tabular}{cc|c}
+               \(x\) & \(y\) & \(L\)\\
+               \hline
+               \(0\) & \(0\) & \(0\)\\
+               \(0\) & \(1\) & \(1\)\\
+               \(1\) & \(0\) & \(1\)\\
+               \(1\) & \(1\) & \(0\)\\
+          \end{tabular}
+      }
+    \end{tabularx}
     \caption{Circuito di comando di una luce da due punti e relativa tavola di verità}
-    \label{tab:circuito_luce_due_punti_tavola_verita}
+    \label{tab:circuito_comando_luce_due_punti_e_tavola_verita}
 \end{table}
 
-\vspace{1em}
 \noindent
+Naturalmente, ciascuno dei due interruttori può trovarsi in una sola tra due posizioni, che vengono associate alle due variabili $0$ e $1$. Anche la luce $L$ può essere spenta ($0$) o accesa ($1$). Ecco allora che la tavola di verità appena costruita presenta due variabili d’ingresso ($x$ e $y$) e una variabile $L$ che assumera dei valori che sono funzione di $x$ e $y$; si è, così, ottenuta una funzione Booleana \(f : 2^2 \rightarrow 2\).\\
+Ovviamente, entrando in corridoio con la luce ancora spenta e supponendo entrambi gli interruttori nello stato $0$, la luce $L$ sarà ancora spenta; pertanto, a questa configurazione d’ingresso corrisponde $L = 0$. Se, invece, si entra in corridoio da sinistra, all’atto di accendere la luce, viene commutata la posizione dell’interruttore $x$, che passa da $0$ a $1$; in corrispondenza la luce deve accendersi, e dunque alla coppia $01$ corrisponde $L = 1$. Uscendo dal corridoio a destra si muove l’interruttore $y$, che comanda lo spegnimento della luce; e dunque a $11$ corrisponde $L = 0$. La configurazione che manca, $01$, è quella che si viene a creare quando si entra in corridoio da destra con la luce spenta e si muove l’interruttore; dunque a $01$ corrisponde $L = 1$.\\
 Si proceda, ora, alla traduzione di tale funzione logica in forma canonica. Pertanto, tale funzione espressa come \textbf{somma di \textit{mintern}}:
-\[\overline{x}y + x\\overline{y}\]
-che, dal punto di vista circuitale, corrisponde ad un circuito in parallelo con due deviatori, dimodoché sia soddisfatta la funzione logica di partenza.\\
+\[\overline{x}y + x\overline{y}\]
+che, dal punto di vista circuitale, corrisponde ad un circuito in parallelo con due deviatori, dimodoché sia soddisfatta la funzione logica di partenza, come illustrato di seguito:
+
+% Contenitore per immagini
+\begin{figure}[H]
+    \centering
+    \begin{circuitikz}[]
+      \draw (0,0) -- ++(1,0) node[circ](start){} -- ++(0.5,0.5) node[circ]{} -- ++(0,0.5) -- ++(1,0) -- ++(0,-0.5) node[circ]{} ++(0.5,-0.5) node[circ](end){} -- ++(1,0) coordinate(a) ++(0,-1) node[lampshape](L){\hspace{4em}$L$} (L.north) -- (a) (L.south) -- ++(0,-0.6) -- ++(-4,0);
+      \draw (start) ++(0.5,-0.5) node[circ]{} -- ++(0,-0.5) -- ++(1,0) -- ++(0,0.5) node[circ]{} -- (end);
+      \draw (start) ++(0,0.5) node[]{$\overline{x}$} (start) ++(0,-0.5) node[]{$x$} (end) ++(0,0.5) node[]{$\overline{y}$} (end) ++(0,-0.5) node[]{$y$};
+    \end{circuitikz}
+    \caption{Gli interruttori $x$ e $y$ che risolvono il problema dell’accensione della luce nel corridoio sulla base della prima forma canonica}
+    \label{fig:interruttori_prima_forma_canonica}
+\end{figure}
+
+\noindent
 Mentre come \textbf{prodotto di \textit{maxterm}}:
 \[(\overline{x} + \overline{y}) \cdot (x + y)\]
-che, dal punto di vista circuitale, corrisponde ad un circuito in serie, in cui sono sempre presenti due deviatori. Tuttavia, tale soluzione non è conveniente, in
-quanto si necessita di un un cavo in più per la connessione trai due deviatori.
+che, dal punto di vista circuitale, corrisponde ad un circuito in serie, in cui sono sempre presenti due deviatori, come mostrato nella Figura \ref{fig:interruttori_seconda_forma_canonica}:
+
+% Contenitore per immagini
+\begin{figure}[H]
+    \centering
+    \begin{circuitikz}[]
+      \draw (0,0) -- ++(1,0) node[circ](start){} -- ++(0,0.75) -- ++(0.5,0) node[circ](a){} ++(1,0) node[circ](b){} -- ++(0.5,0) -- ++(0,-0.75) node[circ](end){} -- ++(1,0) coordinate(n) ++(0,-1) node[lampshape](L){\hspace{4em}$L$} (L.north) -- (n) (L.south) -- ++(0,-0.6) -- ++(-4,0);
+      \draw (start) -- ++(0,-0.75) -- ++(0.5,0) node[circ](c){} ++(1,0) node[circ](d){} -- ++(0.5,0) -- (end) ++(-1,0.25) node[circ]{} -- ++(0.5,0.5) ++(-0.5,-0.5) -- ++(0,-0.5) node[circ]{} -- ++(0.5,-0.5);
+      \draw (a) ++(-0.25,0.25) node[]{$x$} (b) ++(0.25,0.25) node[]{$\overline{x}$} (c) ++(-0.25,-0.25) node[]{$y$} (d) ++(0.25,-0.25) node[]{$\overline{y}$};
+    \end{circuitikz}
+    \caption{Gli interruttori $x$ e $y$ che risolvono il problema dell’accensione della luce nel corridoio sulla base alla seconda forma canonica}
+    \label{fig:interruttori_seconda_forma_canonica}
+\end{figure}
+
+\noindent
+Tuttavia, tale soluzione non è conveniente, in quanto si necessita di un un cavo in più per la connessione tra i due deviatori.
 
 \vspace{1em}
 \noindent
-\textbf{Osservazione}: Naturalmente, in questo caso si palesa la necessità di prevedere l'adeguamento degli interruttori in funzione della tipologia di carico da azionare.\\
-Infatti, quando le lamine dei conduttori vengono poste a contatto, per quanto possa essere irrilevante, si ha una resistenza  di contatto che comporta la dissipazione di potenza. Ma non solo, quando le lamine vengono avvicinate per la chiusura del contatto, si ha una \textbf{carica disruttiva} che comporta la generazione di una scarica elettrica che, con successivi e multipli utilizzi, determina un danneggiamento dell'interruttore. Per questo si necessita l'applicazione di un interruttore che esercita una maggiore pressione fra le lamine, ma questo comporta un maggior costo.\\
-In questo secondo caso, si necessita la presenza di un \textit{transistor} e di un relè, in modo tale che la \textbf{circuiteria di potenza} (ovvero il grosso interruttore e la lampada) sia separata dalla \textbf{circuiteria di controllo logico}, che viene realizzata con delle porte logiche.\\
-Questo, chiaramente, comporta un maggior costo, ma con due grandi vantaggi. Il primo rappresentato dal fatto che si ha una netta separazione tra i due circuiti, mentre il secondo è rappresentato dalla sicurezza, in quanto si ha una barriera tra il circuito ad elevata tensione e quello che opera ai livelli di tensione propri delle porte logiche. Pertanto, nel malaugurato caso in cui vi sia una perdita dell'interruttore, l'utente è separato e protetto da eventuali scariche di alta tensione.
+\textbf{Osservazione}: La realizzazione mediante interruttori consente di incarnare la funzione Booleana direttamente al livello base dei circuiti di commutazione, in modo tale che ogni variabile Booleana sia immersa nel circuito; quella basata sulla porta XOR costituisce invece una sorta di interfaccia tra variabili d’ingresso, che determinano il comportamento del circuito, e la variabile d’uscita, che deve comandare la lampadina.\\
+Questo secondo approccio è concettualmente più elegante, ma soprattutto consente di svincolare il carico dalla rete logica. Se infatti il carico assorbe molta corrente, tutti gli interruttori della rete dovranno essere
+dimensionati di conseguenza; ciò potrebbe essere poco funzionale, visto che gli interruttori in grado di gestire correnti maggiori sono piu grossi, costosi e più difficili da azionare. Usando invece un circuito simile a quello di Figura \ref{fig:controllo_lampadina_mediante_rete_logica} solo l’interruttore del relé deve essere dimensionato in modo tale da poter gestire la corrente del carico; gli altri due deviatori, relativi ai due comandi $x$ e $y$, possono essere anche a bassa corrente.
+
+% Contenitore per immagini
+\begin{figure}[H]
+    \centering
+    \begin{circuitikz}[]
+      \draw (0,1) node[circ](start){} ++(0,1) node[circ]{} -- ++(0,1) -- ++(1,0) node[circ](a){} -- ++(6.5,0) node[circ](b){} -- ++(0,1) node[circ]{} ++(0,0.5) node[]{$+V_{CC}$} (b) ++(0,-1.3) node[cutechokeshape, rotate=-90](L){} (b) -- (L) ++(0,-1.5) node[npn, tr circle](Q1){} (L) -- (Q1.C) (Q1.E) -- ++(0,-1.5) -- ++(-6.5,0) node[circ](c){} -- ++(-1,0) -- (start) (c) -- ++(0,-0.1) node[ground](GND){} (c) -- ++(0,0.5) node[circ]{} ++(0,1) node[circ]{} -- (a);
+      \draw (0,1) ++(0,1) -- ++(0.5,-0.5) node[circ](x){} ++(-0.2,0.5) node[]{$x$};
+      \draw (c) ++(0,1.5) -- ++(0.5,-0.5) node[circ](y){} ++(-0.2,0.5) node[]{$y$};
+      \draw (Q1.B) ++(-0.7,0) node[ieeestd or port, xscale=0.7, yscale=0.7](or){} (or.out) -- (Q1.B);
+      \draw (x) ++(2.5,0) node[ieeestd and port, xscale=0.7, yscale=0.7, anchor=in 1](and1){} (x) -- (and1.in 1);
+      \node at (and1.bin 2) [ocirc, left]{};
+      \draw (y) ++(1.5,0) node[ieeestd and port, xscale=0.7, yscale=0.7, anchor=in 2](and2){} (y) -- (and2.in 2);
+      \node at (and2.bin 1) [ocirc, left]{};
+      \draw (y) ++(0.5,0) node[circ]{} |- (and1.in 2);
+      \draw (x) ++(2,0) node[circ]{} |- (and2.in 1);
+      \draw (and1.out) |- (or.in 1) (and2.out) |- (or.in 2);
+      \draw (b) ++(1,0) -- ++(0,-0.8) node[circ]{} -- ++(0.5,-0.5) ++(-0.5,-0.5) node[circ](d){} (c) ++(7.5,0) -- (d);
+      \draw (b) ++(1,0) -- ++(2,0) coordinate(e) ++(0,-1.8) node[lampshape](La){\hspace{4em}$L$} (La.north) -- (e) (La.south) -- ++(0,-1) node[circ]{} ++(0,-0.5) node[]{$220$V} ++(0,-0.5) node[circ](f){} (c) ++(7.5,0) -- ++(2,0) -- (f);
+      \draw [dotted] (d) ++(0.5,0.5) -- ++(-2,0);
+    \end{circuitikz}
+    \caption{Controllo di una lampadina di potenza mediante una rete logica asservita a un transistor che controlla relé}
+    \label{fig:controllo_lampadina_mediante_rete_logica}
+\end{figure}
+
+\noindent
+Si noti che nel circuito l’uscita della porta OR controlla direttamente la base di un transistor; quando l’uscita OR va a $1$, il transistor entra
+in saturazione, la $V_{CE}$ crolla al valore di saturazione e tutta la tensione $V_{CC}$ di alimentazione va sul relé, che, commutando, chiude il circuito d’uscita e accende la lampadina.\\
+Pertanto, come si è detto, in questo caso si palesa la necessità di prevedere l'adeguamento degli interruttori in funzione della tipologia di carico da azionare.\\
+Infatti, quando le lamine dei conduttori vengono poste a contatto, per quanto possa essere irrilevante, si ha una resistenza  di contatto che comporta la dissipazione di potenza. Ma non solo, quando le lamine vengono avvicinate per la chiusura del contatto, si ha una \textbf{carica disruttiva} che comporta la generazione di una scarica elettrica che, con successivi e multipli utilizzi, determina un danneggiamento dell'interruttore. Per tale ragione, occorre impiegare un interruttore che viene azionato esercitando una maggiore pressione fra le lamine, il quale presenta un maggior costo rispetto ad un interrutore ordinario.\\
+Nel caso analizzato, in particolare, si necessita la presenza di un \textit{transistor} e di un relè, in modo tale che la \textbf{circuiteria di potenza} (ovvero il grosso interruttore e la lampada) sia separata dalla \textbf{circuiteria di controllo logico}, che viene realizzata con delle porte logiche.\\
+Questo, chiaramente, comporta un maggior costo, ma con due grandi vantaggi:
+\begin{enumerate}
+  \item il primo rappresentato dal fatto che si ha una netta separazione tra i due circuiti;
+  \item il secondo è rappresentato dalla sicurezza, in quanto si ha una barriera tra il circuito ad elevata tensione e quello che opera ai livelli di tensione propri delle porte logiche.
+\end{enumerate}
+Pertanto, nel malaugurato caso in cui vi sia una perdita dell'interruttore, l'utente è separato e protetto da eventuali scariche di alta tensione.
 
 \vspace{1em}
 \noindent
-\textbf{Esempio}: Si consideri, ora, il caso in cui al posto di avere due soli interruttori per comandare un carico.\\
-In questo secondo caso, si avranno tre variabili binarie \(x, y\) e \(z\) per le quali si costruisce la seguente tabella di verità:
+\textbf{Esempio}: Si consideri, ora, il caso in cui al posto di avere due soli interruttori per comandare un carico, ve ne siano tre. Si vuole, pertanto, progettare un circuito capace di accendere o di spegnere una lampada mediante uno qualsiasi di tre interruttori indipendenti. Indicando al solito con $L = 1$ la condizione di lampada accesa, viene fissata come specifica che quando i tre interruttori sono aperti $L = 0$. Chiudendo uno qualsiasi degli interruttori $L$ dovra assumere il valore $1$, mentre torneràal valore $0$ azionando un qualsiasi altro interruttore. Infine essa assumerà nuovamente il valore $1$ quando tutti i tre interruttori saranno chiusi. Anche questa situazione è molto frequente in pratica, per esempio in un ampio salone nel quale si vogliano avere più punti luce.\\
+In questo secondo caso, com'è intuibile, si avranno tre variabili binarie \(x, y\) e \(z\) per le quali si costruisce la seguente tabella di verità:
 
 \begin{table}[H]
     \centering
@@ -2332,13 +2403,35 @@ In questo secondo caso, si avranno tre variabili binarie \(x, y\) e \(z\) per le
     \label{tab:circuito_luce_tre_punti_tavola_verita}
 \end{table}
 
-\vspace{1em}
 \noindent
 La sintesi del circuito mediante termini minimi fornisce
 \[\overline{x} \overline{y} z + \overline{x} y \overline{z} + x \overline{y} \overline{z} + xyz\]
 Prima di procedere alla realizzazione circuitale, è però opportuno semplificare il più possibile l'espressione, ottenendo
 \[\overline{x} (\overline{y}z + y \overline{z}) + x (\overline{y} \overline{z} + yz)\]
 Il circuito che si ricava è rappresentato nella figura seguente:
+
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{\textwidth}{PP}
+      {
+          \begin{circuitikz}[]
+            \draw (0,0) -- (1,0) node[circ](x){} -- ++(0.5,0.5) node[circ]{} ++(0,-1) node[circ]{} -- ++(0,-0.5) -- ++(1,0) node[circ](y2){} -- ++(0.5,0.5) node[circ]{} ++(0,-1) node[circ]{} -- ++(0,-0.5) -- ++(1,0) -- ++(0,4) node[circ]{};
+            \draw (x) ++(0.5,0.5) -- ++(0,0.5) -- ++(1,0) node[circ](y1){} -- ++(0.5,0.5) node[circ]{} ++(0,-1) node[circ]{} -- ++(0,-0.5) node[circ]{} -- ++(0,-0.5) ++(0,0.5) -- ++(2,0) -- ++(0,0.5) node[circ]{} ++(0.5,0.5) node[circ](z){} -- ++(-0.5,0.5) node[circ]{} -- ++(0,0.5) -- ++(-2,0) -- ++(0,-0.5) (z) -- ++(1,0);
+          \end{circuitikz}
+      } & {
+          \begin{tabular}{cc|c}
+               \(x\) & \(y\) & \(L\)\\
+               \hline
+               \(0\) & \(0\) & \(0\)\\
+               \(0\) & \(1\) & \(1\)\\
+               \(1\) & \(0\) & \(1\)\\
+               \(1\) & \(1\) & \(0\)\\
+          \end{tabular}
+      }
+    \end{tabularx}
+    \caption{Circuito di comando di una luce da due punti e relativa tavola di verità}
+    \label{tab:circuito_comando_luce_due_punti_e_tavola_verita}
+\end{table}
 
 Si noti che i circuiti ottenuti presentano un numero di invertitori maggiore del numero di interruttori richiesti dal problema.\\
 Si necessita, allora, l'impiego di un dispositivo noto con il nome di \textbf{invertitore}, ovvero un \textbf{doppio deviatore} che si può trovare solamente in due possibili stati \(=\), oppure \(\times\).
