@@ -130,12 +130,67 @@ Laurea in ingegneria elettronica e informatica}}
 \end{tikzpicture}
 }
 
+%Empty Karnaugh map 4x4
+\newenvironment{KarnaughExample}%
+{
+\begin{tikzpicture}[baseline=(current bounding box.north),scale=0.8]
+  \node[](start) at (2.55,-1.65){};
+  \node[above=of start]() {
+    \begin{tikzpicture}[scale=1.1, every node/.style={scale=1.1}]
+      \draw (0,0) grid (4,4);
+    \end{tikzpicture}
+  };
+\draw (-0.2,5.4) -- node [pos=0.7,above right,anchor=south west] {$xy$} node [pos=0.7,below left,anchor=north east] {$zw$} ++(135:1);
+%
+\matrix (mapa) [matrix of nodes,
+        column sep={1.1cm,between origins},
+        row sep={1.1cm,between origins},
+        every node/.style={minimum size=0.3mm},
+        anchor=8.center,
+        ampersand replacement=\&] at (0.5,0.5)
+{
+                       \& |(c00)| $00$         \& |(c01)| $01$         \& |(c11)| $11$         \& |(c10)| $10$         \& |(cf)| \phantom{00} \\
+|(r00)| $00$             \& |(0)|  \phantom{0} \& |(1)|  \phantom{0} \& |(3)|  \phantom{0} \& |(2)|  \phantom{0} \&                     \\
+|(r01)| $01$             \& |(4)|  \phantom{0} \& |(5)|  \phantom{0} \& |(7)|  \phantom{0} \& |(6)|  \phantom{0} \&                     \\
+|(r11)| $11$             \& |(12)| \phantom{0} \& |(13)| \phantom{0} \& |(15)| \phantom{0} \& |(14)| \phantom{0} \&                     \\
+|(r10)| $10$             \& |(8)|  \phantom{0} \& |(9)|  \phantom{0} \& |(11)| \phantom{0} \& |(10)| \phantom{0} \&                     \\
+|(rf) | \phantom{00}   \&                    \&                    \&                    \&                    \&                     \\
+};
+}%
+{
+\end{tikzpicture}
+}
+
 %Empty Karnaugh map 2x4
 \newenvironment{Karnaughvuit}%
 {
 \begin{tikzpicture}[baseline=(current bounding box.north),scale=0.8]
 \draw (0,0) grid (4,2);
 \draw (0,2) -- node [pos=0.7,above right,anchor=south west] {$xy$} node [pos=0.7,below left,anchor=north east] {$z$} ++(135:1);
+%
+\matrix (mapa) [matrix of nodes,
+        column sep={0.8cm,between origins},
+        row sep={0.8cm,between origins},
+        every node/.style={minimum size=0.3mm},
+        anchor=4.center,
+        ampersand replacement=\&] at (0.5,0.5)
+{
+                      \& |(c00)| $00$         \& |(c01)| $01$         \& |(c11)| $11$         \& |(c10)| $10$         \& |(cf)| \phantom{00} \\
+|(r00)| $0$             \& |(0)|  \phantom{0} \& |(1)|  \phantom{0} \& |(3)|  \phantom{0} \& |(2)|  \phantom{0} \&                     \\
+|(r01)| $1$             \& |(4)|  \phantom{0} \& |(5)|  \phantom{0} \& |(7)|  \phantom{0} \& |(6)|  \phantom{0} \&                     \\
+|(rf) | \phantom{00}  \&                    \&                    \&                    \&                    \&                     \\
+};
+}%
+{
+\end{tikzpicture}
+}
+
+%Empty Karnaugh map 2x4
+\newenvironment{KarnaughvuitPhi}%
+{
+\begin{tikzpicture}[baseline=(current bounding box.north),scale=0.8]
+\draw (0,0) grid (4,2);
+\draw (0,2) -- node [pos=0.9,above right,anchor=south west] {$\phi_1\phi_2$} node [pos=0.7,below left,anchor=north east] {$\phi_3$} ++(135:1);
 %
 \matrix (mapa) [matrix of nodes,
         column sep={0.8cm,between origins},
@@ -599,7 +654,7 @@ Lo stesso ragionamento può essere fatto per l’OR, che può essere espresso in
     \rowcolors{1}{white}{white}
     \begin{tabularx}{\textwidth}{|P||l|l|l|}
          \hline
-         $ $ & \begin{center} AND, OR, NOT \end{center} & \begin{center} OR, NOT \end{center} & \begin{center} AND, NOT \end{center}\\
+         $ $ & AND, OR, NOT & OR, NOT & AND, NOT\\
          \hline
          \hline
          $ $ & $f_0 \equiv A \cap \overline{A}$ & $\overline{\overline{A} \cup A}$ & $A \cap \overline{A}$\\
@@ -2208,10 +2263,10 @@ Con i simboli \(x\) e \(\overline{x}\) si indicano due contati azionati contempo
 
           \draw (dot) ++(0,0.3) |- ++(1,0) node[at end, above left]{$x_2$} node [branch](etc){} -- ++(0.5,0.5) ++(0,-0.5) node [branch]{} -- ++(1,0);
 
-          \draw (etc) ++(0,-0.35) node[under]{$\cdot$};
-          \draw (etc) ++(0,-0.45) node[under]{$\cdot$};
-          \draw (etc) ++(0,-0.85) node[under]{$\cdot$};
-          \draw (etc) ++(0,-0.95) node[under]{$\cdot$};
+          \draw (etc) ++(0,-0.35) node[]{$\cdot$};
+          \draw (etc) ++(0,-0.45) node[]{$\cdot$};
+          \draw (etc) ++(0,-0.85) node[]{$\cdot$};
+          \draw (etc) ++(0,-0.95) node[]{$\cdot$};
 
           \draw (dot) -- ++(0,-1) |- ++(1,0) node[at end, above left]{$x_n$} node [branch]{} -- ++(0.5,0.5) ++(0,-0.5) node [branch]{} -- ++(1,0) -- ++(0,1);
 
@@ -2234,7 +2289,9 @@ Se invece i contatti \(x_1, x_2, ..., x_n\) sono in serie tra loro, come illustr
           % Variabili
           \coordinate (start) at (0,0);
 
-          \draw (start) -- ++(1,0) node[at end, above left]{$x_1$} node [branch]{} -- ++(0.5,0.5) ++(0,-0.5) node [branch]{} -- ++(1,0) node[at end, above left]{$x_2$} node [branch]{} -- ++(0.5,0.5) ++(0,-0.5) node [branch]{} -- ++(1,0) ++(0.2,0) -- ++(0.2,0) ++(0.2,0) -- ++(0.2,0) ++(0.2,0) -- ++(1,0) node[at end, above left]{$x_n$} node [branch]{} -- ++(0.5,0.5) ++(0,-0.5) node [branch]{} -- ++(1,0);
+          \draw (start) -- ++(1,0) node[at end, above left]{$x_1$} node [branch]{} -- ++(0.5,0.5) ++(0,-0.5) node [branch]{} -- ++(1,0) node[at end, above left]{$x_2$} node [branch]{} -- ++(0.5,0.5) ++(0,-0.5) node [branch]{} -- ++(1,0) coordinate(a);
+          \draw [dashed] (a) -- ++(1,0);
+          \draw (a) ++(1,0) -- ++(1,0) node[at end, above left]{$x_n$} node [branch]{} -- ++(0.5,0.5) ++(0,-0.5) node [branch]{} -- ++(1,0);
         \end{tikzpicture}
     }
     \caption{$n$ contatti in serie realizzano la funzione Booleana \(x_1 \cdot x_2 \cdot ... \cdot x_n\)}
@@ -2282,7 +2339,7 @@ Dal momento che si hanno due variabili binarie \(x\) e \(y\), è possibile costr
       {
           \begin{circuitikz}[]
             \draw (1,0) node[draw,minimum width=5mm,minimum height=5mm](x){$x$} ++(1,0) node[draw,minimum width=5mm,minimum height=5mm](y){$y$} ++(1,0) ++(0,-1) node[lampshape](L){\hspace{4em}$L$};
-            \draw (0,0) -- (x.west) (x.east) -- (y.west) (y.est) -| (L.north) (L.south) -- ++(0,-0.6) -- ++(-3,0);
+            \draw (0,0) -- (x.west) (x.east) -- (y.west) (y.east) -| (L.north) (L.south) -- ++(0,-0.6) -- ++(-3,0);
           \end{circuitikz}
       } & {
           \begin{tabular}{cc|c}
@@ -2361,7 +2418,7 @@ dimensionati di conseguenza; ciò potrebbe essere poco funzionale, visto che gli
       \draw (and1.out) |- (or.in 1) (and2.out) |- (or.in 2);
       \draw (b) ++(1,0) -- ++(0,-0.8) node[circ]{} -- ++(0.5,-0.5) ++(-0.5,-0.5) node[circ](d){} (c) ++(7.5,0) -- (d);
       \draw (b) ++(1,0) -- ++(2,0) coordinate(e) ++(0,-1.8) node[lampshape](La){\hspace{4em}$L$} (La.north) -- (e) (La.south) -- ++(0,-1) node[circ]{} ++(0,-0.5) node[]{$220$V} ++(0,-0.5) node[circ](f){} (c) ++(7.5,0) -- ++(2,0) -- (f);
-      \draw [dotted] (d) ++(0.5,0.5) -- ++(-2,0);
+      \draw [dashed] (d) ++(0.5,0.5) -- ++(-2,0);
     \end{circuitikz}
     \caption{Controllo di una lampadina di potenza mediante una rete logica asservita a un transistor che controlla relé}
     \label{fig:controllo_lampadina_mediante_rete_logica}
@@ -2408,33 +2465,39 @@ La sintesi del circuito mediante termini minimi fornisce
 \[\overline{x} \overline{y} z + \overline{x} y \overline{z} + x \overline{y} \overline{z} + xyz\]
 Prima di procedere alla realizzazione circuitale, è però opportuno semplificare il più possibile l'espressione, ottenendo
 \[\overline{x} (\overline{y}z + y \overline{z}) + x (\overline{y} \overline{z} + yz)\]
-Il circuito che si ricava è rappresentato nella figura seguente:
+Il circuito che si ricava è rappresentato nella Tabella \ref{tab:circuito_comando_luce_tre_punti_e_invertitore}:
 
 \begin{table}[H]
     \centering
     \begin{tabularx}{\textwidth}{PP}
       {
           \begin{circuitikz}[]
-            \draw (0,0) -- (1,0) node[circ](x){} -- ++(0.5,0.5) node[circ]{} ++(0,-1) node[circ]{} -- ++(0,-0.5) -- ++(1,0) node[circ](y2){} -- ++(0.5,0.5) node[circ]{} ++(0,-1) node[circ]{} -- ++(0,-0.5) -- ++(1,0) -- ++(0,4) node[circ]{};
+            \draw (0,0) -- ++(1,0) node[circ](x){} -- ++(0.5,0.5) node[circ]{} ++(0,-1) node[circ]{} -- ++(0,-0.5) -- ++(1,0) node[circ](y2){} -- ++(0.5,0.5) node[circ]{} ++(0,-1) node[circ]{} -- ++(0,-0.5) -- ++(1,0) -- ++(0,4) node[circ]{};
             \draw (x) ++(0.5,0.5) -- ++(0,0.5) -- ++(1,0) node[circ](y1){} -- ++(0.5,0.5) node[circ]{} ++(0,-1) node[circ]{} -- ++(0,-0.5) node[circ]{} -- ++(0,-0.5) ++(0,0.5) -- ++(2,0) -- ++(0,0.5) node[circ]{} ++(0.5,0.5) node[circ](z){} -- ++(-0.5,0.5) node[circ]{} -- ++(0,0.5) -- ++(-2,0) -- ++(0,-0.5) (z) -- ++(1,0);
+            \draw (x) ++(0,0.5) node[]{$x$} ++(0,-1) node[]{$\overline{x}$};
+            \draw (y1) ++(0,0.5) node[]{$y$} ++(0,-1) node[]{$\overline{y}$};
+            \draw (y2) ++(0,0.5) node[]{$y$} ++(0,-1) node[]{$\overline{y}$};
+            \draw (z) ++(0,0.5) node[]{$z$} ++(0,-1) node[]{$\overline{z}$};
           \end{circuitikz}
       } & {
-          \begin{tabular}{cc|c}
-               \(x\) & \(y\) & \(L\)\\
-               \hline
-               \(0\) & \(0\) & \(0\)\\
-               \(0\) & \(1\) & \(1\)\\
-               \(1\) & \(0\) & \(1\)\\
-               \(1\) & \(1\) & \(0\)\\
-          \end{tabular}
+          \begin{circuitikz}[]
+            \draw (0,0) -- ++(1,0) node[circ](x){} -- ++(0.5,0.5) node[circ]{} ++(0,-1) node[circ]{} -- ++(0,-0.5) -- ++(1,0) -- ++(0,0.75) -- ++(0.5,0) node[circ](y){} -- ++(0.5,0.5) node[circ]{} -- ++(0.5,0) -- ++(0,0.75) -- ++(1,0) -- ++(0,-0.5) node[circ]{} -- ++(0.5,-0.5) node[circ](z){} -- ++(1,0);
+            \draw (x) ++(0.5,0.5) -- ++(0,0.5) -- ++(1,0) -- ++(0,-0.75) -- ++(0.5,0) node[circ]{} -- ++(0.5,-0.5) node[circ]{} -- ++(0.5,0) -- ++(0,-0.75) -- ++(1,0) -- ++(0,0.5) node[circ]{};
+            \draw [dashed] (y) ++(-0.25,-0.25) -- ++(0,1) -- ++(1,0) -- ++(0,-1) -- ++(-1,0);
+            \draw (x) ++(0,0.5) node[]{$x$} ++(0,-1) node[]{$\overline{x}$};
+            \draw (z) ++(0,0.5) node[]{$z$} ++(0,-1) node[]{$\overline{z}$};
+            \draw (y) ++(0.25,1) node[]{$y$} ++(0,-1.5) node[]{$\overline{y}$};
+          \end{circuitikz}
       }
     \end{tabularx}
-    \caption{Circuito di comando di una luce da due punti e relativa tavola di verità}
-    \label{tab:circuito_comando_luce_due_punti_e_tavola_verita}
+    \caption{Circuito con tre interruttori ottenuto da una sintesi basata sui termini minimi: realizzazione teorica e circuito commerciale, facente uso di un invertitore}
+    \label{tab:circuito_comando_luce_tre_punti_e_invertitore}
 \end{table}
 
-Si noti che i circuiti ottenuti presentano un numero di invertitori maggiore del numero di interruttori richiesti dal problema.\\
-Si necessita, allora, l'impiego di un dispositivo noto con il nome di \textbf{invertitore}, ovvero un \textbf{doppio deviatore} che si può trovare solamente in due possibili stati \(=\), oppure \(\times\).
+Si noti che i circuiti ottenuti presentano un numero di invertitori maggiore del numero di interruttori richiesti dal problema. Si osservi, tuttavia, che i due interruttori associati alla variabile $z$, quando sono chiusi (come in Tabella \ref{tab:circuito_comando_luce_tre_punti_e_invertitore}) portano allo
+stesso potenziale le variabili $y$ e $\overline{y}$ della parte centrale del circuito; dunque i due rami più interni si possono fondere; poichè lo stesso discorso vale anche per gli interruttori della variabile $z$, il risultato finale è che si semplifica il circuito e si risparmia un deviatore.\\
+Si necessita, allora, l'impiego di un dispositivo commerciale, noto con il nome di \textbf{invertitore}, ovvero un \textbf{doppio deviatore} che si può trovare solamente in due possibili stati \(=\), oppure \(\times\).\\
+L'invertitore consente, fra l’altro, di generalizzare il problema a \(n \geq 4\) interruttori; in tutti questi casi il circuito risolutivo è dato da due deviatori in testa alla catena e da \(n - 2\) invertitori in cascata nelle posizioni intermedie.
 
 \vspace{1em}
 \noindent
@@ -2442,97 +2505,180 @@ Si provi, ora, a realizzare la rete logica mediante i termini massimi, per cui s
 \[(x + y + z) \cdot (x + y + \overline{z}) \cdot (\overline{x} + y + \overline{z}) \cdot (\overline{x} + \overline{y} + z) = [x + (y +z) \cdot (\overline{y} + \overline{z})] \cdot [(\overline{x} + (y + \overline{z}) \cdot (\overline{y} + z)]\]
 che con la semplificazione porta al circuito della figura seguente:
 
+% Contenitore per immagini
+\begin{figure}[H]
+    \centering
+    \begin{circuitikz}[]
+      \draw (0,0) -- ++(1,0) node[circ](start){} -- ++(0,-0.75) -- ++(0.5,0) node[circ]{} ++(0.5,0.5) node[circ](z1){} -- ++(0.5,-0.5) node[circ]{} -- ++(0.5,0) -- ++(0,0.75) node[circ]{} -- ++(0.5,0) node[circ]{} -- ++(0.5,0) node[circ]{} -- ++(0,-0.75) -- ++(0.5,0) node[circ]{} -- ++(0.5,0.5) node[circ](z2){} ++(0.5,-0.5) node[circ]{} -- ++(0.5,0) -- ++(0,0.75) node[circ](end){} -- ++(1,0);
+      \draw (start) -- ++(0,0.75) node[circ]{} -- ++(0.5, 0) node[circ]{} ++(0.5,-0.5) node[circ](y1){} -- ++(0,-0.5) (y1) -- ++(0.5,0.5) node[circ]{} -- ++(0.5,0) -- ++(0,-0.75) ++(1,0) -- ++(0,0.75) -- ++(0.5,0) node[circ]{} ++(0.5,-0.5) node[circ](y2){} -- ++(0,-0.5) (y2) -- ++(0.5,0.5) node[circ]{} -- ++(0.5,0) node[circ]{} -- (end);
+      \draw (start) ++(0,0.75) -- ++(0,0.75) -- ++(2,0) node[circ]{} ++(0.5,-0.5) node[circ](x){} -- ++(0,-1) (x) -- ++(0.5,0.5) node[circ]{} -- ++(2,0) -- ++(0,-0.75);
+      \draw (x) ++(-0.25,0.15) node[]{$x$} ++(0.8,0) node[]{$\overline{x}$};
+      \draw (y1) ++(-0.25,0.15) node[]{$y$} ++(0.8,0) node[]{$\overline{y}$};
+      \draw (y2) ++(-0.25,0.15) node[]{$y$} ++(0.8,0) node[]{$\overline{y}$};
+      \draw (z1) ++(-0.25,-0.15) node[]{$z$} ++(0.8,0) node[]{$\overline{z}$};
+      \draw (z2) ++(-0.45,-0.15) node[]{$z$} ++(0.8,0) node[]{$\overline{z}$};
+      \draw [dashed] (y1) ++(0,0.25) -- ++(3.25,0) (z1) ++(0,-0.25) -- ++(3.25,0);
+    \end{circuitikz}
+    \caption{Circuito con tre interruttori ottenuto da una sintesi basata sui termini massimi}
+    \label{fig:circuito_comando_luce_tre_punti_maxterm}
+\end{figure}
 
+\noindent
 Anche in questo caso la soluzione basata sui termini massimi è meno vantaggiosa, poiché richiede \(5\) deviatori invece di \(4\), ma tale circuito è del tutto analogo a quello precedente, ma differente dal punto di vista topologico.\\
-Al di là della straordinaria importanza applicativa del metodo formale basato sull’Algebra Booleana, importante riflettere, soprattutto alla luce di quest’ultimo esempio, che molto spesso in ambito ingegneristico la teoria offre diverse soluzioni tra loro equivalenti; sta poi al progettista scegliere la migliore, tenuto conto della razionalità e semplicità delle soluzioni prospettate, dei costi, del numero di componenti impiegati ecc.
+Al di là della straordinaria importanza applicativa del metodo formale basato sull’Algebra Booleana, è importante riflettere, soprattutto alla luce di quest’ultimo esempio, che molto spesso in ambito ingegneristico la teoria offre diverse soluzioni tra loro equivalenti; sta poi al progettista scegliere la migliore, tenuto conto della razionalità e semplicità delle soluzioni prospettate, dei costi, del numero di componenti impiegati ecc.
 
 \subsection{Semplificazione delle espressioni Booleane}
 Si e già visto, dagli esempi che precedono, che le forme canoniche non esauriscono le espressioni analitiche di una funzione; anzi, come per qualsiasi relazione algebrica, anche quelle logiche possono essere trasformate in un certo numero di espressioni formalmente diverse, ma equivalenti dal punto di vista matematico.\\
 Ad esempio:
 \[f = \overline{x} \overline{y} \overline{z} + \overline{x} \overline{y} z + \overline{x}yz + xyz = \overline{x} \overline{z} (\overline{z} + z) + yz (\overline{x} + x) = \overline{x} \overline{y} + yz\]
-Si diranno equivalenti due funzioni che abbiano la stessa tavola di verità, forma semplificata di una funzione ogni sua espressione non canonica, forma minima quella in cui ogni variabile, diretta o negata che sia, compare il minor numero di volte.\\
-Le tecniche di semplificazione sono due:
+
+\subsubsection{Funzioni Booleane equivalenti}
+Di seguito si espone la definzione di funzioni Booleane equivalenti:
+
+% Tabella per le definizione di concetti, etc...
+\vspace{1em}
+\rowcolors{1}{black!5}{black!5}
+\setlength{\tabcolsep}{14pt}
+\renewcommand{\arraystretch}{2}
+\noindent
+\begin{tabularx}{\textwidth}{@{}|P|@{}}
+    \hline
+    {\textbf{FUNZIONI BOOLEANE EQUIVALENTI}}\\
+    \parbox{\linewidth}{Si diranno \textbf{equivalenti} due funzioni che abbiano la stessa tavola di verità, forma semplificata di una funzione ogni sua espressione non canonica, forma minima quella in cui ogni variabile, diretta o negata che sia, compare il minor numero di volte.\vspace{3mm}}\\
+    \hline
+\end{tabularx}
+\vspace{1em}
+
+\noindent
+Espressioni semplificate si possono ottenere applicando le relazioni fondamentali dell’Algebra Booleana alle espressioni canoniche, ma questa strada richiede una notevole pratica, si applica facilmente solo a funzioni di un limitato numero di variabili e non fornisce alcuna garanzia di pervenire effettivamente alla forma minima, dato il carattere artigianale del procedimento.\\
+Le tecniche di semplificazione più sistematiche che vengono analizzate nel seguito sono principalmente due:
 \begin{enumerate}
     \item Mappe di Karnaugh
     \item Metodo tabellare di Quine - Mc Cluskey
 \end{enumerate}
 
 \subsubsection{Mappe di Karnaugh}
-Il metodo proposto da Karnaugh e un metodo grafico di semplificazione che permette di ottenere molto semplicemente la forma minima di una funzione espressa come somma di prodotti (\textit{minterm}), facendo ricorso a particolari mappe di rappresentazione. Quale limitazione si ha che, sebbene il metodo sia concettualmente applicabile a funzioni di qualsiasi numero di variabili, esso diviene difficoltoso già per \(5, 6\) variabili.\\
-Le mappe di Karnaugh, che possono essere considerate un ulteriore metodo di rappresentazione di una funzione logica, consistono in matrici di \(m\) righe e \(k\) colonne, in cui \(m = 2^i\) e \(k = 2^j\) per qualche \(i, j\), col vincolo che
+Il metodo proposto da \emph{Karnaugh} è un metodo grafico di semplificazione che permette di ottenere molto semplicemente la forma minima di una funzione espressa come somma di prodotti (\textit{minterm}), facendo ricorso a particolari mappe di rappresentazione. Quale limitazione si ha che, sebbene il metodo sia concettualmente applicabile a funzioni di qualsiasi numero di variabili, esso diviene difficoltoso già per \(5 - 6\) variabili.\\
+Le mappe di Karnaugh, che possono essere considerate un ulteriore metodo di rappresentazione di una funzione logica e consistono in matrici di \(m\) righe e \(k\) colonne, in cui \(m = 2^i\) e \(k = 2^j\) per qualche \(i, j\), col vincolo che
 \[2^i \cdot 2^j = 2^n\]
 ovvero pari al numero di elementi della matrice, in cui \(n\) è il numero delle variabili. Di conseguenza, le mappe di Karnaugh presentano \(4\) celle nel caso di funzioni di due variabili, \(8\) per quelle di tre variabili, \(16\) per quelle di quattro e così via.\\
-Ogni elemento della matrice rappresenta un termine minimo, che entra in un’espressione \textit{minterm} di somma di prodotti.\\
-Infatti, il concetto alla base delle mappe di Karnaugh prevede di disporre i termini minimi nello spazio in modo tale che i termini minimi da semplificare si trovino vicini fra di loro.\\
+Ogni elemento della matrice rappresenta un termine minimo, che entra in un’espressione \textit{minterm} di somma di prodotti; infatti, il concetto alla base delle mappe di Karnaugh prevede di disporre i termini minimi nello spazio in modo tale che i termini minimi da semplificare si trovino vicini fra di loro.\\
 In particolare, le mappe devono essere costruita in modo tale che nel passaggio da una cella all'altra ci sia sempre e solo un'unica variabile che viene a modificarsi. Ciò implica che la tabella è chiusa in se stessa tanto in senso orizzontale, quanto in senso verticale.\\
-Per questo motivo, infatti, nella disposizione dei numeri binari sulle righe e sulle colonne si utilizza la sequenza \(00, 01, 11, 10\) dimodoché nel passaggio da una colonna\\riga all'altra vi sia il cambio di una sola variabile.
+Per questo motivo, infatti, nella disposizione dei numeri binari sulle righe e sulle colonne si utilizza la sequenza \(00, 01, 11, 10\) dimodoché nel passaggio da una colonna/riga all'altra vi sia il cambio di una sola variabile.\\
+Nella Figura \ref{fig:mappa_karnaugh_2_3_4_0} sono riprodotte le strutture delle mappe per 2, 3 e 4 variabili.
+
+% Contenitore per immagini
+\hspace{5em}
+\begin{figure}[H]
+    \centering
+    \rowcolors{1}{white}{white}
+    \setlength{\tabcolsep}{4pt}
+    \renewcommand{\arraystretch}{2}
+    \noindent
+    \begin{tabularx}{\textwidth}{>{\hsize=0.55\textwidth}PP}
+      {
+        \begin{Karnaughquatre}
+            \contingut{\overline{x} \overline{y}, x \overline{y}, \overline{x}y, xy}
+        \end{Karnaughquatre}
+        \hspace{1em}
+        \begin{Karnaughvuit}
+            \contingut{\overline{x}\overline{y}\overline{z}, \overline{x}y\overline{z}, x\overline{y}\overline{z}, xy\overline{z}, \overline{x}\overline{y}z, \overline{x}yz, x\overline{y}z, xyz}
+        \end{Karnaughvuit}
+      } & {
+        \begin{KarnaughExample}
+              \contingut{\overline{x}\overline{y}\overline{z}\overline{w},\overline{x}y\overline{z}\overline{w},x\overline{y}\overline{z}\overline{w},xy\overline{z}\overline{w},\overline{x}\overline{y}\overline{z}w,\overline{x}y\overline{z}w,x\overline{y}\overline{z}w,xy\overline{z}w,\overline{x}\overline{y}z\overline{w},\overline{x}yz\overline{w},x\overline{y}z\overline{w},xyz\overline{w},\overline{x}\overline{y}zw,\overline{x}yzw,x\overline{y}zw,xyzw}
+        \end{KarnaughExample}
+      }
+    \end{tabularx}
+    \vspace{-4em}
+    \caption{Mappe di Karnaugh per $2$, $3$ e $4$ variabili}
+    \label{fig:mappa_karnaugh_2_3_4_0}
+\end{figure}
 
 \newpage
 \begin{center}
     18 Ottobre 2021
 \end{center}
 \subsection{Riassunto}
-Le forme canoniche sono di due tipi: \textit{minterm} e \textit{maxterm}. In particolare considerando la funzione che vale sempre \(1\) tranne per un solo caso in cui vale \(0\) prende il nome di \textit{maxterm}, mentre la funzione che vale sempre \(0\) e vale \(1\) solamente per un solo caso, ovvero quello oggetto di studio prende il nome di \textit{minterm}. Talune forme sono esattamente equivalenti per l'espressione di una funzione logica: \textbf{prodotto di \textit{maxterm}} oppure \textbf{somma di \textit{minterm}}.\\
+Le forme canoniche sono di due tipi: \textit{minterm} e \textit{maxterm}. In particolare considerando la funzione che vale sempre \(1\) tranne per un solo caso in cui vale \(0\) prende il nome di \textit{maxterm}, mentre la funzione che vale sempre \(0\) e vale \(1\) solamente per un solo caso, ovvero quello oggetto di studio, prende il nome di \textit{minterm}. Talune forme sono esattamente equivalenti per l'espressione di una funzione logica: \textbf{prodotto di \textit{maxterm}} oppure \textbf{somma di \textit{minterm}}.\\
 Dal punto di vista pratico, come si è detto, sono perfettamente equivalentiu: certo è che, se una funzione presenta più \(0\) che \(1\), sarà più conveniente ricorrere al \textbf{prodotto di \textit{maxterm}} anziché una \textbf{somma di \textit{minterm}}.\\
-Attraverso l'applicazione dei teoremi fondanti dell'algebra booleana, così come attraverso i teoremi di De Morgan, è possibile passare da una forma all'altra in modo molto equivalente, giungendo ad una semplificazione decisamente vantaggiosa, sia in termini circuitali che in termini logici.\\
-L'interpretazione circuitale dell'Algebra Booleana si deve a Shannon, che la scelse come tema del suo master. La chiave centrale di tale interpretazione sono gli interruttori che rappresentano le variabili booleana e che possono essere poste in serie per simulare il funzionamento di una porta AND; se sono poste in parallelo simulano il funzionamento di una porta OR.\\
-La commutazione di ciascun interruttore rappresentante una variabile determina una particolare configurazione del circuito da cui è possibile estrarre la corrispondente funzione logica.\\
-L'utilizzo dell'Algebra Booleana e delle tavole di verità è fondamentale nella progettazione di un circuito e per la determinazione della soluzione più conveniente e pratica dal punto di vista circuitale.\\
-Dal punto di vista tecnico, inoltre, si è osservato che il carico che è necessario comandare comporterebbe la necessità di dimensionare tutti gli interruttori esposti all'elevata tensione del carico, con un elevato costo per ciascun interruttore. Attraverso l'utilizzo di un relè e di un transistor, si ha una separazione netta tra la parte del circuito ad elevata tensione e quella di controllo, per cui gli interruttori con cui interagisce l'utente lavorano alla tensione delle porte logiche, ovvero pochi volt, eliminando il rischio delle perdite di elevate tensioni.\\
-Inoltre, gli interruttori che operano ad elevata tensione sono molto costosi e pesanti e presentano una molla di richiamo che sarebbe stato difficile azionare, anche dal punto di vista meccanico. Implementando, invece, interruttori che operano sui \(5 V\) si agevola anche l'azione di accensione e spegnimento da parte dell'utente.\\
-L'accessione di un punto luce da più di \(2\) interruttori, invece richiederebbe l'uso di un dispositivo denominato \textbf{invertitore}, che può essere installato in quantità molteplice per assolvere i compito richiesto.
-Le semplificazioni booleane effettuate ricorrendo ai teoremi dell'Algebra Booleana o ai teoremi di De Morgan sono molto complesse e dal basso tasso di successo.\\
-Le mappe di Karnaugh, invece, sono delle mappe \textbf{bidimensionali} (che, comunque, ne limita le applicazioni) che presentano un numero di righe e di colonne che deve essere sempre \(2^i \times 2^j = 2^n\), ove \(n\) è il numero delle variabili di cui si sta analizzando l'equazione logica. Inoltre, le n-uple di variabili devono essere disposte in modo tale che tra due n-uple successive vi sia la variazione di una sola variabile.\\
+Attraverso l'applicazione dei teoremi fondanti dell'Algebra Booleana, così come attraverso i Teoremi di De Morgan (§ \ref{sec:teorema_de_morgan}), è possibile passare da una forma all'altra in modo molto equivalente, giungendo ad una semplificazione decisamente vantaggiosa, sia in termini circuitali che in termini logici.\\
+L'interpretazione circuitale dell'Algebra Booleana si deve a Shannon, che la scelse come tema del suo master. La chiave centrale di tale interpretazione sono gli interruttori che rappresentano le variabili booleane e che possono essere poste in serie per simulare il funzionamento di una porta AND; se sono poste in parallelo simulano il funzionamento di una porta OR.\\
+La commutazione di ciascun interruttore rappresentante una variabile determina una particolare configurazione del circuito da cui è possibile estrarre la corrispondente funzione logica. L'utilizzo dell'Algebra Booleana e delle tavole di verità è fondamentale nella progettazione di un circuito e per la determinazione della soluzione più conveniente e pratica dal punto di vista circuitale.\\
+Dal punto di vista tecnico, inoltre, si è osservato che il carico che è necessario comandare potrebbe comportare, a seconda della sua entità, la necessità di dimensionare tutti gli interruttori esposti all'elevata tensione del carico, con un significativo costo associato per ciascun interruttore. Attraverso l'utilizzo di un relè e di un transistor, invece, si ha una separazione netta tra la parte del circuito ad elevata tensione e quella di controllo: gli interruttori con cui interagisce l'utente lavorano alla tensione delle porte logiche, ovvero pochi Volt, eliminando il rischio delle perdite di elevate tensioni.\\
+Inoltre, gli interruttori che operano ad elevata tensione sono molto costosi e pesanti e presentano una molla di richiamo che sarebbe stato difficile azionare, anche dal punto di vista meccanico. Implementando, invece, interruttori che operano sui \(5 V\) si agevola anche l'azione di accensione e spegnimento da parte dell'utente. L'accessione di un punto luce da più di \(2\) interruttori, invece, richiederebbe l'uso di un dispositivo denominato \textbf{invertitore}, che può essere installato in molteplice quantità per assolvere al compito richiesto.\\
+Si è visto, infine, che le semplificazioni booleane effettuate ricorrendo ai teoremi dell'Algebra Booleana o ai teoremi di De Morgan sono molto complesse e dal basso tasso di successo. Le mappe di Karnaugh, invece, sono delle mappe \textbf{bidimensionali} (fatto che, comunque, ne limita le applicazioni) che presentano un numero di righe $m = 2^i$ e di colonne $k = 2^j$ che deve essere sempre tale per cui \(2^i \times 2^j = 2^n\), per qualche $i$ e $j$, ove \(n\) è il numero delle variabili di cui si sta analizzando l'equazione logica. Inoltre, le n-uple di variabili devono essere disposte in modo tale che tra due n-uple successive vi sia la variazione di una sola variabile.\\
 Si presti particolare attenzione che la mappa deve essere considerata \textbf{chiusa} sia in senso orizzontale che in senso verticale, pertanto la combinazione \(00, 01, 11, 10\) rispetta la regola precedentemente esposta, in quanto la dupla \(10\) è considerata adiacente a \(00\), ma comunque tra le due si ha il cambiamento di una sola variabile.\\
-Nella Figura \ref{fig:mappa_karnaugh_16_8_2} sono riprodotte le strutture delle mappe per \(2\), \(3\) e \(4\) variabili.
+Nella Figura \ref{fig:mappa_karnaugh_2_3_4_1} sono riprodotte le strutture delle mappe per \(2\), \(3\) e \(4\) variabili.
 
 % Contenitore per immagini
+\hspace{5em}
 \begin{figure}[H]
     \centering
-    \begin{Karnaughquatre}
-        \contingut{\overline{x} \overline{y}, x \overline{y}, \overline{x}y, xy}
-    \end{Karnaughquatre}
-    %
-    \begin{Karnaughvuit}
-        \contingut{\overline{x}\overline{y}\overline{z}, \overline{x}y\overline{z}, x\overline{y}\overline{z}, xy\overline{z}, \overline{x}\overline{y}z, \overline{x}yz, x\overline{y}z, xyz}
-    \end{Karnaughvuit}
-    %
-    \begin{Karnaugh}
-
-    \end{Karnaugh}
-        %
-    \caption{Mappe di Karnaugh a \(16\), \(8\) e \(2\)}
-    \label{fig:mappa_karnaugh_16_8_2}
+    \rowcolors{1}{white}{white}
+    \setlength{\tabcolsep}{4pt}
+    \renewcommand{\arraystretch}{2}
+    \noindent
+    \begin{tabularx}{\textwidth}{>{\hsize=0.55\textwidth}PP}
+      {
+        \begin{Karnaughquatre}
+            \contingut{\overline{x} \overline{y}, x \overline{y}, \overline{x}y, xy}
+        \end{Karnaughquatre}
+        \hspace{1em}
+        \begin{Karnaughvuit}
+            \contingut{\overline{x}\overline{y}\overline{z}, \overline{x}y\overline{z}, x\overline{y}\overline{z}, xy\overline{z}, \overline{x}\overline{y}z, \overline{x}yz, x\overline{y}z, xyz}
+        \end{Karnaughvuit}
+      } & {
+        \begin{KarnaughExample}
+              \contingut{\overline{x}\overline{y}\overline{z}\overline{w},\overline{x}y\overline{z}\overline{w},x\overline{y}\overline{z}\overline{w},xy\overline{z}\overline{w},\overline{x}\overline{y}\overline{z}w,\overline{x}y\overline{z}w,x\overline{y}\overline{z}w,xy\overline{z}w,\overline{x}\overline{y}z\overline{w},\overline{x}yz\overline{w},x\overline{y}z\overline{w},xyz\overline{w},\overline{x}\overline{y}zw,\overline{x}yzw,x\overline{y}zw,xyzw}
+        \end{KarnaughExample}
+      }
+    \end{tabularx}
+    \vspace{-4em}
+    \caption{Mappe di Karnaugh per $2$, $3$ e $4$ variabili}
+    \label{fig:mappa_karnaugh_2_3_4_1}
 \end{figure}
 
 \noindent
-Grazie al fatto che le mappe sono costruite in modo tale che due celle contigue differiscono solamente per una sola variabile è possibile costruire il \textbf{prodotto di \textit{maxterm}} e la \textbf{somma di \textit{minterm}} osservando dove la funzione vale \(0\) o \(1\) rispettivamente. Costruendo i \textbf{sottocubi} come multipli di \(2\) è possibile costruire il \textbf{determinante} semplicemente osservando sulle righe e sulle colonne interessate le variabili che rimangono costanti.\\
-In particolare:
+Nella mappa di Karnaugh, com'è intuibile, viene inserito $1$ in corrispondenza delle terne per le quali la funzione vale $1$ e $0$ in corrispondenza delle terne per le quali la funzione vale $0$. L’assegnazione delle coordinate delle caselle della tabella dev’essere tale che passando da ciascuna casella a una adiacente, sia in senso orizzontale che verticale, vari il valore di una sola variabile. Si noti che devono essere considerate adiacenti anche le caselle terminali, come se la mappa fosse chiusa circolarmente su se stessa, sia in senso orizzontale che verticale.\\
+Ricapitolando, è possibile asserire che ciascun elemento della matrice corrisponde a un termine minimo di $n$ variabili, e che la rappresentazione di una qualsiasi funzione di $n$ variabili si ottiene contrassegnando con $1$ o con $0$ le posizioni corrispondenti ai termini minimi da cui la funzione è composta.\\
+Una funzione riportata sulla mappa di Karnaugh può essere semplificata osservando che due caselle adiacenti, sia in senso orizzontale che verticale, differiscono per il valore di una sola variabile, che in una delle due caselle
+apparirà come variabile affermata, nell’altra come negata; si ricava dunque
+\[fx + f\overline{x} = f(x + \overline{x}) = f\]
+per l'assioma A7 della complementarietà.\\
+Grazie al fatto che le mappe sono costruite in modo tale che due celle contigue differiscano solamente per una sola variabile è possibile costruire il \textbf{prodotto di \textit{maxterm}} e la \textbf{somma di \textit{minterm}} osservando dove la funzione vale \(0\) o \(1\) rispettivamente.\\
+Se si designa con \emph{sottocubo} il ricoprimento associato a un implicante, la regola pratica per individuare l’implicante a esso associato è quella che prevede che esso sia costiuito dal prodotto dalle variabili che rimangono costanti su $0$ o su $1$ all’interno del sottocubo stesso, sempre ricordando che i sottocupi, per Karnaugh, devono avere $2^i$ elementi, per qualche $i$.\\
+Costruendo, quindi, i \textbf{sottocubi} come multipli di \(2\) è possibile costruire il \textbf{determinante} semplicemente osservando sulle righe e sulle colonne interessate le variabili che rimangono costanti.\\
+Per esempio, considerando la mappa di Karnaugh di Figura \ref{fig:mappa_karnaugh_3_0} seguente:
 
 % Contenitore per immagini
 \begin{figure}[H]
     \centering
     \begin{Karnaughvuit}
         \contingut{1,0,0,0,1,0,1,0}
-        \implicant{0}{4}{red}
-        \implicantcostats{4}{6}{blue}
+        \implicant{0}{4}{green}
+        \implicantcostats{4}{6}{red}
     \end{Karnaughvuit}
-    \caption{Mappa di Karnaugh a \(8\)}
-    \label{fig:mappa_karnaugh_8}
+    \vspace{-1.5em}
+    \caption{Mappa di Karnaugh a \(3\) variabili}
+    \label{fig:mappa_karnaugh_3_0}
 \end{figure}
 
 \noindent
-Pertanto costruendo i due implicanti corrispondenti a due \textit{minterm} si ha:
-\[\overline{xy} + z\overline{y}\]
+La funzione semplificata si ottiene allora come somma degli implicanti necessari e sufficienti a coprire tutti i \emph{minterm} della funzione; nel caso di cui sopra si ha:
+\[f = \overline{xy} + \overline{y}z\]
 
 \vspace{1em}
 \noindent
-\textbf{Osservazione}: Quando si costruiscono i \textbf{sottocubi} bisogna fare attenzione a non includere dei termini già considerati, per cui si costruirebbero degli \textbf{implicanti \textit{non primi}}.\\
-In particolare, vige la regola dei \textbf{sottocubi massimali} e della \textbf{copertura minima}.
+\textbf{Osservazione}: Da questi esempi si evince che un implicante di $n - 1$ variabili implica i termini minimi associati a $2$ caselle adiacenti, un
+implicante di $n - 2$ variabili implica i termini minimi associati a $2^2$ caselle adiacenti (appartenenti alla stessa riga o alla stessa colonna o raccolti attorno allo stesso vertice) e in generale un implicante di $n - i$ variabili implica i termini minimi associati a un sottocubo di $2^i$ caselle adiacenti.\\
+In tale contesto, allora, un \textbf{implicante} si dice \textbf{primo} se corrisponde a un sottocubo non completamente coperto da altri sottocubi, mentre si dirà \textbf{massimale} se non è possibile aumentare ulteriormente la sua dimensione; si definisce, infine, \textbf{copertura} della funzione un insieme di sottocubi tali da coprire tutti gli $1$ della funzione. La minimizzazione della funzione si ricava a partire da una \textbf{copertura minima}, cioè una copertura formata dal più piccolo insieme di sottocubi primi massimali.\\
+Una regola pratica da adottare, quindi, quando si costruiscono i \textbf{sottocubi} è quella che prevede di evitare il  più possibile di includere dei termini già considerati in altri sottocubi, per cui si costruirebbero degli \textbf{implicanti \textit{non primi}}.\\
+In particolare, al fine di ottenere la massima semplficazione possibile della funzione, vige la regola dei \textbf{sottocubi massimali} e della \textbf{copertura minima}.
 
 \vspace{1em}
 \noindent
-\textbf{Osservazione}: Naturalmente, attraverso la costruzione degli implicanti è possibile ottenere, in conclusione, delle semplificazioni corrette, ma formalmente diverse, ma deve essere sempre possibile passare dall'una all'altra.
+\textbf{Osservazione}: Naturalmente, attraverso la costruzione degli implicanti è possibile ottenere, in conclusione, delle semplificazioni corrette, ma formalmente diverse, tali per cui deve essere sempre possibile passare dall'una all'altra, senza perdita di generalità.
 
 \vspace{1em}
 \noindent
@@ -2545,15 +2691,20 @@ In particolare, vige la regola dei \textbf{sottocubi massimali} e della \textbf{
         \contingut{1,0,0,0,0,0,0,0,0,1,0,0,1,1,0,0}
         \implicant{0}{0}{red}
         \implicant{12}{13}{blue}
-        \implicant{13}{9}{yellow}
+        \implicant{13}{9}{green}
     \end{Karnaugh}
-    \caption{Mappa di Karnaugh a \(16\)}
-    \label{fig:mappa_karnaugh_16_1}
+    \vspace{-1.5em}
+    \caption{Mappa di Karnaugh a \(4\) variabili}
+    \label{fig:mappa_karnaugh_4_0}
 \end{figure}
+
+\noindent
+Pertanto costruendo i tre implicanti corrispondenti a tre \textit{minterm} si ha:
+\[f = \overline{xyzw} + \overline{x}z\overline{w} + \overline{x}yz\]
 
 \vspace{1em}
 \noindent
-\textbf{Esempio}: Si consideri la seguente mappa di Karnaugh:
+\textbf{Esempio}: Si consideri, infine, la seguente mappa di Karnaugh:
 
 % Contenitore per immagini
 \begin{figure}[H]
@@ -2561,61 +2712,188 @@ In particolare, vige la regola dei \textbf{sottocubi massimali} e della \textbf{
     \begin{Karnaugh}
         \contingut{1,0,1,0,1,1,1,0,1,0,1,0,1,1,1,0}
         \implicantcostats{0}{10}{green}
+        \implicant{4}{13}{red}
     \end{Karnaugh}
-    \caption{Mappa di Karnaugh a \(16\)}
-    \label{fig:mappa_karnaugh_16_2}
+    \vspace{-1.5em}
+    \caption{Mappa di Karnaugh a \(4\) variabili}
+    \label{fig:mappa_karnaugh_4_1}
 \end{figure}
 
+\noindent
+Pertanto costruendo i due implicanti corrispondenti a due \textit{minterm} si ha:
+\[f = \overline{y} + \overline{x}w\]
+
+\vspace{1em}
 \subsubsection{Mappa di Karnaugh sui termini massimi}
-Le mappe di Karnaugh possono essere usate anche per costruire la funzione semplificata secondo la II forma canonica basata sul prodotto di somme. In tal caso i sottocubi e la relativa copertura minima vanno costruiti sugli \(0\).\\
-Si consideri la seguente mappa di Karnaugh:
+Le mappe di Karnaugh possono essere usate anche per costruire la funzione semplificata secondo la II forma canonica, basata, quindi, sul prodotto di somme. In tal caso i sottocubi e la relativa copertura minima vanno costruiti sugli \(0\). Ciascun sottocubo sarà l’implicante dei relativi termini massimi e verrà rappresentato in forma simbolica dalla somma logica delle variabili che rimangono costanti sul sottoinsieme, \emph{dirette se le relative
+coordinate valgono $0$, negate se valgono $1$}. Tutto ciò deriva dalla circostanza seguente
+\[\left(f + x\right) \cdot \left(f + \overline{x}\right) = f + x \cdot \overline{x} = f\]
+Si consideri, a tal proposito, la seguente mappa di Karnaugh:
 
 % Contenitore per immagini
 \begin{figure}[H]
     \centering
     \begin{Karnaughvuit}
-        \contingut{1,0,1,0,1,1,1,0}
+        \contingut{0,1,0,0,0,1,1,1}
+        \implicant{0}{4}{red}
+        \implicant{3}{2}{green}
     \end{Karnaughvuit}
-    \caption{Mappa di Karnaugh a \(8\)}
-    \label{fig:mappa_karnaugh_8_1}
-\end{figure}
-
-\subsubsection{Mappe di Karnaugh a \(5\) o più variabili}
-Per la realizzazione delle mappe di Karnaugh con più di \(4\) variabili è impossibile costruire un'unica mappa, ma è sufficiente, nel caso di \(5\) variabili, sdoppiare la mappa in due sottomappe da \(4\):
-
-\begin{figure}[H]
-    \centering
-    \begin{Karnaugh}
-        \contingut{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0}
-    \end{Karnaugh}
-    \begin{Karnaugh}
-        \contingut{0,1,1,0,0,0,1,0,0,0,1,0,1,1,1,1}
-    \end{Karnaugh}
-    \caption{Mappa di Karnaugh a \(32\)}
-    \label{fig:mappa_karnaugh_32}
+    \vspace{-1.5em}
+    \caption{Mappa di Karnaugh a \(3\) variabili per la semplificazione dei \emph{maxterm}}
+    \label{fig:mappa_karnaugh_3_1}
 \end{figure}
 
 \noindent
-Se si avessero \(6\) variabili, si necessiterebbe la costruzione di \(4\) mappe di Karnaugh a \(16\) e così via.
+La funzione semplificata che ne deriva è
+\[f = \left(x + y\right) \cdot \left(\overline{x} + z\right) = xz + \overline{x}y\]
+che corrisponde alla funzione semplificata cercata, ottenuta, però, basandosi sull'individuazione dei due implicanti corrispondenti a due \emph{maxterm}.
 
-\subsection{Condizioni non specificate}
-Nella sintesi di una funzione logica di \(n\) variabili si può presentare il caso in cui per \(k\) configurazioni delle variabili di ingresso la funzione vale \(1\), per \(m\) configurazioni vale \(0\), ma \(k + m = 2^n\). Le restanti \(2^n - (m + k)\) configurazioni vengono dette \textbf{condizioni non specificate} (o anche d.c.c., acronimo di \textit{don’t care condition}).\\
+\vspace{1em}
+\subsubsection{Mappe di Karnaugh a \(5\) o più variabili}
+Il metodo delle mappe di Karnaugh può essere applicato, come già accennato, anche a funzioni di $5$ o $6$ variabili. In tal caso non si potrà più realizzare una mappa piana, in cui ogni casella sia adiacente a caselle le cui coordinate differiscano per un’unica variabile. La mappa per cinque variabili viene pertanto realizzata mediante due mappe da quattro variabili, una associata al valore $0$ della quinta variabile, l’altra al valore $1$. Le adiacenze vanno, quindi, ricercate anche tra caselle occupanti posizioni omologhe sulle due mappe.\\
+Si voglia, ad esempio, semplificare la seguente funzione:
+\begin{flalign*}
+  f & = x\overline{y}zwr + x\overline{y}zw\overline{r} + x\overline{y}z\overline{w}r + x\overline{y}z\overline{w}\overline{r} + \\
+  & + x\overline{y}\overline{z}wr + x\overline{y}\overline{z}w\overline{r} + x\overline{y}\overline{z}\overline{w}r + x\overline{y}\overline{z}\overline{w}\overline{r} +\\
+  & + \overline{x}yzwr + xyzwr + \overline{x}\overline{y}zwr + \overline{x}y\overline{z}\overline{w}r
+\end{flalign*}
+Le due mappe da $4$ variabili, che si ottengono, una per $r=0$ e una per $r=1$ sono le seguenti
+
+\begin{figure}[H]
+    \hspace{15.8em}
+    \begin{tikzpicture}[anchor=left]
+        \draw [dashed, stealth-stealth] (0,0) -- ++(0,1) -- ++(6.05,0) -- ++(0,-1);
+    \end{tikzpicture}\\
+    \rowcolors{1}{white}{white}
+    \setlength{\tabcolsep}{5pt}
+    \renewcommand{\arraystretch}{0.5}
+    \begin{tabularx}{\textwidth}{P}{
+      \rowcolors{1}{white}{white}
+      \setlength{\tabcolsep}{5pt}
+      \renewcommand{\arraystretch}{0.5}
+      \begin{tabularx}{0.8\textwidth}{PP}
+        {
+          \begin{Karnaugh}
+              \contingut{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0}
+              \implicant{2}{10}{red}
+          \end{Karnaugh}
+        } & {
+          \begin{Karnaugh}
+              \contingut{0,1,1,0,0,0,1,0,0,0,1,0,1,1,1,1}
+              \implicant{1}{1}{green}
+              \implicant{12}{14}{violet}
+              \implicant{2}{10}{orange}
+          \end{Karnaugh}
+        }\\
+        $r = 0$ & $r = 1$\\
+        \end{tabularx}
+    }
+    \end{tabularx}
+    \caption{Uso della mappa di Karnaugh per una funzione di 5 variabili}
+    \label{fig:mappa_karnaugh_5_0}
+\end{figure}
+
+\noindent
+La funzione semplificata risulta
+\[f = x\overline{y} + \overline{x}y\overline{z}\overline{w}r + zwr\]
+in quanto le due mappe sono da considerarsi adiacenti rispetto alla colonna $10$ corrispondente alla coppia $xy$.\\
+Se le variabili fossero $6$, come $x$, $y$, $z$, $w$, $r$ e $t$ sarebbe necessario usare quattro mappe nelle quattro variabili $x$, $y$, $z$, $w$ e una per ogni coppia possibile di valori associati alle variabili $r$ e $t$.
+
+\vspace{1em}
+\subsubsection{Condizioni non specificate}
+Nella sintesi di una funzione logica di \(n\) variabili si può presentare il caso in cui per \(k\) configurazioni delle variabili di ingresso la funzione vale \(1\), per \(m\) configurazioni vale \(0\), ma \(k + m < 2^n\). Le restanti \(2^n - (m + k)\) configurazioni vengono dette \textbf{condizioni non specificate} (o anche \emph{d.c.c.}, acronimo di \textit{don’t care condition}).\\
 In pratica questa situazione si verifica ogni qualvolta in un circuito certe configurazioni di ingresso sono fisicamente impossibili, o rendono privo di significato il valore dell’uscita. Da un punto di vista strettamente analitico ciò accade quando una funzione \(F\) è funzione delle variabili \(\phi_1, \phi_2, \phi_3, ..., \phi_m\), ognuna delle quali è a sua volta funzione delle variabili \(x_1, x_2, ..., x_n\), cioé
-\[... continua ...\]
-Si nota che le terne di possibili valori \(\phi_1, \phi_2, \phi_3\) sono \(000, 001, 010, 100, 101\), mentre le configurazioni rimanenti \(011, 110, 111\) non compaiono. Ne consegue che la tavola di verità della \(F\) conterrà condizioni non specificate in corrispondenza di queste configurazioni d’ingresso.\\
-Sulla tavola di verita le condizioni non specificate vengono indicate con un trattino, nella forma canonica racco- `
-gliendo in parentesi i termini minimi corrispondenti, sulle mappe di Karnaugh contrassegnando con il simbolo ˆ
-la casella corrispondente a ciascuna condizione non specificata.
-Le condizioni non specificate possono venir sfruttate nelle semplificazioni, in modo da pervenire ad espressioni
-minime piu semplici. Se si opera con le mappe di Karnaugh, le semplificazioni vanno ancora fatte in modo da `
-coprire tutte le caselle contrassegnate con un 1, ma se serve si possono aggregare anche le caselle associate a
-condizioni non specificate, che possiamo contrassegnare con ˆ ; in pratica si tratta di utilizzare le condizioni non
-specificate per allargare al massimo i sottocubi di copertura della funzione, assegnando a ciascuna di loro il valore
-1 o 0 a seconda che torni o meno utile per ottenere sottocubi piu ampi. Nell’esempio di sopra si ottiene
+\[F = f \left(\phi_1, \phi_2, \phi_3, ..., \phi_m\right) \hspace{2em} \phi_i = f \left(x_1, x_2, ..., x_n\right) \hspace{2em} i = 1, 2..., m\]
+Le condizioni non specificate si ricavano dalle tavole di verità delle $\phi_i$, e sono tutte e sole le configurazioni delle $\phi_i$ che non compaiono in tali tabelle. Sia ad esempio:
+
+\vspace{1em}
+\noindent
+\begin{figure}[H]
+    \centering
+    \rowcolors{1}{white}{white}
+    \begin{tabular}{cl}
+     & \(\phi_1 = x \cdot \left(yz + \overline{y}\overline{z}\right)\)\\
+     \(F \left(\phi_1, \phi_2, \phi_3\right)\) & \(\phi_2 = w \cdot \left(y\overline{x} + \overline{y}z\right)\)\\
+     & \(\phi_3 = xyz + \overline{x}\overline{y}\overline{z}\)\\
+    \end{tabular}
+    \vspace{1em}
+\end{figure}
+
+\noindent
+La tavola di verità delle $\phi_i$ è riportata nella Figura \ref{fig:tavola_verita_fi_e_F} seguente, così come i valori assunti dalla funzione $F$ considerata:
+
+\vspace{1em}
+\noindent
+\begin{figure}[H]
+    \centering
+    \rowcolors{1}{white}{white}
+    \begin{tabularx}{\textwidth}{PP}
+      {
+        \rowcolors{1}{white}{white}
+        \setlength{\tabcolsep}{8pt}
+        \renewcommand{\arraystretch}{1.2}
+        \begin{tabular}{cccc|ccc}
+          $x$ & $y$ & $z$ & $w$ & $\phi_1$ & $\phi_2$ & $\phi_3$\\
+          \hline
+          $0$ & $0$ & $0$ & $0$ & $0$ & $0$ & $1$\\
+          $0$ & $0$ & $0$ & $1$ & $0$ & $0$ & $1$\\
+          $0$ & $0$ & $1$ & $0$ & $0$ & $0$ & $0$\\
+          $0$ & $0$ & $1$ & $1$ & $0$ & $1$ & $0$\\
+          $0$ & $1$ & $0$ & $0$ & $0$ & $0$ & $0$\\
+          $0$ & $1$ & $0$ & $1$ & $0$ & $1$ & $0$\\
+          $0$ & $1$ & $1$ & $0$ & $0$ & $0$ & $0$\\
+          $0$ & $1$ & $1$ & $1$ & $0$ & $0$ & $0$\\
+          $1$ & $0$ & $0$ & $0$ & $1$ & $0$ & $0$\\
+          $1$ & $0$ & $0$ & $1$ & $1$ & $0$ & $0$\\
+          $1$ & $0$ & $1$ & $0$ & $0$ & $0$ & $0$\\
+          $1$ & $0$ & $1$ & $1$ & $0$ & $1$ & $0$\\
+          $1$ & $1$ & $0$ & $0$ & $0$ & $0$ & $0$\\
+          $1$ & $1$ & $0$ & $1$ & $0$ & $1$ & $0$\\
+          $1$ & $1$ & $1$ & $0$ & $1$ & $0$ & $1$\\
+          $1$ & $1$ & $1$ & $1$ & $1$ & $0$ & $1$\\
+        \end{tabular}
+      } & {
+          \rowcolors{1}{white}{white}
+          \setlength{\tabcolsep}{8pt}
+          \renewcommand{\arraystretch}{1.2}
+          \begin{tabular}{ccc|c}
+            $\phi_1$ & $\phi_2$ & $\phi_3$ & $F$\\
+            \hline
+            $0$ & $0$ & $0$ & $1$\\
+            $0$ & $0$ & $1$ & $0$\\
+            $0$ & $1$ & $0$ & $1$\\
+            $0$ & $1$ & $1$ & $-$\\
+            $1$ & $0$ & $0$ & $1$\\
+            $1$ & $0$ & $1$ & $0$\\
+            $1$ & $1$ & $0$ & $-$\\
+            $1$ & $1$ & $1$ & $-$\\
+          \end{tabular}
+      }
+    \end{tabularx}
+    \caption{Le tavole di verità delle funzioni $\phi_1$, $\phi_2$ e $\phi_3$ e quella della funzione $F$}
+    \label{fig:tavola_verita_fi_e_F}
+\end{figure}
+
+\noindent
+Si nota immediatamente che le terne di possibili valori \(\phi_1, \phi_2, \phi_3\) sono \(000, 001, 010, 100, 101\), mentre le configurazioni rimanenti \(011, 110, 111\) non compaiono. Ne consegue che la tavola di verità della \(F\) conterrà condizioni non specificate in corrispondenza di queste configurazioni d’ingresso.\\
+Sulla tavola di verità le condizioni non specificate vengono indicate con un trattino, nella forma canonica raccogliendo in parentesi i termini minimi corrispondenti, sulle mappe di Karnaugh contrassegnando con il simbolo $\times$ la casella corrispondente a ciascuna condizione non specificata.\\
+Le condizioni non specificate possono venir sfruttate nelle semplificazioni, in modo da pervenire ad espressioni minime più semplici. Se si opera con le mappe di Karnaugh, le semplificazioni vanno ancora fatte in modo da coprire tutte le caselle contrassegnate con un $1$, ma se serve si possono aggregare anche le caselle associate a condizioni non specificate, che si possono contrassegnare con $\times$; in pratica si tratta di utilizzare le condizioni non specificate per allargare al massimo i sottocubi di copertura della funzione, assegnando a ciascuna di loro il valore $1$ o $0$ a seconda che torni o meno utile per ottenere sottocubi piu ampi. Nell’esempio di sopra si ottiene
+
+% Contenitore per immagini
+\begin{figure}[H]
+    \centering
+    \begin{KarnaughvuitPhi}
+        \contingut{1,1,1,\times,0,\times,0,\times}
+        \implicant{0}{2}{green}
+    \end{KarnaughvuitPhi}
+    \vspace{-1.5em}
+    \caption{Mappa di Karnaugh a \(3\) variabili}
+    \label{fig:mappa_karnaugh_3_2}
+\end{figure}
 
 \newpage
 \begin{center}
-    11 Ottobre 2021
+    19 Ottobre 2021
 \end{center}
 \subsection{Riassunto}
 La semplificazione delle espressioni booleane può avvenire in tre modi egualmente validi:
@@ -2624,40 +2902,42 @@ La semplificazione delle espressioni booleane può avvenire in tre modi egualmen
     \item Mappa di Karnaugh
     \item Metodo tabellare Quine-McCluskey
 \end{enumerate}
-Le mappe di Karnaugh sono delle \textbf{tabelle piane} che presentano un numero di celle pari a \(2^n\), ove \(n\) è il numero di variabili oggetto di studio. Le righe e le colonne devono essere formate nel seguente modo
-\[2^i \cdot 2^j = 2^n\]
-La realizzazione prevede di disporre le variabili sulle righe e sulle colonne in modo tale che tra una cella all'altra, tanto in senso orizzontale quanto in quello verticale, vi sia una sola variazione di una variabile, nel senso della sua complementarietà.\\
+Le mappe di Karnaugh sono delle \textbf{tabelle piane} che presentano un numero di celle pari a \(2^n\), ove \(n\) è il numero di variabili oggetto di studio. Il numero delle righe $m$ e delle colonne $k$ devono essere tali per cui
+\[m \cdot k = 2^i \cdot 2^j = 2^n\]
+per qualche $i$ e $j$. La realizzazione di una mappa di Karnaugh prevede di disporre le variabili sulle righe e sulle colonne in modo tale che tra una cella all'altra, tanto in senso orizzontale quanto in quello verticale, si registri la variazione di una sola variabile, nel senso della sua complementarietà.\\
 L'individuazione dei blocchi di \textit{minterm} deve avvenire rispettando due importanti condizioni: \textbf{sottocubi massimali} e della \textbf{copertura minima}.\\
 Per determinare, poi, a quale \textbf{implicante} corrisponde al sottocubo evidenziato è sufficiente rilevare quelle variabili che nel sottocubo rimangono costanti sia in orizzontale che in verticale, nel senso della loro complementarietà.\\
-Si ricordi, ancora, che le mappe di Karnaugh devono essere considerate chiuse in senso circolare (\textbf{adiacenza per circolarità}), per cui è necessario disporre le variabili come \(00, 01, 11, 10\) per cui tra \(00 - 01\), \(01 - 11\), \(11 - 10\) e \(10 - 00\) vi è la variazione di una sola variabile.\\
-Naturalmente, con questa modalità è possibile anche individuare \textbf{sottocubi \textit{non primi}}, ovvero sottocubi che includono minterm già inglobati in altri sottocubi. Certo è che la somma di minterm risultante sarà comunque correttamente espressa, solamente sarà presente una ridondanza superflua, che può essere semplificata tramite i teoremi dell'Algebra Booleana. Naturalmente, però, è sufficiente evitare di considerare sottocubi non primi per ottenere, alla fine, la formula minima di espressione della funzione booleana.\\
+Si ricordi, ancora, che le mappe di Karnaugh devono essere considerate chiuse in senso circolare (si parla, in tal senso, di \textbf{adiacenza per circolarità}), per cui, nel caso di due variabili, è necessario disporle come segue \(00, 01, 11, 10\), dimodoché tra \(00 - 01\), \(01 - 11\), \(11 - 10\) e \(10 - 00\) vi sia la variazione di una sola variabile.\\
+Naturalmente, con questa modalità è possibile anche individuare \textbf{sottocubi \textit{non primi}}, ovvero sottocubi che includono minterm già inglobati in altri sottocubi. Certo è che la somma di \emph{minterm} risultante sarà comunque correttamente espressa, solamente sarà presente una ridondanza superflua, che può essere semplificata tramite i teoremi dell'Algebra Booleana. Naturalmente, però, è sufficiente evitare di considerare sottocubi non primi per ottenere, alla fine, la formula minima di espressione della funzione booleana.\\
 Naturalmente, in forza del \textbf{principio di dualità}, così com'è possibile ottenere una somma di \textit{minterm} tramite le mappe di Karnaugh, sarà anche possibile ottenere un prodotto di \textit{maxterm}, che può rivelarsi più conveniente qualora nella tabella siano maggiormente presenti gli \(0\) piuttosto che gli \(1\).\\
-Naturalmente, è possibile procedere all'applicazione delle mappe di Karnaugh anche a \(5\), \(6\) variabili, con un sensibile aumento della complicazione della procedura di semplificazione. In questi casi, sarà maggiormente conveniente operare tramite il metodo tabella di Quine-McCluskey (anche più facilmente programmabile).\\
-È possibile, inoltre, che la funzione analizzata non possa presentare determinate combinazioni di variabili in ingresso, le quali sarebbero prive di significato. Allora, nella procedura di semplificazione tramite mappa di Karnaugh, laddove figurano le combinazioni di variabili in ingresso si pone una \(X\) che può tramutarsi in \(1\) o \(0\) al fine di \textbf{massimizzare i sottocubi} e garantire una \textbf{copertura minima}.
+Naturalmente, è possibile procedere all'applicazione delle mappe di Karnaugh anche a \(5\), \(6\) variabili, con un sensibile aumento della complicazione della procedura di semplificazione. In questi casi, sarà maggiormente conveniente operare tramite il metodo tabellare di Quine-Mc Cluskey (il quale, essendo un vero e proprio algoritmo, + anche più facilmente programmabile).\\
+È possibile, inoltre, che la funzione analizzata non possa presentare determinate combinazioni di variabili in ingresso, le quali sarebbero prive di significato. Allora, nella procedura di semplificazione tramite mappa di Karnaugh, laddove figurano le combinazioni di variabili in ingresso di cui sopra, chiamate \emph{condizioni non specificate}, si pone una \(\times\) che può tramutarsi in \(1\) o \(0\) al fine di \textbf{massimizzare i sottocubi} e garantire una \textbf{copertura minima}.
 
-\vspace{1em}
+\newpage
 \noindent
-\textbf{Esercizio}: Si costruisca una funzione \(f\) a \(n = 3\) variabili:
+\textbf{Esercizio}: Si costruisca una funzione \(f\) a \(n = 3\) variabili, la quale presenta la tabela di verità riportata nella Tabella \ref{tab:funzione_3_variabili_0} seguente:
 
 \begin{table}[H]
     \centering
+    \rowcolors{1}{white}{white}
+    \setlength{\tabcolsep}{8pt}
+    \renewcommand{\arraystretch}{1.2}
     \begin{tabular}{ccc|c}
-         $x$ & $y$ & $z$ & $f(x, y, z)$\\
-         \hline
-         $0$ & $0$ & $0$ & $1$\\
-         $0$ & $0$ & $1$ & $1$\\
-         $0$ & $1$ & $0$ & $0$\\
-         $0$ & $1$ & $1$ & $1$\\
-         $1$ & $0$ & $0$ & $1$\\
-         $1$ & $0$ & $1$ & $0$\\
-         $1$ & $1$ & $0$ & $1$\\
-         $1$ & $1$ & $1$ & $1$\\
+      $x$ & $y$ & $z$ & $f(x, y, z)$\\
+      \hline
+      $0$ & $0$ & $0$ & $1$\\
+      $0$ & $0$ & $1$ & $1$\\
+      $0$ & $1$ & $0$ & $0$\\
+      $0$ & $1$ & $1$ & $1$\\
+      $1$ & $0$ & $0$ & $1$\\
+      $1$ & $0$ & $1$ & $0$\\
+      $1$ & $1$ & $0$ & $1$\\
+      $1$ & $1$ & $1$ & $1$\\
     \end{tabular}
     \caption{Funzione a \(n = 3\) variabili}
-    \label{tab:funzione_3_variabili_1}
+    \label{tab:funzione_3_variabili_0}
 \end{table}
 
-\vspace{1em}
 \noindent
 Considerando la \textbf{somma di \textit{minterm}} si ottiene
 \[f = \overline{x}\overline{y}\overline{z} + \overline{x}\overline{y}z + \overline{x}yz + x\overline{y}\overline{z} + xy\overline{z} + xyz\]
@@ -2668,7 +2948,7 @@ ottenendo
 
 \vspace{1em}
 \noindent
-Considerando il \textbf{prodotto di \textit{maxterm}} si ottiene
+Considerando il \textbf{prodotto di \textit{maxterm}}, invece, si ottiene
 \[f = (\overline{x} + y + \overline{z}) \cdot (x + \overline{y} + z)\]
 ovvero
 \[f = \overline{x}x + \overline{x}y + \overline{x}z + xy + \overline{y}y + xz + \overline{x}\overline{z} + y\overline{z} + z\overline{z}\]
@@ -2685,35 +2965,42 @@ Si realizzi, allora, la mappa di Karnaugh corrispondente, scegliendo i \textit{m
     \begin{Karnaughvuit}
         \contingut{1,0,1,1,1,1,0,1}
         \implicant{4}{5}{red}
-        \implicantcostats{0}{2}{yellow}
+        \implicantcostats{0}{2}{green}
         \implicant{3}{7}{blue}
     \end{Karnaughvuit}
-    \label{fig:mappa_karnaugh_8_1}
+    \vspace{-1.5em}
+    \caption{Mappa di Karnaugh a $3$ variabili}
+    \label{fig:mappa_karnaugh_8_0}
 \end{figure}
 
-\vspace{1em}
 \noindent
-Da cui si ottiene
-\[f = \overline{y}z + \overline{x}z + xy\]
-la quale è differente dalla espressione ottenuta all'inizio. Per cui, costruendo un'ulteriore mappa di Karnaugh si individuano tutti i termini presenti nell'espressione di partenza, ovvero
-\[f = \overline{x}\overline{y} + yz + \overline{y}\overline{z} + xy\]
+Per cui si ottiene
+\[f = \overline{y}\overline{z} + \overline{x}z + xy\]
+la quale è differente dalla espressione ottenuta tramite procedure algebriche. Tuttavia, quest'ultima è la forma minima cercata, in quanto sono stati individuati sottocubi massimali primi al fine di garantire una copertura minima.\\
+Per capire come si è giunti alla forma minima individuata in principio, si costruisce un'ulteriore mappa di Karnaugh e si individuano, in essa, tutti i termini presenti nell'espressione di partenza, ovvero
+\[f = x\overline{z} + \overline{x}\overline{y} + xy + \overline{x}z\]
+come mostrato nella Figura \ref{fig:mappa_karnaugh_8_1} seguente:
 
 \begin{figure}[H]
     \centering
     \begin{Karnaughvuit}
         \contingut{1,0,1,1,1,1,0,1}
         \implicant{3}{2}{red}
-        \implicant{3}{7}{blue}
-        \implicant{0}{4}{yellow}
-        \implicant{4}{5}{green}
+        \implicant{3}{7}{green}
+        \implicant{0}{4}{blue}
+        \implicant{4}{5}{violet}
     \end{Karnaughvuit}
+    \vspace{-1.5em}
+    \caption{Mappa di Karnaugh a $3$ variabili}
     \label{fig:mappa_karnaugh_8_1}
 \end{figure}
 
 \noindent
-Pertanto, come si nota, sono stati scelti dei sottocubi \textit{non primi}, pertanto vi sono \(4\) termini al posto di \(3\), come formula minima.\\
-Pertanto si deve cercare di eliminare i due sottocubi non primi \(xy\) e \(\overline{x}z\) che deve divenire \(yz\), ovvero
-\[xy + \overline{x}z = yz\]
+Grazie a questa seconda mappa di Karnaugh è facile capire che nella semplificazione di partenza sono stati scelti dei sottocubi \textit{non primi}, pertanto vi sono \(4\) termini al posto di \(3\), come formula minima.\\
+Pertanto si deve cercare di eliminare i due sottocubi non primi \(\overline{x}\overline{y}\) e \(x\overline{z}\) che deve divenire \(\overline{y}\overline{z}\), ovvero
+\[\overline{x}\overline{y} + x\overline{z} = \overline{y}\overline{z}\]
+Ma ciò è facile da capire in forza dell'\textbf{assioma della complementarietà} A7, che permette di scrivere
+\[\overline{x}\overline{y} + x\overline{z} = \overline{x}\overline{y} + \overline{y}\overline{z} + x\overline{z} + \overline{y}\overline{z} = \overline{y} \cdot \left(\overline{x} + \overline{z}\right) + \overline{z} \cdot \left(x + \overline{y}\right)\]
 
 \vspace{1em}
 \noindent
@@ -2760,7 +3047,7 @@ Che sulla mappa di Karnaugh figura come segue:
         \implicant{0}{1}{red}
         \implicantcostats{1}{2}{green}
     \end{Karnaughvuit}
-    \label{fig:mappa_karnaugh_8_3}
+    \label{fig:mappa_karnaugh_8_2}
 \end{figure}
 
 \vspace{1em}
@@ -2828,7 +3115,7 @@ La realizzazione della mappa di Karnaugh si ottiene
         \implicant{4}{5}{blue}
         \implicant{0}{4}{green}
     \end{Karnaughvuit}
-    \label{fig:mappa_karnaugh_8_4}
+    \label{fig:mappa_karnaugh_8_3}
 \end{figure}
 
 \noindent
@@ -2904,7 +3191,7 @@ La realizzazione della mappa di Karnaugh si ottiene
         \implicant{1}{5}{blue}
         \implicant{6}{6}{yellow}
     \end{Karnaughvuit}
-    \label{fig:mappa_karnaugh_8_5}
+    \label{fig:mappa_karnaugh_8_4}
 \end{figure}
 
 Da cui si può osservare:
@@ -3020,7 +3307,7 @@ Infatti, ciò si può facilmente osservare anche attraverso la realizzazione del
         \implicant{1}{5}{red}
         \implicant{7}{6}{green}
     \end{Karnaughvuit}
-    \label{fig:mappa_karnaugh_8_6}
+    \label{fig:mappa_karnaugh_8_5}
 \end{figure}
 
 \noindent
@@ -3155,7 +3442,7 @@ La realizzazione della mappa di Karnaugh si ottiene
         \implicant{5}{7}{blue}
         \implicant{0}{4}{green}
     \end{Karnaughvuit}
-    \label{fig:mappa_karnaugh_8_4}
+    \label{fig:mappa_karnaugh_8_7}
 \end{figure}
 
 \noindent
@@ -3169,7 +3456,7 @@ Oppure, equivalentemente
         \implicant{4}{5}{blue}
         \implicant{3}{7}{green}
     \end{Karnaughvuit}
-    \label{fig:mappa_karnaugh_8_4}
+    \label{fig:mappa_karnaugh_8_8}
 \end{figure}
 
 \noindent
@@ -3473,7 +3760,7 @@ La mappa di Karnaugh corrispondente sarà
         \implicant{3}{2}{red}
         \implicant{5}{7}{blue}
     \end{Karnaughvuit}
-    \label{fig:mappa_karnaugh_8_5}
+    \label{fig:mappa_karnaugh_8_9}
 \end{figure}
 
 \noindent

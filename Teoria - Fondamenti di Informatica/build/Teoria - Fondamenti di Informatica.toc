@@ -42,97 +42,98 @@
 \contentsline {subsection}{\numberline {2.18}Interpretazione circuitale}{36}{}%
 \contentsline {subsection}{\numberline {2.19}Riassunto}{38}{}%
 \contentsline {subsection}{\numberline {2.20}Semplificazione delle espressioni Booleane}{42}{}%
-\contentsline {subsubsection}{\numberline {2.20.1}Mappe di Karnaugh}{42}{}%
-\contentsline {subsection}{\numberline {2.21}Riassunto}{43}{}%
-\contentsline {subsubsection}{\numberline {2.21.1}Mappa di Karnaugh sui termini massimi}{45}{}%
-\contentsline {subsubsection}{\numberline {2.21.2}Mappe di Karnaugh a \(5\) o più variabili}{45}{}%
-\contentsline {subsection}{\numberline {2.22}Condizioni non specificate}{45}{}%
-\contentsline {subsection}{\numberline {2.23}Riassunto}{47}{}%
-\contentsline {subsection}{\numberline {2.24}Metodo tabellare Quine - Mc Cluskey}{53}{}%
-\contentsline {section}{\numberline {3}Circuiti combinatori}{56}{}%
-\contentsline {subsection}{\numberline {3.1}Introduzione}{56}{}%
-\contentsline {subsubsection}{\numberline {3.1.1}Itinerari e livelli}{56}{}%
-\contentsline {subsection}{\numberline {3.2}Riassunto}{57}{}%
-\contentsline {subsection}{\numberline {3.3}Analisi dei circuiti combinatori}{60}{}%
-\contentsline {subsection}{\numberline {3.4}Sintesi dei circuiti combinatori}{60}{}%
-\contentsline {subsection}{\numberline {3.5}Riassunto}{62}{}%
-\contentsline {subsection}{\numberline {3.6}Moduli combinatori}{63}{}%
-\contentsline {subsubsection}{\numberline {3.6.1}Decodificatori}{63}{}%
-\contentsline {subsubsection}{\numberline {3.6.2}Codificatore}{64}{}%
-\contentsline {subsubsection}{\numberline {3.6.3}Selettori}{64}{}%
-\contentsline {subsubsection}{\numberline {3.6.4}Selettore d'uscita}{64}{}%
-\contentsline {subsection}{\numberline {3.7}Riassunto}{67}{}%
-\contentsline {subsection}{\numberline {3.8}Costruzione modulare di una funzione Booleana}{67}{}%
-\contentsline {subsubsection}{\numberline {3.8.1}Diodi}{68}{}%
-\contentsline {subsection}{\numberline {3.9}Riassunto}{69}{}%
-\contentsline {subsection}{\numberline {3.10}Memorie E-PROM}{70}{}%
-\contentsline {subsection}{\numberline {3.11}Moduli per la realizzazione dell’unita logico-aritmetica}{70}{}%
-\contentsline {subsubsection}{\numberline {3.11.1}Il semisommatore e il sommatore completo}{70}{}%
-\contentsline {subsubsection}{\numberline {3.11.2}Calcolo della differenza mediante sommatore}{71}{}%
-\contentsline {subsection}{\numberline {3.12}Riassunto}{72}{}%
-\contentsline {section}{\numberline {4}Circuiti sequenziali}{74}{}%
-\contentsline {subsection}{\numberline {4.1}Moduli sequenziali asincroni}{74}{}%
-\contentsline {subsection}{\numberline {4.2}Il Flip-Flop Set-Reset - FFSR}{75}{}%
-\contentsline {subsubsection}{\numberline {4.2.1}Latch di NOR}{75}{}%
-\contentsline {subsection}{\numberline {4.3}Riassunto}{77}{}%
-\contentsline {subsection}{\numberline {4.4}Latch di NAND}{79}{}%
-\contentsline {subsection}{\numberline {4.5}\textit {Flip-Flop} SR sincrono}{79}{}%
-\contentsline {subsection}{\numberline {4.6}\textit {Flip-Flop} JK}{79}{}%
-\contentsline {subsection}{\numberline {4.7}Flip-Flop di tipo T}{80}{}%
-\contentsline {subsection}{\numberline {4.8}\textit {Flip-Flop} di tipo D}{80}{}%
-\contentsline {subsection}{\numberline {4.9}Registri e contatori}{80}{}%
-\contentsline {subsection}{\numberline {4.10}Contatore}{80}{}%
-\contentsline {subsection}{\numberline {4.11}Riassunto}{81}{}%
-\contentsline {section}{\numberline {5}Codifica}{83}{}%
-\contentsline {subsubsection}{\numberline {5.0.1}Codifica dei caratteri}{83}{}%
-\contentsline {subsubsection}{\numberline {5.0.2}Codifica dei numeri}{84}{}%
-\contentsline {subsubsection}{\numberline {5.0.3}Conversione da base \(2\) a base \(10\)}{84}{}%
-\contentsline {subsubsection}{\numberline {5.0.4}Conversione da base \(10\) a base \(2\)}{84}{}%
-\contentsline {subsection}{\numberline {5.1}Operazioni binarie}{84}{}%
-\contentsline {subsection}{\numberline {5.2}Riassunto}{85}{}%
-\contentsline {subsection}{\numberline {5.3}Rappresentazioni in \textit {floating-point}}{85}{}%
-\contentsline {subsubsection}{\numberline {5.3.1}Segnali analogici}{86}{}%
-\contentsline {subsubsection}{\numberline {5.3.2}Immagini}{86}{}%
-\contentsline {subsection}{\numberline {5.4}Riassunto}{88}{}%
-\contentsline {subsection}{\numberline {5.5}Rappresentazione fisica dei bit}{89}{}%
-\contentsline {subsubsection}{\numberline {5.5.1}Bit nelle memoria RAM}{90}{}%
-\contentsline {subsubsection}{\numberline {5.5.2}Seriale e Parallelo}{90}{}%
-\contentsline {subsection}{\numberline {5.6}Riassunto}{91}{}%
-\contentsline {section}{\numberline {6}Rivoluzione microelettronica}{92}{}%
-\contentsline {subsection}{\numberline {6.1}Seconda fase: Transistor}{92}{}%
-\contentsline {subsection}{\numberline {6.2}Circuiti integrati}{92}{}%
-\contentsline {subsection}{\numberline {6.3}Concetto di informazione}{93}{}%
-\contentsline {subsection}{\numberline {6.4}Riassunto}{94}{}%
-\contentsline {subsection}{\numberline {6.5}Ridondanza}{94}{}%
-\contentsline {section}{\numberline {7}Storia dell'informatica}{96}{}%
-\contentsline {subsection}{\numberline {7.1}Riassunto}{97}{}%
-\contentsline {subsection}{\numberline {7.2}Nozione di algoritmo}{97}{}%
-\contentsline {subsection}{\numberline {7.3}Modello RAM}{98}{}%
-\contentsline {subsection}{\numberline {7.4}Computazione}{98}{}%
-\contentsline {subsubsection}{\numberline {7.4.1}Prossima istruzione}{98}{}%
-\contentsline {subsubsection}{\numberline {7.4.2}STOP della computazione}{98}{}%
-\contentsline {subsubsection}{\numberline {7.4.3}Configurazione iniziale}{99}{}%
-\contentsline {subsubsection}{\numberline {7.4.4}Configurazione finale}{99}{}%
-\contentsline {subsubsection}{\numberline {7.4.5}Convergenza}{99}{}%
-\contentsline {subsubsection}{\numberline {7.4.6}Calcolo di una funzione tramite un programma}{99}{}%
-\contentsline {subsubsection}{\numberline {7.4.7}Funzione calcolabile}{99}{}%
-\contentsline {subsubsection}{\numberline {7.4.8}Linguaggio delle funzioni}{99}{}%
-\contentsline {subsection}{\numberline {7.5}Riassunto}{100}{}%
-\contentsline {subsection}{\numberline {7.6}Programmazione imperativa}{102}{}%
-\contentsline {subsubsection}{\numberline {7.6.1}Istruzioni logiche di controllo}{102}{}%
-\contentsline {subsubsection}{\numberline {7.6.2}Selezione}{102}{}%
-\contentsline {subsubsection}{\numberline {7.6.3}Iterazione while - do}{103}{}%
-\contentsline {subsubsection}{\numberline {7.6.4}Iterazione repeat - unti}{103}{}%
-\contentsline {subsection}{\numberline {7.7}Tesi di Church-Turing}{103}{}%
-\contentsline {section}{\numberline {8}Architettura dei calcolatori}{104}{}%
-\contentsline {subsection}{\numberline {8.1}Componenti essenziali di un calcolatore}{104}{}%
-\contentsline {subsection}{\numberline {8.2}Ciclo \textit {fetch-decode-execute}}{104}{}%
-\contentsline {subsection}{\numberline {8.3}Riassunto}{105}{}%
-\contentsline {subsection}{\numberline {8.4}Struttura di base del calcolatore}{105}{}%
-\contentsline {subsubsection}{\numberline {8.4.1}Processore}{105}{}%
-\contentsline {subsection}{\numberline {8.5}Istruzioni in linguaggio ASSEMBLY}{106}{}%
-\contentsline {subsection}{\numberline {8.6}Gerarchia di memoria}{107}{}%
-\contentsline {subsubsection}{\numberline {8.6.1}Registri CPU}{107}{}%
-\contentsline {subsubsection}{\numberline {8.6.2}RAM}{108}{}%
-\contentsline {subsubsection}{\numberline {8.6.3}Memoria Cache}{108}{}%
-\contentsline {subsubsection}{\numberline {8.6.4}Memoria secondaria}{108}{}%
+\contentsline {subsubsection}{\numberline {2.20.1}Funzioni Booleane equivalenti}{42}{}%
+\contentsline {subsubsection}{\numberline {2.20.2}Mappe di Karnaugh}{42}{}%
+\contentsline {subsection}{\numberline {2.21}Riassunto}{44}{}%
+\contentsline {subsubsection}{\numberline {2.21.1}Mappa di Karnaugh sui termini massimi}{47}{}%
+\contentsline {subsubsection}{\numberline {2.21.2}Mappe di Karnaugh a \(5\) o più variabili}{47}{}%
+\contentsline {subsubsection}{\numberline {2.21.3}Condizioni non specificate}{48}{}%
+\contentsline {subsection}{\numberline {2.22}Riassunto}{50}{}%
+\contentsline {subsection}{\numberline {2.23}Metodo tabellare Quine - Mc Cluskey}{56}{}%
+\contentsline {section}{\numberline {3}Circuiti combinatori}{59}{}%
+\contentsline {subsection}{\numberline {3.1}Introduzione}{59}{}%
+\contentsline {subsubsection}{\numberline {3.1.1}Itinerari e livelli}{59}{}%
+\contentsline {subsection}{\numberline {3.2}Riassunto}{60}{}%
+\contentsline {subsection}{\numberline {3.3}Analisi dei circuiti combinatori}{63}{}%
+\contentsline {subsection}{\numberline {3.4}Sintesi dei circuiti combinatori}{63}{}%
+\contentsline {subsection}{\numberline {3.5}Riassunto}{65}{}%
+\contentsline {subsection}{\numberline {3.6}Moduli combinatori}{66}{}%
+\contentsline {subsubsection}{\numberline {3.6.1}Decodificatori}{66}{}%
+\contentsline {subsubsection}{\numberline {3.6.2}Codificatore}{67}{}%
+\contentsline {subsubsection}{\numberline {3.6.3}Selettori}{67}{}%
+\contentsline {subsubsection}{\numberline {3.6.4}Selettore d'uscita}{67}{}%
+\contentsline {subsection}{\numberline {3.7}Riassunto}{70}{}%
+\contentsline {subsection}{\numberline {3.8}Costruzione modulare di una funzione Booleana}{70}{}%
+\contentsline {subsubsection}{\numberline {3.8.1}Diodi}{71}{}%
+\contentsline {subsection}{\numberline {3.9}Riassunto}{73}{}%
+\contentsline {subsection}{\numberline {3.10}Memorie E-PROM}{74}{}%
+\contentsline {subsection}{\numberline {3.11}Moduli per la realizzazione dell’unita logico-aritmetica}{74}{}%
+\contentsline {subsubsection}{\numberline {3.11.1}Il semisommatore e il sommatore completo}{74}{}%
+\contentsline {subsubsection}{\numberline {3.11.2}Calcolo della differenza mediante sommatore}{75}{}%
+\contentsline {subsection}{\numberline {3.12}Riassunto}{76}{}%
+\contentsline {section}{\numberline {4}Circuiti sequenziali}{78}{}%
+\contentsline {subsection}{\numberline {4.1}Moduli sequenziali asincroni}{78}{}%
+\contentsline {subsection}{\numberline {4.2}Il Flip-Flop Set-Reset - FFSR}{79}{}%
+\contentsline {subsubsection}{\numberline {4.2.1}Latch di NOR}{79}{}%
+\contentsline {subsection}{\numberline {4.3}Riassunto}{81}{}%
+\contentsline {subsection}{\numberline {4.4}Latch di NAND}{83}{}%
+\contentsline {subsection}{\numberline {4.5}\textit {Flip-Flop} SR sincrono}{83}{}%
+\contentsline {subsection}{\numberline {4.6}\textit {Flip-Flop} JK}{83}{}%
+\contentsline {subsection}{\numberline {4.7}Flip-Flop di tipo T}{84}{}%
+\contentsline {subsection}{\numberline {4.8}\textit {Flip-Flop} di tipo D}{84}{}%
+\contentsline {subsection}{\numberline {4.9}Registri e contatori}{84}{}%
+\contentsline {subsection}{\numberline {4.10}Contatore}{84}{}%
+\contentsline {subsection}{\numberline {4.11}Riassunto}{85}{}%
+\contentsline {section}{\numberline {5}Codifica}{87}{}%
+\contentsline {subsubsection}{\numberline {5.0.1}Codifica dei caratteri}{87}{}%
+\contentsline {subsubsection}{\numberline {5.0.2}Codifica dei numeri}{88}{}%
+\contentsline {subsubsection}{\numberline {5.0.3}Conversione da base \(2\) a base \(10\)}{88}{}%
+\contentsline {subsubsection}{\numberline {5.0.4}Conversione da base \(10\) a base \(2\)}{88}{}%
+\contentsline {subsection}{\numberline {5.1}Operazioni binarie}{88}{}%
+\contentsline {subsection}{\numberline {5.2}Riassunto}{89}{}%
+\contentsline {subsection}{\numberline {5.3}Rappresentazioni in \textit {floating-point}}{89}{}%
+\contentsline {subsubsection}{\numberline {5.3.1}Segnali analogici}{90}{}%
+\contentsline {subsubsection}{\numberline {5.3.2}Immagini}{90}{}%
+\contentsline {subsection}{\numberline {5.4}Riassunto}{92}{}%
+\contentsline {subsection}{\numberline {5.5}Rappresentazione fisica dei bit}{93}{}%
+\contentsline {subsubsection}{\numberline {5.5.1}Bit nelle memoria RAM}{94}{}%
+\contentsline {subsubsection}{\numberline {5.5.2}Seriale e Parallelo}{94}{}%
+\contentsline {subsection}{\numberline {5.6}Riassunto}{95}{}%
+\contentsline {section}{\numberline {6}Rivoluzione microelettronica}{96}{}%
+\contentsline {subsection}{\numberline {6.1}Seconda fase: Transistor}{96}{}%
+\contentsline {subsection}{\numberline {6.2}Circuiti integrati}{96}{}%
+\contentsline {subsection}{\numberline {6.3}Concetto di informazione}{97}{}%
+\contentsline {subsection}{\numberline {6.4}Riassunto}{98}{}%
+\contentsline {subsection}{\numberline {6.5}Ridondanza}{98}{}%
+\contentsline {section}{\numberline {7}Storia dell'informatica}{100}{}%
+\contentsline {subsection}{\numberline {7.1}Riassunto}{101}{}%
+\contentsline {subsection}{\numberline {7.2}Nozione di algoritmo}{101}{}%
+\contentsline {subsection}{\numberline {7.3}Modello RAM}{102}{}%
+\contentsline {subsection}{\numberline {7.4}Computazione}{102}{}%
+\contentsline {subsubsection}{\numberline {7.4.1}Prossima istruzione}{102}{}%
+\contentsline {subsubsection}{\numberline {7.4.2}STOP della computazione}{102}{}%
+\contentsline {subsubsection}{\numberline {7.4.3}Configurazione iniziale}{103}{}%
+\contentsline {subsubsection}{\numberline {7.4.4}Configurazione finale}{103}{}%
+\contentsline {subsubsection}{\numberline {7.4.5}Convergenza}{103}{}%
+\contentsline {subsubsection}{\numberline {7.4.6}Calcolo di una funzione tramite un programma}{103}{}%
+\contentsline {subsubsection}{\numberline {7.4.7}Funzione calcolabile}{103}{}%
+\contentsline {subsubsection}{\numberline {7.4.8}Linguaggio delle funzioni}{103}{}%
+\contentsline {subsection}{\numberline {7.5}Riassunto}{104}{}%
+\contentsline {subsection}{\numberline {7.6}Programmazione imperativa}{106}{}%
+\contentsline {subsubsection}{\numberline {7.6.1}Istruzioni logiche di controllo}{106}{}%
+\contentsline {subsubsection}{\numberline {7.6.2}Selezione}{106}{}%
+\contentsline {subsubsection}{\numberline {7.6.3}Iterazione while - do}{107}{}%
+\contentsline {subsubsection}{\numberline {7.6.4}Iterazione repeat - unti}{107}{}%
+\contentsline {subsection}{\numberline {7.7}Tesi di Church-Turing}{107}{}%
+\contentsline {section}{\numberline {8}Architettura dei calcolatori}{108}{}%
+\contentsline {subsection}{\numberline {8.1}Componenti essenziali di un calcolatore}{108}{}%
+\contentsline {subsection}{\numberline {8.2}Ciclo \textit {fetch-decode-execute}}{108}{}%
+\contentsline {subsection}{\numberline {8.3}Riassunto}{109}{}%
+\contentsline {subsection}{\numberline {8.4}Struttura di base del calcolatore}{109}{}%
+\contentsline {subsubsection}{\numberline {8.4.1}Processore}{109}{}%
+\contentsline {subsection}{\numberline {8.5}Istruzioni in linguaggio ASSEMBLY}{110}{}%
+\contentsline {subsection}{\numberline {8.6}Gerarchia di memoria}{111}{}%
+\contentsline {subsubsection}{\numberline {8.6.1}Registri CPU}{111}{}%
+\contentsline {subsubsection}{\numberline {8.6.2}RAM}{112}{}%
+\contentsline {subsubsection}{\numberline {8.6.3}Memoria Cache}{112}{}%
+\contentsline {subsubsection}{\numberline {8.6.4}Memoria secondaria}{112}{}%

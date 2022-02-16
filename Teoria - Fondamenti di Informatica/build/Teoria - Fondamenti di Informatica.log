@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.1.27)  14 FEB 2022 17:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.1.27)  16 FEB 2022 17:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -548,28 +548,7 @@ LaTeX Warning: Label `fig:transistor' multiply defined.
 LaTeX Warning: Label `tab:codifica_termini_minimi' multiply defined.
 
 
-LaTeX Warning: Label `tab:circuito_comando_luce_due_punti_e_tavola_verita' multiply defined.
-
-
-LaTeX Warning: Label `fig:mappa_karnaugh_8_1' multiply defined.
-
-
-LaTeX Warning: Label `fig:mappa_karnaugh_8_1' multiply defined.
-
-
-LaTeX Warning: Label `fig:mappa_karnaugh_8_6' multiply defined.
-
-
-LaTeX Warning: Label `fig:mappa_karnaugh_16_2' multiply defined.
-
-
 LaTeX Warning: Label `tab:funzione_3_variabili_3' multiply defined.
-
-
-LaTeX Warning: Label `fig:mappa_karnaugh_8_4' multiply defined.
-
-
-LaTeX Warning: Label `fig:mappa_karnaugh_8_4' multiply defined.
 
 
 LaTeX Warning: Label `tab:semplificazione_quine_mc_cuskey' multiply defined.
@@ -581,30 +560,27 @@ LaTeX Warning: Label `fig:modulo_numero_complesso' multiply defined.
 LaTeX Warning: Label `tab:my_label' multiply defined.
 
 
-LaTeX Warning: Label `fig:mappa_karnaugh_8_5' multiply defined.
-
-
 LaTeX Warning: Label `fig:flip-flop' multiply defined.
 
 )
 \openout1 = `"Teoria - Fondamenti di Informatica.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 204.
-LaTeX Font Info:    ... okay on input line 204.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 204.
-LaTeX Font Info:    ... okay on input line 204.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 204.
-LaTeX Font Info:    ... okay on input line 204.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 204.
-LaTeX Font Info:    ... okay on input line 204.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 204.
-LaTeX Font Info:    ... okay on input line 204.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 204.
-LaTeX Font Info:    ... okay on input line 204.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 204.
-LaTeX Font Info:    ... okay on input line 204.
-LaTeX Info: Redefining \it@ocap on input line 204.
-LaTeX Info: Redefining \it@ccap on input line 204.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 259.
+LaTeX Font Info:    ... okay on input line 259.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 259.
+LaTeX Font Info:    ... okay on input line 259.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 259.
+LaTeX Font Info:    ... okay on input line 259.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 259.
+LaTeX Font Info:    ... okay on input line 259.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 259.
+LaTeX Font Info:    ... okay on input line 259.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 259.
+LaTeX Font Info:    ... okay on input line 259.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 259.
+LaTeX Font Info:    ... okay on input line 259.
+LaTeX Info: Redefining \it@ocap on input line 259.
+LaTeX Info: Redefining \it@ccap on input line 259.
 
 
 File italian.ldf warning: 
@@ -612,7 +588,7 @@ italian.ldf    With OT1 encoding guillemets are poorly faked
 italian.ldf    Use T1 encoding
 italian.ldf    or specify a font with command \CaporaliFrom
 italian.ldf    See the documentation concerning the babel-italian typesetting 
-italian.ldf    on input line 204.
+italian.ldf    on input line 259.
 
 (/usr/local/texlive/2021basic/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -670,11 +646,11 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 207.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 262.
 (/usr/local/texlive/2021basic/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 207.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 262.
  (/usr/local/texlive/2021basic/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (build/Teoria - Fondamenti di Informatica.toc [1
@@ -684,1857 +660,1175 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \openout4 = `"Teoria - Fondamenti di Informatica.toc"'.
 
  [3] [4] [5] [6] [7] [8]
-Overfull \hbox (3.23445pt too wide) in paragraph at lines 421--421
+Overfull \hbox (3.23445pt too wide) in paragraph at lines 476--476
  []|$\OML/cmm/m/it/10 A$| 
  []
 
 
-Overfull \hbox (3.5539pt too wide) in paragraph at lines 421--421
+Overfull \hbox (3.5539pt too wide) in paragraph at lines 476--476
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (3.5539pt too wide) in paragraph at lines 421--421
+Overfull \hbox (3.5539pt too wide) in paragraph at lines 476--476
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (3.79pt too wide) in paragraph at lines 421--421
+Overfull \hbox (3.79pt too wide) in paragraph at lines 476--476
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (3.79pt too wide) in paragraph at lines 421--421
+Overfull \hbox (3.79pt too wide) in paragraph at lines 476--476
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 [9]
-Overfull \hbox (2.05084pt too wide) in paragraph at lines 453--453
+Overfull \hbox (2.05084pt too wide) in paragraph at lines 508--508
  []|$\OT1/cmr/m/n/10 0$| 
  []
 
 
-Overfull \hbox (2.05084pt too wide) in paragraph at lines 453--453
+Overfull \hbox (2.05084pt too wide) in paragraph at lines 508--508
  []|$\OT1/cmr/m/n/10 1$| 
  []
 
 
-Overfull \hbox (2.05084pt too wide) in paragraph at lines 453--453
+Overfull \hbox (2.05084pt too wide) in paragraph at lines 508--508
  []|$\OT1/cmr/m/n/10 2$| 
  []
 
 
-Overfull \hbox (2.05084pt too wide) in paragraph at lines 453--453
+Overfull \hbox (2.05084pt too wide) in paragraph at lines 508--508
  []|$\OT1/cmr/m/n/10 3$| 
  []
 
 
-Overfull \hbox (2.05084pt too wide) in paragraph at lines 453--453
+Overfull \hbox (2.05084pt too wide) in paragraph at lines 508--508
  []|$\OT1/cmr/m/n/10 4$| 
  []
 
 
-Overfull \hbox (2.05084pt too wide) in paragraph at lines 453--453
+Overfull \hbox (2.05084pt too wide) in paragraph at lines 508--508
  []|$\OT1/cmr/m/n/10 5$| 
  []
 
 
-Overfull \hbox (2.05084pt too wide) in paragraph at lines 453--453
+Overfull \hbox (2.05084pt too wide) in paragraph at lines 508--508
  []|$\OT1/cmr/m/n/10 6$| 
  []
 
 
-Overfull \hbox (2.05084pt too wide) in paragraph at lines 453--453
+Overfull \hbox (2.05084pt too wide) in paragraph at lines 508--508
  []|$\OT1/cmr/m/n/10 7$| 
  []
 
 
-Overfull \hbox (2.05084pt too wide) in paragraph at lines 453--453
+Overfull \hbox (2.05084pt too wide) in paragraph at lines 508--508
  []|$\OT1/cmr/m/n/10 9$| 
  []
 
 
-Overfull \hbox (7.05086pt too wide) in paragraph at lines 453--453
+Overfull \hbox (7.05086pt too wide) in paragraph at lines 508--508
  []|$\OT1/cmr/m/n/10 10$| 
  []
 
 
-Overfull \hbox (7.05086pt too wide) in paragraph at lines 453--453
+Overfull \hbox (7.05086pt too wide) in paragraph at lines 508--508
  []|$\OT1/cmr/m/n/10 11$| 
  []
 
 
-Overfull \hbox (7.05086pt too wide) in paragraph at lines 453--453
+Overfull \hbox (7.05086pt too wide) in paragraph at lines 508--508
  []|$\OT1/cmr/m/n/10 12$| 
  []
 
 
-Overfull \hbox (7.05086pt too wide) in paragraph at lines 453--453
+Overfull \hbox (7.05086pt too wide) in paragraph at lines 508--508
  []|$\OT1/cmr/m/n/10 13$| 
  []
 
 
-Overfull \hbox (7.05086pt too wide) in paragraph at lines 453--453
+Overfull \hbox (7.05086pt too wide) in paragraph at lines 508--508
  []|$\OT1/cmr/m/n/10 14$| 
  []
 
 
-Overfull \hbox (7.05086pt too wide) in paragraph at lines 453--453
+Overfull \hbox (7.05086pt too wide) in paragraph at lines 508--508
  []|$\OT1/cmr/m/n/10 15$| 
  []
 
 
-Overfull \hbox (12.68979pt too wide) in paragraph at lines 453--453
+Overfull \hbox (12.68979pt too wide) in paragraph at lines 508--508
  []|$ []$| 
  []
 
 
-Overfull \hbox (11.91197pt too wide) in paragraph at lines 453--453
+Overfull \hbox (11.91197pt too wide) in paragraph at lines 508--508
  []|$ []$| 
  []
 
 
-Overfull \hbox (7.68977pt too wide) in paragraph at lines 453--453
+Overfull \hbox (7.68977pt too wide) in paragraph at lines 508--508
  []|$ []$| 
  []
 
 
-Overfull \hbox (2.69968pt too wide) in paragraph at lines 453--453
+Overfull \hbox (2.69968pt too wide) in paragraph at lines 508--508
  []|$ []$| 
  []
 
 
-Overfull \hbox (17.18976pt too wide) in paragraph at lines 453--453
+Overfull \hbox (17.18976pt too wide) in paragraph at lines 508--508
  []|$ []$| 
  []
 
 
-Overfull \hbox (19.68977pt too wide) in paragraph at lines 453--453
+Overfull \hbox (19.68977pt too wide) in paragraph at lines 508--508
  []|$ []$| 
  []
 
 
-Overfull \hbox (3.23445pt too wide) in paragraph at lines 453--453
+Overfull \hbox (3.23445pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 A$| 
  []
 
 
-Overfull \hbox (5.13763pt too wide) in paragraph at lines 453--453
+Overfull \hbox (5.13763pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 B$| 
  []
 
 
-Overfull \hbox (3.71751pt too wide) in paragraph at lines 453--453
+Overfull \hbox (3.71751pt too wide) in paragraph at lines 508--508
  []|$\OMS/cmsy/m/n/10 \$| 
  []
 
 
-Overfull \hbox (4.82863pt too wide) in paragraph at lines 453--453
+Overfull \hbox (4.82863pt too wide) in paragraph at lines 508--508
  []|$\OMS/cmsy/m/n/10 ^^H$| 
  []
 
 
-Overfull \hbox (3.71751pt too wide) in paragraph at lines 453--453
+Overfull \hbox (3.71751pt too wide) in paragraph at lines 508--508
  []|$\OMS/cmsy/m/n/10 [$| 
  []
 
 
-Overfull \hbox (4.82863pt too wide) in paragraph at lines 453--453
+Overfull \hbox (4.82863pt too wide) in paragraph at lines 508--508
  []|$\OMS/cmsy/m/n/10 ^^Q$| 
  []
 
 
-Overfull \hbox (4.82863pt too wide) in paragraph at lines 453--453
+Overfull \hbox (4.82863pt too wide) in paragraph at lines 508--508
  []|$\OMS/cmsy/m/n/10 ^^Z$| 
  []
 
 
-Overfull \hbox (4.82863pt too wide) in paragraph at lines 453--453
+Overfull \hbox (4.82863pt too wide) in paragraph at lines 508--508
  []|$\OMS/cmsy/m/n/10 ^^[$| 
  []
 
 
-Overfull \hbox (3.82855pt too wide) in paragraph at lines 453--453
+Overfull \hbox (3.82855pt too wide) in paragraph at lines 508--508
  []|$ \OMS/cmsy/m/n/10 j$| 
  []
 
 
-Overfull \hbox (3.5539pt too wide) in paragraph at lines 453--453
+Overfull \hbox (3.5539pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 453--453
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 453--453
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 453--453
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 453--453
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 453--453
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 453--453
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 453--453
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 453--453
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 453--453
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 453--453
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 453--453
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 453--453
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 453--453
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 453--453
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 453--453
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 453--453
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (3.5539pt too wide) in paragraph at lines 453--453
+Overfull \hbox (3.5539pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 453--453
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 453--453
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 453--453
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 453--453
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 453--453
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 453--453
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 453--453
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 453--453
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 453--453
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 453--453
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 453--453
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 453--453
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 453--453
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 453--453
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 453--453
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 453--453
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (3.79pt too wide) in paragraph at lines 453--453
+Overfull \hbox (3.79pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 453--453
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 453--453
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 453--453
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 453--453
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 453--453
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 453--453
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 453--453
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 453--453
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 453--453
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 453--453
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 453--453
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 453--453
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 453--453
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 453--453
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 453--453
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 453--453
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (3.79pt too wide) in paragraph at lines 453--453
+Overfull \hbox (3.79pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 453--453
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 453--453
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 453--453
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 453--453
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 453--453
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 453--453
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 453--453
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 453--453
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 453--453
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 453--453
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 453--453
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 453--453
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 453--453
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 453--453
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 453--453
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 453--453
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 508--508
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 [10]
-Overfull \hbox (1.97318pt too wide) in paragraph at lines 508--508
+Overfull \hbox (1.97318pt too wide) in paragraph at lines 563--563
  []|$[]$| 
  []
 
 
-Overfull \hbox (1.97318pt too wide) in paragraph at lines 508--508
+Overfull \hbox (1.97318pt too wide) in paragraph at lines 563--563
  []|$[]$| 
  []
 
 
-Overfull \hbox (0.50356pt too wide) in alignment at lines 508--508
+Overfull \hbox (0.50356pt too wide) in alignment at lines 563--563
 [][][][][][] 
  []
 
 [11]
-Overfull \hbox (0.56009pt too wide) in paragraph at lines 582--582
+Overfull \hbox (0.56009pt too wide) in paragraph at lines 637--637
  []|$[]$| 
  []
 
 
-Overfull \hbox (0.56009pt too wide) in paragraph at lines 582--582
+Overfull \hbox (0.56009pt too wide) in paragraph at lines 637--637
  []|$[]$| 
  []
 
 
-Overfull \hbox (17.59122pt too wide) in alignment at lines 582--582
+Overfull \hbox (17.59122pt too wide) in alignment at lines 637--637
 [][] 
  []
 
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./Teoria - Fondamenti di Informatica.tex:622: LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.622     \end{tabularx}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
 [12] [13] [14] [15]
-Underfull \hbox (badness 10000) in alignment at lines 779--779
+Underfull \hbox (badness 10000) in alignment at lines 834--834
 [][][] 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 779--779
+Underfull \hbox (badness 10000) in alignment at lines 834--834
 [][][] 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 779--779
+Underfull \hbox (badness 10000) in alignment at lines 834--834
 [][][] 
  []
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 819--822
+Underfull \hbox (badness 10000) in paragraph at lines 874--877
 
  []
 
 [17]
-Overfull \hbox (14.64319pt too wide) in paragraph at lines 837--837
+Overfull \hbox (14.64319pt too wide) in paragraph at lines 892--892
  []|[]| 
  []
 
 
-Overfull \hbox (14.64319pt too wide) in paragraph at lines 837--837
+Overfull \hbox (14.64319pt too wide) in paragraph at lines 892--892
  []|[]| 
  []
 
 
-Overfull \hbox (14.64319pt too wide) in paragraph at lines 837--837
+Overfull \hbox (14.64319pt too wide) in paragraph at lines 892--892
  []|[]| 
  []
 
 
-Overfull \hbox (194.77368pt too wide) in alignment at lines 837--837
+Overfull \hbox (194.77368pt too wide) in alignment at lines 892--892
 [][][] 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 824--838
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 879--893
  [] 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 878--878
+Underfull \hbox (badness 10000) in alignment at lines 933--933
 [][][][] 
  []
 
 
-Overfull \hbox (6.65912pt too wide) in paragraph at lines 878--878
+Overfull \hbox (6.65912pt too wide) in paragraph at lines 933--933
  []|[] 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 878--878
+Underfull \hbox (badness 10000) in alignment at lines 933--933
 [][][][] 
  []
 
 
-Overfull \hbox (6.65912pt too wide) in paragraph at lines 878--878
+Overfull \hbox (6.65912pt too wide) in paragraph at lines 933--933
  []|[] 
  []
 
 
-Overfull \hbox (0.92474pt too wide) in alignment at lines 926--926
+Overfull \hbox (0.92474pt too wide) in alignment at lines 981--981
 [][][][][] 
  []
 
 
-Overfull \hbox (0.87729pt too wide) in alignment at lines 926--926
+Overfull \hbox (0.87729pt too wide) in alignment at lines 981--981
 [][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 926--926
+Underfull \hbox (badness 10000) in alignment at lines 981--981
 [][] 
  []
 
 [18] [19]
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 974--1037
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 1029--1092
   [] 
  []
 
 
-Overfull \hbox (7.08768pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (7.08768pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 f[]$| 
  []
 
 
-Overfull \hbox (2.9804pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (2.9804pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 f[]$| 
  []
 
 
-Overfull \hbox (7.08768pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (7.08768pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 f[]$| 
  []
 
 
-Overfull \hbox (7.08768pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (7.08768pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 f[]$| 
  []
 
 
-Overfull \hbox (7.08768pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (7.08768pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 f[]$| 
  []
 
 
-Overfull \hbox (7.08768pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (7.08768pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 f[]$| 
  []
 
 
-Overfull \hbox (7.08768pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (7.08768pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 f[]$| 
  []
 
 
-Overfull \hbox (7.08768pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (7.08768pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 f[]$| 
  []
 
 
-Overfull \hbox (11.0738pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (11.0738pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 f[]$| 
  []
 
 
-Overfull \hbox (11.0738pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (11.0738pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 f[]$| 
  []
 
 
-Overfull \hbox (11.0738pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (11.0738pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 f[]$| 
  []
 
 
-Overfull \hbox (11.0738pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (11.0738pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 f[]$| 
  []
 
 
-Overfull \hbox (11.0738pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (11.0738pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 f[]$| 
  []
 
 
-Overfull \hbox (11.0738pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (11.0738pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 f[]$| 
  []
 
 
-Overfull \hbox (8.73734pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (8.73734pt too wide) in paragraph at lines 1159--1159
  []|$ []$| 
  []
 
 
-Overfull \hbox (10.56686pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (10.56686pt too wide) in paragraph at lines 1159--1159
  []|$ []$| 
  []
 
 
-Overfull \hbox (8.34464pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (8.34464pt too wide) in paragraph at lines 1159--1159
  []|$ []$| 
  []
 
 
-Overfull \hbox (4.83572pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (4.83572pt too wide) in paragraph at lines 1159--1159
  []|$ []$| 
  []
 
 
-Overfull \hbox (17.33574pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (17.33574pt too wide) in paragraph at lines 1159--1159
  []|$ [] $| 
  []
 
 
-Overfull \hbox (5.2057pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.2057pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 A$| 
  []
 
 
-Overfull \hbox (5.7925pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.7925pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 B$| 
  []
 
 
-Overfull \hbox (3.45566pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (3.45566pt too wide) in paragraph at lines 1159--1159
  []|$[]$| 
  []
 
 
-Overfull \hbox (5.48349pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.48349pt too wide) in paragraph at lines 1159--1159
  []|$\OMS/cmsy/m/n/10 ^^H$| 
  []
 
 
-Overfull \hbox (5.48349pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.48349pt too wide) in paragraph at lines 1159--1159
  []|$\OT1/cmr/m/n/10 +$| 
  []
 
 
-Overfull \hbox (4.48341pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (4.48341pt too wide) in paragraph at lines 1159--1159
  []|$ \OMS/cmsy/m/n/10 j$| 
  []
 
 
-Overfull \hbox (3.45566pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (3.45566pt too wide) in paragraph at lines 1159--1159
  []|$[]$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (1.41786pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (1.41786pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (1.41786pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (1.41786pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (1.41786pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (1.41786pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (1.65396pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (1.65396pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1104--1104
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1159--1159
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 [20]
-Overfull \hbox (25.00003pt too wide) in paragraph at lines 1141--1176
+Overfull \hbox (25.00003pt too wide) in paragraph at lines 1196--1231
 []
  []
 
 [21]
-Overfull \hbox (25.00003pt too wide) in paragraph at lines 1182--1217
+Overfull \hbox (25.00003pt too wide) in paragraph at lines 1237--1272
 []
  []
 
 
-Overfull \hbox (25.00003pt too wide) in paragraph at lines 1223--1258
+Overfull \hbox (25.00003pt too wide) in paragraph at lines 1278--1313
 []
  []
 
 [22]
-Overfull \hbox (25.00003pt too wide) in paragraph at lines 1280--1315
+Overfull \hbox (25.00003pt too wide) in paragraph at lines 1335--1370
 []
  []
 
 [23]
-Overfull \hbox (25.00003pt too wide) in paragraph at lines 1366--1400
+Overfull \hbox (25.00003pt too wide) in paragraph at lines 1421--1455
 []
  []
 
 
-Overfull \hbox (25.00003pt too wide) in paragraph at lines 1451--1485
+Overfull \hbox (25.00003pt too wide) in paragraph at lines 1506--1540
 []
  []
 
 
-Overfull \hbox (12.68758pt too wide) in paragraph at lines 1550--1550
+Overfull \hbox (12.68758pt too wide) in paragraph at lines 1605--1605
  []|[] 
  []
 
 [24]
-Overfull \hbox (25.00003pt too wide) in paragraph at lines 1560--1594
+Overfull \hbox (25.00003pt too wide) in paragraph at lines 1615--1649
 []
  []
 
 
-Overfull \hbox (6.73883pt too wide) in paragraph at lines 1659--1659
+Overfull \hbox (6.73883pt too wide) in paragraph at lines 1714--1714
  []|[] 
  []
 
 [25] [26]
-Underfull \hbox (badness 10000) in paragraph at lines 1746--1747
+Underfull \hbox (badness 10000) in paragraph at lines 1801--1802
 
  []
 
 [27]
-Underfull \hbox (badness 10000) in paragraph at lines 1774--1775
+Underfull \hbox (badness 10000) in paragraph at lines 1829--1830
 
  []
 
 [28]
-Underfull \hbox (badness 10000) in paragraph at lines 1803--1804
-
- []
-
-[29]
-Underfull \hbox (badness 10000) in paragraph at lines 1832--1833
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 1858--1859
 
  []
 
-[30] [31] [32] [33] [34]
-Underfull \hbox (badness 10000) in paragraph at lines 2138--2141
+[29]
+Underfull \hbox (badness 10000) in paragraph at lines 1887--1888
 
  []
 
-[35]
 
-./Teoria - Fondamenti di Informatica.tex:2219: Package pgfkeys Error: I do not know the key '/tikz/under' and I am going to ignore it. Perhaps you misspelled it.
+Underfull \hbox (badness 10000) in paragraph at lines 1913--1914
 
-See the pgfkeys package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2219     }
-            
-This error message was generated by an \errmessage
-command, so I can't give any explicit help.
-Pretend that you're Hercule Poirot: Examine all clues,
-and deduce the truth by order and method.
+ []
 
+[30] [31] [32] [33] [34]
+Underfull \hbox (badness 10000) in paragraph at lines 2193--2196
 
-./Teoria - Fondamenti di Informatica.tex:2219: Package pgfkeys Error: I do not know the key '/tikz/under' and I am going to ignore it. Perhaps you misspelled it.
+ []
 
-See the pgfkeys package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2219     }
-            
-(That was another \errmessage.)
+[35] [36] [37] [38] [39] [40] [41] [42]
+Overfull \hbox (7.38867pt too wide) in paragraph at lines 2592--2592
+ []|[] 
+ []
 
+[43]
+Overfull \hbox (7.38867pt too wide) in paragraph at lines 2636--2636
+ []|[] 
+ []
 
-./Teoria - Fondamenti di Informatica.tex:2219: Package pgfkeys Error: I do not know the key '/tikz/under' and I am going to ignore it. Perhaps you misspelled it.
-
-See the pgfkeys package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2219     }
-            
-(That was another \errmessage.)
-
-
-./Teoria - Fondamenti di Informatica.tex:2219: Package pgfkeys Error: I do not know the key '/tikz/under' and I am going to ignore it. Perhaps you misspelled it.
-
-See the pgfkeys package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2219     }
-            
-(That was another \errmessage.)
-
-[36] [37]
-./Teoria - Fondamenti di Informatica.tex:2297: Package PGF Math Error: Unknown function `est' (in 'est').
-
-See the PGF Math package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2297     \end{tabularx}
-                         
-(That was another \errmessage.)
-
-./Teoria - Fondamenti di Informatica.tex:2297: Package PGF Math Error: Unknown function `est' (in 'est').
-
-See the PGF Math package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2297     \end{tabularx}
-                         
-(That was another \errmessage.)
-
-
-./Teoria - Fondamenti di Informatica.tex:2297: Package PGF Math Error: Unknown function `est' (in 'est').
-
-See the PGF Math package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2297     \end{tabularx}
-                         
-(That was another \errmessage.)
-
-[38] [39] [40] [41] [42] [43] [44] [45] [46] [47] [48] [49] [50] [51] [52]
-./Teoria - Fondamenti di Informatica.tex:2977: Undefined control sequence.
+[44] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55]
+./Teoria - Fondamenti di Informatica.tex:3264: Undefined control sequence.
 <recently read> \bm 
                     
-l.2977     \end{tabularx}
+l.3264     \end{tabularx}
                          
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2542,10 +1836,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Teoria - Fondamenti di Informatica.tex:2977: Missing $ inserted.
+./Teoria - Fondamenti di Informatica.tex:3264: Missing $ inserted.
 <inserted text> 
                 $
-l.2977     \end{tabularx}
+l.3264     \end{tabularx}
                          
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2553,10 +1847,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./Teoria - Fondamenti di Informatica.tex:2977: Undefined control sequence.
+./Teoria - Fondamenti di Informatica.tex:3264: Undefined control sequence.
 <recently read> \bm 
                     
-l.2977     \end{tabularx}
+l.3264     \end{tabularx}
                          
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2564,10 +1858,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Teoria - Fondamenti di Informatica.tex:2977: Missing $ inserted.
+./Teoria - Fondamenti di Informatica.tex:3264: Missing $ inserted.
 <inserted text> 
                 $
-l.2977     \end{tabularx}
+l.3264     \end{tabularx}
                          
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2575,10 +1869,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./Teoria - Fondamenti di Informatica.tex:2977: Undefined control sequence.
+./Teoria - Fondamenti di Informatica.tex:3264: Undefined control sequence.
 <recently read> \bm 
                     
-l.2977     \end{tabularx}
+l.3264     \end{tabularx}
                          
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2586,10 +1880,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Teoria - Fondamenti di Informatica.tex:2977: Missing $ inserted.
+./Teoria - Fondamenti di Informatica.tex:3264: Missing $ inserted.
 <inserted text> 
                 $
-l.2977     \end{tabularx}
+l.3264     \end{tabularx}
                          
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2597,10 +1891,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./Teoria - Fondamenti di Informatica.tex:2977: Undefined control sequence.
+./Teoria - Fondamenti di Informatica.tex:3264: Undefined control sequence.
 <recently read> \bm 
                     
-l.2977     \end{tabularx}
+l.3264     \end{tabularx}
                          
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2608,10 +1902,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Teoria - Fondamenti di Informatica.tex:2977: Missing $ inserted.
+./Teoria - Fondamenti di Informatica.tex:3264: Missing $ inserted.
 <inserted text> 
                 $
-l.2977     \end{tabularx}
+l.3264     \end{tabularx}
                          
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2619,10 +1913,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./Teoria - Fondamenti di Informatica.tex:2977: Undefined control sequence.
+./Teoria - Fondamenti di Informatica.tex:3264: Undefined control sequence.
 <recently read> \bm 
                     
-l.2977     \end{tabularx}
+l.3264     \end{tabularx}
                          
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2630,10 +1924,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Teoria - Fondamenti di Informatica.tex:2977: Missing $ inserted.
+./Teoria - Fondamenti di Informatica.tex:3264: Missing $ inserted.
 <inserted text> 
                 $
-l.2977     \end{tabularx}
+l.3264     \end{tabularx}
                          
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2641,10 +1935,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./Teoria - Fondamenti di Informatica.tex:2977: Undefined control sequence.
+./Teoria - Fondamenti di Informatica.tex:3264: Undefined control sequence.
 <recently read> \bm 
                     
-l.2977     \end{tabularx}
+l.3264     \end{tabularx}
                          
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2652,10 +1946,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Teoria - Fondamenti di Informatica.tex:2977: Missing $ inserted.
+./Teoria - Fondamenti di Informatica.tex:3264: Missing $ inserted.
 <inserted text> 
                 $
-l.2977     \end{tabularx}
+l.3264     \end{tabularx}
                          
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2663,10 +1957,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./Teoria - Fondamenti di Informatica.tex:2977: Undefined control sequence.
+./Teoria - Fondamenti di Informatica.tex:3264: Undefined control sequence.
 <recently read> \bm 
                     
-l.2977     \end{tabularx}
+l.3264     \end{tabularx}
                          
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2674,10 +1968,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Teoria - Fondamenti di Informatica.tex:2977: Missing $ inserted.
+./Teoria - Fondamenti di Informatica.tex:3264: Missing $ inserted.
 <inserted text> 
                 $
-l.2977     \end{tabularx}
+l.3264     \end{tabularx}
                          
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2685,10 +1979,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./Teoria - Fondamenti di Informatica.tex:2977: Undefined control sequence.
+./Teoria - Fondamenti di Informatica.tex:3264: Undefined control sequence.
 <recently read> \bm 
                     
-l.2977     \end{tabularx}
+l.3264     \end{tabularx}
                          
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2696,10 +1990,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Teoria - Fondamenti di Informatica.tex:2977: Missing $ inserted.
+./Teoria - Fondamenti di Informatica.tex:3264: Missing $ inserted.
 <inserted text> 
                 $
-l.2977     \end{tabularx}
+l.3264     \end{tabularx}
                          
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2707,10 +2001,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./Teoria - Fondamenti di Informatica.tex:2977: Undefined control sequence.
+./Teoria - Fondamenti di Informatica.tex:3264: Undefined control sequence.
 <recently read> \bm 
                     
-l.2977     \end{tabularx}
+l.3264     \end{tabularx}
                          
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2718,10 +2012,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Teoria - Fondamenti di Informatica.tex:2977: Missing $ inserted.
+./Teoria - Fondamenti di Informatica.tex:3264: Missing $ inserted.
 <inserted text> 
                 $
-l.2977     \end{tabularx}
+l.3264     \end{tabularx}
                          
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2729,10 +2023,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./Teoria - Fondamenti di Informatica.tex:2977: Undefined control sequence.
+./Teoria - Fondamenti di Informatica.tex:3264: Undefined control sequence.
 <recently read> \bm 
                     
-l.2977     \end{tabularx}
+l.3264     \end{tabularx}
                          
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2740,10 +2034,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Teoria - Fondamenti di Informatica.tex:2977: Missing $ inserted.
+./Teoria - Fondamenti di Informatica.tex:3264: Missing $ inserted.
 <inserted text> 
                 $
-l.2977     \end{tabularx}
+l.3264     \end{tabularx}
                          
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2751,10 +2045,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./Teoria - Fondamenti di Informatica.tex:2977: Undefined control sequence.
+./Teoria - Fondamenti di Informatica.tex:3264: Undefined control sequence.
 <recently read> \bm 
                     
-l.2977     \end{tabularx}
+l.3264     \end{tabularx}
                          
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2762,10 +2056,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Teoria - Fondamenti di Informatica.tex:2977: Missing $ inserted.
+./Teoria - Fondamenti di Informatica.tex:3264: Missing $ inserted.
 <inserted text> 
                 $
-l.2977     \end{tabularx}
+l.3264     \end{tabularx}
                          
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2773,10 +2067,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./Teoria - Fondamenti di Informatica.tex:2977: Undefined control sequence.
+./Teoria - Fondamenti di Informatica.tex:3264: Undefined control sequence.
 <recently read> \bm 
                     
-l.2977     \end{tabularx}
+l.3264     \end{tabularx}
                          
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2784,10 +2078,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Teoria - Fondamenti di Informatica.tex:2977: Missing $ inserted.
+./Teoria - Fondamenti di Informatica.tex:3264: Missing $ inserted.
 <inserted text> 
                 $
-l.2977     \end{tabularx}
+l.3264     \end{tabularx}
                          
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2796,376 +2090,376 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-Overfull \hbox (9.46974pt too wide) in alignment at lines 2977--2977
+Overfull \hbox (9.46974pt too wide) in alignment at lines 3264--3264
 [][][] 
  []
 
-[53] [54] [55] [56] [57] [58]
-Underfull \hbox (badness 10000) in paragraph at lines 3289--3295
+[56] [57] [58] [59] [60] [61]
+Underfull \hbox (badness 10000) in paragraph at lines 3576--3582
 
  []
 
-[59] [60] [61] [62]
-Underfull \hbox (badness 10000) in paragraph at lines 3431--3433
+[62] [63] [64] [65]
+Underfull \hbox (badness 10000) in paragraph at lines 3718--3720
 
  []
 
 
-LaTeX Warning: Command \textquoteright invalid in math mode on input line 3445.
+LaTeX Warning: Command \textquoteright invalid in math mode on input line 3732.
 
-[63] [64] [65] [66]
+[66] [67] [68] [69] [70]
 
-./Teoria - Fondamenti di Informatica.tex:3600: Package inputenc Error: Unicode character ̃ (U+0303)
+./Teoria - Fondamenti di Informatica.tex:3887: Package inputenc Error: Unicode character ̃ (U+0303)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3600 ...lo la ` VAK di saturazione, pari 0, 3 ̃
+l.3887 ...lo la ` VAK di saturazione, pari 0, 3 ̃
                                                   0, 6 V ). Le linee z3
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
-[67] [68]
-Underfull \hbox (badness 10000) in paragraph at lines 3656--3659
+[71] [72]
+Underfull \hbox (badness 10000) in paragraph at lines 3943--3946
 
  []
 
-[69]
+[73]
 
-./Teoria - Fondamenti di Informatica.tex:3683: Package inputenc Error: Unicode character ́ (U+0301)
+./Teoria - Fondamenti di Informatica.tex:3970: Package inputenc Error: Unicode character ́ (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3683 ...\(0\) e che se l’ultimo riporto, Rn ́
+l.3970 ...\(0\) e che se l’ultimo riporto, Rn ́
                                                   1
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./Teoria - Fondamenti di Informatica.tex:3686: Package inputenc Error: Unicode character ́ (U+0301)
+./Teoria - Fondamenti di Informatica.tex:3973: Package inputenc Error: Unicode character ́ (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3686 Ri ́
+l.3973 Ri ́
             1 del riporto del passo precedente. In questo modo si ottiene il...
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./Teoria - Fondamenti di Informatica.tex:3687: Package inputenc Error: Unicode character ́ (U+0301)
+./Teoria - Fondamenti di Informatica.tex:3974: Package inputenc Error: Unicode character ́ (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3687 ...gura 5.31a. La somma di ` Ai, Bi e Ri ́
+l.3974 ...gura 5.31a. La somma di ` Ai, Bi e Ri ́
                                                   1 vale 1 solo quando c’e...
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./Teoria - Fondamenti di Informatica.tex:3689: Package inputenc Error: Unicode character ́ (U+0301)
+./Teoria - Fondamenti di Informatica.tex:3976: Package inputenc Error: Unicode character ́ (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3689 valore di Ri ́
+l.3976 valore di Ri ́
                       1), oppure quando Ri ́1 “ 1 e Ai ‘ Bi “ 1. Per ...
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./Teoria - Fondamenti di Informatica.tex:3689: Package inputenc Error: Unicode character ́ (U+0301)
+./Teoria - Fondamenti di Informatica.tex:3976: Package inputenc Error: Unicode character ́ (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3689 valore di Ri ́1), oppure quando Ri ́
+l.3976 valore di Ri ́1), oppure quando Ri ́
                                              1 “ 1 e Ai ‘ Bi “ 1. Per ...
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
-[70]
-./Teoria - Fondamenti di Informatica.tex:3726: Extra alignment tab has been changed to \cr.
+[74]
+./Teoria - Fondamenti di Informatica.tex:4013: Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.3726          &
+l.4013          &
                   & & 0 & 0 & 1 & 1 &
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
 So I'll assume that you meant to type \cr instead.
 
-./Teoria - Fondamenti di Informatica.tex:3726: Extra alignment tab has been changed to \cr.
+./Teoria - Fondamenti di Informatica.tex:4013: Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.3726          & & & 0 & 0 & 1 & 1 &
+l.4013          & & & 0 & 0 & 1 & 1 &
                                      
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
 So I'll assume that you meant to type \cr instead.
 
-[71]
-Underfull \hbox (badness 10000) in paragraph at lines 3757--3759
+[75]
+Underfull \hbox (badness 10000) in paragraph at lines 4044--4046
 
  []
 
-[72] [73]
+[76] [77]
 
-LaTeX Warning: File `img/circuiti_sequenziali/image1.png' not found on input line 3778.
+LaTeX Warning: File `img/circuiti_sequenziali/image1.png' not found on input line 4065.
 
 
-./Teoria - Fondamenti di Informatica.tex:3778: Package pdftex.def Error: File `img/circuiti_sequenziali/image1.png' not found: using draft setting.
+./Teoria - Fondamenti di Informatica.tex:4065: Package pdftex.def Error: File `img/circuiti_sequenziali/image1.png' not found: using draft setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3778 ....4]{img/circuiti_sequenziali/image1.png}
+l.4065 ....4]{img/circuiti_sequenziali/image1.png}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-[74]
+[78]
 
-./Teoria - Fondamenti di Informatica.tex:3832: Package inputenc Error: Unicode character ⌧ (U+2327)
+./Teoria - Fondamenti di Informatica.tex:4119: Package inputenc Error: Unicode character ⌧ (U+2327)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3832 ...mmuta a X “ 0 con un certo ritardo ⌧
+l.4119 ...mmuta a X “ 0 con un certo ritardo ⌧
                                                    , legato ai tempi di comm...
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./Teoria - Fondamenti di Informatica.tex:3833: Package inputenc Error: Unicode character ⌧ (U+2327)
+./Teoria - Fondamenti di Informatica.tex:4120: Package inputenc Error: Unicode character ⌧ (U+2327)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3833 ...mmutare Y a 1 con un ritardo pari a 2⌧
+l.4120 ...mmutare Y a 1 con un ritardo pari a 2⌧
                                                    .
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./Teoria - Fondamenti di Informatica.tex:3835: Package inputenc Error: Unicode character ́ (U+0301)
+./Teoria - Fondamenti di Informatica.tex:4122: Package inputenc Error: Unicode character ́ (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3835 e Y “ 1, poiche essa  ́
+l.4122 e Y “ 1, poiche essa  ́
                                   e stabile rispetto a ` R “ S “ 0, a no...
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
-[75] [76]
+[79] [80]
 
-LaTeX Warning: File `img/circuiti_combinatori/image22.png' not found on input line 3864.
+LaTeX Warning: File `img/circuiti_combinatori/image22.png' not found on input line 4151.
 
 
-./Teoria - Fondamenti di Informatica.tex:3864: Package pdftex.def Error: File `img/circuiti_combinatori/image22.png' not found: using draft setting.
+./Teoria - Fondamenti di Informatica.tex:4151: Package pdftex.def Error: File `img/circuiti_combinatori/image22.png' not found: using draft setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3864 ...4]{img/circuiti_combinatori/image22.png}
+l.4151 ...4]{img/circuiti_combinatori/image22.png}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-LaTeX Warning: File `img/circuiti_sequenziali/image3.png' not found on input line 3877.
+LaTeX Warning: File `img/circuiti_sequenziali/image3.png' not found on input line 4164.
 
 
-./Teoria - Fondamenti di Informatica.tex:3877: Package pdftex.def Error: File `img/circuiti_sequenziali/image3.png' not found: using draft setting.
+./Teoria - Fondamenti di Informatica.tex:4164: Package pdftex.def Error: File `img/circuiti_sequenziali/image3.png' not found: using draft setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3877 ...{img/circuiti_sequenziali/image3.png} }}
+l.4164 ...{img/circuiti_sequenziali/image3.png} }}
                                                   %
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (12.75018pt too wide) in paragraph at lines 3877--3877
+Overfull \hbox (12.75018pt too wide) in paragraph at lines 4164--4164
 []\OT1/cmr/m/n/8 (a) |$[]$| 
  []
 
 
-LaTeX Warning: File `img/circuiti_sequenziali/image4.png' not found on input line 3879.
+LaTeX Warning: File `img/circuiti_sequenziali/image4.png' not found on input line 4166.
 
 
-./Teoria - Fondamenti di Informatica.tex:3879: Package pdftex.def Error: File `img/circuiti_sequenziali/image4.png' not found: using draft setting.
+./Teoria - Fondamenti di Informatica.tex:4166: Package pdftex.def Error: File `img/circuiti_sequenziali/image4.png' not found: using draft setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3879 ...{img/circuiti_sequenziali/image4.png} }}
+l.4166 ...{img/circuiti_sequenziali/image4.png} }}
                                                   %
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (13.22241pt too wide) in paragraph at lines 3879--3879
+Overfull \hbox (13.22241pt too wide) in paragraph at lines 4166--4166
 []\OT1/cmr/m/n/8 (b) |$[]$
  []
 
-[77]
-Underfull \hbox (badness 10000) in paragraph at lines 3888--3894
+[81]
+Underfull \hbox (badness 10000) in paragraph at lines 4175--4181
 
  []
 
-./Teoria - Fondamenti di Informatica.tex:3913: Package pdftex.def Error: File `img/circuiti_sequenziali/image10.png' not found: using draft setting.
+./Teoria - Fondamenti di Informatica.tex:4200: Package pdftex.def Error: File `img/circuiti_sequenziali/image10.png' not found: using draft setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3913     \end{tabularx}
+l.4200     \end{tabularx}
                          
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-./Teoria - Fondamenti di Informatica.tex:3913: Package pdftex.def Error: File `img/circuiti_sequenziali/image10.png' not found: using draft setting.
+./Teoria - Fondamenti di Informatica.tex:4200: Package pdftex.def Error: File `img/circuiti_sequenziali/image10.png' not found: using draft setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3913     \end{tabularx}
+l.4200     \end{tabularx}
                          
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
 Package tabularx Warning: X Columns too narrow (table too wide)
-(tabularx)                 on input line 3913.
+(tabularx)                 on input line 4200.
 
 
-LaTeX Warning: File `img/circuiti_sequenziali/image10.png' not found on input line 3913.
+LaTeX Warning: File `img/circuiti_sequenziali/image10.png' not found on input line 4200.
 
 
-./Teoria - Fondamenti di Informatica.tex:3913: Package pdftex.def Error: File `img/circuiti_sequenziali/image10.png' not found: using draft setting.
+./Teoria - Fondamenti di Informatica.tex:4200: Package pdftex.def Error: File `img/circuiti_sequenziali/image10.png' not found: using draft setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3913     \end{tabularx}
+l.4200     \end{tabularx}
                          
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (50.00002pt too wide) in alignment at lines 3913--3913
+Overfull \hbox (50.00002pt too wide) in alignment at lines 4200--4200
 [][] 
  []
 
 
-./Teoria - Fondamenti di Informatica.tex:3923: LaTeX Error: There's no line here to end.
+./Teoria - Fondamenti di Informatica.tex:4210: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3923 D
+l.4210 D
         i seguito il funzionamento: Con il vincolo che uno dei due input \(R...
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[78]
+[82]
 
-./Teoria - Fondamenti di Informatica.tex:3937: LaTeX Error: There's no line here to end.
+./Teoria - Fondamenti di Informatica.tex:4224: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3937 \\F
+l.4224 \\F
           unzionamento: Con il vincolo che \(R + S = 1\), con un impulso \(0...
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[79]
+[83]
 
-LaTeX Warning: File `img/circuiti_sequenziali/image10.png' not found on input line 3980.
-
-
-./Teoria - Fondamenti di Informatica.tex:3980: Package pdftex.def Error: File `img/circuiti_sequenziali/image10.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.3980 ...4]{img/circuiti_sequenziali/image10.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+LaTeX Warning: File `img/circuiti_sequenziali/image10.png' not found on input line 4267.
 
 
-LaTeX Warning: File `img/circuiti_sequenziali/image11.png' not found on input line 3992.
-
-
-./Teoria - Fondamenti di Informatica.tex:3992: Package pdftex.def Error: File `img/circuiti_sequenziali/image11.png' not found: using draft setting.
+./Teoria - Fondamenti di Informatica.tex:4267: Package pdftex.def Error: File `img/circuiti_sequenziali/image10.png' not found: using draft setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3992 ...4]{img/circuiti_sequenziali/image11.png}
+l.4267 ...4]{img/circuiti_sequenziali/image10.png}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-[80] [81] [82]
-Overfull \hbox (8.01457pt too wide) in paragraph at lines 4066--4069
+
+LaTeX Warning: File `img/circuiti_sequenziali/image11.png' not found on input line 4279.
+
+
+./Teoria - Fondamenti di Informatica.tex:4279: Package pdftex.def Error: File `img/circuiti_sequenziali/image11.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4279 ...4]{img/circuiti_sequenziali/image11.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[84] [85] [86]
+Overfull \hbox (8.01457pt too wide) in paragraph at lines 4353--4356
 \OT1/cmr/m/n/10 ben pre-sto, al-la co-di-fi-ca dei ca-rat-te-ri at-tra-ver-so lo stan-dard $\OML/cmm/m/it/10 UTF\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 UnicodeTransformationFormat\OT1/cmr/m/n/10 )$,
  []
 
-[83] [84]
-Underfull \hbox (badness 10000) in paragraph at lines 4113--4116
+[87] [88]
+Underfull \hbox (badness 10000) in paragraph at lines 4400--4403
 
  []
 
-[85] [86] [87]
-Underfull \hbox (badness 10000) in paragraph at lines 4168--4172
+[89] [90] [91]
+Underfull \hbox (badness 10000) in paragraph at lines 4455--4459
 
  []
 
-[88] [89] [90] [91] [92] [93]
-Underfull \hbox (badness 10000) in paragraph at lines 4298--4301
+[92] [93] [94] [95] [96] [97]
+Underfull \hbox (badness 10000) in paragraph at lines 4585--4588
 
  []
 
-[94] [95] [96] [97] [98] [99] [100]
-./Teoria - Fondamenti di Informatica.tex:4529: Undefined control sequence.
-l.4529 \[f(x) = x \overdotline
+[98] [99] [100] [101] [102] [103] [104]
+./Teoria - Fondamenti di Informatica.tex:4816: Undefined control sequence.
+l.4816 \[f(x) = x \overdotline
                                1 = \left\{
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3173,69 +2467,69 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[101] [102] [103]
-./Teoria - Fondamenti di Informatica.tex:4645: Missing $ inserted.
+[105] [106] [107]
+./Teoria - Fondamenti di Informatica.tex:4932: Missing $ inserted.
 <inserted text> 
                 $
-l.4645         \item istruzione \leftarrow
+l.4932         \item istruzione \leftarrow
                                            memoria \([PC]\)
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-./Teoria - Fondamenti di Informatica.tex:4645: LaTeX Error: Bad math environment delimiter.
+./Teoria - Fondamenti di Informatica.tex:4932: LaTeX Error: Bad math environment delimiter.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.4645 ...  \item istruzione \leftarrow memoria \(
+l.4932 ...  \item istruzione \leftarrow memoria \(
                                                   [PC]\)
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[104]
-./Teoria - Fondamenti di Informatica.tex:4665: Missing $ inserted.
+[108]
+./Teoria - Fondamenti di Informatica.tex:4952: Missing $ inserted.
 <inserted text> 
                 $
-l.4665         \item istruzione \leftarrow
+l.4952         \item istruzione \leftarrow
                                            memoria \([PC]\)
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-./Teoria - Fondamenti di Informatica.tex:4665: LaTeX Error: Bad math environment delimiter.
+./Teoria - Fondamenti di Informatica.tex:4952: LaTeX Error: Bad math environment delimiter.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.4665 ...  \item istruzione \leftarrow memoria \(
+l.4952 ...  \item istruzione \leftarrow memoria \(
                                                   [PC]\)
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[105] [106] [107] [108] (build/Teoria - Fondamenti di Informatica.aux)
+[109] [110] [111] [112] (build/Teoria - Fondamenti di Informatica.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 34281 strings out of 480445
- 843780 string characters out of 5892391
- 1450462 words of memory out of 5000000
- 51102 multiletter control sequences out of 15000+600000
+ 34354 strings out of 480445
+ 845596 string characters out of 5892391
+ 1451320 words of memory out of 5000000
+ 51175 multiletter control sequences out of 15000+600000
  415149 words of font info for 70 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 128i,21n,130p,1096b,1027s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 128i,35n,130p,1096b,1343s stack positions out of 5000i,500n,10000p,200000b,80000s
  </Users/enricopiccin/Library/texlive/2021basic/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmr7.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "build/Teoria - Fondamenti di Informatica.pdf" (108 pages, 616540 bytes).
+Output written on "build/Teoria - Fondamenti di Informatica.pdf" (112 pages, 639868 bytes).
 PDF statistics:
- 440 PDF objects out of 1000 (max. 8388607)
- 303 compressed objects within 4 object streams
+ 454 PDF objects out of 1000 (max. 8388607)
+ 313 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
