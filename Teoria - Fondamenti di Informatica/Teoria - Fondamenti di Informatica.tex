@@ -2954,7 +2954,7 @@ ovvero
 \[f = \overline{x}x + \overline{x}y + \overline{x}z + xy + \overline{y}y + xz + \overline{x}\overline{z} + y\overline{z} + z\overline{z}\]
 da cui si ottiene
 \[f = xy + x\overline{z} + \overline{x}\overline{y} + \overline{y}\overline{z} + \overline{x}z + yz\]
-Ma per il \textbf{teorema dell'assorbimento 3}, \(x\overline{y} + \overline{x}\overline{z} + \overline{y}\overline{z} = x\overline{y} + \overline{x}\overline{z}\) così come \(xy + \overline{x}z + yz = xy + \overline{x}z\), pertanto si ottiene:
+Ma per il \textbf{teorema dell'Assorbimento 3} T6, \(x\overline{y} + \overline{x}\overline{z} + \overline{y}\overline{z} = x\overline{y} + \overline{x}\overline{z}\) così come \(xy + \overline{x}z + yz = xy + \overline{x}z\), pertanto si ottiene:
 \[f = x\overline{z} + \overline{x}\overline{y} + xy + \overline{x}z\]
 
 \vspace{1em}
@@ -2999,46 +2999,59 @@ come mostrato nella Figura \ref{fig:mappa_karnaugh_8_1} seguente:
 Grazie a questa seconda mappa di Karnaugh è facile capire che nella semplificazione di partenza sono stati scelti dei sottocubi \textit{non primi}, pertanto vi sono \(4\) termini al posto di \(3\), come formula minima.\\
 Pertanto si deve cercare di eliminare i due sottocubi non primi \(\overline{x}\overline{y}\) e \(x\overline{z}\) che deve divenire \(\overline{y}\overline{z}\), ovvero
 \[\overline{x}\overline{y} + x\overline{z} = \overline{y}\overline{z}\]
-Ma ciò è facile da capire in forza dell'\textbf{assioma della complementarietà} A7, che permette di scrivere
-\[\overline{x}\overline{y} + x\overline{z} = \overline{x}\overline{y} + \overline{y}\overline{z} + x\overline{z} + \overline{y}\overline{z} = \overline{y} \cdot \left(\overline{x} + \overline{z}\right) + \overline{z} \cdot \left(x + \overline{y}\right)\]
+Ma ciò è facile da capire in forza dell'\textbf{teorema dell'Assorbimento $3$} T6, che permette di scrivere
+\[f = x\overline{z} + \overline{x}\overline{y} + xy + \overline{x}z = \left(x\overline{z} + \overline{x}\overline{y} + \overline{y}\overline{z}\right) + \left(xy + \overline{x}z + yz\right)\]
+in quanto
+\[x\overline{z} + \overline{x}\overline{y} + \overline{y}\overline{z} = x\overline{z} + \overline{x}\overline{y} \hspace{1em} \text{e} \hspace{1em} xy + \overline{x}z + yz = xy + \overline{x}z\]
+Applicando nuovamente il teorema dell'\textbf{teorema dell'Assorbimento $3$} T6, la \textbf{proprietà commutativa} A4 e la \textbf{proprietà associativa} A5 si perviene al risultato seguente:
+\[\left(x\overline{z} + \overline{x}\overline{y} + \overline{y}\overline{z}\right) + \left(xy + \overline{x}z + yz\right) = \overline{y}\overline{z} + xy + \overline{x}z + yz + \overline{x}\overline{y}\]
+in quanto
+\[xy + \overline{y}z + x\overline{z} = xy + \overline{y}z\]
+Giunti a questo punto, applicando per due volte consecutive il teorema dell'\textbf{teorema dell'Assorbimento $3$} T6, la \textbf{proprietà commutativa} A4 e la \textbf{proprietà associativa} A5 si perviene al risultato seguente:
+\[\overline{y}\overline{z} + xy + \overline{x}z + yz + \overline{x}\overline{y} = \overline{y}\overline{z} + \left(xy + \overline{x}z + yz\right) + \overline{x}\overline{y} = \left(\overline{x}z + \overline{y}\overline{z} + \overline{x}\overline{y}\right) + xy = \overline{y}\overline{z} + xy + \overline{x}z\]
+giacché
+\[xy + \overline{x}z + yz = xy + \overline{x}z \hspace{1em} \text{e} \hspace{1em} \overline{x}z + \overline{y}\overline{z} + \overline{x}\overline{y} = \overline{x}z + \overline{y}\overline{z}\]
+come volevasi dimostrare.
 
-\vspace{1em}
+\vspace{2em}
 \noindent
-Si consideri una nuova funzione a \(n = 3\) variabili
+\textbf{Esercizio}: Si consideri, ora, una seconda funzione \(f\) a \(n = 3\) variabili, la quale presenta la tabela di verità riportata nella Tabella \ref{tab:funzione_3_variabili_1} seguente:
+
 \begin{table}[H]
     \centering
+    \rowcolors{1}{white}{white}
+    \setlength{\tabcolsep}{8pt}
+    \renewcommand{\arraystretch}{1.2}
     \begin{tabular}{ccc|c}
-         $x$ & $y$ & $z$ & $f(x, y, z)$\\
-         \hline
-         $0$ & $0$ & $0$ & $1$\\
-         $0$ & $0$ & $1$ & $0$\\
-         $0$ & $1$ & $0$ & $1$\\
-         $0$ & $1$ & $1$ & $0$\\
-         $1$ & $0$ & $0$ & $1$\\
-         $1$ & $0$ & $1$ & $0$\\
-         $1$ & $1$ & $0$ & $0$\\
-         $1$ & $1$ & $1$ & $0$\\
+      $x$ & $y$ & $z$ & $f(x, y, z)$\\
+      \hline
+      $0$ & $0$ & $0$ & $1$\\
+      $0$ & $0$ & $1$ & $0$\\
+      $0$ & $1$ & $0$ & $1$\\
+      $0$ & $1$ & $1$ & $0$\\
+      $1$ & $0$ & $0$ & $1$\\
+      $1$ & $0$ & $1$ & $0$\\
+      $1$ & $1$ & $0$ & $0$\\
+      $1$ & $1$ & $1$ & $0$\\
     \end{tabular}
     \caption{Funzione a \(n = 3\) variabili}
-    \label{tab:funzione_3_variabili_2}
+    \label{tab:funzione_3_variabili_1}
 \end{table}
 
 \noindent
 Considerando la \textbf{somma di \textit{minterm}} si ottiene
 \[f = \overline{x}\overline{y}\overline{z} + \overline{x}y\overline{z} + x\overline{y}\overline{x}\]
-che per l'idempotenza di supo scrivere come:
+che per il \textbf{teorema dell'Idempotenza} T1 si può scrivere come segue:
 \[f = \overline{x}\overline{y}\overline{z} + \overline{x}y\overline{z} + x\overline{y}\overline{x} + \overline{x} \overline{y} \overline{z}\]
-Per cui, per il teorema dell'assorbimento si ha
+Per cui, per il \textbf{teorema dell'Assorbimento} T9 si traduce in
 \[f = \overline{x}\overline{z} \cdot (\overline{y} + y) + \overline{y}\overline{z} \cdot (x + \overline{x}) = \overline{x} \overline{z} + \overline{y}\overline{z}\]
 
 \vspace{1em}
 \noindent
-Considerando il \textbf{prodotto di \textit{maxterm}} si ottiene
+Considerando, invece, il \textbf{prodotto di \textit{maxterm}} si ottiene
 \[f = (y + \overline{z}) \cdot (\overline{y} + \overline{z}) \cdot (\overline{x} + \overline{y}) = (y \overline{y} + y \overline{z} + \overline{y}\overline{z} + \overline{z} \overline{z}) \cdot (\overline{x} + \overline{y}) = \overline{z} \cdot (\overline{x} + \overline{y}) = \overline{x} \overline{z} + \overline{y} \overline{z}\]
-
-\vspace{1em}
-\noindent
-Che sulla mappa di Karnaugh figura come segue:
+semplificando grazie all'\textbf{assioma di complementarietà} A7 e al \textbf{teorema dell'Assorbimento} T9.\\
+Realizzando la funzione considerata tramite la mappa di Karnaugh Figura \ref{fig:mappa_karnaugh_8_2} seguente si ottiene:
 
 \begin{figure}[H]
     \centering
@@ -3047,65 +3060,70 @@ Che sulla mappa di Karnaugh figura come segue:
         \implicant{0}{1}{red}
         \implicantcostats{1}{2}{green}
     \end{Karnaughvuit}
+    \vspace{-1.5em}
+    \caption{Mappa di Karnaugh a $3$ variabili}
     \label{fig:mappa_karnaugh_8_2}
 \end{figure}
 
-\vspace{1em}
 \noindent
-\textbf{Esercizio}: Si consideri la seguente funzione logica:
+E analizzando gli implicanti ottenuti si perviene al risultato già ottenuto:
+\[f = \overline{x}\overline{z} + \overline{y}\overline{z}\]
 
-\vspace{1em}
+\vspace{2em}
 \noindent
-Si consideri una nuova funzione a \(n = 3\) variabili
+\textbf{Esercizio}: Si consideri, ora, una terza funzione \(f\) a \(n = 3\) variabili, la quale presenta la tabela di verità riportata nella Tabella \ref{tab:funzione_3_variabili_2} seguente:
+
 \begin{table}[H]
     \centering
+    \rowcolors{1}{white}{white}
+    \setlength{\tabcolsep}{8pt}
+    \renewcommand{\arraystretch}{1.2}
     \begin{tabular}{ccc|c}
-         $x$ & $y$ & $z$ & $f(x, y, z)$\\
-         \hline
-         $0$ & $0$ & $0$ & $1$\\
-         $0$ & $0$ & $1$ & $1$\\
-         $0$ & $1$ & $0$ & $0$\\
-         $0$ & $1$ & $1$ & $1$\\
-         $1$ & $0$ & $0$ & $0$\\
-         $1$ & $0$ & $1$ & $0$\\
-         $1$ & $1$ & $0$ & $1$\\
-         $1$ & $1$ & $1$ & $0$\\
+      $x$ & $y$ & $z$ & $f(x, y, z)$\\
+      \hline
+      $0$ & $0$ & $0$ & $1$\\
+      $0$ & $0$ & $1$ & $1$\\
+      $0$ & $1$ & $0$ & $0$\\
+      $0$ & $1$ & $1$ & $1$\\
+      $1$ & $0$ & $0$ & $0$\\
+      $1$ & $0$ & $1$ & $0$\\
+      $1$ & $1$ & $0$ & $1$\\
+      $1$ & $1$ & $1$ & $0$\\
     \end{tabular}
     \caption{Funzione a \(n = 3\) variabili}
-    \label{tab:funzione_3_variabili_3}
+    \label{tab:funzione_3_variabili_2}
 \end{table}
 
 \noindent
 Considerando la \textbf{somma di \textit{minterm}} si ottiene
 \[f = \overline{x}\overline{y}\overline{z} + \overline{x}\overline{y}z + \overline{x}yz + xy\overline{z}\]
-Procedendo alla semplificazione si ottiene
+Procedendo alla semplificazione tramite il \textbf{teorema dell'Assorbimento} T9 si ottiene
 \[f = \overline{x}\overline{y}(\overline{z} + z) + \overline{x}yz + xy\overline{z}\]
-e procedendo per \textbf{idempotenza}, si ottiene
+Applicando il \textbf{teorema dell'Idempotenza} T1, si ottiene
 \[f = \overline{x}\overline{y}(\overline{z} + z) + \overline{x}\overline{y}z + \overline{x}yz + xy\overline{z} = \overline{x}\overline{y}(\overline{z} + z) + \overline{x}z (\overline{y} + y) + xy\overline{z}\]
 che equivale a
 \[f = \overline{x}\overline{y} + \overline{x}z + xy\overline{z}\]
+sempre per il \textbf{teorema dell'Assorbimento} T9.
 
 \vspace{1em}
 \noindent
 Considerando il \textbf{prodotto di \textit{maxterm}} si ottiene:
 \[f = (x + \overline{y} + z) \cdot (\overline{x} + y + z) \cdot (\overline{x} + y + \overline{z}) \cdot (\overline{x} + \overline{y} + \overline{z})\]
-che per il teorema \textbf{T9} si ottiene
+che per il \textbf{teorema dell'Assorbimento} T9 equivale a
 \[f = (x + \overline{y} + z) \cdot (\overline{x} + y + z) \cdot (\overline{x} + \overline{z})\]
-Procedendo per \textbf{idempotenza} si procede alla duplicazione di \(\overline{x} + y + \overline{z}\) per cui si ottiene:
+Procedendo applicando il \textbf{teorema dell'Idempotenza} T1 si effettua la duplicazione di \(\overline{x} + y + \overline{z}\) per cui si ottiene:
 \[f = (x + \overline{y} + z) \cdot (\overline{x} + y + z) \cdot (\overline{x} + y + \overline{z}) \cdot (\overline{x} + \overline{z})\]
-da cui, sempre per il teorema \textbf{T9},  si ottiene
+da cui, sempre per il \textbf{teorema dell'Assorbimento} T9,  si ottiene
 \[f = (x + \overline{y} + z) \cdot (\overline{x} + y) \cdot (\overline{x} + \overline{z})\]
-Ancora una volta si è ottenuto un risultato di \textbf{prodotto di \textit{maxterm}} differente dalla \textbf{somma di \textit{minterm}}, per cui, sviluppando i prodotti si ha:
-\[f = (x + \overline{y} + z) \cdot (\overline{x} + y) \cdot (\overline{x} + \overline{z}) = (x + \overline{y} + z) \cdot (\overline{x} + \overline{x} \overline{z} + \overline{x}y + y \overline{x}\]
-che per il teorema dell'assorbimento \(3\) si ottiene:
-\[f = (x + \overline{y} + z) \cdot (\overline{x} + y \overline{z})\]
-che, sviluppando il prodotto è uguale a
-\[f = (x \overline{x} ... continua ...\]
-Di fatto, come si osserva, si è ottenuto il medesimo risultato di partenza.
-
-\vspace{1em}
-\noindent
-La realizzazione della mappa di Karnaugh si ottiene
+Come nel primo caso, si è ottenuto un risultato di semplificazione differente tra le due forme canonice di \textbf{somma di \textit{minterm}} e \textbf{prodotto di \textit{maxterm}}. Al fine di dimostrarne l'equivalenza si procede allo sviluppo dell'ultima espressione come segue:
+\[f = (x + \overline{y} + z) \cdot (\overline{x} + y) \cdot (\overline{x} + \overline{z}) = (x + \overline{y} + z) \cdot (\overline{x} + \overline{x} \overline{z} + \overline{x}y + y \overline{z})\]
+Applicando il \textbf{teorema dell'Assorbimento 1} T4 si ottiene:
+\[f = (x + \overline{y} + z) \cdot (\overline{x} + \overline{x} \overline{z} + \overline{x}y + y \overline{z}) = (x + \overline{y} + z) \cdot (\overline{x} + \overline{x}y + y \overline{z}) = (x + \overline{y} + z) \cdot (\overline{x} + y \overline{z})\]
+Per cui, sviluppando l'espressione si ottiene
+\[f = x \overline{x} + xy\overline{z} + \overline{x}\overline{y} + y\overline{y}\overline{z} + \overline{x}z + yz\overline{z}\]
+Naturalmente, per l'\textbf{assioma di complementarietà} A7 si ottiene
+\[f = xy\overline{z} + \overline{x}\overline{y} + \overline{x}z\]
+Di fatto, come si osserva, si è ottenuto il medesimo risultato di partenza. Realizzando la funzione considerata tramite la mappa di Karnaugh Figura \ref{fig:mappa_karnaugh_8_3} seguente si ottiene:
 
 \begin{figure}[H]
     \centering
@@ -3115,72 +3133,63 @@ La realizzazione della mappa di Karnaugh si ottiene
         \implicant{4}{5}{blue}
         \implicant{0}{4}{green}
     \end{Karnaughvuit}
+    \vspace{-1.5em}
+    \caption{Mappa di Karnaugh a $3$ variabili}
     \label{fig:mappa_karnaugh_8_3}
 \end{figure}
 
 \noindent
-Che ancora una volta produce il risultato cercato:
-\[\overline{x} \overline{y} + \overline{x} z + xy\overline{z}\]
+E analizzando gli implicanti ottenuti si perviene al risultato già ottenuto:
+\[f = \overline{x} \overline{y} + \overline{x} z + xy\overline{z}\]
 
-\vspace{1em}
+\newpage
 \noindent
-Si consideri una nuova funzione a \(n = 3\) variabili
+\textbf{Esercizio}: Si costruisca una nuova funzione \(f\) a \(n = 3\) variabili, la quale presenta la tabela di verità riportata nella Tabella \ref{tab:funzione_3_variabili_5} seguente:
+
 \begin{table}[H]
     \centering
+    \rowcolors{1}{white}{white}
+    \setlength{\tabcolsep}{8pt}
+    \renewcommand{\arraystretch}{1.2}
     \begin{tabular}{ccc|c}
-         $x$ & $y$ & $z$ & $f(x, y, z)$\\
-         \hline
-         $0$ & $0$ & $0$ & $1$\\
-         $0$ & $0$ & $1$ & $0$\\
-         $0$ & $1$ & $0$ & $1$\\
-         $0$ & $1$ & $1$ & $1$\\
-         $1$ & $0$ & $0$ & $0$\\
-         $1$ & $0$ & $1$ & $1$\\
-         $1$ & $1$ & $0$ & $1$\\
-         $1$ & $1$ & $1$ & $0$\\
+      $x$ & $y$ & $z$ & $f(x, y, z)$\\
+      \hline
+      $0$ & $0$ & $0$ & $1$\\
+      $0$ & $0$ & $1$ & $0$\\
+      $0$ & $1$ & $0$ & $1$\\
+      $0$ & $1$ & $1$ & $1$\\
+      $1$ & $0$ & $0$ & $0$\\
+      $1$ & $0$ & $1$ & $1$\\
+      $1$ & $1$ & $0$ & $1$\\
+      $1$ & $1$ & $1$ & $0$\\
     \end{tabular}
     \caption{Funzione a \(n = 3\) variabili}
-    \label{tab:funzione_3_variabili_4}
+    \label{tab:funzione_3_variabili_5}
 \end{table}
 
+\noindent
 Considerando la \textbf{somma di \textit{minterm}} si ottiene
-\[f = \overline{x} \overline{y} \overline{z} + \overline{x} y \overline{z} + \overline{x} y z + x \overline{y} \overline{z} + xy \overline{z}\]
-Procedendo alla semplificazione si ottiene
-\[f = \overline{x} (\overline{z} + yz) + x \overline{y} + x\overline{y}z + xy \overline{z} = \overline{x} (\overline{z} + y) + x \overline{y} + x\overline{y}z + xy \overline{z}\]
-ovvero
-\[f = \overline{x}\overline{z} + \overline{x}y + x \overline{y} + x\overline{y}z + xy \overline{z}\]
-Ancora una volta è possibile raccogliere il primo e l'ultimo addendo
-\[f = \overline{z} \cdot (\overline{x} + xy) + \overline{x}y + x \overline{y} + x\overline{y}z\]
-ovvero
-\[f = \overline{x}\overline{z} + \overline{z}y + \overline{x}y + x \overline{y} + x\overline{y}z\]
-da cui
-\[f = \overline{x}\overline{z} + \overline{x}y + y \overline{z} + x\overline{y}z\]
-
-\vspace{1em}
-Considerando, ora, il \textbf{prodotto di \textit{maxterm}} si ottiene
-\[f = (\overline{x} + \overline{y} + z) \cdot (x + \overline{y} + \overline{z}) \cdot (x + y + z)\]
-Non potendo semplificare, si procede allo sviluppo dei prodotti:
-\[f = (x \overline{x} + xy + xz + \overline{x}y + y + yz + \overline{x}\overline{z} + y \overline{z} + z \overline{z}) \cdot (\overline{x} + \overline{y} + \overline{z})\]
-da cui si ottiene
-\[f = (y \cdot (x + \overline{x} + 1 + z + \overline{z}) + xz + \overline{x} \overline{z}) \cdot (\overline{x} + \overline{y} + \overline{z})\]
-ovvero
-\[f = (y + xz + \overline{x} \overline{z}) \cdot (\overline{x} + \overline{y} + \overline{z})\]
-Ancora una volta si sviluppano i prodotti:
-\[f = \overline{x}y + y\overline{y} + y \overline{z} + x \overline{x} z + x \overline{y} z + x z \overline{z} + \overline{x} \overline{z} + \overline{x} \overline{y} \overline{z} + \overline{x} \overline{z}\]
-da cui
-\[f = \overline{x}y + y \overline{z} + x \overline{y} z + \overline{x} \overline{z} + \overline{x} \overline{y} \overline{z} + \overline{x} \overline{z}\]
-che, per il teorema dell'assorbimento si semplifica come:
-\[f = \overline{x}\overline{z} + \overline{x}y + y \overline{z} + x\overline{y}z\]
-
-
-e procedendo per \textbf{idempotenza}, si ottiene
-\[f = \overline{x}\overline{y}(\overline{z} + z) + \overline{x}\overline{y}z + \overline{x}yz + xy\overline{z} = \overline{x}\overline{y}(\overline{z} + z) + \overline{x}z (\overline{y} + y) + xy\overline{z}\]
-che equivale a
-\[f = \overline{x}\overline{z} + \overline{x}y + y \overline{z} + x\overline{y}z\]
+\[f = \overline{x} \overline{y} \overline{z} + \overline{x} y \overline{z} + \overline{x} y z + x \overline{y}z + xy \overline{z}\]
+Procedendo alla semplificazione, tramite il \textbf{teorema dell'Assorbimento} T9 si ottiene
+\[f = \overline{x}\overline{z}(\overline{y} + y) + \overline{x} y z + x \overline{y}z + xy \overline{z} = \overline{x}\overline{z} + \overline{x} y z + x\overline{y}z + xy \overline{z}\]
+Applicando il \textbf{teorema dell'Assorbimento 2} T5:
+\[f = \overline{x}(\overline{z} + yz) + x\overline{y}z + xy\overline{z} = \overline{x}\overline{z} + \overline{x}y + x \overline{y}z + xy\overline{z}\]
+Applicando nuovamente il \textbf{teorema dell'Assorbimento 2} T5:
+\[f = \overline{x}\overline{z} + x\overline{y}z + y(\overline{x} + x\overline{z}) = \overline{x}\overline{z} + x\overline{y}z + \overline{x}y  y\overline{z}\]
 
 \vspace{1em}
 \noindent
-La realizzazione della mappa di Karnaugh si ottiene
+Considerando, ora, il \textbf{prodotto di \textit{maxterm}} si ottiene
+\[f = (x + y + \overline{z}) \cdot (\overline{x} + y + z) \cdot (\overline{x} + \overline{y} + \overline{z})\]
+Non potendo semplificare in maniera immediata, si procede allo sviluppo dei prodotti:
+\[f = \left(x\overline{x} + xy + xz + \overline{x}y + y + yz + \overline{x}\overline{z} + y\overline{z} + \overline{z}\right) \cdot (\overline{x} + \overline{y} + z\overline{z})\]
+Applicando l'\textbf{assioma di complementarietà} A7, il \textbf{teorema dell'Idempotenza} T1, il \textbf{teorema dell'Assorbimento} T9 e il \textbf{teorema dell'Assorbimento 1} T4, si semplifica come segue
+\[f = \left(xz + y + \overline{x}\overline{z}\right) \cdot (\overline{x} + \overline{y} + \overline{z})\]
+Ancora una volta si sviluppa l'espressione, ottenendo:
+\[f = x\overline{x}z + x\overline{y}z + xz\overline{z} + \overline{x}y + y\overline{y} + y\overline{z} + \overline{x}\overline{z} + \overline{x}\overline{y}\overline{z} + \overline{x}\overline{z}\]
+Ancora una volta, applicando l'\textbf{assioma di complementarietà} A7, il \textbf{teorema dell'Idempotenza} T1, il \textbf{teorema dell'Assorbimento} T9 e il \textbf{teorema dell'Assorbimento 1} T4, si semplifica come segue
+\[f = x\overline{y}z + \overline{x}y + y\overline{z} + \overline{x}\overline{z}\]
+come volevasi dimostrare. Realizzando la funzione considerata tramite la mappa di Karnaugh Figura \ref{fig:mappa_karnaugh_8_4} seguente si ottiene:
 
 \begin{figure}[H]
     \centering
@@ -3189,45 +3198,51 @@ La realizzazione della mappa di Karnaugh si ottiene
         \implicant{0}{1}{red}
         \implicant{1}{3}{green}
         \implicant{1}{5}{blue}
-        \implicant{6}{6}{yellow}
+        \implicant{6}{6}{violet}
     \end{Karnaughvuit}
+    \vspace{-1.5em}
+    \caption{Mappa di Karnaugh a $3$ variabili}
     \label{fig:mappa_karnaugh_8_4}
 \end{figure}
 
-Da cui si può osservare:
+\noindent
+E analizzando gli implicanti ottenuti si perviene al risultato già ottenuto:
 \[f = \overline{x}\overline{z} + \overline{x}y + y\overline{z} + x\overline{y}z\]
 
 \newpage
 \begin{center}
     20 Ottobre 2021
 \end{center}
-\subsection{Metodo tabellare Quine - Mc Cluskey}
-Il metodo di Quine - Mc Cluskey è un procedimento tabellare che consente di ottenere la forma minima come somma di prodotti per qualsiasi funzione logica. Esso si basa sulla relazione:
-\[f x + f \overline{x} = f\]
+\subsection{Metodo tabellare di Quine - Mc Cluskey}
+Il \emph{metodo tabellare di Quine - Mc Cluskey} è un procedimento tabellare che consente di ottenere la forma minima come somma di prodotti per qualsiasi funzione logica. Esso si basa sulla relazione:
+\[f \cdot x + f \cdot \overline{x} = f\]
 già usata in precedenza per le mappe di Karnaugh; solo che ora essa viene applicata in modo sistematico a tutti i termini minimi della funzione.\\
 Per capirne la logica si consideri la seguente funzione logica:
 
 \begin{table}[H]
-    \centering
-    \setlength{\tabcolsep}{5pt}
+    \rowcolors{1}{white}{white}
+    \setlength{\tabcolsep}{8pt}
+    \renewcommand{\arraystretch}{1.2}
     \begin{tabularx}{\textwidth}{ccc}
     {
+        \hspace{-1em}
         \setlength{\tabcolsep}{3.5pt}
         \begin{tabular}{c|c|ccc|cc}
              & & $x$ & $y$ & $z$ & $f$\\
              \hline
              $0$ & $\overline{x}\overline{y}\overline{z}$ & $0$ & $0$ & $0$ & $0$\\
              $1$ & $\overline{x}\overline{y}z$ & $0$ & $0$ & $1$ & $0$\\
-             $2$ & $\overline{x}y\overline{z}$ & $0$ & $1$ & $0$ & $1$ & \color{red}$\bm{*}\\
-             $3$ & $\overline{x}yz$ & $0$ & $1$ & $1$ & $1$ & \color{red}$\bm{*}\\
+             $2$ & $\overline{x}y\overline{z}$ & $0$ & $1$ & $0$ & $1$ & $\color{red}{\ast}$\\
+             $3$ & $\overline{x}yz$ & $0$ & $1$ & $1$ & $1$ & $\color{red}{\ast}$\\
              $4$ & $x\overline{y}\overline{z}$ & $1$ & $0$ & $0$ & $0$\\
-             $5$ & $x\overline{y}z$ & $1$ & $0$ & $1$ & $1$ & \color{blue}$\bm{*}\\
+             $5$ & $x\overline{y}z$ & $1$ & $0$ & $1$ & $1$ & $\color{blue}{\ast}$\\
              $6$ & $xy\overline{z}$ & $1$ & $1$ & $0$ & $0$\\
-             $7$ & $xyz$ & $1$ & $1$ & $1$ & $1$ & \color{blue}$\bm{*}\\
+             $7$ & $xyz$ & $1$ & $1$ & $1$ & $1$ & $\color{blue}{\ast}$\\
         \end{tabular}
     }
     &
     {
+        \hspace{-1em}
         \setlength{\tabcolsep}{3.5pt}
         \begin{tabular}{c|c|c|ccc|cc}
              \textbf{Livello} & & & $x$ & $y$ & $z$ & $f$\\
@@ -3235,53 +3250,58 @@ Per capirne la logica si consideri la seguente funzione logica:
              $0$ & $0$ & $\overline{x}\overline{y}\overline{z}$ & $0$ & $0$ & $0$ & $0$\\
              \hline
               & $1$ & $\overline{x}\overline{y}z$ & $0$ & $0$ & $1$ & $0$\\
-              \(1\) & $2$ & $\overline{x}y\overline{z}$ & $0$ & $1$ & $0$ & $1$ & \textcolor{red}{*}\\
+              \(1\) & $2$ & $\overline{x}y\overline{z}$ & $0$ & $1$ & $0$ & $1$ & $\color{red}{\ast}$\\
               & $4$ & $x\overline{y}\overline{z}$ & $1$ & $0$ & $0$ & $0$\\
              \hline
               &
-             $3$ & $\overline{x}yz$ & $0$ & $1$ & $1$ & $1$ & \textcolor{red}{*}\\
-             \(2\) & $5$ & $x\overline{y}z$ & $1$ & $0$ & $1$ & $1$ & \textcolor{blue}{*}\\
+             $3$ & $\overline{x}yz$ & $0$ & $1$ & $1$ & $1$ & $\color{red}{\ast}$\\
+             \(2\) & $5$ & $x\overline{y}z$ & $1$ & $0$ & $1$ & $1$ & $\color{blue}{\ast}$\\
              & $6$ & $xy\overline{z}$ & $1$ & $1$ & $0$ & $0$\\
              \hline
-             $3$ & $7$ & $xyz$ & $1$ & $1$ & $1$ & $1$ & \textcolor{blue}{*}\\
+             $3$ & $7$ & $xyz$ & $1$ & $1$ & $1$ & $1$ & $\color{blue}{\ast}$\\
         \end{tabular}
     }
     &
     {
+        \hspace{-1em}
         \setlength{\tabcolsep}{3.5pt}
         \begin{tabular}{c|c|c|ccc|cc}
              \textbf{Livello} & & & $x$ & $y$ & $z$ & $f$\\
              \hline
-             $1$ & $2$ & $\overline{x}y\overline{z}$ & $0$ & $1$ & $0$ & $1$ & \textcolor{red}{*}\\
+             $1$ & $2$ & $\overline{x}y\overline{z}$ & $0$ & $1$ & $0$ & $1$ & $\color{red}{\ast}$\\
              \hline
              \parbox{3em}{\multirow{2}{3em}{\centering \(2\)}} &
-             $3$ & $\overline{x}yz$ & $0$ & $1$ & $1$ & $1$ & \textcolor{red}{*}\\
-             & $5$ & $x\overline{y}z$ & $1$ & $0$ & $1$ & $1$ & \textcolor{blue}{*}\\
+             $3$ & $\overline{x}yz$ & $0$ & $1$ & $1$ & $1$ & $\color{red}{\ast}$\\
+             & $5$ & $x\overline{y}z$ & $1$ & $0$ & $1$ & $1$ & $\color{blue}{\ast}$\\
              \hline
-             $3$ & $7$ & $xyz$ & $1$ & $1$ & $1$ & $1$ & \textcolor{blue}{*}\\
+             $3$ & $7$ & $xyz$ & $1$ & $1$ & $1$ & $1$ & $\color{blue}{\ast}$\\
         \end{tabular}
     }
     \end{tabularx}
-
-
     \caption{Trasformazione della tavola di verità della funzione logica \(f\) per ottenere la tabella di Quine-Mc Cuskey}
     \label{tab:tavola_verita_Quine_Mc_Cuskey}
 \end{table}
 
 \noindent
-La cui semplificazione per via algebrica porta a:
-\[\overline{x}y\overline{z} + \overline{x}yz + x\overline{y}z + xyz = \overline{x}y(\overline{z} + z) + xz(\overline{y} + y) = \overline{x}y + xz\]
-È ben evidente che la struttura della semplificazione \(\overline{x}y\overline{z} + \overline{x}yz = \overline{x}y(\overline{z} + z)\), che riguarda i termini minimi contrassegnati con \textcolor{red}{*} in tabella, e del tipo \(f\overline{z} + fz = f\) e riguarda due termini minimi che differiscono per la sola variabile \(z\), che si trova diretta in uno dei due termini e negata nell'altro. La stessa cosa si può dire per i due termini minimi contrassegnati con \textcolor{blue}{*}.\\
+La semplificazione per via algebrica di tale funzione $f$ porta a:
+\[f = \overline{x}y\overline{z} + \overline{x}yz + x\overline{y}z + xyz = \overline{x}y(\overline{z} + z) + xz(\overline{y} + y) = \overline{x}y + xz\]
+È ben evidente che la struttura della semplificazione
+\[\overline{x}y\overline{z} + \overline{x}yz = \overline{x}y(\overline{z} + z)\]
+che riguarda i termini minimi contrassegnati con $\color{red}{\ast}$ in tabella, è del tipo
+\[f\overline{z} + fz = f\]
+e riguarda due termini minimi che differiscono per la sola variabile \(z\), che si trova diretta in uno dei due termini e negata nell'altro. La stessa cosa si può dire per i due termini minimi contrassegnati con $\color{blue}{\ast}$.\\
 Si procede, quindi, all'ordinamento delle righe della tabella in modo da mettere su livelli adiacenti le n-uple che differiscono per una sola variabile.\\
-Una possibilità e quella di procedere per peso crescente delle n-uple binarie associate ai termini minimi (dove per peso di un'n-upla è da intendersi il numero di 1 in essa presenti) in modo che a ciascun peso corrisponda un livello; così facendo si ottiene la seconda tabella riportata.\\
-Se ora si eliminano le righe che corrispondono a termini minimi per i quali la funzione vale 0 (che non rientrano nella somma di prodotti) si ottiene la terza tabella di figura, che corrisponde alla tabella di Quine-Mc Cuskey.\\
-A questo punto si può procedere con le semplificazioni, che generano una seconda tabella. Poiché \(\overline{x} y \overline{z}\) si semplifica con \(\overline{x}yz\) per ottenere
-\(\overline{x}y\), su questa tabella vengono contrassegnate con una lineetta la variabile \(z\) che è stata oggetto di semplificazione; vengono, inoltre, contrassegnati a lato i termini minimi che sono coinvolti nella semplificazione, cioè \(2 - 3\); viceversa la coppia \(2 - 5\) non porta ad alcuna semplificazione. Esaurito il confronto tra i livelli \(1\) e \(2\), è possibile ora controllare le semplificazioni tra i livelli \(2\) e \(3\); in questo caso si trovano semplificazioni per entrambe le coppie, cioè \(3 - 7\) e \(5 - 7\).\\
+Una possibilità è quella di procedere per peso crescente delle n-uple binarie associate ai termini minimi (dove per peso di un'n-upla è da intendersi il numero di $1$ in essa presenti) in modo che a ciascun peso corrisponda un livello; così facendo si ottiene la seconda tabella riportata in Figura \ref{tab:tavola_verita_Quine_Mc_Cuskey}.\\
+Se ora si eliminano le righe che corrispondono a termini minimi per i quali la funzione vale $0$ (che non rientrano nella somma di prodotti) si ottiene la terza tabella di Figura \ref{tab:tavola_verita_Quine_Mc_Cuskey}, che corrisponde alla tabella di Quine-Mc Cuskey.\\
+A questo punto si può procedere con le semplificazioni, che generano una seconda tabella. Poiché \(\overline{x} y \overline{z}\) si semplifica con \(\overline{x}yz\) per ottenere \(\overline{x}y\), su questa tabella viene contrassegnata con una lineetta la variabile \(z\) che è stata oggetto di semplificazione; vengono, inoltre, contrassegnati a lato i termini minimi che sono coinvolti nella semplificazione, cioè \(2 - 3\); viceversa la coppia \(2 - 5\) non porta ad alcuna semplificazione. Esaurito il confronto tra i livelli \(1\) e \(2\), è possibile ora controllare le semplificazioni tra i livelli \(2\) e \(3\); in questo caso si trovano semplificazioni per entrambe le coppie, cioè \(3 - 7\) e \(5 - 7\).\\
 La tabella che si ottiene è la seguente:
 
+\rowcolors{1}{white}{white}
 \begin{table}[H]
     \centering
-    \setlength{\tabcolsep}{5pt}
+    \rowcolors{1}{white}{white}
+    \setlength{\tabcolsep}{8pt}
+    \renewcommand{\arraystretch}{1.2}
     \begin{tabular}{c|c|ccc|cc}
          & $ $ & $x$ & $y$ & $z$ & $ $ & \\
          \hline
@@ -3291,13 +3311,14 @@ La tabella che si ottiene è la seguente:
          & $5 - 7$ & $1$ & $-$ & $1$ & $C$ & \\
     \end{tabular}
     \caption{Tabella di semplificazione}
-    \label{tab:semplificazione_quine_mc_cuskey}
+    \label{tab:semplificazione_quine_mc_cuskey_0}
 \end{table}
 
 \noindent
 Poiché non è possibile fare altre semplificazioni ci si ferma, contrassegnando con delle lettere progressive gli implicanti che non si possono più semplificare.\\
-L’espressione finale deriva dalla somma degli implicanti coinvolti, \(f = A + B + C = \overline{x}y + yz + xz\).\\
-Si osservi tuttavia che l’espressione che otteniamo non e in forma minima, poiché come noto il termine \(yz\) si può eliminare per il terzo teorema dell'assorbimento.\\
+L’espressione finale deriva dalla somma degli implicanti coinvolti:
+\[f = A + B + C = \overline{x}y + yz + xz\]
+Si osservi, tuttavia, che l’espressione che è stata ottenuta non è in forma minima, poiché, com'è noto, il termine \(yz\) si può eliminare per il \textbf{teorema dell'Assorbimento 3} T6.\\
 Infatti, ciò si può facilmente osservare anche attraverso la realizzazione della mappa di Karnaugh della funzione considerata
 
 \begin{figure}[H]
@@ -3307,52 +3328,335 @@ Infatti, ciò si può facilmente osservare anche attraverso la realizzazione del
         \implicant{1}{5}{red}
         \implicant{7}{6}{green}
     \end{Karnaughvuit}
+    \vspace{-1.5em}
+    \caption{Mappa di Karnaugh a $3$ variabili}
     \label{fig:mappa_karnaugh_8_5}
 \end{figure}
 
 \noindent
-Per individuare il minimo numero di implicanti che implicano tutti i termini minimi è necessario costruire il \textbf{reticolo del metodo}, disponendo sulle righe gli implicanti, sulle colonne i termini minimi, e ponendo un segno (p.es. un pallino) in corrispondenza dei termini minimi che formano ciascun implicante.\\
-Infatti si osserva che:
+Dall'analisi degli implicanti individuati appare evidente come si possa esprimere $f$ come segue:
+\[f = \overline{x}y + xz\]
+Per individuare il minimo numero di implicanti che implicano tutti i termini minimi è necessario costruire il \textbf{reticolo del metodo}, disponendo sulle righe gli implicanti, sulle colonne i termini minimi, e ponendo un segno (quale un pallino) in corrispondenza dei termini minimi che formano ciascun implicante. In particolare si osserva che:
 
 % Contenitore per immagini
 \begin{figure}[H]
     \centering
     \begin{tikzpicture}
-        \draw[-] (0,1)--(6.5,1) node[left]{};
-        \draw[-] (1,0)--(1,6) node[above]{};
-        \draw[-] (0,3)--(6.5,3) node[right]{};
-        \draw[-] (2.5,0)--(2.5,6) node[above]{};
-        \draw[-] (0,5)--(6.5,5) node[right]{};
-        \draw[-] (4,0)--(4,6) node[above]{};
-        \draw[-] (5.5,0)--(5.5,6) node[above]{};
+    \tikzset{dot/.style={fill=black,circle}}
 
+    \foreach \l [count=\y] in {C,...,A} {
+      \draw (0,\y) -- (5,\y);
+      \node at (-0.5,\y){\l};
+    }
 
+    \foreach \x [count=\i] in {2,3,5,7} {
+        \draw (\i,0) -- (\i,4);
+        \node at (\i,-0.5){\x};
+    }
 
-        \draw[line width=2pt,black,-stealth](0,0)--(3,3) node[anchor=north west]{};
-        \filldraw[black] (0,0) circle (2pt) node[anchor=south] {};
-        \filldraw[black] (3,3) circle (2pt) node[anchor=south] {$a + i \cdot b$};
-\end{tikzpicture}
-    \caption{Modulo di un numero complesso}
-    \label{fig:modulo_numero_complesso}
+    % A
+    \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (1,3){};
+    \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (2,3){};
+
+    % B
+    \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (2,2){};
+    \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (4,2){};
+
+    % C
+    \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (3,1){};
+    \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (4,1){};
+    \end{tikzpicture}
+    \caption{Reticolo di semplificazione}
+    \label{fig:reticolo_semplificazione_0}
 \end{figure}
+
+\noindent
+Procedendo per colonne è facile osservare che il termine minimo $2$ è coperto solo dall'implicante $A$ e dunque questo implicante è indispensabile; il termine minimo $5$ viene coperto solo da $C$ e, dunque, anche questo implicante è indispensabile.\\
+L’implicante $B$, invece, non è necessario alla composizione della funzione, poiché i termini minimi a lui associati, ossia $3$ e $7$, sono già coperti rispettivamente da $A$ e da $C$. Dunque la funzione semplificata, come già anticipato, è
+\[f = \overline{x}y + xz\]
+
+\newpage
+\subsubsection{Procedura di Quine-Mc Cluskey}
+La procedura completa per la semplificazione mediante il metodo tabellare di Quine-Mc Cluskey è la seguente:
+
+\begin{enumerate}
+  \item si esprimono i termini minimi che sono a $1$ sostituendo ogni variabile diretta con $1$ e ogni variabile negata con $0$. Ad esempio, il termine minimo $\overline{x}yz$ viene rappresentato con $011$;
+  \item si ordinano tutti i termini minimi in gruppi aventi lo stesso peso, cioè lo stesso numero di $1$; tali raggruppamenti vengono chiamati \textbf{livelli};
+  \item si costruisce una tabella disponendo i livelli in ordine crescente e associando a ciascun termine minimo il corrispondente numero decimale. Ad esempio i termini minimi
+  \[\overline{x}\overline{y}\overline{z} \hspace{2em} \overline{x}\overline{y} \hspace{2em} \overline{x}y\overline{z} \hspace{2em} \overline{x}yz \hspace{1em} xyz\]
+  generano la seguente tabella
+
+  \begin{table}[H]
+      \centering
+      \setlength{\tabcolsep}{3.5pt}
+      \begin{tabular}{c|c|c|c}
+        $ $ & \text{Livello} & \text{Numero} & \text{Termine minimo}\\
+        \hline
+        $\sqrt{}$ & $0$ & $0$ & $000$\\
+        \hline
+        $\sqrt{}$ & $1$ & $1$ & $001$\\
+        $\sqrt{}$ & $1$ & $2$ & $010$\\
+        \hline
+        $\sqrt{}$ & $2$ & $3$ & $011$\\
+        \hline
+        $\sqrt{}$ & $3$ & $7$ & $111$\\
+      \end{tabular}
+      \caption{Divisione dei termini minimi in livelli e riordinamento degli stessi}
+      \label{tab:divisione_minterm_livello}
+  \end{table}
+
+  \item a partire dal primo termine minimo del primo livello disponibile, si confrontano tutti i termini minimi del livello $k$ con tutti quelli del livello $k + 1$, semplificando tra loro i termini che differiscono per un solo bit.\\
+  Si costruisce in tal modo una seconda tabella, nella quale le semplificazioni avvenute si indicano con una lineetta, mentre gli implicanti vengono contraddistinti con i numeri dei termini minimi che li hanno generati.\\
+  Nella tabella si contrassegnano tutti i termini minimi che hanno dato luogo ad almeno una semplificazione, mentre i termini minimi che non hanno portato a semplificazioni vengono contrassegnati con lettere progressive dell’alfabeto. Riferendosi all’esempio riportato sopra, si ottiene la Tabella \ref{tab:semplificazione_quine_mc_cuskey_1} seguente:
+
+  \rowcolors{1}{white}{white}
+  \begin{table}[H]
+      \centering
+      \rowcolors{1}{white}{white}
+      \setlength{\tabcolsep}{8pt}
+      \renewcommand{\arraystretch}{1.2}
+      \begin{tabular}{c|c|c}
+           $\sqrt{}$ & $0,1$ & $00-$\\
+           $\sqrt{}$ & $0,2$ & $0-0$\\
+           \hline
+           $\sqrt{}$ & $1,3$ & $0-1$\\
+           $\sqrt{}$ & $2,3$ & $01-$\\
+           \hline
+           $A$ & $3,7$ & $-11$\\
+      \end{tabular}
+      \caption{Tabella di semplificazione}
+      \label{tab:semplificazione_quine_mc_cuskey_1}
+  \end{table}
+
+  \item con lo stesso procedimento di prima, nella seconda tabella si confrontano tutti i termini del livello $k$ con tutti quelli del livello $k + 1$. Sono semplificabili tra loro i termini che \emph{differiscono per un solo bit} e che siano \emph{già stati semplificati rispetto alla stessa variabile}. Si costruisce in tal modo una terza tabella con le stesse modalità esposte per la costruzione della seconda tabella. Nell’esempio che si sta trattando si ha la Tabella \ref{tab:semplificazione_quine_mc_cuskey_2} che segue:
+
+  \rowcolors{1}{white}{white}
+  \begin{table}[H]
+      \centering
+      \rowcolors{1}{white}{white}
+      \setlength{\tabcolsep}{8pt}
+      \renewcommand{\arraystretch}{1.2}
+      \begin{tabular}{c|c|c}
+           $B$ & $0,1,2,3$ & $0--$\\
+      \end{tabular}
+      \caption{Tabella di semplificazione}
+      \label{tab:semplificazione_quine_mc_cuskey_2}
+  \end{table}
+
+  \noindent
+  mentre nella seconda tabella il termine $3,7$ non dà luogo a semplificazioni e viene quindi contrassegnato con $A$.
+  \item si prosegue in modo analogo, con la costruzione di tabelle successive, finchè non è più possibile eseguire semplificazioni. Tutti i termini che nelle successive tabelle non sono stati contrassegnati vengono chiamati implicanti primi e la loro somma logica realizza la funzione desiderata. Può però accadere che l’espressione minima di tale funzione si realizzi con un numero di implicanti inferiore a quello degli implicanti primi: essa, infatti, si ricava come somma del minimo numero di implicanti primi con cui vengono implicati tutti i termini minimi della funzione. Nell’esempio che si sta esaminando gli implicanti primi sono
+  \[A = -11 \hspace{2em} B = 0--\]
+  \item la scelta più opportuna degli implicanti primi necessari, che può divenire complessa già con un numero di variabili relativamente ridotto, avviene mediante la costruzione di un semplice reticolo, avente i termini minimi sulle colonne e gli implicanti primi sulle righe. Su ogni riga, cioè in corrispondenza di ciascun implicante, si contrassegnano opportunamente i termini minimi implicati. Nell’esempio trattato si ottiene il seguente reticolo
+
+  % Contenitore per immagini
+  \begin{figure}[H]
+      \centering
+      \begin{tikzpicture}
+      \tikzset{dot/.style={fill=black,circle}}
+
+      \foreach \l [count=\y] in {B,A} {
+        \draw (0,\y) -- (6,\y);
+        \node at (-0.5,\y){\l};
+      }
+
+      \foreach \x [count=\i] in {0,1,2,3,7} {
+          \draw (\i,0) -- (\i,3);
+          \node at (\i,-0.5){\x};
+      }
+
+      % A
+      \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (4,2){};
+      \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (5,2){};
+
+      % B
+      \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (1,1){};
+      \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (2,1){};
+      \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (3,1){};
+      \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (4,1){};
+      \end{tikzpicture}
+      \caption{Reticolo di semplificazione}
+      \label{fig:reticolo_semplificazione_1}
+  \end{figure}
+
+  \noindent
+  Dall’esame del reticolo si individuano poi i termini minimi che sono implicati da un unico implicante primo. Ciascuno di essi diviene evidentemente essenziale nella realizzazione della funzione. Ogni implicante essenziale così individuato implica d’altra parte altri termini minimi che risultano automaticamente coperti e pertanto non vanno piu considerati.\\
+  È semplice, infine, trovare, sia pure per tentativi, la copertura minima dei termini rimasti. Nell’esempio che si sta trattando ambedue gli implicanti primi $A$ e $B$ sono essenziali; l’espressione semplificata è allora
+  \[f = A + B = yz + \overline{x}\]
+  Facilmente ravvisabile anche attraverso la mappa di Karnaugh associata, riportata nella Figura \ref{fig:mappa_karnaugh_8_6}
+
+  \begin{figure}[H]
+      \centering
+      \begin{Karnaughvuit}
+          \contingut{1,1,0,0,1,1,0,1}
+          \implicant{0}{5}{red}
+          \implicant{5}{7}{green}
+      \end{Karnaughvuit}
+      \vspace{-1.5em}
+      \caption{Mappa di Karnaugh a $3$ variabili}
+      \label{fig:mappa_karnaugh_8_6}
+  \end{figure}
+\end{enumerate}
 
 \vspace{1em}
 \noindent
-La mappa di Karnaugh corrispondente è
+\textbf{Esempio}: Più significativo, soprattutto per quanto riguarda la realizzazione della copertura minima, è l’esempio seguente. Si voglia semplificare la funzione
+\[f = \sum \left(1,3,4,6,7,9,10,11,12,13,14,15\right)_m\]
+nella quale la notazione binaria associata a ciascun numero intero rappresenta la codifica dei termini minimi. La divisione dei termini minimi in livelli e il riordinamento dei livelli dà luogo alla tabella di sinistra, mentre al centro e sulla destra ci sono le successive tabelle di semplificazione
 
+\begin{table}[H]
+    \rowcolors{1}{white}{white}
+    \setlength{\tabcolsep}{8pt}
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabularx}{\textwidth}{ccc}
+    {
+        \hspace{-1em}
+        \setlength{\tabcolsep}{3.5pt}
+        \begin{tabular}{c|c|c|c}
+        $ $ & \text{Livello} & \text{Numero} & \text{Termine minimo}\\
+        \hline
+        $\sqrt{}$ & $1$ & $1$ & $0001$\\
+        $\sqrt{}$ & $1$ & $4$ & $0100$\\
+        \hline
+        $\sqrt{}$ & $2$ & $3$ & $0011$\\
+        $\sqrt{}$ & $2$ & $6$ & $0110$\\
+        $\sqrt{}$ & $2$ & $9$ & $0101$\\
+        $\sqrt{}$ & $2$ & $10$ & $1010$\\
+        $\sqrt{}$ & $2$ & $12$ & $1100$\\
+        \hline
+        $\sqrt{}$ & $3$ & $7$ & $0111$\\
+        $\sqrt{}$ & $3$ & $11$ & $1011$\\
+        $\sqrt{}$ & $3$ & $13$ & $1101$\\
+        $\sqrt{}$ & $3$ & $14$ & $1110$\\
+        \hline
+        $\sqrt{}$ & $4$ & $15$ & $1111$\\
+      \end{tabular}
+    }
+    &
+    {
+        \hspace{-1em}
+        \setlength{\tabcolsep}{3.5pt}
+        \begin{tabular}{c|c|c}
+             $\sqrt{}$ & $1,3$ & $00-1$\\
+             $\sqrt{}$ & $1,9$ & $-0001$\\
+             $\sqrt{}$ & $4,6$ & $01-0$\\
+             $\sqrt{}$ & $4,12$ & $-100$\\
+             \hline
+             $\sqrt{}$ & $3,7$ & $0-11$\\
+             $\sqrt{}$ & $3,11$ & $-011$\\
+             $\sqrt{}$ & $6,7$ & $011-$\\
+             $\sqrt{}$ & $5,14$ & $-110$\\
+             $\sqrt{}$ & $9,11$ & $10-1$\\
+             $\sqrt{}$ & $9,13$ & $1-01$\\
+             $\sqrt{}$ & $10,11$ & $101-$\\
+             $\sqrt{}$ & $10,14$ & $1-10$\\
+             $\sqrt{}$ & $12,13$ & $110-$\\
+             \hline
+             $\sqrt{}$ & $7,15$ & $-111$\\
+             $\sqrt{}$ & $11,15$ & $1-111$\\
+             $\sqrt{}$ & $13,15$ & $11-1$\\
+             $\sqrt{}$ & $14,15$ & $111-$\\
+        \end{tabular}
+    }
+    &
+    {
+        \hspace{-1em}
+        \setlength{\tabcolsep}{3.5pt}
+        \begin{tabular}{c|c|c}
+             $A$ & $1,3,9,11$ & $-0-1$\\
+             $B$ & $4,6,12,14$ & $-1-0$\\
+             \hline
+             $C$ & $3,7,11,15$ & $--11$\\
+             $D$ & $6,7,14,15$ & $-11-$\\
+             $E$ & $9,11,13,15$ & $1--1$\\
+             $F$ & $10,11,14,15$ & $1-1-$\\
+             $G$ & $12,13,14,15$ & $11--$\\
+        \end{tabular}
+    }
+    \end{tabularx}
+    \caption{Trasformazione della tavola di verità della funzione logica di \(4\) variabili per ottenere la tabella di Quine-Mc Cuskey}
+    \label{tab:tavola_verita_Quine_Mc_Cuskey_4_variabili}
+\end{table}
+
+\noindent
+A cui fa seguito immediato il reticolo di Figura \ref{fig:reticolo_semplificazione_2}:
+
+% Contenitore per immagini
 \begin{figure}[H]
     \centering
-    \begin{Karnaughvuit}
-        \contingut{1,1,0,0,1,1,0,1}
-        \implicant{0}{5}{red}
-        \implicant{5}{7}{green}
-    \end{Karnaughvuit}
-    \label{fig:mappa_karnaugh_8_6}
+    \begin{tikzpicture}
+    \tikzset{dot/.style={fill=black,circle}}
+
+    \foreach \l [count=\y] in {G,...,A} {
+      \draw (0,\y) -- (13,\y);
+      \node at (-0.5,\y){\l};
+    }
+
+    \foreach \x [count=\i] in {1,3,4,6,7,9,10,11,12,13,14,15} {
+        \draw (\i,0) -- (\i,8);
+        \node at (\i,-0.5){\x};
+    }
+
+    % A
+    \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (1,7){};
+    \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (2,7){};
+    \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (6,7){};
+    \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (8,7){};
+
+    % B
+    \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (3,6){};
+    \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (4,6){};
+    \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (9,6){};
+    \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (11,6){};
+
+    % C
+    \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (2,5){};
+    \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (5,5){};
+    \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (8,5){};
+    \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (12,5){};
+
+    % D
+    \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (4,4){};
+    \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (5,4){};
+    \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (11,4){};
+    \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (12,4){};
+
+    % E
+    \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (6,3){};
+    \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (8,3){};
+    \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (10,3){};
+    \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (12,3){};
+
+    % F
+    \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (7,2){};
+    \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (8,2){};
+    \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (11,2){};
+    \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (12,2){};
+
+    % G
+    \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (9,1){};
+    \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (10,1){};
+    \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (11,1){};
+    \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (12,1){};
+    \end{tikzpicture}
+    \caption{Reticolo di semplificazione}
+    \label{fig:reticolo_semplificazione_2}
 \end{figure}
 
-... continua ...
 \noindent
-Tali realizzazioni si comprendono non appena si valuta attentamente la mappa di Karnaugh associata alla funzione a \( n = 4\) variabili:
+Dall’esame del reticolo risulta che il termine minimo $1$ è implicato solamente da $A$, quello $4$ solo da $B$ e quello $10$ solo da $F$. Di conseguenza $A$, $B$, $F$ sono implicanti primi essenziali. La loro scelta copre i termini minimi
+$1$, $3$, $4$, $6$, $9$, $10$, $11$, $12$, $14$, $15$. Per coprire i rimanenti termini minimi $7$ e $13$ si può scegliere per il primo l’implicante $C$ o quello $D$, per il secondo quello $E$ o quello $G$.\\
+Ci sono, pertanto, quattro realizzazioni equivalenti della funzione assegnata
+\begin{align*}
+  f = A + B + F + D + E = \overline{y}w + y\overline{w} + xz + yz + xw\\
+  f = A + B + F + D + G = \overline{y}w + y\overline{w} + xz + yz + xy\\
+  f = A + B + F + C + E = \overline{y}w + y\overline{w} + xz + zw + xw\\
+  f = A + B + F + C + G = \overline{y}w + y\overline{w} + xz + zw + xy\\
+\end{align*}
+Tali realizzazioni si comprendono non appena si valuta attentamente la mappa di Karnaugh di Figura \ref{fig:mappa_karnaugh_16_2} associata alla
+funzione considerata
+\noindent
+Tali realizzazioni si comprendono non appena si valuta attentamente la mappa di Karnaugh associata alla funzione a \(n  = 4\) variabili:
 
 % Contenitore per immagini
 \begin{figure}[H]
@@ -3366,9 +3670,13 @@ Tali realizzazioni si comprendono non appena si valuta attentamente la mappa di 
         \implicantdaltbaix{1}{11}{violet}
         \implicant{7}{14}{orange}
     \end{Karnaugh}
-    \caption{Mappa di Karnaugh a \(16\)}
+    \vspace{-1.5em}
+    \caption{Mappa di Karnaugh della funzione a $4$ variabili}
     \label{fig:mappa_karnaugh_16_2}
 \end{figure}
+
+\noindent
+In cui vi sono solamente $3$ sottocubi primi, mentre i restanti $2$ non sono primi e sono fra loro interdipendenti. Da tale configurazione segue la molteplicità delle soluzioni individuate in precedenza.
 
 \newpage
 \section{Circuiti combinatori}
@@ -3376,12 +3684,41 @@ Tali realizzazioni si comprendono non appena si valuta attentamente la mappa di 
 \subsection{Introduzione}
 Nella realtà pratica, l'Algebra Booleana non sempre viene impiegata per raggiungere la \textbf{forma minima} di una funzione logica, in quanto se così si procedesse non si potrebbe sfruttare il \textbf{fattore di scala}.\\
 Infatti, quando si deve realizzare una rete logica, molto spesso è più conveniente impiegare dei \textbf{moduli precostituiti}, anche ridondanti, piuttosto che richiedere la realizzazione di un modulo \textit{custom}, costruito appositamente per lo scopo.\\
-In questi termini si parla di \textbf{circuiti combinatori}. Si chiamano combinatori quei circuiti dotati di uno o più ingressi e uno o più uscite, il cui funzionamento è descritto da una funzione logica; in questi circuiti gli ingressi e le uscite possono assumere solo uno di due valori binari previsti (0 e 1); inoltre in ogni istante l’uscita è funzione deterministica unicamente degli ingressi. La figura seguente illustra la struttura generale di un circuito combinatorio con \(n\) ingressi e \(m\) uscite, il cui funzionamento è descritto dalla funzione \(F : 2^n \rightarrow 2^m\), che è una funzione Booleana da \(2^n\) a \(2^m\) realizzata mediante \(m\) funzioni Booleane \(f_i : 2^n \rightarrow 2\):
+In questi termini si parla di \textbf{circuiti combinatori}. Si chiamano \emph{combinatori} quei circuiti dotati di uno o più ingressi e uno o più uscite, il cui funzionamento è descritto da una funzione logica; in questi circuiti gli ingressi e le uscite possono assumere solo uno di due valori binari previsti ($0$ e $1$); inoltre, in ogni istante, l’uscita è funzione deterministica unicamente degli ingressi.
+
+% Contenitore per immagini
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+      \draw (0,0) -- (0,3) -- (2,3) -- (2,0) -- (0,0);
+      \draw (0,2.5) -- ++(-1,0) ++(-0.3,0) node[]{$x_1$};
+      \draw (0,2) -- ++(-1,0) ++(-0.3,0) node[]{$x_2$};
+      \draw (-0.5,1.7) node[fill,circle,inner sep=0pt,minimum size=2pt]{} (-0.5,1.5) node[fill,circle,inner sep=0pt,minimum size=2pt]{} (-0.5,1) node[fill,circle,inner sep=0pt,minimum size=2pt]{} (-0.5,0.8) node[fill,circle,inner sep=0pt,minimum size=2pt]{};
+      \draw (0,0.5) -- ++(-1,0) ++(-0.3,0) node[]{$x_n$};
+
+      \draw (2,2.5) -- ++(1,0) ++(0.3,0) node[]{$y_1$};
+      \draw (2,2) -- ++(1,0) ++(0.3,0) node[]{$y_2$};
+      \draw (2.5,1.7) node[fill,circle,inner sep=0pt,minimum size=2pt]{} (2.5,1.5) node[fill,circle,inner sep=0pt,minimum size=2pt]{} (2.5,1) node[fill,circle,inner sep=0pt,minimum size=2pt]{} (2.5,0.8) node[fill,circle,inner sep=0pt,minimum size=2pt]{};
+      \draw (2,0.5) -- ++(1,0) ++(0.3,0) node[]{$y_m$};
+
+      \draw (1,1.5) node[]{$F$};
+    \end{tikzpicture}
+    \caption{Struttura generale di un circuito combinatorio}
+    \label{fig:struttura_generale_circuito_combinatorio}
+\end{figure}
+
+\noindent
+La Figura \ref{fig:struttura_generale_circuito_combinatorio} precedente illustra la struttura generale di un circuito combinatorio con \(n\) ingressi e \(m\) uscite, il cui funzionamento è descritto dalla funzione
+\[F : 2^n \rightarrow 2^m\]
+che è una funzione Booleana da \(2^n\) a \(2^m\) realizzata mediante \(m\) funzioni Booleane
+\[f_i : 2^n \rightarrow 2\]
+mostrate di seguito:
 \[y_1 = f_1 (x_1, x_2, ..., x_n)\]
 \[y_2 = f_2 (x_1, x_2, ..., x_n)\]
 \[...\]
 \[y_m = f_m (x_1, x_2, ..., x_n)\]
 
+\vspace{1em}
 \subsubsection{Itinerari e livelli}
 Ogni rete logica e formata da un certo numero di porte (AND, OR, ecc.) tra loro variamente interconnesse, da un certo numero di ingressi, contraddistinti in figura seguente con i simboli \(A_i\), e da un certo numero di uscite, contraddistinte nella medesima figura con i simboli \(B_k\).\\
 Si dice itinerario tra due elementi \(X\) e \(Y\) qualsiasi
