@@ -3647,12 +3647,12 @@ A cui fa seguito immediato il reticolo di Figura \ref{fig:reticolo_semplificazio
 Dall’esame del reticolo risulta che il termine minimo $1$ è implicato solamente da $A$, quello $4$ solo da $B$ e quello $10$ solo da $F$. Di conseguenza $A$, $B$, $F$ sono implicanti primi essenziali. La loro scelta copre i termini minimi
 $1$, $3$, $4$, $6$, $9$, $10$, $11$, $12$, $14$, $15$. Per coprire i rimanenti termini minimi $7$ e $13$ si può scegliere per il primo l’implicante $C$ o quello $D$, per il secondo quello $E$ o quello $G$.\\
 Ci sono, pertanto, quattro realizzazioni equivalenti della funzione assegnata
-\begin{align*}
-  f = A + B + F + D + E = \overline{y}w + y\overline{w} + xz + yz + xw\\
-  f = A + B + F + D + G = \overline{y}w + y\overline{w} + xz + yz + xy\\
-  f = A + B + F + C + E = \overline{y}w + y\overline{w} + xz + zw + xw\\
-  f = A + B + F + C + G = \overline{y}w + y\overline{w} + xz + zw + xy\\
-\end{align*}
+\begin{flalign*}
+  f & = A + B + F + D + E = \overline{y}w + y\overline{w} + xz + yz + xw\\
+  f & = A + B + F + D + G = \overline{y}w + y\overline{w} + xz + yz + xy\\
+  f & = A + B + F + C + E = \overline{y}w + y\overline{w} + xz + zw + xw\\
+  f & = A + B + F + C + G = \overline{y}w + y\overline{w} + xz + zw + xy
+\end{flalign*}
 Tali realizzazioni si comprendono non appena si valuta attentamente la mappa di Karnaugh di Figura \ref{fig:mappa_karnaugh_16_2} associata alla
 funzione considerata
 \noindent
@@ -3717,11 +3717,8 @@ mostrate di seguito:
 \[y_2 = f_2 (x_1, x_2, ..., x_n)\]
 \[...\]
 \[y_m = f_m (x_1, x_2, ..., x_n)\]
-
-\vspace{1em}
-\subsubsection{Itinerari e livelli}
-Ogni rete logica e formata da un certo numero di porte (AND, OR, ecc.) tra loro variamente interconnesse, da un certo numero di ingressi, contraddistinti in figura seguente con i simboli \(A_i\), e da un certo numero di uscite, contraddistinte nella medesima figura con i simboli \(B_k\).\\
-Si dice itinerario tra due elementi \(X\) e \(Y\) qualsiasi
+Nei circuiti elettronici i due stati $0$ e $1$ sono realizzati mediante due livelli caratteristici di tensione, detti \textbf{livello alto} ($h$) e \textbf{livello basso} ($l$). L’effettiva corrispondenza tra $h$ e $l$ e le costanti logiche $0$ e $1$ è convenzionale e va precisata di volta in volta. In tal senso, è detta \textbf{logica positiva} la convenzione secondo la quale il valore $1$ viene associato al livello alto $h$; simmetricamente, si chiama \textbf{logica negativa} quella in cui il valore $1$ è associato al livello basso $l$.\\
+Si chiama \textbf{circuito logico elementare} o \textbf{porta logica} un circuito a $1$ o $2$ ingressi e un’uscita il cui valore è $1$ in corrispondenza delle configurazioni degli ingressi descritte dalle funzioni logiche NOT (per $1$ ingresso), OR, AND, NAND, NOR, XOR, XNOR (per $2$ ingressi).
 
 \newpage
 \begin{center}
@@ -3729,18 +3726,18 @@ Si dice itinerario tra due elementi \(X\) e \(Y\) qualsiasi
 \end{center}
 
 \subsection{Riassunto}
-Il metodo di semplificazione di Quine Mc Cluskey si basa su una semplice proprietà:
+Il metodo di semplificazione di Quine-Mc Cluskey si basa su una semplice proprietà:
 \[f \cdot x + f \cdot \overline{x} = f\]
 Una volta che è nota la tabella di verità della funzione logica oggetto di interesse si rilevano tutte le combinazioni delle variabili in ingresso che producono il valore logico \(1\) e si classificano tali combinazioni sulla base del peso, (ovvero \quotes{quanti \(1\) sono presenti in ciascuna combinazione delle variabili in ingresso}).\\
-Classificate le combinazioni in ingresso si confrontano tutte le combinazioni di ciascun peso con quelle di tutti gli altri pesi al fine di verificare se vi sono delle coppie di variabili che si conservano e che, quindi, si possono semplificare, in modo tale da raggiungere la forma minima, maggiormente semplificata.\\
-Quando non si può più procedere ad un'ulteriore semplificazione si è, di fatto, ottenuto l'insieme di tutti gli \textbf{implicanti} che non significa che costituiscono la forma minima, ma possono essere ancora ridondanti.\\
+Classificate le combinazioni in ingresso, si confrontano tutte le combinazioni di ciascun peso con quelle di tutti gli altri pesi al fine di verificare se vi sono delle coppie di variabili che si conservano e che, quindi, si possono semplificare, in modo tale da raggiungere la forma minima, maggiormente semplificata.\\
+Quando non si può più procedere ad un'ulteriore semplificazione si è, di fatto, ottenuto l'insieme di tutti gli \textbf{implicanti}. Tuttavia, aver individuato gli implicanti non significa aver concluso l'operazione di semplificazione, in quanto questi ultimi non sono necessariamente primi, in quanto possono essere ancora ridondanti.\\
 Infatti, gli implicanti ottenuti tramite la tabella di Quine Mc Cluskey devono essere analizzati ulteriormente tramite il cosiddetto \textbf{reticolo}, al fine di determinare la \textbf{copertura essenziale e minima}, e mai sovrabbondante.\\
-Infatti, realizzando successivamente la mappa di Karnaugh ci si rende conto, effettivamente, della presenza di sottocubi non primi che vengono comunque ottenuti anche attraverso il metodo di Quine Mc Cluskey e che può essere arginato attraverso il reticolo, così come nella mappa di Karnaugh si osservava che alcuni \textit{minterm} erano già stati \quotes{coperti} da altri sottocubi precedentemente individuati.
+Infatti, realizzando successivamente la mappa di Karnaugh ci si rende conto, effettivamente, della presenza di sottocubi non primi che vengono comunque ottenuti anche attraverso il metodo di Quine-Mc Cluskey e che vanno a costituire, a tutti gli effetti, delle alternative di semplificazione. Al fine di ottenere la forma minima, si deve procedere attravero l'analisi del reticolo, essattamente come accadeva con la mappa di Karnaugh, nella quale era fondamentale osservare che alcuni \textit{minterm} potevano essere \quotes{coperti} da altri sottocubi precedentemente individuati.
 
 \vspace{1em}
 \noindent
 \textbf{Osservazione}: Si presti particolare attenzione che, nella fase di confronto e di semplificazione, ogni qualvolta si semplificano dei \textit{minterm}, questi vengono \quotes{spuntati}, per tenere conto che sono stati considerati.\\
-Se, infatti, un \textit{minterm} non viene considerato in fase di semplificazione allora bisognerà tenerne conto, in quanto diventerà un \textbf{implicante} nella fase finale di semplificazione (per quanto possa essere modesto, in quanto implicherà solamente se stesso).
+Se, infatti, un \textit{minterm} non viene considerato in fase di semplificazione (per un'intrinseca impossibilità derivante dal confronto con tutti i termini del livello successivo) allora bisognerà tenerne conto, in quanto diventerà un \textbf{implicante} nella fase finale di semplificazione (per quanto esso sia modesto, in quanto implicherà solamente se stesso).
 
 \vspace{1em}
 \noindent
@@ -3751,6 +3748,9 @@ Se, infatti, un \textit{minterm} non viene considerato in fase di semplificazion
 Si consideri una nuova funzione a \(n = 3\) variabili
 \begin{table}[H]
     \centering
+    \rowcolors{1}{white}{white}
+    \setlength{\tabcolsep}{8pt}
+    \renewcommand{\arraystretch}{1.2}
     \begin{tabular}{ccc|c}
          $x$ & $y$ & $z$ & $f(x, y, z)$\\
          \hline
@@ -3767,9 +3767,8 @@ Si consideri una nuova funzione a \(n = 3\) variabili
     \label{tab:funzione_3_variabili_3}
 \end{table}
 
-\vspace{1em}
 \noindent
-La realizzazione della mappa di Karnaugh si ottiene
+Inserendo ciscun termine all'interno della mappa di Karnaugh si ottiene la seguente mappa, nella quale si palesano due alternative di semplificazione:
 
 \begin{figure}[H]
     \centering
@@ -3779,10 +3778,14 @@ La realizzazione della mappa di Karnaugh si ottiene
         \implicant{5}{7}{blue}
         \implicant{0}{4}{green}
     \end{Karnaughvuit}
+    \vspace{-1.5em}
+    \caption{Mappa di Karnaugh a \(3\) variabili}
     \label{fig:mappa_karnaugh_8_7}
 \end{figure}
 
 \noindent
+A cui corrisponde la seguente formula minima:
+\[f = \overline{x}\overline{y} + yz + x\overline{z}\]
 Oppure, equivalentemente
 
 \begin{figure}[H]
@@ -3793,15 +3796,21 @@ Oppure, equivalentemente
         \implicant{4}{5}{blue}
         \implicant{3}{7}{green}
     \end{Karnaughvuit}
+    \vspace{-1.5em}
+    \caption{Mappa di Karnaugh a \(3\) variabili}
     \label{fig:mappa_karnaugh_8_8}
 \end{figure}
 
 \noindent
-Procedendo, invece, tramite il metodo tabella di Quine Mc Clusky si ottiene
+A cui corrisponde, invece, la seguente formula minima:
+\[f = \overline{y}\overline{z} + xy + \overline{x}z\]
+Procedendo, invece, tramite il metodo tabellare di Quine-Mc Clusky, si individuano tutti i minterm della funzione data, i quali vengono divisi in opportuni livelli e mappati nella Tabella \ref{tab:tabella_quine_mc_cluskey} seguente, secondo peso crescente:
 
 \begin{table}[H]
     \centering
+    \rowcolors{1}{white}{white}
     \setlength{\tabcolsep}{5pt}
+    \renewcommand{\arraystretch}{1.2}
     \begin{tabular}{c|c|c|ccc|cc}
          \textbf{Livello} & & & $x$ & $y$ & $z$ & $f$\\
          \hline
@@ -3816,17 +3825,18 @@ Procedendo, invece, tramite il metodo tabella di Quine Mc Clusky si ottiene
          \hline
          $3$ & $7$ & $xyz$ & $1$ & $1$ & $1$ & $1$\\
     \end{tabular}
-    \caption{Tabella di Quine Mc Cuskley}
+    \caption{Tabella di Quine-Mc Cuskley}
     \label{tab:tabella_quine_mc_cluskey}
 \end{table}
 
-\vspace{1em}
 \noindent
-Da cui si ottiene
+Una volta suddiviso in livelli ciascun minterm, si procede a confrontare ciascun termine del livello $k$ con ogni termine del livello $k + 1$ per effettuare delle semplificazioni: saranno semplificabili quei termini che differiscono per un solo bit, il quale viene contrassegnato con un trattino in fase di semplifcazione, come mostrato nella Tabella \ref{tab:semplificazione_quine_mc_cuskey_3}. Ovviamente, i termini che non possono essere semplificati vengono contrassegnati con una lettera alfabetica crescente e andranno a costituire gli implicanti atti alla definizione della formula minima della funzione:
 
 \begin{table}[H]
     \centering
+    \rowcolors{1}{white}{white}
     \setlength{\tabcolsep}{5pt}
+    \renewcommand{\arraystretch}{1.2}
     \begin{tabular}{c|c|ccc|cc}
          & $ $ & $x$ & $y$ & $z$ & $ $ & \\
          \hline
@@ -3840,66 +3850,74 @@ Da cui si ottiene
          & $6 - 7$ & $1$ & $1$ & $-$ & $F$ & \\
     \end{tabular}
     \caption{Tabella di semplificazione}
-    \label{tab:semplificazione_quine_mc_cuskey}
+    \label{tab:semplificazione_quine_mc_cuskey_3}
 \end{table}
 
 \vspace{1em}
 \noindent
-La realizzazione del reticolo conduce al seguente risultato
+La realizzazione del reticolo conduce al seguente risultato:
 
 % Contenitore per immagini
 \begin{figure}[H]
     \centering
     \begin{tikzpicture}
-        \draw[-] (0,1)--(9.5,1) node[left]{};
-        \draw[-] (1,0)--(1, 12) node[above]{};
-        \draw[-] (0,3)--(9.5,3) node[right]{};
-        \draw[-] (2.5,0)--(2.5,12) node[above]{};
-        \draw[-] (0,5)--(9.5,5) node[right]{};
-        \draw[-] (4,0)--(4,12) node[above]{};
-        \draw[-] (5.5,0)--(5.5,12) node[above]{};
-        \draw[-] (0,7)--(9.5,7) node[right]{};
-        \draw[-] (7,0)--(7,12) node[above]{};
-        \draw[-] (8.5,0)--(8.5,12) node[above]{};
-        \draw[-] (0,9)--(10,9) node[right]{};
-        \draw[-] (0,11)--(9.5,11) node[right]{};
+      \tikzset{dot/.style={fill=black,circle}}
 
-        \filldraw[black] (-1,0.8) circle (0pt) node[anchor=south] {$F$};
-        \filldraw[black] (-1,2.8) circle (0pt) node[anchor=south] {$E$};
-        \filldraw[black] (-1,4.8) circle (0pt) node[anchor=south] {$D$};
-        \filldraw[black] (-1,6.8) circle (0pt) node[anchor=south] {$C$};
-        \filldraw[black] (-1,8.8) circle (0pt) node[anchor=south] {$B$};
-        \filldraw[black] (-1,10.8) circle (0pt) node[anchor=south] {$A$};
+      \foreach \l [count=\y] in {F,...,A} {
+        \draw (0,\y) -- (7,\y);
+        \node at (-0.5,\y){\l};
+      }
 
-        \filldraw[black] (1,-1) circle (0pt) node[anchor=south] {$0$};
-        \filldraw[black] (2.5,-1) circle (0pt) node[anchor=south] {$1$};
-        \filldraw[black] (4,-1) circle (0pt) node[anchor=south] {$3$};
-        \filldraw[black] (5.5,-1) circle (0pt) node[anchor=south] {$4$};
-        \filldraw[black] (7,-1) circle (0pt) node[anchor=south] {$6$};
-        \filldraw[black] (8.5,-1) circle (0pt) node[anchor=south] {$7$};
+      \foreach \x [count=\i] in {0,1,3,4,6,7} {
+          \draw (\i,0) -- (\i,7);
+          \node at (\i,-0.5){\x};
+      }
 
-        \filldraw[black] (1,11) circle (3pt) node[anchor=south] {};
-        \filldraw[black] (2.5,11) circle (3pt) node[anchor=south] {};
+      % A
+      \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (1,6){};
+      \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (2,6){};
 
-        \filldraw[black] (1,9) circle (3pt) node[anchor=south] {};
-        \filldraw[black] (5.5,9) circle (3pt) node[anchor=south] {};
+      % B
+      \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (1,5){};
+      \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (4,5){};
 
-        \filldraw[black] (2.5,7) circle (3pt) node[anchor=south] {};
-        \filldraw[black] (4,7) circle (3pt) node[anchor=south] {};
-\end{tikzpicture}
-    \caption{Modulo di un numero complesso}
-    \label{fig:modulo_numero_complesso}
+      % C
+      \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (2,4){};
+      \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (3,4){};
+
+      % D
+      \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (4,3){};
+      \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (5,3){};
+
+      % E
+      \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (3,2){};
+      \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (6,2){};
+
+      % F
+      \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (5,1){};
+      \draw node[fill,circle,inner sep=0pt,minimum size=5pt] at (6,1){};
+    \end{tikzpicture}
+    \caption{Reticolo di semplificazione}
+    \label{fig:reticolo_semplificazione_3}
 \end{figure}
 
-\vspace{1em}
 \noindent
-Da cui, tramite la creazione de reticolo, si possono ottenere le due possibili funzioni
-\[f_1 = x \overline{z} + \overline{x} \overline{y} + yz\]
-\[f_2 = x y + \overline{y} \overline{z} + \overline{x} z\]
-ovvero
-\[0 - 1 + 4 - 6 + 3 - 7\]
-e
-\[0 - 4 + 1 - 3 + 6 - 7\]
+Dalla Figura \ref{fig:reticolo_semplificazione_3} appare evidente come, in questo caso, non vi siano termini essenziali, ma necessariamente due possibile alternative di semplificazione, in quanto ogni termine può essere coperto tramite due implicanti distinti. Da ciò segue che:
+\begin{flalign*}
+  f_1 & = A + D + E\\
+  f_2 & = B + C + F
+\end{flalign*}
+al fine di garantire la copertura minima ed essenziale, senza che vi siano termini ridondanti.\\
+Le formule minime associato sono:
+\begin{flalign*}
+  f_1 & = \overline{x} \overline{y} + x \overline{z} + yz\\
+  f_2 & = \overline{y} \overline{z} + \overline{x}z + xy
+\end{flalign*}
+
+\vspace{1em}
+\subsection{Itinerari e livelli}
+Ogni rete logica e formata da un certo numero di porte (AND, OR, ecc.) tra loro variamente interconnesse, da un certo numero di ingressi, contraddistinti in figura seguente con i simboli \(A_i\), e da un certo numero di uscite, contraddistinte nella medesima figura con i simboli \(B_k\).\\
+Si dice itinerario tra due elementi \(X\) e \(Y\) qualsiasi.
 
 \vspace{1em}
 \noindent

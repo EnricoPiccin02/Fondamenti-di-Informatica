@@ -53,25 +53,25 @@
 \contentsline {subsubsection}{\numberline {2.23.1}Procedura di Quine-Mc Cluskey}{59}{}%
 \contentsline {section}{\numberline {3}Circuiti combinatori}{63}{}%
 \contentsline {subsection}{\numberline {3.1}Introduzione}{63}{}%
-\contentsline {subsubsection}{\numberline {3.1.1}Itinerari e livelli}{63}{}%
 \contentsline {subsection}{\numberline {3.2}Riassunto}{64}{}%
-\contentsline {subsection}{\numberline {3.3}Analisi dei circuiti combinatori}{67}{}%
-\contentsline {subsection}{\numberline {3.4}Sintesi dei circuiti combinatori}{67}{}%
-\contentsline {subsection}{\numberline {3.5}Riassunto}{69}{}%
-\contentsline {subsection}{\numberline {3.6}Moduli combinatori}{70}{}%
-\contentsline {subsubsection}{\numberline {3.6.1}Decodificatori}{70}{}%
-\contentsline {subsubsection}{\numberline {3.6.2}Codificatore}{71}{}%
-\contentsline {subsubsection}{\numberline {3.6.3}Selettori}{71}{}%
-\contentsline {subsubsection}{\numberline {3.6.4}Selettore d'uscita}{71}{}%
-\contentsline {subsection}{\numberline {3.7}Riassunto}{74}{}%
-\contentsline {subsection}{\numberline {3.8}Costruzione modulare di una funzione Booleana}{74}{}%
-\contentsline {subsubsection}{\numberline {3.8.1}Diodi}{75}{}%
-\contentsline {subsection}{\numberline {3.9}Riassunto}{77}{}%
-\contentsline {subsection}{\numberline {3.10}Memorie E-PROM}{78}{}%
-\contentsline {subsection}{\numberline {3.11}Moduli per la realizzazione dell’unita logico-aritmetica}{78}{}%
-\contentsline {subsubsection}{\numberline {3.11.1}Il semisommatore e il sommatore completo}{78}{}%
-\contentsline {subsubsection}{\numberline {3.11.2}Calcolo della differenza mediante sommatore}{79}{}%
-\contentsline {subsection}{\numberline {3.12}Riassunto}{80}{}%
+\contentsline {subsection}{\numberline {3.3}Itinerari e livelli}{66}{}%
+\contentsline {subsection}{\numberline {3.4}Analisi dei circuiti combinatori}{67}{}%
+\contentsline {subsection}{\numberline {3.5}Sintesi dei circuiti combinatori}{67}{}%
+\contentsline {subsection}{\numberline {3.6}Riassunto}{69}{}%
+\contentsline {subsection}{\numberline {3.7}Moduli combinatori}{70}{}%
+\contentsline {subsubsection}{\numberline {3.7.1}Decodificatori}{70}{}%
+\contentsline {subsubsection}{\numberline {3.7.2}Codificatore}{71}{}%
+\contentsline {subsubsection}{\numberline {3.7.3}Selettori}{71}{}%
+\contentsline {subsubsection}{\numberline {3.7.4}Selettore d'uscita}{71}{}%
+\contentsline {subsection}{\numberline {3.8}Riassunto}{74}{}%
+\contentsline {subsection}{\numberline {3.9}Costruzione modulare di una funzione Booleana}{74}{}%
+\contentsline {subsubsection}{\numberline {3.9.1}Diodi}{75}{}%
+\contentsline {subsection}{\numberline {3.10}Riassunto}{77}{}%
+\contentsline {subsection}{\numberline {3.11}Memorie E-PROM}{78}{}%
+\contentsline {subsection}{\numberline {3.12}Moduli per la realizzazione dell’unita logico-aritmetica}{78}{}%
+\contentsline {subsubsection}{\numberline {3.12.1}Il semisommatore e il sommatore completo}{78}{}%
+\contentsline {subsubsection}{\numberline {3.12.2}Calcolo della differenza mediante sommatore}{79}{}%
+\contentsline {subsection}{\numberline {3.13}Riassunto}{80}{}%
 \contentsline {section}{\numberline {4}Circuiti sequenziali}{82}{}%
 \contentsline {subsection}{\numberline {4.1}Moduli sequenziali asincroni}{82}{}%
 \contentsline {subsection}{\numberline {4.2}Il Flip-Flop Set-Reset - FFSR}{83}{}%
