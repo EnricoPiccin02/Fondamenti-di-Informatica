@@ -3916,38 +3916,135 @@ Le formule minime associato sono:
 
 \vspace{1em}
 \subsection{Itinerari e livelli}
-Ogni rete logica e formata da un certo numero di porte (AND, OR, ecc.) tra loro variamente interconnesse, da un certo numero di ingressi, contraddistinti in figura seguente con i simboli \(A_i\), e da un certo numero di uscite, contraddistinte nella medesima figura con i simboli \(B_k\).\\
-Si dice itinerario tra due elementi \(X\) e \(Y\) qualsiasi.
+Ogni rete logica e formata da un certo numero di porte (AND, OR, ecc.) tra loro variamente interconnesse, da un certo numero di ingressi e da un certo numero di uscite.\\
+Si dice \textbf{itinerario} tra due elementi \(X\) e \(Y\) qualsiasi un percorso che colleghi $X$ con $Y$.\\
+Si dice, invece, \emph{livello di un elemento $X$} rispetto all’uscita $B_j$ e a un determinato itinerario $I$, il numero di elementi, $X$ compreso, disposti lungo l’itinerario a partire dall’uscita $B_j$.\\
+Si dice \emph{livello di una variabile} rispetto all’uscita $B_j$ e all’itinerario $I$ il numero di elementi compresi tra il rispettivo ingresso e l’uscita $B_j$ lungo l’itinerario $I$.\\
+In Figura \ref{fig:esempi_livelli_reti_logiche} sono riportati due esempi.
 
-\vspace{1em}
-\noindent
-I circuiti combinatori devono essere studiati attraverso due procedure
-\begin{itemize}
-    \item L'\textbf{analisi logica}, al fine di determinarne il funzionamento e i componenti;
-    \item La \textbf{sintesi logica}, al fine di ottimizzarne il funzionamento o semplicemente modificarlo.
-\end{itemize}
+\begin{figure}[H]
+    \centering
+    \begin{tabularx}{\textwidth}{>{\hsize=0.3\textwidth}PP}
+      {
+        \hspace{-1.5em}
+        \begin{tikzpicture}
+          \node [circle, draw, minimum size=0.5cm] (G1) at (0,0) {$G_1$};
+          \node [circle, draw, minimum size=0.5cm] (G2) at (0,-1.5) {$G_2$};
+          \node [circle, draw, minimum size=0.5cm] (G3) at (0,-3) {$G_3$};
+          \node [circle, draw, minimum size=0.5cm] (G4) at (2,-1.5) {$G_4$};
+          \draw (G1) -- ++(1,0) |- (G4.135);
+          \draw (G2) -- (G4);
+          \draw (G3) -- ++(1,0) |- (G4.225);
+          \draw (G1.135) -- ++(-0.5,0) coordinate(a) ++(-0.25,0) node[]{$A_1$};
+          \draw (G1.225) -- ++(-0.5,0) ++(-0.25,0) node[]{$A_2$};
 
-\vspace{1em}
+          \draw (G2.125) -- (a |- G2.125) ++(-0.25,0) node[]{$A_3$};
+          \draw (G2.180) -- (a |- G2) ++(-0.25,0) node[]{$A_4$};
+          \draw (G2.235) -- (a |- G2.235) ++(-0.25,0) node[]{$A_5$};
+
+          \draw (G3.135) -- ++(-0.5,0) ++(-0.25,0) node[]{$A_6$};
+          \draw (G3.225) -- ++(-0.5,0) ++(-0.25,0) node[]{$A_7$};
+
+          \draw (G4) -- ++(0.75,0) ++(0.25,0) node[]{$B$};
+          \draw (G1) ++(0,1) node[]{II livello};
+          \draw (G4) ++(0,1) node[]{I livello};
+        \end{tikzpicture}
+      } & {
+        \hspace{0.5em}
+        \begin{tikzpicture}
+          \node [circle, draw, minimum size=0.5cm] (G1) at (-1,0) {$G_1$};
+          \node [circle, draw, minimum size=0.5cm] (G2) at (1.25,1) {$G_2$};
+          \node [circle, draw, minimum size=0.5cm] (G3) at (3.25,0) {$G_3$};
+          \node [circle, draw, minimum size=0.5cm] (G4) at (5.5,0) {$G_4$};
+          \draw (G1.125) -- ++(-0.5,0) coordinate(a) ++(-0.25,0) node[]{$A_1$};
+          \draw (G1.180) -- (a |- G1) ++(-0.25,0) node[]{$A_2$};
+          \draw (G1.235) -- ++(-0.5,0) ++(-0.25,0) node[]{$A_3$};
+
+          \draw (G1.0) -- ++(1,0) node[circ](b){} |- (G2) (G2.0) -- ++(0.5,0) |- (G3.125) (b) -- (G3) (G3.235) -- ++(-0.5,0) -- ++(0,-0.5) -- ++(-0.25,0) ++(-0.25,0) node[]{$A_4$};
+          \draw (G3) -- (G4) (G4.125) -- ++(-0.5,0) -- ++(0,0.5) -- ++(-0.25,0) ++(-0.25,0) node[]{$A_5$} (G4.235) -- ++(-0.5,0) -- ++(0,-0.5) -- ++(-0.25,0) ++(-0.25,0) node[]{$A_6$} (G4.0) -- ++(0.25,0) ++(0.25,0) node[]{$B$};
+
+          \draw (G1) ++(0,1) node[]{III e IV livello};
+          \draw (G2) ++(0,1) node[]{III livello};
+          \draw (G3) ++(0,1) node[]{II livello};
+          \draw (G4) ++(0,1) node[]{I livello};
+        \end{tikzpicture}
+      }
+    \end{tabularx}
+    \caption{Esempi di livelli in due reti logiche}
+    \label{fig:esempi_livelli_reti_logiche}
+\end{figure}
+
 \noindent
-Ogni rete logica e formata da un certo numero di porte (AND, OR, ecc.) tra loro variamente interconnesse, da un certo numero di ingressi, contraddistinti con i simboli \(A_i\), e da un certo numero di uscite, contraddistinte con i simboli \(B_k\).\\
-Si dice \textbf{itinerario} tra due elementi X e Y qualsiasi il percorso che colleghi \(X\) con \(Y\).\\
-Si dice invece \textbf{livello di un elemento \(X\) rispetto all’uscita \(B_j\)} e a un determinato
-itinerario \(I\), il numero di elementi, \(X\) compreso, disposti lungo l’itinerario a partire dall’uscita \(B_j\).\\
-Si dice \textbf{livello di una variabile rispetto all’uscita \(B_j\) e all’itinerario \(I\)} il numero di elementi compresi tra il rispettivo ingresso e l’uscita \(B_j\) lungo l’itinerario \(I\).\\
+Si noti che uno stesso elemento puo avere più livelli a secondo dell’itinerario scelto. Ad esempio, in Figura \ref{fig:esempi_livelli_reti_logiche} il gate $G_1$ è di III livello secondo l’itinerario $G_4$, $G_3$, $G_1$ e di IV livello secondo l’itinerario $G_4$, $G_3$, $G_2$, $G_1$.
 
 \vspace{1em}
 \noindent
 \textbf{Osservazione}: La presenza di più livelli all'interno di un circuito è molto critica, in quanto più livelli introducono più latenze che potrebbero determinare una scorretta analisi degli ingressi logici, in quanto le porte logiche presenti in un circuito introducono un tempo di propagazione che non necessariamente è trascurabile.\\
 Tali ritardi prendo il nome di \textbf{alee}, ovvero dei ritardi che non sono ammissibili, in quanto le variabili di uscita devono essere processati senza eterogeneità di ritardi in ingresso.
 
-\subsection{Analisi dei circuiti combinatori}
-L’analisi di un circuito combinatorio tende a ottenere una rappresentazione della funzione d’uscita \(y\) o nella sua forma analitica, oppure sotto forma di tavola di verità. Poiché la rappresentazione circuitale è simbolica, l’analisi non e legata a considerazioni di logica positiva o negativa.\\
-Per effettuare l’analisi, nel caso di circuiti AND-OR-NOT, e sufficiente partire dagli elementi su cui entrano le variabili e procedere verso il terminale di uscita secondo tutti i possibili itinerari, usando la funzione di uscita di ciascun elemento come variabile di ingresso dell’elemento successivo.\\
-L’analisi dei circuiti basati su porte NAND e NOR è notevolmente più complessa, a causa della non associatività degli operatori.
+\vspace{1em}
+\noindent
+Per i circuiti combinatori, come per ogni altro tipo di circuito, si pongono due problemi opposti: da un lato quello dell’\textbf{analisi}, cioè della \emph{descrizione del funzionamento del circuito}, una volta che sia nota la sua configurazione, il che significa la definizione della funzione che realizza; dall’altro quello della \textbf{sintesi}, cioè del \emph{progetto di un circuito che realizzi una certa funzione logica}, comunque descritta.\\
+Pertanto, i circuiti combinatori devono essere studiati attraverso due procedure, essenzialmente:
+\begin{itemize}
+    \item L'\textbf{analisi logica}, al fine di determinarne il funzionamento e i componenti;
+    \item La \textbf{sintesi logica}, al fine di ottimizzarne il funzionamento o semplicemente modificarlo.
+\end{itemize}
 
+\subsection{Analisi dei circuiti combinatori}
+L’analisi di un circuito combinatorio tende a ottenere una rappresentazione della funzione d’uscita \(y\) o nella sua forma analitica, oppure sotto forma di tavola di verità. Poiché la rappresentazione circuitale è simbolica, l’analisi non è legata a considerazioni di logica positiva o negativa.\\
+Per effettuare l’analisi, nel caso di circuiti AND-OR-NOT, è sufficiente partire dagli elementi su cui entrano le variabili e procedere verso il terminale di uscita secondo tutti i possibili itinerari, usando la funzione di uscita di ciascun elemento come variabile di ingresso dell’elemento successivo.
+
+\begin{figure}[H]
+    \centering
+    \begin{tabularx}{\textwidth}{P>{\hsize=0.38\textwidth}P}
+      {
+        \begin{tikzpicture}
+          % Porte logiche
+          \node [and gate US, draw, logic gate inputs=nnn] (and1) at (0,0){};
+          \node [and gate US, draw, right=of and1, yshift=8.5mm, logic gate inputs=nn] (and2){};
+          \node [not gate US, draw, right=of and1] (not1){};
+          \node [not gate US, draw, below=of not1, yshift=5mm] (not2){};
+          \node [and gate US, draw, right=of not1, anchor=input 1, logic gate inputs=nn] (and3){};
+          \node [or gate US, draw, right=of and3, anchor=input 2, logic gate inputs=nnn] (or){};
+
+          % INPUT
+          \draw (and1.input 1) -- ++(-0.5,0) coordinate(start) ++(0,0.15) node[left]{$x_1$};
+          \draw (and1.input 2) -- ++(-0.5,0) node[at end, left]{$x_2$};
+          \draw (and1.input 3) -- ++(-0.5,0) ++(0,-0.15) node[left]{$\overline{x_3}$};
+          \draw (and2.input 1) -- (start |- and2.input 1) node[at end, left]{$x_4$};
+
+          \draw (and1.output) -- ++(0.5,0) node[circ](a){} -- (not1.input) (a) |- (and2.input 2);
+          \draw (not2.input) -- ([xshift=2.5mm] and1.output |- not2.input) coordinate(c) -- (c |- and2.input 1) node[circ](b){};
+          \draw (not1.output) -| (and3.input 1) (not2.output) -- ++(0.5,0) |- (and3.input 2);
+          \draw (and2.output) -- ([xshift=5mm] and3.output |- and2.output) |- (or.input 1) (and3.output) -- (or.input 2) (or.input 3) -- ++(-0.5,0) -- ++(0,-0.25) node[at end, below]{$x_5$};
+          \draw (or.output) -- ++(0.5,0) node[at end, right]{$y$} ([xshift=2.5mm] and3.output) ++(0,0.25) node[]{$y_c$};
+          \draw ([xshift=2.5mm] not1.output) ++(0,0.25) node[]{$y_{a_1}$} ([xshift=2.5mm] not2.output) ++(0,-0.25) node[]{$y_{a_2}$};
+          \draw (a) ++(0,-0.25) node[]{$y_a$};
+        \end{tikzpicture}
+      } & {
+        \renewcommand{\arraystretch}{1.1}
+        $\begin{array}{l@{}}
+          y_a = x_1 \cdot x_2 \cdot \overline{x_3} \\
+          y_{a_1}  = \overline{y_a} = \overline{x_1 \cdot x_2 \cdot \overline{x_3}} = \overline{x_1} + \overline{x_2} + x_3\\
+          y_{a_2}  = \overline{x_4}\\
+          y_b  = x_4 \cdot y_a = x_1 \cdot x_2 \cdot \overline{x_3} \cdot x_4\\
+          y_c  = y_{a_1} \cdot y_{a_2} = \overline{x_4} \cdot \left(\overline{x_1} + \overline{x_2} + x_3\right)\\
+          y  = y_b + y_c + x_5 = x_1 \cdot x_2 \cdot \overline{x_3} \cdot x_4 + \\
+          + \overline{x_4} \cdot \left(\overline{x_1} + \overline{x_2} + x_3\right) + x_5
+        \end{array}$
+      }
+      \end{tabularx}
+    \caption{Rete AND-OR-NOT ed equazioni che si ottengono dall’analisi}
+    \label{fig:analisi_circuito}
+\end{figure}
+
+\noindent
+Com'è intuibile, l’analisi dei circuiti basati su porte NAND e NOR è notevolmente più complessa, a causa della non associatività degli operatori.
+
+\vspace{1em}
 \subsection{Sintesi dei circuiti combinatori}
-Eseguire la sintesi di un circuito combinatorio consiste, come già accennato, nel progettare un circuito a \(n\) ingressi che soddisfi una determinata funzione di uscita \(y\) di progetto. La funzione \(y\) che il circuito deve soddisfare può essere assegnata in diverse forme.\\
-precisamente:
+Eseguire la sintesi di un circuito combinatorio consiste, come già accennato, nel progettare un circuito a \(n\) ingressi che soddisfi una determinata funzione di uscita \(y\) di progetto. La funzione \(y\) che il circuito deve soddisfare può essere assegnata in diverse forme. Più precisamente:
 
 \begin{itemize}
     \item con la \textbf{descrizione a parole} del funzionamento del circuito. È questa la forma di assegnazione più comune, ma anche la più imprecisa. È necessario porre un’estrema attenzione alla corretta interpretazione di eventuali condizioni implicite e all’esistenza di vincoli di qualsiasi natura. Dalla descrizione verbale è necessario passare poi alla tavola di verità, assegnando il valore della funzione per ognuna delle \(2^n\) configurazioni degli ingressi;

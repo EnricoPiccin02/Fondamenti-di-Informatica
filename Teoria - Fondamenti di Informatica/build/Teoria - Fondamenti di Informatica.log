@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.1.27)  20 FEB 2022 17:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.1.27)  22 FEB 2022 17:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1826,371 +1826,381 @@ Overfull \hbox (4.98245pt too wide) in alignment at lines 3576--3576
  []
 
 [61] [62] [63] [64] [65]
-Underfull \hbox (badness 10000) in paragraph at lines 3931--3937
+Overfull \hbox (13.8267pt too wide) in paragraph at lines 3972--3972
+ [] 
+ []
+
+[66]
+Overfull \hbox (13.22838pt too wide) in paragraph at lines 4037--4037
+ []|[] 
+ []
+
+
+Overfull \hbox (6.29756pt too wide) in paragraph at lines 4037--4037
+ []|$[]$ 
+ []
+
+[67] [68] [69] [70]
+Underfull \hbox (badness 10000) in paragraph at lines 4170--4172
 
  []
 
-[66] [67] [68] [69]
-Underfull \hbox (badness 10000) in paragraph at lines 4073--4075
 
- []
+LaTeX Warning: Command \textquoteright invalid in math mode on input line 4184.
 
+[71] [72] [73] [74] [75]
 
-LaTeX Warning: Command \textquoteright invalid in math mode on input line 4087.
-
-[70] [71] [72] [73] [74]
-
-./Teoria - Fondamenti di Informatica.tex:4242: Package inputenc Error: Unicode character ̃ (U+0303)
+./Teoria - Fondamenti di Informatica.tex:4339: Package inputenc Error: Unicode character ̃ (U+0303)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.4242 ...lo la ` VAK di saturazione, pari 0, 3 ̃
+l.4339 ...lo la ` VAK di saturazione, pari 0, 3 ̃
                                                   0, 6 V ). Le linee z3
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
-[75] [76]
-Underfull \hbox (badness 10000) in paragraph at lines 4298--4301
+[76] [77]
+Underfull \hbox (badness 10000) in paragraph at lines 4395--4398
 
  []
 
-[77]
+[78]
 
-./Teoria - Fondamenti di Informatica.tex:4325: Package inputenc Error: Unicode character ́ (U+0301)
+./Teoria - Fondamenti di Informatica.tex:4422: Package inputenc Error: Unicode character ́ (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.4325 ...\(0\) e che se l’ultimo riporto, Rn ́
+l.4422 ...\(0\) e che se l’ultimo riporto, Rn ́
                                                   1
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./Teoria - Fondamenti di Informatica.tex:4328: Package inputenc Error: Unicode character ́ (U+0301)
+./Teoria - Fondamenti di Informatica.tex:4425: Package inputenc Error: Unicode character ́ (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.4328 Ri ́
+l.4425 Ri ́
             1 del riporto del passo precedente. In questo modo si ottiene il...
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./Teoria - Fondamenti di Informatica.tex:4329: Package inputenc Error: Unicode character ́ (U+0301)
+./Teoria - Fondamenti di Informatica.tex:4426: Package inputenc Error: Unicode character ́ (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.4329 ...gura 5.31a. La somma di ` Ai, Bi e Ri ́
+l.4426 ...gura 5.31a. La somma di ` Ai, Bi e Ri ́
                                                   1 vale 1 solo quando c’e...
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./Teoria - Fondamenti di Informatica.tex:4331: Package inputenc Error: Unicode character ́ (U+0301)
+./Teoria - Fondamenti di Informatica.tex:4428: Package inputenc Error: Unicode character ́ (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.4331 valore di Ri ́
+l.4428 valore di Ri ́
                       1), oppure quando Ri ́1 “ 1 e Ai ‘ Bi “ 1. Per ...
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./Teoria - Fondamenti di Informatica.tex:4331: Package inputenc Error: Unicode character ́ (U+0301)
+./Teoria - Fondamenti di Informatica.tex:4428: Package inputenc Error: Unicode character ́ (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.4331 valore di Ri ́1), oppure quando Ri ́
+l.4428 valore di Ri ́1), oppure quando Ri ́
                                              1 “ 1 e Ai ‘ Bi “ 1. Per ...
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
-[78]
-./Teoria - Fondamenti di Informatica.tex:4368: Extra alignment tab has been changed to \cr.
+[79]
+./Teoria - Fondamenti di Informatica.tex:4465: Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.4368          &
+l.4465          &
                   & & 0 & 0 & 1 & 1 &
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
 So I'll assume that you meant to type \cr instead.
 
-./Teoria - Fondamenti di Informatica.tex:4368: Extra alignment tab has been changed to \cr.
+./Teoria - Fondamenti di Informatica.tex:4465: Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.4368          & & & 0 & 0 & 1 & 1 &
+l.4465          & & & 0 & 0 & 1 & 1 &
                                      
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
 So I'll assume that you meant to type \cr instead.
 
-[79]
-Underfull \hbox (badness 10000) in paragraph at lines 4399--4401
+[80]
+Underfull \hbox (badness 10000) in paragraph at lines 4496--4498
 
  []
 
-[80] [81]
+[81] [82]
 
-LaTeX Warning: File `img/circuiti_sequenziali/image1.png' not found on input line 4420.
+LaTeX Warning: File `img/circuiti_sequenziali/image1.png' not found on input line 4517.
 
 
-./Teoria - Fondamenti di Informatica.tex:4420: Package pdftex.def Error: File `img/circuiti_sequenziali/image1.png' not found: using draft setting.
+./Teoria - Fondamenti di Informatica.tex:4517: Package pdftex.def Error: File `img/circuiti_sequenziali/image1.png' not found: using draft setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.4420 ....4]{img/circuiti_sequenziali/image1.png}
+l.4517 ....4]{img/circuiti_sequenziali/image1.png}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-[82]
+[83]
 
-./Teoria - Fondamenti di Informatica.tex:4474: Package inputenc Error: Unicode character ⌧ (U+2327)
+./Teoria - Fondamenti di Informatica.tex:4571: Package inputenc Error: Unicode character ⌧ (U+2327)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.4474 ...mmuta a X “ 0 con un certo ritardo ⌧
+l.4571 ...mmuta a X “ 0 con un certo ritardo ⌧
                                                    , legato ai tempi di comm...
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./Teoria - Fondamenti di Informatica.tex:4475: Package inputenc Error: Unicode character ⌧ (U+2327)
+./Teoria - Fondamenti di Informatica.tex:4572: Package inputenc Error: Unicode character ⌧ (U+2327)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.4475 ...mmutare Y a 1 con un ritardo pari a 2⌧
+l.4572 ...mmutare Y a 1 con un ritardo pari a 2⌧
                                                    .
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./Teoria - Fondamenti di Informatica.tex:4477: Package inputenc Error: Unicode character ́ (U+0301)
+./Teoria - Fondamenti di Informatica.tex:4574: Package inputenc Error: Unicode character ́ (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.4477 e Y “ 1, poiche essa  ́
+l.4574 e Y “ 1, poiche essa  ́
                                   e stabile rispetto a ` R “ S “ 0, a no...
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
-[83] [84]
+[84] [85]
 
-LaTeX Warning: File `img/circuiti_combinatori/image22.png' not found on input line 4506.
+LaTeX Warning: File `img/circuiti_combinatori/image22.png' not found on input line 4603.
 
 
-./Teoria - Fondamenti di Informatica.tex:4506: Package pdftex.def Error: File `img/circuiti_combinatori/image22.png' not found: using draft setting.
+./Teoria - Fondamenti di Informatica.tex:4603: Package pdftex.def Error: File `img/circuiti_combinatori/image22.png' not found: using draft setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.4506 ...4]{img/circuiti_combinatori/image22.png}
+l.4603 ...4]{img/circuiti_combinatori/image22.png}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-LaTeX Warning: File `img/circuiti_sequenziali/image3.png' not found on input line 4519.
+LaTeX Warning: File `img/circuiti_sequenziali/image3.png' not found on input line 4616.
 
 
-./Teoria - Fondamenti di Informatica.tex:4519: Package pdftex.def Error: File `img/circuiti_sequenziali/image3.png' not found: using draft setting.
+./Teoria - Fondamenti di Informatica.tex:4616: Package pdftex.def Error: File `img/circuiti_sequenziali/image3.png' not found: using draft setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.4519 ...{img/circuiti_sequenziali/image3.png} }}
+l.4616 ...{img/circuiti_sequenziali/image3.png} }}
                                                   %
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (12.75018pt too wide) in paragraph at lines 4519--4519
+Overfull \hbox (12.75018pt too wide) in paragraph at lines 4616--4616
 []\OT1/cmr/m/n/8 (a) |$[]$| 
  []
 
 
-LaTeX Warning: File `img/circuiti_sequenziali/image4.png' not found on input line 4521.
+LaTeX Warning: File `img/circuiti_sequenziali/image4.png' not found on input line 4618.
 
 
-./Teoria - Fondamenti di Informatica.tex:4521: Package pdftex.def Error: File `img/circuiti_sequenziali/image4.png' not found: using draft setting.
+./Teoria - Fondamenti di Informatica.tex:4618: Package pdftex.def Error: File `img/circuiti_sequenziali/image4.png' not found: using draft setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.4521 ...{img/circuiti_sequenziali/image4.png} }}
+l.4618 ...{img/circuiti_sequenziali/image4.png} }}
                                                   %
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (13.22241pt too wide) in paragraph at lines 4521--4521
+Overfull \hbox (13.22241pt too wide) in paragraph at lines 4618--4618
 []\OT1/cmr/m/n/8 (b) |$[]$
  []
 
-[85]
-Underfull \hbox (badness 10000) in paragraph at lines 4530--4536
+[86]
+Underfull \hbox (badness 10000) in paragraph at lines 4627--4633
 
  []
 
-./Teoria - Fondamenti di Informatica.tex:4555: Package pdftex.def Error: File `img/circuiti_sequenziali/image10.png' not found: using draft setting.
+./Teoria - Fondamenti di Informatica.tex:4652: Package pdftex.def Error: File `img/circuiti_sequenziali/image10.png' not found: using draft setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.4555     \end{tabularx}
+l.4652     \end{tabularx}
                          
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-./Teoria - Fondamenti di Informatica.tex:4555: Package pdftex.def Error: File `img/circuiti_sequenziali/image10.png' not found: using draft setting.
+./Teoria - Fondamenti di Informatica.tex:4652: Package pdftex.def Error: File `img/circuiti_sequenziali/image10.png' not found: using draft setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.4555     \end{tabularx}
+l.4652     \end{tabularx}
                          
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
 Package tabularx Warning: X Columns too narrow (table too wide)
-(tabularx)                 on input line 4555.
+(tabularx)                 on input line 4652.
 
 
-LaTeX Warning: File `img/circuiti_sequenziali/image10.png' not found on input line 4555.
+LaTeX Warning: File `img/circuiti_sequenziali/image10.png' not found on input line 4652.
 
 
-./Teoria - Fondamenti di Informatica.tex:4555: Package pdftex.def Error: File `img/circuiti_sequenziali/image10.png' not found: using draft setting.
+./Teoria - Fondamenti di Informatica.tex:4652: Package pdftex.def Error: File `img/circuiti_sequenziali/image10.png' not found: using draft setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.4555     \end{tabularx}
+l.4652     \end{tabularx}
                          
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (50.00002pt too wide) in alignment at lines 4555--4555
+Overfull \hbox (50.00002pt too wide) in alignment at lines 4652--4652
 [][] 
  []
 
 
-./Teoria - Fondamenti di Informatica.tex:4565: LaTeX Error: There's no line here to end.
+./Teoria - Fondamenti di Informatica.tex:4662: LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.4565 D
+l.4662 D
         i seguito il funzionamento: Con il vincolo che uno dei due input \(R...
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-[86]
-
-./Teoria - Fondamenti di Informatica.tex:4579: LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.4579 \\F
-          unzionamento: Con il vincolo che \(R + S = 1\), con un impulso \(0...
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 [87]
 
-LaTeX Warning: File `img/circuiti_sequenziali/image10.png' not found on input line 4622.
+./Teoria - Fondamenti di Informatica.tex:4676: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4676 \\F
+          unzionamento: Con il vincolo che \(R + S = 1\), con un impulso \(0...
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[88]
+
+LaTeX Warning: File `img/circuiti_sequenziali/image10.png' not found on input line 4719.
 
 
-./Teoria - Fondamenti di Informatica.tex:4622: Package pdftex.def Error: File `img/circuiti_sequenziali/image10.png' not found: using draft setting.
+./Teoria - Fondamenti di Informatica.tex:4719: Package pdftex.def Error: File `img/circuiti_sequenziali/image10.png' not found: using draft setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.4622 ...4]{img/circuiti_sequenziali/image10.png}
+l.4719 ...4]{img/circuiti_sequenziali/image10.png}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-LaTeX Warning: File `img/circuiti_sequenziali/image11.png' not found on input line 4634.
+LaTeX Warning: File `img/circuiti_sequenziali/image11.png' not found on input line 4731.
 
 
-./Teoria - Fondamenti di Informatica.tex:4634: Package pdftex.def Error: File `img/circuiti_sequenziali/image11.png' not found: using draft setting.
+./Teoria - Fondamenti di Informatica.tex:4731: Package pdftex.def Error: File `img/circuiti_sequenziali/image11.png' not found: using draft setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.4634 ...4]{img/circuiti_sequenziali/image11.png}
+l.4731 ...4]{img/circuiti_sequenziali/image11.png}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-[88] [89] [90]
-Overfull \hbox (8.01457pt too wide) in paragraph at lines 4708--4711
+[89] [90] [91]
+Overfull \hbox (8.01457pt too wide) in paragraph at lines 4805--4808
 \OT1/cmr/m/n/10 ben pre-sto, al-la co-di-fi-ca dei ca-rat-te-ri at-tra-ver-so lo stan-dard $\OML/cmm/m/it/10 UTF\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 UnicodeTransformationFormat\OT1/cmr/m/n/10 )$,
  []
 
-[91] [92]
-Underfull \hbox (badness 10000) in paragraph at lines 4755--4758
+[92] [93]
+Underfull \hbox (badness 10000) in paragraph at lines 4852--4855
 
  []
 
-[93] [94] [95]
-Underfull \hbox (badness 10000) in paragraph at lines 4810--4814
+[94] [95] [96]
+Underfull \hbox (badness 10000) in paragraph at lines 4907--4911
 
  []
 
-[96] [97] [98] [99] [100] [101]
-Underfull \hbox (badness 10000) in paragraph at lines 4940--4943
+[97] [98] [99] [100] [101] [102]
+Underfull \hbox (badness 10000) in paragraph at lines 5037--5040
 
  []
 
-[102] [103] [104] [105] [106] [107] [108]
-./Teoria - Fondamenti di Informatica.tex:5171: Undefined control sequence.
-l.5171 \[f(x) = x \overdotline
+[103] [104] [105] [106] [107] [108] [109]
+./Teoria - Fondamenti di Informatica.tex:5268: Undefined control sequence.
+l.5268 \[f(x) = x \overdotline
                                1 = \left\{
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2198,69 +2208,69 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[109] [110] [111]
-./Teoria - Fondamenti di Informatica.tex:5287: Missing $ inserted.
+[110] [111] [112]
+./Teoria - Fondamenti di Informatica.tex:5384: Missing $ inserted.
 <inserted text> 
                 $
-l.5287         \item istruzione \leftarrow
+l.5384         \item istruzione \leftarrow
                                            memoria \([PC]\)
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-./Teoria - Fondamenti di Informatica.tex:5287: LaTeX Error: Bad math environment delimiter.
+./Teoria - Fondamenti di Informatica.tex:5384: LaTeX Error: Bad math environment delimiter.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.5287 ...  \item istruzione \leftarrow memoria \(
+l.5384 ...  \item istruzione \leftarrow memoria \(
                                                   [PC]\)
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[112]
-./Teoria - Fondamenti di Informatica.tex:5307: Missing $ inserted.
+[113]
+./Teoria - Fondamenti di Informatica.tex:5404: Missing $ inserted.
 <inserted text> 
                 $
-l.5307         \item istruzione \leftarrow
+l.5404         \item istruzione \leftarrow
                                            memoria \([PC]\)
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-./Teoria - Fondamenti di Informatica.tex:5307: LaTeX Error: Bad math environment delimiter.
+./Teoria - Fondamenti di Informatica.tex:5404: LaTeX Error: Bad math environment delimiter.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.5307 ...  \item istruzione \leftarrow memoria \(
+l.5404 ...  \item istruzione \leftarrow memoria \(
                                                   [PC]\)
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[113] [114] [115] [116] (build/Teoria - Fondamenti di Informatica.aux)
+[114] [115] [116] [117] (build/Teoria - Fondamenti di Informatica.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 34357 strings out of 480445
- 845873 string characters out of 5892391
- 1451112 words of memory out of 5000000
- 51178 multiletter control sequences out of 15000+600000
+ 34419 strings out of 480445
+ 846920 string characters out of 5892391
+ 1451133 words of memory out of 5000000
+ 51240 multiletter control sequences out of 15000+600000
  415149 words of font info for 70 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  128i,35n,130p,1096b,1343s stack positions out of 5000i,500n,10000p,200000b,80000s
  </Users/enricopiccin/Library/texlive/2021basic/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmr7.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "build/Teoria - Fondamenti di Informatica.pdf" (116 pages, 662290 bytes).
+Output written on "build/Teoria - Fondamenti di Informatica.pdf" (117 pages, 668071 bytes).
 PDF statistics:
- 467 PDF objects out of 1000 (max. 8388607)
- 322 compressed objects within 4 object streams
+ 470 PDF objects out of 1000 (max. 8388607)
+ 324 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
