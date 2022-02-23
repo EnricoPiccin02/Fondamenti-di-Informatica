@@ -161,6 +161,37 @@ Laurea in ingegneria elettronica e informatica}}
 \end{tikzpicture}
 }
 
+%Empty Karnaugh map 4x4
+\newenvironment{KarnaughSemplification}%
+{
+\begin{tikzpicture}[baseline=(current bounding box.north),scale=0.8]
+  \node[](start) at (2.55,-1.65){};
+  \node[above=of start]() {
+    \begin{tikzpicture}[scale=1.1, every node/.style={scale=1.1}]
+      \draw (0,0) grid (4,4);
+    \end{tikzpicture}
+  };
+\draw (-0.2,5.4) -- node [pos=0.9,above right,anchor=south west] {$x_1x_2$} node [pos=0.7,below left,anchor=north east] {$x_3x_4$} ++(135:1);
+%
+\matrix (mapa) [matrix of nodes,
+        column sep={1.1cm,between origins},
+        row sep={1.1cm,between origins},
+        every node/.style={minimum size=0.3mm},
+        anchor=8.center,
+        ampersand replacement=\&] at (0.5,0.5)
+{
+                       \& |(c00)| $00$         \& |(c01)| $01$         \& |(c11)| $11$         \& |(c10)| $10$         \& |(cf)| \phantom{00} \\
+|(r00)| $00$             \& |(0)|  \phantom{0} \& |(1)|  \phantom{0} \& |(3)|  \phantom{0} \& |(2)|  \phantom{0} \&                     \\
+|(r01)| $01$             \& |(4)|  \phantom{0} \& |(5)|  \phantom{0} \& |(7)|  \phantom{0} \& |(6)|  \phantom{0} \&                     \\
+|(r11)| $11$             \& |(12)| \phantom{0} \& |(13)| \phantom{0} \& |(15)| \phantom{0} \& |(14)| \phantom{0} \&                     \\
+|(r10)| $10$             \& |(8)|  \phantom{0} \& |(9)|  \phantom{0} \& |(11)| \phantom{0} \& |(10)| \phantom{0} \&                     \\
+|(rf) | \phantom{00}   \&                    \&                    \&                    \&                    \&                     \\
+};
+}%
+{
+\end{tikzpicture}
+}
+
 %Empty Karnaugh map 2x4
 \newenvironment{Karnaughvuit}%
 {
@@ -191,6 +222,30 @@ Laurea in ingegneria elettronica e informatica}}
 \begin{tikzpicture}[baseline=(current bounding box.north),scale=0.8]
 \draw (0,0) grid (4,2);
 \draw (0,2) -- node [pos=0.9,above right,anchor=south west] {$\phi_1\phi_2$} node [pos=0.7,below left,anchor=north east] {$\phi_3$} ++(135:1);
+%
+\matrix (mapa) [matrix of nodes,
+        column sep={0.8cm,between origins},
+        row sep={0.8cm,between origins},
+        every node/.style={minimum size=0.3mm},
+        anchor=4.center,
+        ampersand replacement=\&] at (0.5,0.5)
+{
+                      \& |(c00)| $00$         \& |(c01)| $01$         \& |(c11)| $11$         \& |(c10)| $10$         \& |(cf)| \phantom{00} \\
+|(r00)| $0$             \& |(0)|  \phantom{0} \& |(1)|  \phantom{0} \& |(3)|  \phantom{0} \& |(2)|  \phantom{0} \&                     \\
+|(r01)| $1$             \& |(4)|  \phantom{0} \& |(5)|  \phantom{0} \& |(7)|  \phantom{0} \& |(6)|  \phantom{0} \&                     \\
+|(rf) | \phantom{00}  \&                    \&                    \&                    \&                    \&                     \\
+};
+}%
+{
+\end{tikzpicture}
+}
+
+%Empty Karnaugh map 2x4
+\newenvironment{KarnaughvuitFunction}%
+{
+\begin{tikzpicture}[baseline=(current bounding box.north),scale=0.8]
+\draw (0,0) grid (4,2);
+\draw (0,2) -- node [pos=0.9,above right,anchor=south west] {$x_2 x_1$} node [pos=0.7,below left,anchor=north east] {$x_0$} ++(135:1);
 %
 \matrix (mapa) [matrix of nodes,
         column sep={0.8cm,between origins},
@@ -4053,16 +4108,16 @@ Eseguire la sintesi di un circuito combinatorio consiste, come già accennato, n
 
     \item con un’\textbf{espressione analitica}, che è il modo più conciso, anche se non univoco, di descrivere il funzionamento di un circuito;
 
-    \item con uno \textbf{schema logico}, che è una procedura generalmente usata quando un determinato circuito logico debba essere riprogettato con componenti diversi. In tal caso, con le regole dell’analisi si ricava un’espressione analitica della funzione y.
+    \item con uno \textbf{schema logico}, che è una procedura generalmente usata quando un determinato circuito logico debba essere riprogettato con componenti diversi. In tal caso, con le regole dell’analisi si ricava un’espressione analitica della funzione $y$.
 \end{itemize}
 
 \noindent
 Qualunque sia il metodo di assegnazione, la sintesi procede partendo dalla tavola di verità o da un’espressione analitica; applicando i metodi di semplificazione delle funzioni logiche si perviene alla forma più conveniente per gli scopi che ci si propone.\\
-Si noti che non sempre la forma più conveniente corrisponde alla forma minima della funzione. Ad esempio non e sempre opportuno realizzare circuitalmente la forma minima algebrica, in quanto vi possono essere dei vincoli sul numero massimo di livelli. Infatti, se e ben vero quanto esposto precedentemente, e cioè che nei circuiti combinatori l’uscita è, istante per istante, funzione unicamente degli ingressi, non significa che la variazione degli ingressi sia avvertita immediatamente in uscita; tale affermazione sta piuttosto a significare che ogni configurazione di ingresso dà luogo a una determinata uscita e che eventuali transitori di commutazione possono ritardare, ma non modificare questa uscita.\\
+Si noti, inoltre, che non sempre la forma più conveniente corrisponde alla forma minima della funzione. Ad esempio, non è sempre opportuno realizzare circuitalmente la forma minima algebrica, in quanto vi possono essere dei vincoli sul numero massimo di livelli. Infatti, se è ben vero quanto esposto precedentemente, e cioè che nei circuiti combinatori l’uscita è, istante per istante, funzione unicamente degli ingressi, non significa che la variazione degli ingressi sia avvertita immediatamente in uscita; tale affermazione sta piuttosto a significare che ogni configurazione di ingresso dà luogo a una determinata uscita e che eventuali transitori di commutazione possono ritardare, ma non modificare, questa uscita.\\
 Poiché il tempo di commutazione \(\Delta\) di qualsiasi porta logica, per quanto piccolo, non è mai nullo, il tempo di risposta di un circuito a \(n\) livelli, al variare della configurazione d’ingresso, è \(n \cdot \Delta\).\\
 In definitiva, il ritardo totale tra ingresso e uscita è proporzionale al numero di livelli e potendo la forma minima di una funzione contenere un numero di livelli molto elevato, la sua diretta realizzazione circuitale potrebbe dar luogo a ritardi intollerabili.\\
 La forma in cui si ha il minimo ritardo è quella a due livelli, che d’altra parte è quella che si ottiene con i metodi di semplificazione che sono stati esposti in precedenza.\\
-Inoltre si osservi che, molto spesso, anche dal punto di vista economico, è più conveniente introdurre nel circuito delle componenti ridondanti piuttosto che personalizzate al fine di ottimizzare anche i costi di produzione della propria rete logica. La convenienza di eventuali fattorizzazioni va valutata caso per caso. Si può dunque concludere che la sintesi di un circuito combinatorio procede attraverso i seguenti passi:
+Inoltre si osservi che, molto spesso, anche dal punto di vista economico, è più conveniente introdurre nel circuito delle componenti ridondanti piuttosto che progettare una rete custom, al fine di ottimizzare anche i costi di produzione della propria rete logica. La convenienza di eventuali fattorizzazioni va valutata caso per caso. Si può dunque concludere che la sintesi di un circuito combinatorio procede attraverso i seguenti passi:
 
 \begin{enumerate}
     \item Descrizione del funzionamento del circuito
@@ -4073,36 +4128,181 @@ Inoltre si osservi che, molto spesso, anche dal punto di vista economico, è pi�
     \item Disegno del circuito
 \end{enumerate}
 
+\noindent
 Si osservi che il passo \(5\) non può essere attuato secondo un procedimento sistematico, e l’effettiva forma minima più conveniente andrà valutata di volta in volta, eventualmente facendo uso di tecniche basate sul concetto di decomponibilità.
 
 \vspace{1em}
 \noindent
-\textbf{Esempio}: Si voglia realizzare un circuito a tre ingressi e quattro uscite; sugli ingressi si può presentare un numero binario compreso tra 0 e 5. All’uscita di tale circuito si deve ottenere il prodotto per \(3\) del numero in ingresso.\\
+\textbf{Esempio}: Si voglia realizzare un circuito a tre ingressi e quattro uscite; sugli ingressi si può presentare un numero binario compreso tra $0$ e $5$. All’uscita di tale circuito si deve ottenere il prodotto per \(3\) del numero in ingresso.\\
 Il massimo numero di uscita rappresentabile con \(4\) bit è \(15\) e sarà necessario sintetizzare quattro funzioni logiche.
 
 \begin{table}[H]
     \centering
-    \setlength{\tabcolsep}{8pt}
+    \setlength{\tabcolsep}{5pt}
+    \renewcommand{\arraystretch}{1.1}
     \begin{tabular}{l||ccc|cccc}
-         & & \textbf{\(x\)} & & & \textbf{\(y\)} &\\
+         & & $\boldsymbol{x}$ & & & $\boldsymbol{y}$ &\\
          \hline
-         \(3 \cdot \textbf{x} = \textbf{y}\) & \(x_2\) & \(x_1\) & \(x_0\) & \(y_3\) & \(y_2\) & \(y_1\) & \(y_0\)\\
+         \(3 \cdot \boldsymbol{x} = \boldsymbol{y} \) & \(x_2\) & \(x_1\) & \(x_0\) & \(y_3\) & \(y_2\) & \(y_1\) & \(y_0\)\\
          \hline
+         $3 \cdot 0 = 0$ & $0$ & $0$ & $0$ & $0$ & $0$ & $0$ & $0$\\
+         $3 \cdot 1 = 3$ & $0$ & $0$ & $1$ & $0$ & $0$ & $1$ & $1$\\
+         $3 \cdot 2 = 6$ & $0$ & $1$ & $0$ & $0$ & $1$ & $1$ & $0$\\
+         $3 \cdot 3 = 9$ & $0$ & $1$ & $1$ & $1$ & $0$ & $0$ & $1$\\
+         $3 \cdot 4 = 12$ & $1$ & $0$ & $0$ & $1$ & $1$ & $0$ & $0$\\
+         $3 \cdot 5 = 15$ & $1$ & $0$ & $1$ & $1$ & $1$ & $1$ & $1$\\
+         $3 \cdot 6 = -$ & $1$ & $1$ & $0$ & $-$ & $-$ & $-$ & $-$\\
+         $3 \cdot 7 = -$ & $1$ & $1$ & $1$ & $-$ & $-$ & $-$ & $-$\\
     \end{tabular}
-    \caption{Caption}
-    \label{tab:my_label}
+    \caption{Tavola di verita del circuito che moltiplica per $3$}
+    \label{tab:tavola_verita_circuito_moltiplica_per_3}
 \end{table}
+
+\noindent
+A cui corrispondono le seguenti tavole di Karnaugh, ciascuna per ogni funzione $y_0$, $y_1$, $y_2$ e $y_3$:
+
+\begin{figure}[H]
+    \centering
+    \begin{tabularx}{\textwidth}{PP}
+      {
+        \begin{KarnaughvuitFunction}
+          \contingut{0,0,1,\times,0,1,1,\times}
+          \implicant{5}{7}{red}
+          \implicant{3}{6}{green}
+        \end{KarnaughvuitFunction}
+      } & {
+        \begin{KarnaughvuitFunction}
+          \contingut{0,1,1,\times,0,0,1,\times}
+          \implicant{1}{3}{red}
+          \implicant{3}{6}{green}
+        \end{KarnaughvuitFunction}
+      }\\
+      $y_3$ & $y_2$\\
+      {
+        \begin{KarnaughvuitFunction}
+          \contingut{0,1,0,\times,1,0,1,\times}
+          \implicant{1}{3}{red}
+          \implicantcostats{4}{6}{green}
+        \end{KarnaughvuitFunction}
+      } & {
+        \begin{KarnaughvuitFunction}
+          \contingut{0,0,0,\times,1,1,1,\times}
+          \implicant{4}{6}{red}
+        \end{KarnaughvuitFunction}
+      }\\
+      $y_1$ & $y_0$
+      \end{tabularx}
+    \caption{Mappe di Karnaugh per le quattro funzioni $y_3$, $y_2$, $y_1$ e $y_0$ considerate}
+    \label{fig:mappe_karnaugh_quattro_funzioni}
+\end{figure}
+
+\noindent
+In cui è fondamentale considerare la presenza di \emph{condizioni non specificate} che comportano una limitazione dell'utilizzo della rete logica: se, naturalmente, il circuito viene impiegato rispettando le specifiche di progetto, allora esso funzionerà come previsto. Altrimenti il circuito risponderà erroneamente, fornendo risultati irregolari e scorretti.\\
+Se, tuttavia, vengono utilizzate opportunamente le condizioni non specificate si ottiene:
+
+\begin{figure}[H]
+  \centering
+  \noindent
+  \begin{tabular}{ll}
+    $y_3 = x_2 + x_0 \cdot x_1$ & $y_1 = \overline{x_0} \cdot x_1 + x_0 \cdot \overline{x_1}$\\
+    $y_2 = x_2 + \overline{x_0} \cdot x_1$ & $y_0 = x_0$
+  \end{tabular}
+\end{figure}
+
+\noindent
+A cui corrisponde il circuito di Figura \ref{fig:moltiplicatore_per_3}, ottenuto mettendo in comune il termine $c_0 \cdot x_1$ tra le funzioni $y_1$ e $y_2$.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+      % Porte logiche
+      \node [and gate US, draw, logic gate inputs=nnn] (and1) at (0,0){};
+      \node [and gate US, draw, below=of and1, yshift=5.5mm, logic gate inputs=nnn] (and2){};
+      \node [and gate US, draw, below=of and2, yshift=5.5mm, logic gate inputs=nnn] (and3){};
+      \node [or gate US, draw, right=of and1, anchor=input 3, logic gate inputs=nnn] (or1){};
+      \node [or gate US, draw, right=of and2, anchor=input 3, logic gate inputs=nnn] (or2){};
+      \node [or gate US, draw, right=of and3, anchor=input 3, logic gate inputs=nnn] (or3){};
+
+      % INPUT
+      \draw (and1.input 1) -- ++(-0.5,0) coordinate(start) node[at end, left]{$x_0$};
+      \draw (and1.input 3) -- ++(-0.5,0) node[at end, left]{$x_1$};
+      \draw (and2.input 1) -- ++(-0.5,0) node[at end, left]{$\overline{x_0}$};
+      \draw (and2.input 3) -- ++(-0.5,0) node[at end, left]{$x_1$};
+      \draw (and3.input 1) -- ++(-0.5,0) node[at end, left]{$\overline{x_1}$};
+      \draw (and3.input 3) -- ++(-0.5,0) node[at end, left]{$x_0$};
+      \draw (or1.input 1) -- ++(-0.5,0) node[circ](circ1){} -- ++(0,0.5) coordinate(a) -- (start |- a) node[at end, left]{$x_2$};
+      \draw (and1.output) -- (or1.input 3) (and2.output) -- (or2.input 3) (circ1) |- (or2.input 1);
+      \draw (or3.input 1) -- ++(-0.5,0) coordinate(b) -- (b |- or2.input 3) node[circ]{} (and3.output) -- (or3.input 3);
+      \draw (or1.output) -- ++(0.5,0) coordinate(c) node[at end, right]{$y_3$};
+      \draw (or2.output) -- ++(0.5,0) node[at end, right]{$y_2$};
+      \draw (or3.output) -- ++(0.5,0) node[at end, right]{$y_1$};
+      \draw (or3.input 3) ++(0,-0.75) coordinate(d) -- (c |- d) node[at end, right]{$y_0$} (d) -- ([xshift=2.5mm]start |- d) -- ([xshift=2.5mm] start |- d |- and3.input 3) node[circ]{};
+    \end{tikzpicture}
+    \caption{Moltiplicatore per 3 di un numero compreso tra 0 e 5}
+    \label{fig:moltiplicatore_per_3}
+\end{figure}
 
 \vspace{1em}
 \noindent
-Se il circuito viene impiegato rispettando le specifiche di progetto, allora il circuito funzionerà come previsto. Altrimenti il circuito risponde erroneamente, rispondendo in modo irregolare e scorretto.
+\textbf{Esempio}: Si voglia sintetizzare un circuito con la stessa funzione Booleana di quello illustrato nella Figura \ref{fig:semplificazione_circuito_mappa_karnaugh}, ma possibilmente più economico.
 
-\vspace{2em}
+\begin{figure}[H]
+    \centering
+    \setlength{\tabcolsep}{10pt}
+    \renewcommand{\arraystretch}{1}
+    \begin{tabularx}{\textwidth}{P>{\hsize=0.4\textwidth}P}
+      {
+        \begin{tikzpicture}
+          % Porte logiche
+          \node [and gate US, draw, logic gate inputs=nnnnn] (and1) at (0,0){};
+          \node [and gate US, draw, below=of and1, yshift=5.5mm, logic gate inputs=nnnnn] (and2){};
+          \node [and gate US, draw, below=of and2, yshift=5.5mm, logic gate inputs=nnnnn] (and3){};
+          \node [or gate US, draw, above=of and1, yshift=-5.5mm, logic gate inputs=nnnnn] (or1){};
+          \node [not gate US, draw, right=of or1] (not){};
+          \node [or gate US, draw, right=of and1, anchor=input 1, xshift=20mm, yshift=-3.5mm, logic gate inputs=nnnnn] (or2){};
+
+          % INPUT
+          \draw (or1.input 1) -- ++(-1,0) coordinate(start) node[at end, left]{$\overline{x_1}$};
+          \draw (or1.input 3) -- (start |- or1.input 3) node[at end, left]{$\overline{x_3}$};
+          \draw (or1.input 5) -- (start |- or1.input 5) node[at end, left]{$\overline{x_4}$};
+
+          \draw (and1.input 1) -- (start |- and1.input 1) node[at end, left]{$\overline{x_4}$};
+          \draw (and1.input 3) -- (start |- and1.input 3) node[at end, left]{$\overline{x_2}$};
+          \draw (and1.input 5) -- ++(-0.25,0) coordinate(a) -- coordinate[midway](m1) (a |- and2.input 1) -- (and2.input 1);
+          \draw (m1) node[circ]{} -- (start |- m1) node[at end, left]{$\overline{x_3}$};
+
+          \draw (and2.input 3) -- (start |- and2.input 3) node[at end, left]{$x_1$};
+          \draw (and2.input 5) -- ++(-0.25,0) coordinate(b) -- coordinate[midway](m2) (b |- and3.input 1) -- (and3.input 1);
+          \draw (m2) node[circ]{} -- (start |- m2) node[at end, left]{$x_4$};
+
+          \draw (and3.input 3) -- (start |- and3.input 3) node[at end, left]{$\overline{x_2}$};
+          \draw (and3.input 5) -- (start |- and3.input 5) node[at end, left]{$\overline{x_3}$};
+
+          \draw (or1.output) -- (not.input) (not.output) -- ++(1,0) coordinate(c) |- (or2.input 1);
+          \draw (and1.output) -- ++(1,0) |- (or2.input 2) (and2.output) -- ++(1,0) |- (or2.input 4) (and3.output) -- (c |- and3.output) |- (or2.input 5);
+          \draw (or2.output) -- ++(0.5,0) node[at end, right]{$y$};
+        \end{tikzpicture}
+      } & {
+        \begin{KarnaughSemplification}
+          \contingut{0,0,0,0,1,0,1,0,1,0,1,1,0,0,1,1}
+          \implicantcostats{4}{6}{red}
+          \implicantcostats{8}{10}{green}
+          \implicant{15}{10}{blue}
+        \end{KarnaughSemplification}
+      }\\
+    \end{tabularx}
+    \caption{Semplificazione di un circuito mediante mappa di Karnaugh}
+    \label{fig:semplificazione_circuito_mappa_karnaugh}
+\end{figure}
+
 \noindent
-\textbf{Esempio}: Si voglia sintetizzare un circuito con la stessa funzione Booleana di quello illustrato in figura 5.9a,
-ma possibilmente più economico.\\
-Si ottiene
-\[y_1 = \overline{\overline{x_1} + \overline{x_3} + x_4} + ... \]
+L’espressione analitica della funzione di trasmissione è
+\[y = \overline{\overline{x_1} + \overline{x_3} + x_4} + \overline{x_2} x_3 \overline{x_4} + \overline{x_2} \overline{x_3} x_4 = x_1 x_3 \overline{x_4} + \overline{x_2} x_3 \overline{x_4} + x_1 x_3 x_4 + \overline{x_2} \overline{x_3} x_4\]
+Dalla mappa di Karnaugh di Figura \ref{fig:semplificazione_circuito_mappa_karnaugh} si ricava l’espressione minima a due livelli
+\[y = x_1 x_3 + \overline{x_2} \overline{x_3} x_4 + \overline{x_2} x_3 \overline{x_4}\]
+e fattorizzando si ottiene:
+\[y = x_1 x_3 + \overline{x_2} \cdot \left(\overline{x_3} x_4 + x_3 \overline{x_4}\right)\]
+Si capisce bene come, per la funzione così semplificata, siano necessarie solamente $4$ porte, mentre per la funzione di partenza ce ne volevano $6$.
 
 \newpage
 \begin{center}
