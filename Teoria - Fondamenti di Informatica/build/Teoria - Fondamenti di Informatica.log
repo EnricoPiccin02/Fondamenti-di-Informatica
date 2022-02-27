@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.1.27)  23 FEB 2022 17:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.1.27)  27 FEB 2022 17:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -553,22 +553,22 @@ LaTeX Warning: Label `fig:flip-flop' multiply defined.
 )
 \openout1 = `"Teoria - Fondamenti di Informatica.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 314.
-LaTeX Font Info:    ... okay on input line 314.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 314.
-LaTeX Font Info:    ... okay on input line 314.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 314.
-LaTeX Font Info:    ... okay on input line 314.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 314.
-LaTeX Font Info:    ... okay on input line 314.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 314.
-LaTeX Font Info:    ... okay on input line 314.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 314.
-LaTeX Font Info:    ... okay on input line 314.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 314.
-LaTeX Font Info:    ... okay on input line 314.
-LaTeX Info: Redefining \it@ocap on input line 314.
-LaTeX Info: Redefining \it@ccap on input line 314.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 340.
+LaTeX Font Info:    ... okay on input line 340.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 340.
+LaTeX Font Info:    ... okay on input line 340.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 340.
+LaTeX Font Info:    ... okay on input line 340.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 340.
+LaTeX Font Info:    ... okay on input line 340.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 340.
+LaTeX Font Info:    ... okay on input line 340.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 340.
+LaTeX Font Info:    ... okay on input line 340.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 340.
+LaTeX Font Info:    ... okay on input line 340.
+LaTeX Info: Redefining \it@ocap on input line 340.
+LaTeX Info: Redefining \it@ccap on input line 340.
 
 
 File italian.ldf warning: 
@@ -576,7 +576,7 @@ italian.ldf    With OT1 encoding guillemets are poorly faked
 italian.ldf    Use T1 encoding
 italian.ldf    or specify a font with command \CaporaliFrom
 italian.ldf    See the documentation concerning the babel-italian typesetting 
-italian.ldf    on input line 314.
+italian.ldf    on input line 340.
 
 (/usr/local/texlive/2021basic/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -634,11 +634,11 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 317.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 343.
 (/usr/local/texlive/2021basic/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 317.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 343.
  (/usr/local/texlive/2021basic/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (build/Teoria - Fondamenti di Informatica.toc [1
@@ -648,1636 +648,1309 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \openout4 = `"Teoria - Fondamenti di Informatica.toc"'.
 
  [3] [4] [5] [6] [7] [8]
-Overfull \hbox (3.23445pt too wide) in paragraph at lines 531--531
+Overfull \hbox (3.23445pt too wide) in paragraph at lines 557--557
  []|$\OML/cmm/m/it/10 A$| 
  []
 
 
-Overfull \hbox (3.5539pt too wide) in paragraph at lines 531--531
+Overfull \hbox (3.5539pt too wide) in paragraph at lines 557--557
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (3.5539pt too wide) in paragraph at lines 531--531
+Overfull \hbox (3.5539pt too wide) in paragraph at lines 557--557
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (3.79pt too wide) in paragraph at lines 531--531
+Overfull \hbox (3.79pt too wide) in paragraph at lines 557--557
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (3.79pt too wide) in paragraph at lines 531--531
+Overfull \hbox (3.79pt too wide) in paragraph at lines 557--557
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 [9]
-Overfull \hbox (2.05084pt too wide) in paragraph at lines 563--563
+Overfull \hbox (2.05084pt too wide) in paragraph at lines 589--589
  []|$\OT1/cmr/m/n/10 0$| 
  []
 
 
-Overfull \hbox (2.05084pt too wide) in paragraph at lines 563--563
+Overfull \hbox (2.05084pt too wide) in paragraph at lines 589--589
  []|$\OT1/cmr/m/n/10 1$| 
  []
 
 
-Overfull \hbox (2.05084pt too wide) in paragraph at lines 563--563
+Overfull \hbox (2.05084pt too wide) in paragraph at lines 589--589
  []|$\OT1/cmr/m/n/10 2$| 
  []
 
 
-Overfull \hbox (2.05084pt too wide) in paragraph at lines 563--563
+Overfull \hbox (2.05084pt too wide) in paragraph at lines 589--589
  []|$\OT1/cmr/m/n/10 3$| 
  []
 
 
-Overfull \hbox (2.05084pt too wide) in paragraph at lines 563--563
+Overfull \hbox (2.05084pt too wide) in paragraph at lines 589--589
  []|$\OT1/cmr/m/n/10 4$| 
  []
 
 
-Overfull \hbox (2.05084pt too wide) in paragraph at lines 563--563
+Overfull \hbox (2.05084pt too wide) in paragraph at lines 589--589
  []|$\OT1/cmr/m/n/10 5$| 
  []
 
 
-Overfull \hbox (2.05084pt too wide) in paragraph at lines 563--563
+Overfull \hbox (2.05084pt too wide) in paragraph at lines 589--589
  []|$\OT1/cmr/m/n/10 6$| 
  []
 
 
-Overfull \hbox (2.05084pt too wide) in paragraph at lines 563--563
+Overfull \hbox (2.05084pt too wide) in paragraph at lines 589--589
  []|$\OT1/cmr/m/n/10 7$| 
  []
 
 
-Overfull \hbox (2.05084pt too wide) in paragraph at lines 563--563
+Overfull \hbox (2.05084pt too wide) in paragraph at lines 589--589
  []|$\OT1/cmr/m/n/10 9$| 
  []
 
 
-Overfull \hbox (7.05086pt too wide) in paragraph at lines 563--563
+Overfull \hbox (7.05086pt too wide) in paragraph at lines 589--589
  []|$\OT1/cmr/m/n/10 10$| 
  []
 
 
-Overfull \hbox (7.05086pt too wide) in paragraph at lines 563--563
+Overfull \hbox (7.05086pt too wide) in paragraph at lines 589--589
  []|$\OT1/cmr/m/n/10 11$| 
  []
 
 
-Overfull \hbox (7.05086pt too wide) in paragraph at lines 563--563
+Overfull \hbox (7.05086pt too wide) in paragraph at lines 589--589
  []|$\OT1/cmr/m/n/10 12$| 
  []
 
 
-Overfull \hbox (7.05086pt too wide) in paragraph at lines 563--563
+Overfull \hbox (7.05086pt too wide) in paragraph at lines 589--589
  []|$\OT1/cmr/m/n/10 13$| 
  []
 
 
-Overfull \hbox (7.05086pt too wide) in paragraph at lines 563--563
+Overfull \hbox (7.05086pt too wide) in paragraph at lines 589--589
  []|$\OT1/cmr/m/n/10 14$| 
  []
 
 
-Overfull \hbox (7.05086pt too wide) in paragraph at lines 563--563
+Overfull \hbox (7.05086pt too wide) in paragraph at lines 589--589
  []|$\OT1/cmr/m/n/10 15$| 
  []
 
 
-Overfull \hbox (12.68979pt too wide) in paragraph at lines 563--563
+Overfull \hbox (12.68979pt too wide) in paragraph at lines 589--589
  []|$ []$| 
  []
 
 
-Overfull \hbox (11.91197pt too wide) in paragraph at lines 563--563
+Overfull \hbox (11.91197pt too wide) in paragraph at lines 589--589
  []|$ []$| 
  []
 
 
-Overfull \hbox (7.68977pt too wide) in paragraph at lines 563--563
+Overfull \hbox (7.68977pt too wide) in paragraph at lines 589--589
  []|$ []$| 
  []
 
 
-Overfull \hbox (2.69968pt too wide) in paragraph at lines 563--563
+Overfull \hbox (2.69968pt too wide) in paragraph at lines 589--589
  []|$ []$| 
  []
 
 
-Overfull \hbox (17.18976pt too wide) in paragraph at lines 563--563
+Overfull \hbox (17.18976pt too wide) in paragraph at lines 589--589
  []|$ []$| 
  []
 
 
-Overfull \hbox (19.68977pt too wide) in paragraph at lines 563--563
+Overfull \hbox (19.68977pt too wide) in paragraph at lines 589--589
  []|$ []$| 
  []
 
 
-Overfull \hbox (3.23445pt too wide) in paragraph at lines 563--563
+Overfull \hbox (3.23445pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 A$| 
  []
 
 
-Overfull \hbox (5.13763pt too wide) in paragraph at lines 563--563
+Overfull \hbox (5.13763pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 B$| 
  []
 
 
-Overfull \hbox (3.71751pt too wide) in paragraph at lines 563--563
+Overfull \hbox (3.71751pt too wide) in paragraph at lines 589--589
  []|$\OMS/cmsy/m/n/10 \$| 
  []
 
 
-Overfull \hbox (4.82863pt too wide) in paragraph at lines 563--563
+Overfull \hbox (4.82863pt too wide) in paragraph at lines 589--589
  []|$\OMS/cmsy/m/n/10 ^^H$| 
  []
 
 
-Overfull \hbox (3.71751pt too wide) in paragraph at lines 563--563
+Overfull \hbox (3.71751pt too wide) in paragraph at lines 589--589
  []|$\OMS/cmsy/m/n/10 [$| 
  []
 
 
-Overfull \hbox (4.82863pt too wide) in paragraph at lines 563--563
+Overfull \hbox (4.82863pt too wide) in paragraph at lines 589--589
  []|$\OMS/cmsy/m/n/10 ^^Q$| 
  []
 
 
-Overfull \hbox (4.82863pt too wide) in paragraph at lines 563--563
+Overfull \hbox (4.82863pt too wide) in paragraph at lines 589--589
  []|$\OMS/cmsy/m/n/10 ^^Z$| 
  []
 
 
-Overfull \hbox (4.82863pt too wide) in paragraph at lines 563--563
+Overfull \hbox (4.82863pt too wide) in paragraph at lines 589--589
  []|$\OMS/cmsy/m/n/10 ^^[$| 
  []
 
 
-Overfull \hbox (3.82855pt too wide) in paragraph at lines 563--563
+Overfull \hbox (3.82855pt too wide) in paragraph at lines 589--589
  []|$ \OMS/cmsy/m/n/10 j$| 
  []
 
 
-Overfull \hbox (3.5539pt too wide) in paragraph at lines 563--563
+Overfull \hbox (3.5539pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 563--563
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 563--563
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 563--563
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 563--563
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 563--563
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 563--563
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 563--563
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 563--563
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 563--563
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 563--563
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 563--563
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 563--563
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 563--563
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 563--563
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 563--563
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 563--563
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (3.5539pt too wide) in paragraph at lines 563--563
+Overfull \hbox (3.5539pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 563--563
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 563--563
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 563--563
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 563--563
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 563--563
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 563--563
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 563--563
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 563--563
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 563--563
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 563--563
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 563--563
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 563--563
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 563--563
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 563--563
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 563--563
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 563--563
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (3.79pt too wide) in paragraph at lines 563--563
+Overfull \hbox (3.79pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 563--563
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 563--563
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 563--563
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 563--563
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 563--563
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 563--563
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 563--563
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 563--563
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 563--563
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 563--563
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 563--563
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 563--563
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 563--563
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 563--563
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 563--563
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 563--563
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (3.79pt too wide) in paragraph at lines 563--563
+Overfull \hbox (3.79pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 563--563
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 563--563
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 563--563
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 563--563
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 563--563
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 563--563
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 563--563
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 563--563
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 563--563
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 563--563
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 563--563
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 563--563
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 563--563
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 563--563
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (4.87029pt too wide) in paragraph at lines 563--563
+Overfull \hbox (4.87029pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.10638pt too wide) in paragraph at lines 563--563
+Overfull \hbox (5.10638pt too wide) in paragraph at lines 589--589
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 [10]
-Overfull \hbox (1.97318pt too wide) in paragraph at lines 618--618
+Overfull \hbox (1.97318pt too wide) in paragraph at lines 644--644
  []|$[]$| 
  []
 
 
-Overfull \hbox (1.97318pt too wide) in paragraph at lines 618--618
+Overfull \hbox (1.97318pt too wide) in paragraph at lines 644--644
  []|$[]$| 
  []
 
 
-Overfull \hbox (0.50356pt too wide) in alignment at lines 618--618
+Overfull \hbox (0.50356pt too wide) in alignment at lines 644--644
 [][][][][][] 
  []
 
 [11]
-Overfull \hbox (0.56009pt too wide) in paragraph at lines 692--692
+Overfull \hbox (0.56009pt too wide) in paragraph at lines 718--718
  []|$[]$| 
  []
 
 
-Overfull \hbox (0.56009pt too wide) in paragraph at lines 692--692
+Overfull \hbox (0.56009pt too wide) in paragraph at lines 718--718
  []|$[]$| 
  []
 
 
-Overfull \hbox (17.59122pt too wide) in alignment at lines 692--692
+Overfull \hbox (17.59122pt too wide) in alignment at lines 718--718
 [][] 
  []
 
 [12] [13] [14] [15]
-Underfull \hbox (badness 10000) in alignment at lines 889--889
+Underfull \hbox (badness 10000) in alignment at lines 915--915
 [][][] 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 889--889
+Underfull \hbox (badness 10000) in alignment at lines 915--915
 [][][] 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 889--889
+Underfull \hbox (badness 10000) in alignment at lines 915--915
 [][][] 
  []
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 929--932
+Underfull \hbox (badness 10000) in paragraph at lines 955--958
 
  []
 
 [17]
-Overfull \hbox (14.64319pt too wide) in paragraph at lines 947--947
+Overfull \hbox (14.64319pt too wide) in paragraph at lines 973--973
  []|[]| 
  []
 
 
-Overfull \hbox (14.64319pt too wide) in paragraph at lines 947--947
+Overfull \hbox (14.64319pt too wide) in paragraph at lines 973--973
  []|[]| 
  []
 
 
-Overfull \hbox (14.64319pt too wide) in paragraph at lines 947--947
+Overfull \hbox (14.64319pt too wide) in paragraph at lines 973--973
  []|[]| 
  []
 
 
-Overfull \hbox (194.77368pt too wide) in alignment at lines 947--947
+Overfull \hbox (194.77368pt too wide) in alignment at lines 973--973
 [][][] 
  []
 
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 934--948
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 960--974
  [] 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 988--988
+Underfull \hbox (badness 10000) in alignment at lines 1014--1014
 [][][][] 
  []
 
 
-Overfull \hbox (6.65912pt too wide) in paragraph at lines 988--988
+Overfull \hbox (6.65912pt too wide) in paragraph at lines 1014--1014
  []|[] 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 988--988
+Underfull \hbox (badness 10000) in alignment at lines 1014--1014
 [][][][] 
  []
 
 
-Overfull \hbox (6.65912pt too wide) in paragraph at lines 988--988
+Overfull \hbox (6.65912pt too wide) in paragraph at lines 1014--1014
  []|[] 
  []
 
 
-Overfull \hbox (0.92474pt too wide) in alignment at lines 1036--1036
+Overfull \hbox (0.92474pt too wide) in alignment at lines 1062--1062
 [][][][][] 
  []
 
 
-Overfull \hbox (0.87729pt too wide) in alignment at lines 1036--1036
+Overfull \hbox (0.87729pt too wide) in alignment at lines 1062--1062
 [][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 1036--1036
+Underfull \hbox (badness 10000) in alignment at lines 1062--1062
 [][] 
  []
 
 [18] [19]
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 1084--1147
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 1110--1173
   [] 
  []
 
 
-Overfull \hbox (7.08768pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (7.08768pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 f[]$| 
  []
 
 
-Overfull \hbox (2.9804pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (2.9804pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 f[]$| 
  []
 
 
-Overfull \hbox (7.08768pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (7.08768pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 f[]$| 
  []
 
 
-Overfull \hbox (7.08768pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (7.08768pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 f[]$| 
  []
 
 
-Overfull \hbox (7.08768pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (7.08768pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 f[]$| 
  []
 
 
-Overfull \hbox (7.08768pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (7.08768pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 f[]$| 
  []
 
 
-Overfull \hbox (7.08768pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (7.08768pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 f[]$| 
  []
 
 
-Overfull \hbox (7.08768pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (7.08768pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 f[]$| 
  []
 
 
-Overfull \hbox (11.0738pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (11.0738pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 f[]$| 
  []
 
 
-Overfull \hbox (11.0738pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (11.0738pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 f[]$| 
  []
 
 
-Overfull \hbox (11.0738pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (11.0738pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 f[]$| 
  []
 
 
-Overfull \hbox (11.0738pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (11.0738pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 f[]$| 
  []
 
 
-Overfull \hbox (11.0738pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (11.0738pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 f[]$| 
  []
 
 
-Overfull \hbox (11.0738pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (11.0738pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 f[]$| 
  []
 
 
-Overfull \hbox (8.73734pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (8.73734pt too wide) in paragraph at lines 1240--1240
  []|$ []$| 
  []
 
 
-Overfull \hbox (10.56686pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (10.56686pt too wide) in paragraph at lines 1240--1240
  []|$ []$| 
  []
 
 
-Overfull \hbox (8.34464pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (8.34464pt too wide) in paragraph at lines 1240--1240
  []|$ []$| 
  []
 
 
-Overfull \hbox (4.83572pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (4.83572pt too wide) in paragraph at lines 1240--1240
  []|$ []$| 
  []
 
 
-Overfull \hbox (17.33574pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (17.33574pt too wide) in paragraph at lines 1240--1240
  []|$ [] $| 
  []
 
 
-Overfull \hbox (5.2057pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.2057pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 A$| 
  []
 
 
-Overfull \hbox (5.7925pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.7925pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 B$| 
  []
 
 
-Overfull \hbox (3.45566pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (3.45566pt too wide) in paragraph at lines 1240--1240
  []|$[]$| 
  []
 
 
-Overfull \hbox (5.48349pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.48349pt too wide) in paragraph at lines 1240--1240
  []|$\OMS/cmsy/m/n/10 ^^H$| 
  []
 
 
-Overfull \hbox (5.48349pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.48349pt too wide) in paragraph at lines 1240--1240
  []|$\OT1/cmr/m/n/10 +$| 
  []
 
 
-Overfull \hbox (4.48341pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (4.48341pt too wide) in paragraph at lines 1240--1240
  []|$ \OMS/cmsy/m/n/10 j$| 
  []
 
 
-Overfull \hbox (3.45566pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (3.45566pt too wide) in paragraph at lines 1240--1240
  []|$[]$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (1.41786pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (1.41786pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (1.41786pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (1.41786pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (1.41786pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (1.41786pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (1.65396pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (1.65396pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 
-Overfull \hbox (5.52515pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.52515pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 F$| 
  []
 
 
-Overfull \hbox (5.76125pt too wide) in paragraph at lines 1214--1214
+Overfull \hbox (5.76125pt too wide) in paragraph at lines 1240--1240
  []|$\OML/cmm/m/it/10 V$| 
  []
 
 [20]
-Overfull \hbox (25.00003pt too wide) in paragraph at lines 1251--1286
+Overfull \hbox (25.00003pt too wide) in paragraph at lines 1277--1312
 []
  []
 
 [21]
-Overfull \hbox (25.00003pt too wide) in paragraph at lines 1292--1327
+Overfull \hbox (25.00003pt too wide) in paragraph at lines 1318--1353
 []
  []
 
 
-Overfull \hbox (25.00003pt too wide) in paragraph at lines 1333--1368
+Overfull \hbox (25.00003pt too wide) in paragraph at lines 1359--1394
 []
  []
 
 [22]
-Overfull \hbox (25.00003pt too wide) in paragraph at lines 1390--1425
+Overfull \hbox (25.00003pt too wide) in paragraph at lines 1416--1451
 []
  []
 
 [23]
-Overfull \hbox (25.00003pt too wide) in paragraph at lines 1476--1510
+Overfull \hbox (25.00003pt too wide) in paragraph at lines 1502--1536
 []
  []
 
 
-Overfull \hbox (25.00003pt too wide) in paragraph at lines 1561--1595
+Overfull \hbox (25.00003pt too wide) in paragraph at lines 1587--1621
 []
  []
 
 
-Overfull \hbox (12.68758pt too wide) in paragraph at lines 1660--1660
+Overfull \hbox (12.68758pt too wide) in paragraph at lines 1686--1686
  []|[] 
  []
 
 [24]
-Overfull \hbox (25.00003pt too wide) in paragraph at lines 1670--1704
+Overfull \hbox (25.00003pt too wide) in paragraph at lines 1696--1730
 []
  []
 
 
-Overfull \hbox (6.73883pt too wide) in paragraph at lines 1769--1769
+Overfull \hbox (6.73883pt too wide) in paragraph at lines 1795--1795
  []|[] 
  []
 
 [25] [26]
-Underfull \hbox (badness 10000) in paragraph at lines 1856--1857
+Underfull \hbox (badness 10000) in paragraph at lines 1882--1883
 
  []
 
 [27]
-Underfull \hbox (badness 10000) in paragraph at lines 1884--1885
+Underfull \hbox (badness 10000) in paragraph at lines 1910--1911
 
  []
 
 [28]
-Underfull \hbox (badness 10000) in paragraph at lines 1913--1914
+Underfull \hbox (badness 10000) in paragraph at lines 1939--1940
 
  []
 
 [29]
-Underfull \hbox (badness 10000) in paragraph at lines 1942--1943
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 1968--1969
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 1994--1995
+
+ []
+
 [30] [31] [32] [33] [34]
-Underfull \hbox (badness 10000) in paragraph at lines 2248--2251
+Underfull \hbox (badness 10000) in paragraph at lines 2274--2277
 
  []
 
 [35] [36] [37] [38] [39] [40] [41] [42]
-Overfull \hbox (7.38867pt too wide) in paragraph at lines 2647--2647
+Overfull \hbox (7.38867pt too wide) in paragraph at lines 2673--2673
  []|[] 
  []
 
 [43]
-Overfull \hbox (7.38867pt too wide) in paragraph at lines 2691--2691
+Overfull \hbox (7.38867pt too wide) in paragraph at lines 2717--2717
  []|[] 
  []
 
 [44] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56]
-Overfull \hbox (7.46968pt too wide) in alignment at lines 3335--3335
+Overfull \hbox (7.46968pt too wide) in alignment at lines 3361--3361
 [][][] 
  []
 
 [57] [58] [59] [60]
-Overfull \hbox (4.98245pt too wide) in alignment at lines 3631--3631
+Overfull \hbox (4.98245pt too wide) in alignment at lines 3657--3657
 [][][] 
  []
 
 [61] [62] [63] [64] [65]
-Overfull \hbox (13.8267pt too wide) in paragraph at lines 4027--4027
+Overfull \hbox (13.8267pt too wide) in paragraph at lines 4053--4053
  [] 
  []
 
 [66]
-Overfull \hbox (13.22838pt too wide) in paragraph at lines 4092--4092
+Overfull \hbox (13.22838pt too wide) in paragraph at lines 4118--4118
  []|[] 
  []
 
 
-Overfull \hbox (6.29756pt too wide) in paragraph at lines 4092--4092
+Overfull \hbox (6.29756pt too wide) in paragraph at lines 4118--4118
  []|$[]$ 
  []
 
 [67] [68] [69]
-Overfull \hbox (12.93155pt too wide) in paragraph at lines 4293--4293
+Overfull \hbox (12.93155pt too wide) in paragraph at lines 4319--4319
  []|[] 
  []
 
 
-Overfull \hbox (20.6138pt too wide) in paragraph at lines 4293--4293
+Overfull \hbox (20.6138pt too wide) in paragraph at lines 4319--4319
  []|[] 
  []
 
-[70] [71]
-Underfull \hbox (badness 10000) in paragraph at lines 4370--4372
+[70] [71] [72] [73]
+Overfull \hbox (17.55122pt too wide) in paragraph at lines 4561--4561
+ [] 
+ []
+
+
+Overfull \hbox (33.13062pt too wide) in paragraph at lines 4561--4561
+ []|[] 
+ []
+
+
+Overfull \hbox (45.93384pt too wide) in paragraph at lines 4561--4561
+ []|[] 
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 4561--4561
+[][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4566--4568
+
+ []
+
+[74]
+Underfull \hbox (badness 10000) in paragraph at lines 4611--4612
 
  []
 
 
-LaTeX Warning: Command \textquoteright invalid in math mode on input line 4384.
-
-[72] [73] [74] [75] [76]
-
-./Teoria - Fondamenti di Informatica.tex:4539: Package inputenc Error: Unicode character ̃ (U+0303)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.4539 ...lo la ` VAK di saturazione, pari 0, 3 ̃
-                                                  0, 6 V ). Le linee z3
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-[77] [78]
-Underfull \hbox (badness 10000) in paragraph at lines 4595--4598
-
- []
-
-[79]
-
-./Teoria - Fondamenti di Informatica.tex:4622: Package inputenc Error: Unicode character ́ (U+0301)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.4622 ...\(0\) e che se l’ultimo riporto, Rn ́
-                                                  1
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./Teoria - Fondamenti di Informatica.tex:4625: Package inputenc Error: Unicode character ́ (U+0301)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.4625 Ri ́
-            1 del riporto del passo precedente. In questo modo si ottiene il...
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./Teoria - Fondamenti di Informatica.tex:4626: Package inputenc Error: Unicode character ́ (U+0301)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.4626 ...gura 5.31a. La somma di ` Ai, Bi e Ri ́
-                                                  1 vale 1 solo quando c’e...
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./Teoria - Fondamenti di Informatica.tex:4628: Package inputenc Error: Unicode character ́ (U+0301)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.4628 valore di Ri ́
-                      1), oppure quando Ri ́1 “ 1 e Ai ‘ Bi “ 1. Per ...
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./Teoria - Fondamenti di Informatica.tex:4628: Package inputenc Error: Unicode character ́ (U+0301)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.4628 valore di Ri ́1), oppure quando Ri ́
-                                             1 “ 1 e Ai ‘ Bi “ 1. Per ...
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-[80]
-./Teoria - Fondamenti di Informatica.tex:4665: Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.4665          &
-                  & & 0 & 0 & 1 & 1 &
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-./Teoria - Fondamenti di Informatica.tex:4665: Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.4665          & & & 0 & 0 & 1 & 1 &
-                                     
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-[81]
-Underfull \hbox (badness 10000) in paragraph at lines 4696--4698
-
- []
-
-[82] [83]
-
-LaTeX Warning: File `img/circuiti_sequenziali/image1.png' not found on input line 4717.
-
-
-./Teoria - Fondamenti di Informatica.tex:4717: Package pdftex.def Error: File `img/circuiti_sequenziali/image1.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.4717 ....4]{img/circuiti_sequenziali/image1.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[84]
-
-./Teoria - Fondamenti di Informatica.tex:4771: Package inputenc Error: Unicode character ⌧ (U+2327)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.4771 ...mmuta a X “ 0 con un certo ritardo ⌧
-                                                   , legato ai tempi di comm...
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./Teoria - Fondamenti di Informatica.tex:4772: Package inputenc Error: Unicode character ⌧ (U+2327)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.4772 ...mmutare Y a 1 con un ritardo pari a 2⌧
-                                                   .
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./Teoria - Fondamenti di Informatica.tex:4774: Package inputenc Error: Unicode character ́ (U+0301)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.4774 e Y “ 1, poiche essa  ́
-                                  e stabile rispetto a ` R “ S “ 0, a no...
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-[85] [86]
-
-LaTeX Warning: File `img/circuiti_combinatori/image22.png' not found on input line 4803.
-
-
-./Teoria - Fondamenti di Informatica.tex:4803: Package pdftex.def Error: File `img/circuiti_combinatori/image22.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.4803 ...4]{img/circuiti_combinatori/image22.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: File `img/circuiti_sequenziali/image3.png' not found on input line 4816.
-
-
-./Teoria - Fondamenti di Informatica.tex:4816: Package pdftex.def Error: File `img/circuiti_sequenziali/image3.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.4816 ...{img/circuiti_sequenziali/image3.png} }}
-                                                  %
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \hbox (12.75018pt too wide) in paragraph at lines 4816--4816
-[]\OT1/cmr/m/n/8 (a) |$[]$| 
+Overfull \hbox (7.71657pt too wide) in paragraph at lines 4655--4655
+ []|$[]$ 
  []
 
 
-LaTeX Warning: File `img/circuiti_sequenziali/image4.png' not found on input line 4818.
-
-
-./Teoria - Fondamenti di Informatica.tex:4818: Package pdftex.def Error: File `img/circuiti_sequenziali/image4.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.4818 ...{img/circuiti_sequenziali/image4.png} }}
-                                                  %
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \hbox (13.22241pt too wide) in paragraph at lines 4818--4818
-[]\OT1/cmr/m/n/8 (b) |$[]$
+Overfull \hbox (62.6591pt too wide) in alignment at lines 4655--4655
+[][][] 
  []
 
-[87]
-Underfull \hbox (badness 10000) in paragraph at lines 4827--4833
+[75] [76] [77] [78] [79] [80]
+Underfull \hbox (badness 10000) in paragraph at lines 4889--4892
 
  []
 
-./Teoria - Fondamenti di Informatica.tex:4852: Package pdftex.def Error: File `img/circuiti_sequenziali/image10.png' not found: using draft setting.
+[81] [82] [83]
+Underfull \hbox (badness 10000) in paragraph at lines 4990--4992
 
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.4852     \end{tabularx}
-                         
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-./Teoria - Fondamenti di Informatica.tex:4852: Package pdftex.def Error: File `img/circuiti_sequenziali/image10.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.4852     \end{tabularx}
-                         
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Package tabularx Warning: X Columns too narrow (table too wide)
-(tabularx)                 on input line 4852.
-
-
-LaTeX Warning: File `img/circuiti_sequenziali/image10.png' not found on input line 4852.
-
-
-./Teoria - Fondamenti di Informatica.tex:4852: Package pdftex.def Error: File `img/circuiti_sequenziali/image10.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.4852     \end{tabularx}
-                         
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \hbox (50.00002pt too wide) in alignment at lines 4852--4852
-[][] 
  []
 
+[84] [85] [86] [87] [88]
+Underfull \hbox (badness 10000) in paragraph at lines 5121--5127
 
-./Teoria - Fondamenti di Informatica.tex:4862: LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.4862 D
-        i seguito il funzionamento: Con il vincolo che uno dei due input \(R...
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-[88]
-
-./Teoria - Fondamenti di Informatica.tex:4876: LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.4876 \\F
-          unzionamento: Con il vincolo che \(R + S = 1\), con un impulso \(0...
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
+ []
 
 [89]
 
-LaTeX Warning: File `img/circuiti_sequenziali/image10.png' not found on input line 4919.
+Package tabularx Warning: X Columns too narrow (table too wide)
+(tabularx)                 on input line 5146.
 
 
-./Teoria - Fondamenti di Informatica.tex:4919: Package pdftex.def Error: File `img/circuiti_sequenziali/image10.png' not found: using draft setting.
+Overfull \hbox (50.00002pt too wide) in alignment at lines 5146--5146
+[][] 
+ []
 
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.4919 ...4]{img/circuiti_sequenziali/image10.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: File `img/circuiti_sequenziali/image11.png' not found on input line 4931.
-
-
-./Teoria - Fondamenti di Informatica.tex:4931: Package pdftex.def Error: File `img/circuiti_sequenziali/image11.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.4931 ...4]{img/circuiti_sequenziali/image11.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[90] [91] [92]
-Overfull \hbox (8.01457pt too wide) in paragraph at lines 5005--5008
+[90] [91] [92] [93] [94]
+Overfull \hbox (8.01457pt too wide) in paragraph at lines 5299--5302
 \OT1/cmr/m/n/10 ben pre-sto, al-la co-di-fi-ca dei ca-rat-te-ri at-tra-ver-so lo stan-dard $\OML/cmm/m/it/10 UTF\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 UnicodeTransformationFormat\OT1/cmr/m/n/10 )$,
  []
 
-[93] [94]
-Underfull \hbox (badness 10000) in paragraph at lines 5052--5055
+[95] [96]
+Underfull \hbox (badness 10000) in paragraph at lines 5346--5349
 
  []
 
-[95] [96] [97]
-Underfull \hbox (badness 10000) in paragraph at lines 5107--5111
+[97] [98] [99]
+Underfull \hbox (badness 10000) in paragraph at lines 5401--5405
 
  []
 
-[98] [99] [100] [101] [102] [103]
-Underfull \hbox (badness 10000) in paragraph at lines 5237--5240
+[100] [101] [102] [103] [104] [105]
+Underfull \hbox (badness 10000) in paragraph at lines 5531--5534
 
  []
 
-[104] [105] [106] [107] [108] [109] [110]
-./Teoria - Fondamenti di Informatica.tex:5468: Undefined control sequence.
-l.5468 \[f(x) = x \overdotline
-                               1 = \left\{
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[111] [112] [113]
-./Teoria - Fondamenti di Informatica.tex:5584: Missing $ inserted.
-<inserted text> 
-                $
-l.5584         \item istruzione \leftarrow
-                                           memoria \([PC]\)
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-./Teoria - Fondamenti di Informatica.tex:5584: LaTeX Error: Bad math environment delimiter.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.5584 ...  \item istruzione \leftarrow memoria \(
-                                                  [PC]\)
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-[114]
-./Teoria - Fondamenti di Informatica.tex:5604: Missing $ inserted.
-<inserted text> 
-                $
-l.5604         \item istruzione \leftarrow
-                                           memoria \([PC]\)
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-./Teoria - Fondamenti di Informatica.tex:5604: LaTeX Error: Bad math environment delimiter.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.5604 ...  \item istruzione \leftarrow memoria \(
-                                                  [PC]\)
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-[115] [116] [117] [118] (build/Teoria - Fondamenti di Informatica.aux)
+[106] [107] [108] [109] [110] [111] [112] [113] [114] [115] [116] [117] [118] [119] [120] (build/Teoria - Fondamenti di Informatica.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 34490 strings out of 480445
- 848317 string characters out of 5892391
- 1452788 words of memory out of 5000000
- 51305 multiletter control sequences out of 15000+600000
- 416979 words of font info for 76 fonts, out of 8000000 for 9000
+ 34432 strings out of 480445
+ 845704 string characters out of 5892391
+ 1453621 words of memory out of 5000000
+ 51278 multiletter control sequences out of 15000+600000
+ 416459 words of font info for 74 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 128i,35n,130p,1096b,1343s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 128i,35n,130p,1094b,1343s stack positions out of 5000i,500n,10000p,200000b,80000s
  </Users/enricopiccin/Library/texlive/2021basic/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmr5.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "build/Teoria - Fondamenti di Informatica.pdf" (118 pages, 685308 bytes).
+/cm/cmr5.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on "build/Teoria - Fondamenti di Informatica.pdf" (120 pages, 663427 bytes).
 PDF statistics:
- 477 PDF objects out of 1000 (max. 8388607)
- 329 compressed objects within 4 object streams
+ 471 PDF objects out of 1000 (max. 8388607)
+ 324 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

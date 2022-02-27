@@ -42,7 +42,7 @@
 \addtolength{\headheight}{1em}
 \addtolength{\footskip}{-0.5em}
 
-\newcommand{\quotes}[1]{``#1''}
+\newcommand{\quotes}[1]{''#1''}
 \renewcommand\tabularxcolumn[1]{>{\vspace{\fill}}m{#1}<{\vspace{\fill}}}
 \renewcommand\arraystretch{}
 \newcolumntype{P}{>{\centering\arraybackslash}X}
@@ -145,6 +145,32 @@ Laurea in ingegneria elettronica e informatica}}
 \matrix (mapa) [matrix of nodes,
         column sep={1.1cm,between origins},
         row sep={1.1cm,between origins},
+        every node/.style={minimum size=0.3mm},
+        anchor=8.center,
+        ampersand replacement=\&] at (0.5,0.5)
+{
+                       \& |(c00)| $00$         \& |(c01)| $01$         \& |(c11)| $11$         \& |(c10)| $10$         \& |(cf)| \phantom{00} \\
+|(r00)| $00$             \& |(0)|  \phantom{0} \& |(1)|  \phantom{0} \& |(3)|  \phantom{0} \& |(2)|  \phantom{0} \&                     \\
+|(r01)| $01$             \& |(4)|  \phantom{0} \& |(5)|  \phantom{0} \& |(7)|  \phantom{0} \& |(6)|  \phantom{0} \&                     \\
+|(r11)| $11$             \& |(12)| \phantom{0} \& |(13)| \phantom{0} \& |(15)| \phantom{0} \& |(14)| \phantom{0} \&                     \\
+|(r10)| $10$             \& |(8)|  \phantom{0} \& |(9)|  \phantom{0} \& |(11)| \phantom{0} \& |(10)| \phantom{0} \&                     \\
+|(rf) | \phantom{00}   \&                    \&                    \&                    \&                    \&                     \\
+};
+}%
+{
+\end{tikzpicture}
+}
+
+%Empty Karnaugh map 4x4
+\newenvironment{KarnaughFunction}%
+{
+\begin{tikzpicture}[baseline=(current bounding box.north),scale=0.8]
+\draw (0,0) grid (4,4);
+\draw (0,4) -- node [pos=0.9,above right,anchor=south west] {$x_0x_1$} node [pos=0.7,below left,anchor=north east] {$x_2x_3$} ++(135:1);
+%
+\matrix (mapa) [matrix of nodes,
+        column sep={0.8cm,between origins},
+        row sep={0.8cm,between origins},
         every node/.style={minimum size=0.3mm},
         anchor=8.center,
         ampersand replacement=\&] at (0.5,0.5)
@@ -4302,7 +4328,38 @@ Dalla mappa di Karnaugh di Figura \ref{fig:semplificazione_circuito_mappa_karnau
 \[y = x_1 x_3 + \overline{x_2} \overline{x_3} x_4 + \overline{x_2} x_3 \overline{x_4}\]
 e fattorizzando si ottiene:
 \[y = x_1 x_3 + \overline{x_2} \cdot \left(\overline{x_3} x_4 + x_3 \overline{x_4}\right)\]
-Si capisce bene come, per la funzione così semplificata, siano necessarie solamente $4$ porte, mentre per la funzione di partenza ce ne volevano $6$.
+Tuttavia, per la funzione così semplificata, il numero delle porte necessarie per la sua realizzazione aumenta, passando da $4$ a $6$ a seguito dela fattorizzazione. Ecco, allora, come la funzione più conveniente da realizzare sia la prima che è stata ottenuta, la quale produce il circuito di Figura \ref{fig:circuito_economico_funzione_semplificata}:
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+      % Porte logiche
+      \node [and gate US, draw, logic gate inputs=nnnnn] (and1) at (0,0){};
+      \node [and gate US, draw, below=of and1, yshift=5.5mm, logic gate inputs=nnnnn] (and2){};
+      \node [and gate US, draw, below=of and2, yshift=5.5mm, logic gate inputs=nnnnn] (and3){};
+      \node [or gate US, draw, right=of and2, xshift=5.5mm, logic gate inputs=nnnnn] (or){};
+
+      % INPUT
+      \draw (and1.input 1) -- ++(-1,0) coordinate(start) node[at end, left]{$x_1$};
+      \draw (and1.input 5) -- ++(-0.25,0) coordinate(a) -- coordinate[midway](m1) (a |- and2.input 1) -- (and2.input 1);
+      \draw (m1) node[circ]{} -- (start |- m1) node[at end, left]{$\overline{x_3}$};
+
+      \draw (and2.input 3) -- (start |- and2.input 3) node[at end, left]{$\overline{x_4}$};
+      \draw (and2.input 5) -- ++(-0.25,0) coordinate(b) -- coordinate[midway](m2) (b |- and3.input 1) -- (and3.input 1);
+      \draw (m2) node[circ]{} -- (start |- m2) node[at end, left]{$\overline{x_2}$};
+
+      \draw (and3.input 3) -- (start |- and3.input 3) node[at end, left]{$\overline{x_3}$};
+      \draw (and3.input 5) -- (start |- and3.input 5) node[at end, left]{$x_4$};
+
+      \draw (and1.output) -- ++(1,0) coordinate(c) |- (or.input 1) (and2.output) -- (or.input 3) (and3.output) -- (c |- and3.output) |- (or.input 5);
+      \draw (or.output) -- ++(0.5,0) node[at end, right]{$y$};
+    \end{tikzpicture}
+    \caption{Circuito piu economico che realizza la funzione Booleana semplificata}
+    \label{fig:circuito_economico_funzione_semplificata}
+\end{figure}
+
+\noindent
+Si noti, naturalmente, che negli esempi fatti si è supposto di avere a disposizione all’ingresso del circuito sia le variabili dirette che la loro negazione. Quando questa situazione non si verifica, anche il numero di invertitori va minimizzato.
 
 \newpage
 \begin{center}
@@ -4311,8 +4368,8 @@ Si capisce bene come, per la funzione così semplificata, siano necessarie solam
 
 \subsection{Riassunto}
 I circuiti combinatori sono dei dispositivi che permettono di realizzare delle funzioni booleane della forma
-\[F : 2^n \rightarrow n\]
-Le modalità per realizzare tali funzioni sono di due tipi:
+\[F : 2^n \rightarrow 2^m\]
+Le modalità per realizzare tali funzioni si dipartono in due tipi:
 \begin{itemize}
     \item \textbf{Logica positiva}: Al valore \(1\) logico viene associato il valore di tensione alto, a \(0\) il valore di tensione basso.
 
@@ -4322,9 +4379,8 @@ Le modalità per realizzare tali funzioni sono di due tipi:
 \noindent
 I circuiti che vengono realizzati possono presentare più livelli di itinerario che può comportare una latenza, ovvero un ritardo di propagazione al variare delle variabili in ingresso.\\
 Pertanto, è possibile che ad una porta giunga il valore della variabile \(y_1\) istantaneamente, mentre il valore della variabile \(y_2\) giunge con un ritardo di \(2\Delta\), ove \(\Delta\) è il tempo di assestamento di una porta logica, variabile a seconda della tecnologica impiegata.\\
-Se tali variazioni sono infinitesime, possono essere trascurati, ma se non sono trascurabili determinano una instabilità della rete, a causa di continue ed irregolari oscillazioni di valori delle medesime variabili.\\
-Tale fenomeno prende il nome di \textbf{Alea} ed è cruciale nella creazione delle porte logiche.\\
-Lo studio e la manipolazione dei circuiti logici prevede due operazioni
+Se tali variazioni sono infinitesime, possono essere trascurate, ma se non sono trascurabili determinano una instabilità della rete, a causa di continue ed irregolari oscillazioni di valori delle medesime variabili: tale fenomeno prende il nome di \textbf{Alea} ed è cruciale nella creazione delle porte logiche.\\
+Lo studio e la manipolazione dei circuiti logici, inoltre, prevede due operazioni
 \begin{itemize}
     \item Lo \textbf{studio della rete logica}: ovvero determinare ed estrapolare la funzione logica a partire dalla rete logica realizzata.
 
@@ -4332,8 +4388,7 @@ Lo studio e la manipolazione dei circuiti logici prevede due operazioni
 \end{itemize}
 
 \noindent
-Eseguire la sintesi di un circuito combinatorio consiste, come già accennato, nel progettare un circuito a \(n\) ingressi che soddisfi una determinata funzione di uscita \(y\) di progetto. La funzione \(y\) che il circuito deve soddisfare può essere assegnata in diverse forme.\\
-Più precisamente:
+Eseguire la sintesi di un circuito combinatorio consiste, come già accennato, nel progettare un circuito a \(n\) ingressi che soddisfi una determinata funzione di uscita \(y\) di progetto. La funzione \(y\) che il circuito deve soddisfare può essere assegnata in diverse forme. Più precisamente:
 
 \begin{itemize}
     \item con la \textbf{descrizione a parole} del funzionamento del circuito. È questa la forma di assegnazione più comune, ma anche la più imprecisa. È necessario porre un’estrema attenzione alla corretta interpretazione di eventuali condizioni implicite e all’esistenza di vincoli di qualsiasi natura. Dalla descrizione verbale è necessario passare poi alla tavola di verità, assegnando il valore della funzione per ognuna delle \(2^n\) configurazioni degli ingressi;
@@ -4342,93 +4397,332 @@ Più precisamente:
 
     \item con un’\textbf{espressione analitica}, che è il modo più conciso, anche se non univoco, di descrivere il funzionamento di un circuito;
 
-    \item con uno \textbf{schema logico}, che è una procedura generalmente usata quando un determinato circuito logico debba essere riprogettato con componenti diversi. In tal caso, con le regole dell’analisi si ricava un’espressione analitica della funzione y.
+    \item con uno \textbf{schema logico}, che è una procedura generalmente usata quando un determinato circuito logico debba essere riprogettato con componenti diversi. In tal caso, con le regole dell’analisi si ricava un’espressione analitica della funzione $y$.
 \end{itemize}
 
 \noindent
 Indipendentemente dalla modalità di assegnazione della funzione logica, si deve sempre giungere ad una tabella di verità, da cui si può ricavare la mappa di Karnaugh.\\
 Dopodiché si dovrà verificare caso per caso se sia effettivamente più conveniente creare un circuito attraverso la semplificazione massimale, in quanto molto spesso il costo di un circuito \quotes{customizzato} è più elevato rispetto a moduli standard e precostituiti.
 
-\vspace{1em}
-\noindent
-\textbf{Esempio}: Si voglia realizzare un circuito a tre ingressi e quattro uscite; sugli ingressi si può presentare un numero binario compreso tra 0 e 5. All’uscita di tale circuito si deve ottenere il prodotto per \(3\) del numero in ingresso.\\
-Il massimo numero di uscita rappresentabile con \(4\) bit è \(15\) e sarà necessario sintetizzare quattro funzioni logiche.
-
-\begin{table}[H]
-    \centering
-    \setlength{\tabcolsep}{8pt}
-    \begin{tabular}{l||ccc|cccc}
-         & & \textbf{\(x\)} & & & \textbf{\(y\)} &\\
-         \hline
-         \(3 \cdot \textbf{x} = \textbf{y}\) & \(x_2\) & \(x_1\) & \(x_0\) & \(y_3\) & \(y_2\) & \(y_1\) & \(y_0\)\\
-         \hline
-    \end{tabular}
-    \caption{Caption}
-    \label{tab:my_label}
-\end{table}
-
-\noindent
-In cui, naturalmente, le combinazioni in ingresso che non possono essere considerate dalla rete logica costituita, in quanto produrrebbero in uscita un valore non rappresentabile con soli \(4\) bit, costituiranno delle \textbf{condizioni non specificate}, ovvero delle \textit{don't care conditions} e che verranno impiegate proficuamente nella creazione dei sottocubi nella mappa di Karnaugh.\\
+\[\text{Ultimo esempio superfluo}\]
 
 \vspace{1em}
-\noindent
-\textbf{Esempio}: Si voglia costruire un circuito che esegue la moltiplicazione tra due numeri espressi in notazione posizionale in base \(2\).\\
-Siano \(\textbf{x} = x_1 \cdot x_2\) i bit del moltiplicando e \(\textbf{y} = y_1 \cdot y_2\) i bit del moltiplicatore; ciascun fattore varia dunque nell’intervallo \([0, 3]\) mentre il prodotto e compreso nell’intervallo \([0, 9]\).\\
-Il progetto richiede la costruzione della tavola di verità per tutte le possibili \(2^2 \cdot 2^2 = 16\) combinazioni, tenendo conto
-che per rappresentare il valore del prodotto serviranno \([\log_2 (9)] = 4\) bit. Se, per esempio, si ha \(\textbf{x} = 10\), ovvero \(2\) in decimale e \(\textbf{y} = 11\), ovvero \(3\) in decimale, a questa configurazione d’ingresso deve corrispondere \(\textbf{z} = 0110\), ovvero \(6\) in decimale, considerato che \(2 \cdot 3 = 6\).\\
-Operando in questo modo si ottiene la tavola di verità seguente nella quale ogni colonna i-esima rappresenta i valori assunti dalla funzione \(z\) in corrispondenza delle varie quaterne d’ingresso.\\
-Si devono, allora, valutare quattro funzioni Booleane del tipo \(2^2 \rightarrow 2\). Poiché ci sono pochi \(1\) e molti \(0\), conviene usare la I forma canonica, basata sui termini minimi.
-
 \subsection{Moduli combinatori}
-L’algebra Booleana permette di analizzare e progettare qualunque tipo di rete combinatoria, di qualunque complessità. In precedenza abbiamo mostrato anche le tecniche per semplificare le reti ottenute direttamente dalle espressioni delle forme canoniche, basate sulla somma di prodotti o sui prodotti di somme. Sebbene in linea di principio quei metodi possono essere utilizzati per reti combinatorie di qualunque estensione, nella pratica si preferisce affrontare il progetto di una rete complessa secondo una tecnica di scomposizione della rete in blocchi funzionali, detti moduli combinatori. In questo modo si rinuncia alla soluzione teoricamente ottima, a favore di una maggiore comprensibilità, gestibilità e soprattutto modularità del progetto. Ciò porta anche a un effettivo risparmio economico, poiché i moduli combinatori, se prodotti in larga scala, hanno prezzi via via sempre più bassi; dunque non sempre un numero minore di porte implica un risparmio economico.\\
-Già a partire dagli anni \(’70\) vennero prodotti moduli integrati, che svolgendo precise funzionalità di carattere combinatorio trovarono impiego nello sviluppo di progetti complessi. Nella parte che segue vengono esaminati alcuni moduli combinatori di uso corrente.
-
-\subsubsection{Decodificatori}
-I \textbf{decodificatori} convertono un numero espresso in notazione posizionale in base \(2\) in un numero intero in base \(10\). Un decodificatore accetta in ingresso \(n\) bit e presenta in uscita \(m = 2^n\) linee, numerate da \(0\) a \(2^{n - 1}\), in modo tale che va a \(1\) la sola linea \(y_j\) che corrisponde all’intero \(j\) codificato in notazione posizionale dagli \(n\) bit d’ingresso. Se dunque si indicano con \(y_0, y_1, ..., y_m\) le uscite del decodificatore, la generica uscita \(y_j\) ottenuta come AND delle \(n\) variabili che compongono il \textit{minterm} \(j\).\\
-Nelle figure 5.14a e 5.14b vengono riportati, rispettivamente, la tavola di verità e il circuito di un decodificatore a \(2\) bit; analogamente, nelle figure 5.15a e 5.15b si presentano la tavola di verità e il circuito di un decodificatore a \(3\) bit.\\
-In figura 5.14c viene invece rappresentato il simbolo circuitale per un generico decodificatore a \(n\) bit.
+L’Algebra Booleana permette di analizzare e progettare qualunque tipo di rete combinatoria, di qualunque complessità. In precedenza sono state esposte le tecniche per semplificare le reti ottenute direttamente dalle espressioni delle forme canoniche, basate sulla somma di prodotti o sui prodotti di somme.\\
+Sebbene in linea di principio quei metodi possano essere utilizzati per reti combinatorie di qualunque estensione, nella pratica si preferisce affrontare il progetto di una rete complessa secondo una tecnica di scomposizione della rete in blocchi funzionali, detti \textbf{moduli combinatori}. In questo modo si rinuncia alla soluzione teoricamente ottima, a favore di una maggiore comprensibilità, gestibilità e soprattutto modularità del progetto. Ciò porta anche a un effettivo risparmio economico, poiché i moduli combinatori, se prodotti in larga scala, hanno prezzi via via sempre più bassi; dunque non sempre un numero minore di porte implica un risparmio economico.\\
+Già a partire dagli anni '\(70\) vennero prodotti moduli integrati, che svolgendo precise funzionalità di carattere combinatorio trovarono impiego nello sviluppo di progetti complessi. Nella parte che segue vengono esaminati alcuni moduli combinatori di uso corrente.
 
 \vspace{1em}
-\noindent
-\textbf{Osservazione}: Si noti che questo processo non deve creare confusione. Infatti, essendo i calcolatori binari, si sarebbe portati a rappresentare ogni valore, in ingresso come in uscita, sfruttando la logica binaria. Ma allora, se si hanno \(n\) bit in ingresso, che possono produrre \(2^n\) combinazioni di valori, che corrispondono a \(2^n\) numeri decimali. Allora, sarà sufficiente attivare solamente l'uscita corrispondente e si è ottenuto il valore da decodificare.
-
-\subsubsection{Codificatore}
-I codificatori convertono un numero intero in base \(10\) in un numero espresso in notazione posizionale in base \(2\).\\
-Un codificatore svolge dunque la funzione inversa di un decodificatore, nel senso che esso prevede \(m = 2^n\) ingressi e \(n\) uscite. Le uniche configurazioni ammesse per gli ingressi sono quelle in cui c’e esattamente un solo \(1\) in corrispondenza della linea \(x_j\); dunque \(x_j = 1\) e \(x_i = 0\) per ogni \(i \neq j\).\\
-Indicando con \(x_0, x_1, ..., x_{m - 1}\) gli ingressi, la corrispondente configurazione di uscita sulle variabili \(y_{n - }, y_{n - 2}, ..., y_0\) e tale che esse codificano \(j\) notazione posizionale in base \(2\).\\
-Nelle figure 5.16a e 5.16b vengono riportate, rispettivamente, la tavola di verità e le due mappe di Karnaugh associate alle variabili \(y_1\) e \(y_0\). Si noti che nella tabella di verità sono state riportate le sole configurazioni di ingresso definite; le altre danno luogo a \textbf{condizioni non specificate}, che consentono un amplissimo margine di libertà nella realizzazione effettiva del circuito. Ciò è evidente dalle mappe di Karnaugh di figura 5.16b, che consentono almeno \(2\) soluzioni; la prima implica l’uso di due porte OR e la seconda due porte AND e due NOT. Nella figura 5.17a e 5.17b vengono riprodotti, rispettivamente, il circuito del codificatore a \(2\) bit associato alla soluzione con le porte OR e il simbolo circuitale di un generico codificatore a n bit. Analogamente, nelle figure 5.18a e 5.18b si presentano la tavola di verità e il circuito di un codificatore a \(3\) bit.
-
-\subsubsection{Selettori}
-Un \textbf{selettore d’ingresso (o Multiplexer o Mux)} è un modulo che permette di selezionare uno tra \(2^n\) ingressi e presentarlo sull’unica uscita. La selezione si effettua attraverso \(n\) linee di comando.\\
-Nella figura 5.19a viene fornita la tavola di verità del Multiplexer a \(2\) vie (\(2:1\) Mux), che si ricava tenendo conto che per \(s_0 = 0\) viene riportato in uscita il contenuto di \(x_0\), mentre per \(s_0 = 1\) si porta in uscita il contenuto di \(x_1\); la semplificazione tramite minterm di figura 5.19b porta alla soluzione circuitale di figura 5.19c.\\
-Nelle figure 5.20a, 5.20b sono invece rappresentati i Multiplexer a \(4\) e \(8\) vie, mentre la figura 5.20c illustra il simbolo circuitale
-di un generico Multiplexer a \(n\) vie.\\
-La mappa di Karnaugh corrispondente sarà
+\subsubsection{Decodificatori}
+I \textbf{decodificatori} convertono un numero espresso in notazione posizionale in base \(2\) in un numero intero in base \(10\). Un decodificatore accetta in ingresso \(n\) bit e presenta in uscita \(m = 2^n\) linee, numerate da \(0\) a \(2^n - 1\), in modo tale che va a \(1\) la sola linea \(y_j\) che corrisponde all’intero \(j\) codificato in notazione posizionale dagli \(n\) bit d’ingresso. Se dunque si indicano con \(y_0, y_1, ..., y_m\) le uscite del decodificatore, la generica uscita \(y_j\) ottenuta come AND delle \(n\) variabili che compongono il \textit{minterm} \(j\).\\
+Nella Figura \ref{fig:tabella_verita_circuito_decodificatore_2_bit} vengono riportati, rispettivamente, la tavola di verità e il circuito di un decodificatore a \(2\) bit:
 
 \begin{figure}[H]
-    \centering
-    \begin{Karnaughvuit}
-        \contingut{0,0,1,1,0,1,0,1}
-        \implicant{3}{2}{red}
-        \implicant{5}{7}{blue}
-    \end{Karnaughvuit}
-    \label{fig:mappa_karnaugh_8_9}
+  \begin{tabularx}{\textwidth}{PP}
+      {
+        \setlength{\tabcolsep}{8pt}
+        \renewcommand{\arraystretch}{1}
+        \begin{tabular}{cc|cccc}
+          \multicolumn{2}{c|}{$\boldsymbol{x}$} & \multicolumn{4}{c}{$\boldsymbol{y}$}\\
+          \hline
+          $x_1$ & $x_0$ & $y_0$ & $y_1$ & $y_2$ & $y_3$\\
+          \hline
+          $0$ & $0$ & $1$ & $0$ & $0$ & $0$\\
+          $0$ & $1$ & $0$ & $1$ & $0$ & $0$\\
+          $1$ & $0$ & $0$ & $0$ & $1$ & $0$\\
+          $1$ & $1$ & $1$ & $0$ & $0$ & $1$\\
+        \end{tabular}
+        \begin{tabular}{ccccccccccc}
+          $ $ & $ $ & $ $ & $ $ & $ $ & $ $ & $ $ & $ $ & $ $ & $ $ & $ $\\
+        \end{tabular}
+        \renewcommand{\arraystretch}{1.1}
+        $\begin{array}{l@{}}
+            y_0 = \overline{x_1} \overline{x_0}\\
+            y_1 = \overline{x_1} x_0\\
+            y_2 = x_1 \overline{x_0}\\
+            y_3 = x_1 x_2
+        \end{array}$
+      } & {
+        \begin{tikzpicture}
+          % Variabili
+          \coordinate (x1) at (0,0);
+          \coordinate (x0) at (1.5,0);
+
+          % Porte logiche
+          \node [not gate US, draw, rotate=270] (notx1) at ([xshift=6mm,yshift=-8mm]x1){};
+          \node [not gate US, draw, rotate=270] (notx0) at ([xshift=6mm,yshift=-8mm]x0){};
+
+          \node [and gate US, draw, logic gate inputs=nn] (and1) at (4,-2.5){$\overline{x_1}\overline{x_0}$};
+          \node [and gate US, draw, below=of and1, yshift=3.5mm, logic gate inputs=nn] (and2){$\overline{x_1}x_0$};
+          \node [and gate US, draw, below=of and2, yshift=3.5mm, logic gate inputs=nn] (and3){$x_1\overline{x_0}$};
+          \node [and gate US, draw, below=of and3, yshift=3.5mm, logic gate inputs=nn] (and4){$x_1 x_0$};
+
+          % INPUT
+          \draw (x1) node[at start, above]{$x_1$} |- (and4.input 1);
+          \draw (x0) |- (and4.input 2) (x0) node[above]{$x_0$};
+          \draw (notx1.output) |- (and2.input 1);
+          \draw (notx0.output) |- (and3.input 2);
+          \draw (notx1.input) -- ++(0,3mm) -- ([yshift=3mm] notx1.input -| x1) node [branch]{};
+          \draw (notx0.input) -- ++(0,3mm) -- ([yshift=3mm] notx0.input -| x0) node [branch]{};
+          \draw (and1.input 1) -- (and1.input 1 -| notx1.output) node[circ]{};
+          \draw (and1.input 2) -- (and1.input 2 -| notx0.output) node[circ]{};
+          \draw (and2.input 2) -- (and2.input 2 -| x0) node[circ]{};
+          \draw (and3.input 1) -- (and3.input 1 -| x1) node[circ]{};
+
+          % OUTPUT
+          \draw (and1.output) -- ++(0.5,0) node[at end, right]{$y_0$};
+          \draw (and2.output) -- ++(0.5,0) node[at end, right]{$y_1$};
+          \draw (and3.output) -- ++(0.5,0) node[at end, right]{$y_2$};
+          \draw (and4.output) -- ++(0.5,0) node[at end, right]{$y_3$};
+        \end{tikzpicture}
+      }
+  \end{tabularx}
+  \caption{Tabella di verità e circuito di un decodificatore a $2$ bit}
+  \label{fig:tabella_verita_circuito_decodificatore_2_bit}
+\end{figure}
+
+\newpage
+\noindent
+In Figura \ref{fig:simbolo_circuitale_decodificatore_n_bit} viene invece rappresentato il simbolo circuitale per un generico decodificatore a \(n\) bit:
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+    \draw (0,0) -- (1.25,0.5) -- (1.25,-3) -- (0,-2.5) -- (0,0);
+    \draw[-stealth] (-1,-0.5) -- (0,-0.5) node[at start, left]{$0$};
+    \draw[-stealth] (-1,-1) -- (0,-1) node[at start, left]{$1$};
+    \draw (-0.5,-1.33) node[fill,circle,inner sep=0pt,minimum size=2pt]{} (-0.5,-1.66) node[fill,circle,inner sep=0pt,minimum size=2pt]{};
+    \draw[-stealth] (-1,-2) -- (0,-2) node[at start, left]{$n-1$};
+    \draw (0.625,-1.25) node[]{Dec};
+    \draw[-stealth] (1.25,0) -- (2.25,0) node[at end, right]{$0$};
+    \draw[-stealth] (1.25,-0.5) -- (2.25,-0.5) node[at end, right]{$1$};
+    \draw[-stealth] (1.25,-1) -- (2.25,-1) node[at end, right]{$2$};
+    \draw[-stealth] (1.25,-1.5) -- (2.25,-1.5) node[at end, right]{$3$};
+    \draw (1.75,-1.9) node[fill,circle,inner sep=0pt,minimum size=2pt]{} (1.75,-2.2) node[fill,circle,inner sep=0pt,minimum size=2pt]{};
+    \draw[-stealth] (1.25,-2.5) -- (2.25,-2.5) node[at end, right]{$2^n - 1$};
+  \end{tikzpicture}
+  \caption{Simbolo circuitale per un generico decodificatore a $n$ bit}
+  \label{fig:simbolo_circuitale_decodificatore_n_bit}
 \end{figure}
 
 \noindent
-Che permette di individuare i due determinanti, ovvero
-\[y = yz + x\overline{z}\]
-ove \(s\) è il selettore preso in esame, che si comporta come previsto:
-\begin{itemize}
-    \item Se \(s = 0 \rightarrow y = x_0\)
-    \item Se \(s = 1 \rightarrow y = x_1\)
-\end{itemize}
+\textbf{Osservazione}: Si noti che questo processo di decodifica, da binario a decimale, non deve creare confusione. Infatti, essendo i calcolatori binari, si sarebbe portati a rappresentare ogni valore, in ingresso come in uscita, sfruttando la logica binaria. Ma allora, se si hanno \(n\) bit in ingresso, che possono produrre \(2^n\) combinazioni di valori, che corrispondono a \(2^n\) numeri decimali. Allora, sarà sufficiente attivare solamente l'uscita corrispondente e si è ottenuto il valore da decodificare.
 
-\subsubsection{Selettore d'uscita}
-Un selettore d’uscita (o Demultiplexer o Demux) e al contrario un dispositivo che permette di dirottare l’unico ingresso su una delle possibili \(2n\) uscite.\\
-La figura 5.21 mostra un Demultiplexer a \(2\) vie (\(1:2\) Demux), uno a \(4\) vie (\(1:4\) Demux) e uno a \(8\) vie (\(1:8\) Demux), oltre al simbolo grafico di un generico selettore d’uscita a \(2^n\) vie.\\
-Si noti che nel caso di selettore di uscita l’ingresso viene presentato sulla via selezionata, mentre tutti gli altri ingressi sono a \(0\).\\
-In entrambi i selettori (d’ingresso e d’uscita) l’n-upla binaria della linea \(Sel\) seleziona quale, tra le \(2^n\) linee, è interessata alla connessione con l’uscita (l’ingresso).
+\vspace{1em}
+\subsubsection{Codificatore}
+I codificatori convertono un numero intero in base \(10\) in un numero espresso in notazione posizionale in base \(2\). Un codificatore svolge dunque la funzione inversa di un decodificatore, nel senso che esso prevede \(m = 2^n\) ingressi e \(n\) uscite. Le uniche configurazioni ammesse per gli ingressi sono quelle in cui c’è esattamente un solo \(1\) in corrispondenza della linea \(x_j\); dunque \(x_j = 1\) e \(x_i = 0\) per ogni \(i \neq j\). Indicando con \(x_0, x_1, ..., x_{m - 1}\) gli ingressi, la corrispondente configurazione di uscita sulle variabili \(y_{n - 1}, y_{n - 2}, ..., y_0\) è tale che esse codificano \(j\) in notazione posizionale in base \(2\).\\
+Nella Figura \ref{fig:tabella_verita_mappa_karnaugh_codificatore_2_bit} vengono riportate, rispettivamente, la tavola di verità e le due mappe di Karnaugh associate alle variabili \(y_1\) e \(y_0\).
+
+\begin{figure}[H]
+  \begin{tabularx}{\textwidth}{>{\hsize=0.24\textwidth}P>{\hsize=0.28\textwidth}P>{\hsize=0.25\textwidth}P}
+      {
+        \hspace{-2em}
+        \setlength{\tabcolsep}{5pt}
+        \renewcommand{\arraystretch}{1}
+        \begin{tabular}{cccc|cc}
+          \multicolumn{4}{c|}{$\boldsymbol{x}$} & \multicolumn{2}{c}{$\boldsymbol{y}$}\\
+          \hline
+          $x_0$ & $x_1$ & $x_2$ & $x_3$ & $y_1$ & $y_0$\\
+          \hline
+          $1$ & $0$ & $0$ & $0$ & $0$ & $0$\\
+          $0$ & $1$ & $0$ & $0$ & $0$ & $1$\\
+          $0$ & $0$ & $1$ & $0$ & $1$ & $0$\\
+          $0$ & $0$ & $0$ & $1$ & $1$ & $1$\\
+        \end{tabular}
+      } & {
+        \centering
+        \begin{KarnaughFunction}
+          \contingut{\times,0,0,\times,1,\times,\times,\times,1,\times,\times,\times,\times,\times,\times,\times}
+          \implicant{0}{8}{red}
+          \implicant{4}{14}{green}
+          \implicant{12}{10}{blue}
+        \end{KarnaughFunction}
+        \hspace{2em}
+        \renewcommand{\arraystretch}{1.1}
+        $\begin{array}{l@{}}
+            y_1 = x_2 + x_3\\
+            y_1 = \overline{x_1}\overline{x_0}
+        \end{array}$
+      } & {
+        \centering
+        \begin{KarnaughFunction}
+          \contingut{\times,1,0,\times,1,\times,\times,\times,0,\times,\times,\times,\times,\times,\times,\times}
+          \implicant{0}{5}{red}
+          \implicant{4}{14}{green}
+          \implicant{1}{11}{blue}
+        \end{KarnaughFunction}
+        \hspace{2em}
+        \renewcommand{\arraystretch}{1.1}
+        $\begin{array}{l@{}}
+            y_0 = x_1 + x_3\\
+            y_0 = \overline{x_0} \overline{x_2}
+        \end{array}$
+      }
+  \end{tabularx}
+  \caption{Tavola di verita e mappe di Karnaugh del codificatore a $2$ bit}
+  \label{fig:tabella_verita_mappa_karnaugh_codificatore_2_bit}
+\end{figure}
+
+\noindent
+Si noti che nella tabella di verità sono state riportate le sole configurazioni di ingresso definite; le altre danno luogo a \textbf{condizioni non specificate}, che consentono un amplissimo margine di libertà nella realizzazione effettiva del circuito. Ciò è evidente dalle mappe di Karnaugh di Figura \ref{fig:tabella_verita_mappa_karnaugh_codificatore_2_bit}, che consentono almeno \(2\) soluzioni: la prima implica l’uso di due porte OR e la seconda due porte AND e due NOT.\\
+
+\newpage
+\noindent
+Nella Figura \ref{fig:codificatore_2_bit_simbolo_circuitale_decodificatore_n_bit} vengono riprodotti, rispettivamente, il circuito del codificatore a \(2\) bit associato alla soluzione con le porte OR e il simbolo circuitale di un generico codificatore a $n$ bit.
+
+\begin{figure}[H]
+  \begin{tabularx}{\textwidth}{PP}
+    {
+      \begin{tikzpicture}
+        \node [or gate US, draw, logic gate inputs=nnn] (or1){};
+        \node [or gate US, draw, below=of or1, yshift=5.5mm, logic gate inputs=nnn] (or2){};
+
+        \draw (or1.input 1) -- ++(-1,0) coordinate(start) node[at end, left]{$x_1$};
+        \draw (start) ++(0,0.5) -- ++(0.5,0) node[at start, left]{$x_0$};
+        \draw (or2.input 1) -- (or2.input 1 -| start) node[at end, left]{$x_2$};
+        \draw (or2.input 3) -- (or2.input 3 -| start) node[at end, left]{$x_3$};
+        \draw (or2.input 3) ++(-0.5,0) node[circ]{} |- (or1.input 3);
+
+        \draw (or1.output) -- ++(0.5,0) node[at end, right]{$y_0$};
+        \draw (or2.output) -- ++(0.5,0) node[at end, right]{$y_1$};
+      \end{tikzpicture}
+    } & {
+      \begin{tikzpicture}
+        \draw (0,0) -- (1.25,-0.5) -- (1.25,-2.5) -- (0,-3) -- (0,0);
+        \draw[-stealth] (-1,-0.5) -- (0,-0.5) node[at start, left]{$0$};
+        \draw[-stealth] (-1,-1) -- (0,-1) node[at start, left]{$1$};
+        \draw[-stealth] (-1,-1.5) -- (0,-1.5) node[at start, left]{$2$};
+        \draw (-0.5,-1.88) node[fill,circle,inner sep=0pt,minimum size=2pt]{} (-0.5,-2.21) node[fill,circle,inner sep=0pt,minimum size=2pt]{};
+        \draw[-stealth] (-1,-2.5) -- (0,-2.5) node[at start, left]{$2^n - 1$};
+        \draw (0.625,-1.5) node[]{Cod};
+        \draw[-stealth] (1.25,-0.75) -- (2.25,-0.75) node[at end, right]{$0$};
+        \draw[-stealth] (1.25,-1.25) -- (2.25,-1.25) node[at end, right]{$1$};
+        \draw (1.75,-1.58) node[fill,circle,inner sep=0pt,minimum size=2pt]{} (1.75,-1.91) node[fill,circle,inner sep=0pt,minimum size=2pt]{};
+        \draw[-stealth] (1.25,-2.25) -- (2.25,-2.25) node[at end, right]{$n - 1$};
+      \end{tikzpicture}
+    }\\
+  \end{tabularx}
+  \caption{Codificatore a $2$ bit e simbolo circuitale di un decodificatore a $n$ bit}
+  \label{fig:codificatore_2_bit_simbolo_circuitale_decodificatore_n_bit}
+\end{figure}
+
+\vspace{1em}
+\subsubsection{Selettori}
+Un \textbf{selettore d’ingresso (o Multiplexer o Mux)} è un modulo che permette di selezionare uno tra \(2^n\) ingressi e presentarlo sull’unica uscita. La selezione si effettua attraverso \(n\) linee di comando.\\
+
+\begin{figure}[H]
+  \begin{tabularx}{\textwidth}{>{\hsize=0.25\textwidth}P>{\hsize=0.25\textwidth}P>{\hsize=0.45\textwidth}P}
+    {
+        \setlength{\tabcolsep}{5pt}
+        \renewcommand{\arraystretch}{1}
+        \begin{tabular}{c|cc||c}
+          $\boldsymbol{s}$ & \multicolumn{2}{c||}{$\boldsymbol{x}$} & $\boldsymbol{y}$\\
+          \hline
+          $s_0$ & $x_0$ & $x_1$ & $y$\\
+          \hline
+          $0$ & $0$ & $0$ & $0$\\
+          $0$ & $0$ & $1$ & $0$\\
+          $0$ & $1$ & $0$ & $1$\\
+          $0$ & $1$ & $1$ & $1$\\
+          $1$ & $0$ & $0$ & $0$\\
+          $1$ & $0$ & $1$ & $1$\\
+          $1$ & $1$ & $0$ & $0$\\
+          $1$ & $1$ & $1$ & $1$\\
+        \end{tabular}
+    } & {
+        \renewcommand{\arraystretch}{1.1}
+        $\begin{array}{rcl}
+            y & = & \overline{s_0}x_0\overline{x_1} + \overline{s_0}x_0x_1\\
+              & + & s_0\overline{x_0}x_1 + s_0x_0x_1\\
+              & = & \overline{s_0}x_0 + s_0x_1
+        \end{array}$
+    } & {
+      \hspace{-3em}
+      \begin{tikzpicture}
+        \node [and gate US, draw, logic gate inputs=inn] (and1){};
+        \node [and gate US, draw, below=of and1, yshift=5.5mm, logic gate inputs=nnn] (and2){};
+        \node [or gate US, draw, right=of and1, yshift=-5.5mm, logic gate inputs=nnn] (or){};
+
+        \draw (and1.input 3) -- ++(-1,0) coordinate(start) node[at end, left]{$x_0$};
+        \draw (and2.input 3) -- (and2.input 3 -| start) node[at end, left]{$x_1$};
+        \draw (and1.input 1) -- ++(-0.5,0) node[circ]{} ++(0,0.5) |- (and2.input 1) node[at start, above]{$s_0$};
+
+        \draw (and1.output) -- ++(0.5,0) |- (or.input 1);
+        \draw (and2.output) -- ++(0.5,0) |- (or.input 3);
+        \draw (or.output) -- ++(0.5,0) node[at end, right]{$y$};
+      \end{tikzpicture}
+    }\\
+  \end{tabularx}
+  \caption{Selettore d’ingresso (o \emph{Multiplexer}) a $2$ vie}
+  \label{fig:multiplexer_2_vie}
+\end{figure}
+
+\noindent
+Nella Figura \ref{fig:multiplexer_2_vie} viene fornita la tavola di verità del \emph{Multiplexer} a \(2\) vie (\(2:1\) \emph{Mux}), che si ricava tenendo conto che per \(s_0 = 0\) viene riportato in uscita il contenuto di \(x_0\), mentre per \(s_0 = 1\) si porta in uscita il contenuto di \(x_1\); la semplificazione tramite minterm di figura Figura \ref{fig:multiplexer_2_vie} porta alla soluzione circuitale di figura Figura \ref{fig:multiplexer_2_vie}.\\
+La Figura \ref{fig:simbolo_circuitale_selettore_ingresse_2_^_n_vie}, invece, illustra il simbolo circuitale di un generico \emph{Multiplexer} a \(2^n\) vie.
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+    \draw (0,0) -- coordinate[midway](m) (1.25,-0.5) -- (1.25,-2.5) -- (0,-3) -- (0,0);
+    \draw[-stealth] (-1,-0.5) -- (0,-0.5) node[at start, left]{$0$};
+    \draw[-stealth] (-1,-1) -- (0,-1) node[at start, left]{$1$};
+    \draw[-stealth] (-1,-1.5) -- (0,-1.5) node[at start, left]{$2$};
+    \draw (-0.5,-1.88) node[fill,circle,inner sep=0pt,minimum size=2pt]{} (-0.5,-2.21) node[fill,circle,inner sep=0pt,minimum size=2pt]{};
+    \draw[-stealth] (-1,-2.5) -- (0,-2.5) node[at start, left]{$2^n - 1$};
+    \draw (0.625,-1.5) node[]{Mux};
+    \draw[-stealth] (1.25,-1.5) -- (2.25,-1.5) node[at end, right]{$y$};
+    \draw[-stealth] (m) ++(0,0.5) coordinate(a) ++(0,0.5) -- (m) node[at start, above]{Sel};
+    \draw (a) ++(0.1,0.1) -- ++(-0.2,-0.2);
+  \end{tikzpicture}
+  \caption{Simbolo circuitale di un selettore d’ingresso a $2^n$ vie}
+  \label{fig:simbolo_circuitale_selettore_ingresse_2_^_n_vie}
+\end{figure}
+
+\newpage
+\noindent
+Un \textbf{selettore d’uscita} (o \textbf{Demultiplexer} o \textbf{Demux}) è, al contrario, un dispositivo che permette di dirottare l’unico ingresso su una delle possibili $2^n$ uscite.\\
+La Figura \ref{fig:demultiplexer_2_vie_simbolo_circuitale} mostra un Demultiplexer a $2$ vie ($1:2$ \emph{Demux}) oltre al simbolo grafico di un generico selettore d’uscita a $2^n$ vie.
+
+\begin{figure}[H]
+  \begin{tabularx}{\textwidth}{PP}
+    {
+        \hspace{-3em}
+        \begin{tikzpicture}
+          \node [and gate US, draw, logic gate inputs=nnn] (and1){};
+          \node [and gate US, draw, below=of and1, yshift=5.5mm, logic gate inputs=inn] (and2){};
+
+          \draw (and1.input 3) -- ++(-0.7,0) node[circ](dot1){} -- ++(-0.3,0) node[at end, left]{$x$};
+          \draw (dot1) |- (and2.input 3);
+          \draw (and1.input 1) -- ++(-0.3,0) node[circ](dot2){} -- ++(0,0.5) node[at end, above]{$s_0$};
+          \draw (dot2) |- (and2.input 1);
+
+          \draw (and1.output) -- ++(0.5,0) node[at end, right]{$y_0$};
+          \draw (and2.output) -- ++(0.5,0) node[at end, right]{$y_1$};
+        \end{tikzpicture}
+    } & {
+    \begin{tikzpicture}
+        \draw (0,0) -- coordinate[midway](m) (1.25,0.5) -- (1.25,-3) -- (0,-2.5) -- (0,0);
+        \draw[-stealth] (-1,-1.25) -- (0,-1.25) node[at start, left]{$x$};
+        \draw (0.625,-1.25) node[]{DMX};
+        \draw[-stealth] (1.25,0) -- (2.25,0) node[at end, right]{$0$};
+        \draw[-stealth] (1.25,-0.5) -- (2.25,-0.5) node[at end, right]{$1$};
+        \draw[-stealth] (1.25,-1) -- (2.25,-1) node[at end, right]{$2$};
+        \draw[-stealth] (1.25,-1.5) -- (2.25,-1.5) node[at end, right]{$3$};
+        \draw (1.75,-1.85) node[fill,circle,inner sep=0pt,minimum size=2pt]{} (1.75,-2.15) node[fill,circle,inner sep=0pt,minimum size=2pt]{};
+        \draw[-stealth] (1.25,-2.5) -- (2.25,-2.5) node[at end, right]{$2^n -1$};
+        \draw[-stealth] (m) ++(0,0.5) coordinate(a) ++(0,0.5) -- (m) node[at start, above]{Sel};
+        \draw (a) ++(0.1,0.1) -- ++(-0.2,-0.2);
+      \end{tikzpicture}
+    }\\
+  \end{tabularx}
+  \caption{Selettori d’uscita (o \emph{Demultiplexer}) a $2$ vie e relativo simbolo circuitale}
+  \label{fig:demultiplexer_2_vie_simbolo_circuitale}
+\end{figure}
+
+\noindent
+Si noti che nel caso di selettore di uscita, l’ingresso viene presentato sulla via selezionata, mentre tutti gli altri ingressi sono a $0$.\\
+In entrambi i selettori (d’ingresso e d’uscita) l’$n$-pla binaria della linea \emph{Sel} seleziona quale, tra le $2^n$ linee, è interessata alla connessione con l’uscita (o l’ingresso).
 
 \newpage
 \begin{center}
@@ -4518,27 +4812,27 @@ Ma allo stesso tempo si osservano i significativi vantaggi:
 \textbf{Osservazione}: C’e tuttavia un metodo più economico per costruire, in modo modulare, una qualunque funzione Booleana di \(n\) variabili. Facendo sempre riferimento alla I forma canonica, la sua realizzazione richiede un numero di porte AND a \(n\) ingressi pari al numero di minterm (cioè \(2^n\)) e una porta OR con un numero di ingressi pari al numero di porte AND (cioè sempre \(2^n\)).\\
 Si tratta allora di ”prolungare” le uscite delle porte AND agli ingressi della porta OR per i soli minterm che entrano nella funzione.\\
 La figura 5.24a mostra un circuito di questo genere, chiamato matrice di contatti, nel quale
-si evidenzia la presenza di un contatto per i soli minterm che servono per realizzare la funzione z “ x1 x2 ` x1 x2;
+si evidenzia la presenza di un contatto per i soli minterm che servono per realizzare la funzione z “ x1 x2   x1 x2;
 nella pratica circuitale la configurazione diventa quella di figura 5.24b. Se ora vogliamo usare questa tecnica per
-costruire la funzione (5.4) otteniamo il circuito di figura 5.25a. La sua struttura e estremamente vantaggiosa se `
-viene realizzata direttamente dal costruttore di integrati, che privilegia un’alta uniformita nella struttura circuitale. `
-Il confronto con la soluzione a selettori di figura 5.23 e chiarificatore: in quel caso, per realizzare una qualunque `
-funzione di tre variabili occorre un integrato che abbia almeno 3 ` 8 ` 1 “ 12 piedini (a parte l’alimentazione
-e la massa). Con la soluzione ora illustrata il numero di piedini sarebbe pari a soli 3 ` 1 “ 4. La struttura di
-figura 5.25a fa uso di diodi per realizzare le connessioni della matrice; inoltre essa puo essere estesa in modo tale `
-da fornire non una, ma piu funzioni di uscita, passando p.es. a una rete con ` n ingressi e k uscite. Una simile rete
+costruire la funzione (5.4) otteniamo il circuito di figura 5.25a. La sua struttura e estremamente vantaggiosa se
+viene realizzata direttamente dal costruttore di integrati, che privilegia un’alta uniformita nella struttura circuitale.
+Il confronto con la soluzione a selettori di figura 5.23 e chiarificatore: in quel caso, per realizzare una qualunque
+funzione di tre variabili occorre un integrato che abbia almeno 3   8   1 “ 12 piedini (a parte l’alimentazione
+e la massa). Con la soluzione ora illustrata il numero di piedini sarebbe pari a soli 3   1 “ 4. La struttura di
+figura 5.25a fa uso di diodi per realizzare le connessioni della matrice; inoltre essa puo essere estesa in modo tale
+da fornire non una, ma piu funzioni di uscita, passando p.es. a una rete con   n ingressi e k uscite. Una simile rete
 fornisce, per ogni configurazione degli n ingressi, una configurazione sulle k uscite e viene a costituire quella che
 si chiama una memoria ROM, acronimo di Read Only Memory (memoria di sola lettura); la memoria in questione
 ha M “ 2n celle da k bit ciascuna, che vengono indirizzate dalle n linee di indirizzamento. Tenendo conto della
 realizzazione circuitale effettiva illustrata in figura 5.24b, riportiamo in figura 5.25b la struttura di una memoria
 ROM con 23 celle di memoria da 4 bit ciascuna.
 Nella parte destra della figura 5.25b viene riportato l’indirizzo di ciascuna cella e, tra parentesi, il suo contenuto.
-Per capirne il funzionamento supponiamo che si voglia leggere il contenuto della memoria all’indirizzo 3; cio`
-significa che deve essere x2x1x0 “ 011. In tal caso ci sara una sola porta NAND che ha un’uscita bassa, la porta `
+Per capirne il funzionamento supponiamo che si voglia leggere il contenuto della memoria all’indirizzo 3; cio
+significa che deve essere x2x1x0 “ 011. In tal caso ci sara una sola porta NAND che ha un’uscita bassa, la porta
 della riga 3, mentre tutte le altre porte NAND avranno uscita alta. I catodi dei diodi relativi alle due colonne z3 e \(z_0\) vanno allora a massa, inducendo una polarizzazione diretta per i corrispondenti diodi; sui rispettivi anodi si ha
-allora una tensione virtualmente nulla (in pratica ci sara solo la ` VAK di saturazione, pari 0, 3 ̃0, 6 V ). Le linee z3
+allora una tensione virtualmente nulla (in pratica ci sara solo la   VAK di saturazione, pari 0, 30, 6 V ). Le linee z3
 e z0 sono allora basse, e a seguito della complementazione finale diventano alte. Gli altri diodi sulle colonne z3
-e z0 risultano invece interdetti, le linee rimangono allo stato alto (`VCC ) e quindi c’e` 0 in uscita, a seguito della
+e z0 risultano invece interdetti, le linee rimangono allo stato alto ( VCC ) e quindi c’e  0 in uscita, a seguito della
 complementazione finale. Dunque z3 “ 1 e z0 “ 1, mentre le altre due linee z2 e z1 si trovano a zero, e dunque
 z “ 1001.
 
@@ -4619,13 +4913,13 @@ Nella ALU si realizzano tipicamente operazione su numeri interi quali somma, sot
 \subsubsection{Il semisommatore e il sommatore completo}
 Il nucleo di partenza per costruire una ALU è il modulo \textit{semisommatore} (o \textit{Half Adder}), che realizza la somma di due bit con riporto. Di seguito viene riprodotta la tabella aritmetica della somma bit per bit con riporto, che corrisponde alla tavola di verità di due funzioni Booleane, una che realizza la somma \(S_i\) e una che realizza il riporto \(R_i\), per ogni coppia \(A_i\), \(B_i\) dei bit d’ingresso. Si riconosce immediatamente che la \(S_i\) corrisponde a uno XOR, mentre la \(R_i\) è un AND; di conseguenza il modulo ha la realizzazione circuitale di figura 5.29b, mentre la
 figura 5.29c rappresenta il suo simbolo circuitale.\\
-Se ora vogliamo effettuare la somma completa tra due numeri interi \(\textbf{A} = \left[ A_{n - 1} \hspace{0.1em} A_{n - 2} \hspace{0.1em} ... \hspace{0.1em} A_1 \hspace{0.1em} A_0 \right]\) e \(\textbf{B} = \left[ B_{n - 1} \hspace{0.1em} B_{n - 2} \hspace{0.1em} ... \hspace{0.1em} B_1 \hspace{0.1em} B_0 \right]\), espressi in notazione posizionale con \(n\) bit, è necessario costruire una rete che accetti in ingresso \(2n\) bit e generi la somma binaria dei due,\(\textbf{S} = \left[ S_{n - 1} \hspace{0.1em} S_{n - 2} \hspace{0.1em} ... \hspace{0.1em} S_1 \hspace{0.1em} S_0 \right]\), secondo il classico procedimento di somma con riporto evidenziato in figura 5.30a. Partendo da destra si inizia a sommare \(A_0\) con \(B_0\); detto \(R_0\) il riporto, questi dovrà essere sommato con la somma di \(A_1\) e \(B_1\), che genera \(R_1\); questo va sommato con la somma di \(A_2\) e \(B_2\) e così via. È evidente che il riporto \(R_{-1}\) della colonna \(A_0 || B_0\) vale \(0\) e che se l’ultimo riporto, Rn ́1
+Se ora vogliamo effettuare la somma completa tra due numeri interi \(\textbf{A} = \left[ A_{n - 1} \hspace{0.1em} A_{n - 2} \hspace{0.1em} ... \hspace{0.1em} A_1 \hspace{0.1em} A_0 \right]\) e \(\textbf{B} = \left[ B_{n - 1} \hspace{0.1em} B_{n - 2} \hspace{0.1em} ... \hspace{0.1em} B_1 \hspace{0.1em} B_0 \right]\), espressi in notazione posizionale con \(n\) bit, è necessario costruire una rete che accetti in ingresso \(2n\) bit e generi la somma binaria dei due,\(\textbf{S} = \left[ S_{n - 1} \hspace{0.1em} S_{n - 2} \hspace{0.1em} ... \hspace{0.1em} S_1 \hspace{0.1em} S_0 \right]\), secondo il classico procedimento di somma con riporto evidenziato in figura 5.30a. Partendo da destra si inizia a sommare \(A_0\) con \(B_0\); detto \(R_0\) il riporto, questi dovrà essere sommato con la somma di \(A_1\) e \(B_1\), che genera \(R_1\); questo va sommato con la somma di \(A_2\) e \(B_2\) e così via. È evidente che il riporto \(R_{-1}\) della colonna \(A_0 || B_0\) vale \(0\) e che se l’ultimo riporto, Rn 1
 dovesse valere 1, siamo di fronte a una situazione di overflow, che richiede il passaggio alla notazione a virgola
 mobile. Per realizzare un tale circuito bisogna modificare il semisommatore, in modo da includere il contributo
-Ri ́1 del riporto del passo precedente. In questo modo si ottiene il sommatore completo (o full adder), la cui
-tavola di verita` e riportata in figura 5.31a. La somma di ` Ai, Bi e Ri ́1 vale 1 solo quando c’e un numero dispari `
-di 1 nella somma, ed e quindi lo XOR dei tre bit; ` Ri vale 1 quando Ai e Bi sono entrambi a 1 (qualunque sia il
-valore di Ri ́1), oppure quando Ri ́1 “ 1 e Ai ‘ Bi “ 1. Per ricavare in modo formale l’espressione risolutiva
+Ri 1 del riporto del passo precedente. In questo modo si ottiene il sommatore completo (o full adder), la cui
+tavola di verita  e riportata in figura 5.31a. La somma di   Ai, Bi e Ri 1 vale 1 solo quando c’e un numero dispari
+di 1 nella somma, ed e quindi lo XOR dei tre bit;   Ri vale 1 quando Ai e Bi sono entrambi a 1 (qualunque sia il
+valore di Ri 1), oppure quando Ri 1 “ 1 e Ai   Bi “ 1. Per ricavare in modo formale l’espressione risolutiva
 scriviamo i minterm di entrambe le funzioni che si ricavano dalla tavola di verita di figura 5.31a e procediamo con
 
 \subsubsection{Calcolo della differenza mediante sommatore}
@@ -4659,10 +4953,10 @@ La stessa cosa si può ripetere anche per il sistema binario, ovvero, se si deve
 \[
     \rowcolors{1}{white}{white}
     \begin{array}{cccccc}
-         & 0 & 1 & 0 & 1 & +\\
-         & 1 & 1 & 1 & 0 & =\\
-         1 & 0 & 0 & 1 & 1 & =
-         & & & 0 & 0 & 1 & 1 &
+         %& 0 & 1 & 0 & 1 & +\\
+         %& 1 & 1 & 1 & 0 & =\\
+         %1 & 0 & 0 & 1 & 1 & =
+         %& & 0 & 0 & 1 & 1
     \end{array}
 \]
 
@@ -4714,7 +5008,7 @@ Il modello generale di un circuito combinatorio e illustrato di seguito, in cui 
 % Contenitore per immagini
 \begin{figure}[H]
     \centering
-        \includegraphics[scale=0.4]{img/circuiti_sequenziali/image1.png}
+%        \includegraphics[scale=0.4]{img/circuiti_sequenziali/image1.png}
     \caption{Schema generale di un circuito di commutazione con \(n\) ingressi e \(m\) uscite}
     \label{fig:schema_circuito_commutazione}
 \end{figure}
@@ -4740,11 +5034,11 @@ Tanto per fare un breve esempio si consideri la seguente tabella
 Nei sistemi sequenziali introdotti in precedenza, l’informazione sulla storia passata del circuito, ovvero il valore acquisito dalla variabile di stato Q, deve essere memorizzato su un qualche supporto. Si possono
 avere diversi tipi di dispositivi di memorizzazione, ma uno dei più usati è il cosiddetto flip-flop, ovvero un circuito \textbf{bi-stabile}.\\
 In figura seguente viene illustrato il flip-flop già introdotto nella figura 2.26, nel quale l’uscita di un transistor in interdizione viene connessa con l’ingresso di un transistor in conduzione. Sono transistor ad emettitore comune, in quanto l'emettitore viene posto a massa.\\
-Il circuito che si ottiene e bistabile, nel senso che esso può stare indifferentemente e stabilmente in uno o nell'altro dei due stati rappresentati in figura 6.3a e 6.3b. Il funzionamento e basato sul fatto che, quando il transistor di sinistra è interdetto (non passa corrente nel circuito di collettore), allora la sua tensione di collettore e alta (\(v = 2,6 V\)); ciò polarizza la base del transistor di destra, che entra in `
+Il circuito che si ottiene e bistabile, nel senso che esso può stare indifferentemente e stabilmente in uno o nell'altro dei due stati rappresentati in figura 6.3a e 6.3b. Il funzionamento e basato sul fatto che, quando il transistor di sinistra è interdetto (non passa corrente nel circuito di collettore), allora la sua tensione di collettore e alta (\(v = 2,6 V\)); ciò polarizza la base del transistor di destra, che entra in
 piena conduzione, facendo collassare a un valore basso (v † 0, 4 V) la sua tensione di uscita (figura 6.3a), che
 corrisponde a uno 0 logico. I ruoli dei due transistor si scambiano quanto la tensione di collettore del transistor di
 destra viene portata (con un impulso) a un valore (v ° 2, 6 V) (figura 6.3b). Dal funzionamento del circuito risulta
-evidente che esso costituisce un elemento di memoria di 1 bit; infatti si puo decidere che l’uscita del collettore `
+evidente che esso costituisce un elemento di memoria di 1 bit; infatti si puo decidere che l’uscita del collettore
 di uno dei due transistor rappresenti la variabile logica il cui valore vogliamo memorizzare; scegliendo p.es. il
 transistor di destra, se vogliamo memorizzare 1 dobbiamo mandare lo stesso transistor in interdizione; per lo 0
 dobbiamo mandarlo in conduzione (in una logica positiva).
@@ -4766,14 +5060,14 @@ del comportamento di questa semplice rete. La cosa migliore da fare e allora que
 Nella figura 6.5a vengono riportate tutte le possibili combinazioni per \(R, S, X\) e \(Y\); quelle in rosso non soddisfano l’equazione 6.1, perche \(X \neq \overline{R} \cdot (S + X)\) oppure \(Y \neq \overline{S + X}\); queste configurazioni non sono stabili.\\
 Nella successiva figura 6.5b si riportano invece i soli stati stabili, per semplicità di lettura. Si osservi che, a parte il caso in cui \(R = S = 1\), che escludiamo per i motivi che vedremo nel seguito, in tutte le altre combinazioni lecite si ha sempre \(X = \overline{Y}\) , cioè \(X\) e \(Y\) sono l’uno complementare dell'altro.\\
 Partiamo ora dalla condizione R “ S “ 0; dalla tabella 6.5b osserviamo che ci sono due stati stabili possibili, uno
-con X “ 0, Y “ 1 e l’altro con X “ 1, Y “ 0; supponiamo di essere nel secondo, cioe` X “ 1, Y “ 0, cos`ı come
-evidenziato in figura 6.6a. Supponiamo ora di portare l’ingresso R da 0 a 1 nell’istante t1; quando cio avviene, `
-l’uscita della porta 1 commuta a X “ 0 con un certo ritardo ⌧ , legato ai tempi di commutazione dei transistor della
-porta. Il nuovo segnale X “ 0 alimenta l’ingresso della porta 2, facendo commutare Y a 1 con un ritardo pari a 2⌧ .
-Se ora riportiamo R a 0 (si veda figura 6.6b), X e Y rimangono nella stessa configurazione acquisita, cioe` X “ 0
-e Y “ 1, poiche essa  ́ e stabile rispetto a ` R “ S “ 0, a norma della tabella 6.5b. Riportando ora R nuovamente a
-1, non cambia comunque nulla, perche con ` X “ 0 e Y “ 1, R e S possono stare stabilmente in ciascuno dei due
-stati R “ S “ 0 oppure R “ 1, S “ 0. Quello che e successo ` e che inviando un impulso sull’ingresso ` R, che
+con X “ 0, Y “ 1 e l’altro con X “ 1, Y “ 0; supponiamo di essere nel secondo, cioe  X “ 1, Y “ 0, cos ı come
+evidenziato in figura 6.6a. Supponiamo ora di portare l’ingresso R da 0 a 1 nell’istante t1; quando cio avviene,
+l’uscita della porta 1 commuta a X “ 0 con un certo ritardo   , legato ai tempi di commutazione dei transistor della
+porta. Il nuovo segnale X “ 0 alimenta l’ingresso della porta 2, facendo commutare Y a 1 con un ritardo pari a 2  .
+Se ora riportiamo R a 0 (si veda figura 6.6b), X e Y rimangono nella stessa configurazione acquisita, cioe  X “ 0
+e Y “ 1, poiche essa   e stabile rispetto a   R “ S “ 0, a norma della tabella 6.5b. Riportando ora R nuovamente a
+1, non cambia comunque nulla, perche con   X “ 0 e Y “ 1, R e S possono stare stabilmente in ciascuno dei due
+stati R “ S “ 0 oppure R “ 1, S “ 0. Quello che e successo   e che inviando un impulso sull’ingresso   R, che
 viene chiamato impulso di Reset, l’ingresso X va (o permane) a 0.
 
 \newpage
@@ -4800,7 +5094,7 @@ Di fatto, in questo modo, si è costruita una unità logico aritmetica, che vien
 % Contenitore per immagini
 \begin{figure}[H]
     \centering
-        \includegraphics[scale=0.4]{img/circuiti_combinatori/image22.png}
+%        \includegraphics[scale=0.4]{img/circuiti_combinatori/image22.png}
     \caption{ALU}
     \label{fig:alu}
 \end{figure}
@@ -4813,9 +5107,9 @@ Il circuito sequenziale fondamentale è il \textit{flip-flop}, che può essere r
 % Contenitore per immagini
 \begin{figure}[H]
     \centering
-    \subfloat[\parbox{\linewidth}{Il transistor di sinistra del \textit{flip-flop} è interdetto; ciò porta conduzione il transistor di destra, che fornisce uscita logica \(0\)} ]{{\includegraphics[width=0.45 \textwidth]{img/circuiti_sequenziali/image3.png} }}%
+    %\subfloat[\parbox{\linewidth}{Il transistor di sinistra del \textit{flip-flop} è interdetto; ciò porta conduzione il transistor di destra, che fornisce uscita logica \(0\)} ]{{\includegraphics[width=0.45 \textwidth]{img/circuiti_sequenziali/image3.png} }}%
     \qquad
-    \subfloat[\parbox{\linewidth}{ Il transistor di sinistra del \textit{flip-flop} è in conduzione; ciò porta in interdizione il transistor di destra, che fornisce uscita logica \(1\)} 2]{{\includegraphics[width=0.45 \textwidth]{img/circuiti_sequenziali/image4.png} }}%
+    %\subfloat[\parbox{\linewidth}{ Il transistor di sinistra del \textit{flip-flop} è in conduzione; ciò porta in interdizione il transistor di destra, che fornisce uscita logica \(1\)} 2]{{\includegraphics[width=0.45 \textwidth]{img/circuiti_sequenziali/image4.png} }}%
     \label{fig:flip-flop}
 \end{figure}
 
@@ -4840,7 +5134,7 @@ Studiando i diversi stati si ottiene il seguente schema, ottenuto analizzando la
         % Contenitore per immagini
         \begin{figure}[H]
             \centering
-                \includegraphics[scale=0.4]{img/circuiti_sequenziali/image10.png}
+                %\includegraphics[scale=0.4]{img/circuiti_sequenziali/image10.png}
             \caption{Funzionamento di \textit{flip-flop}}
             \label{fig:flip-flop}
         \end{figure}
@@ -4858,7 +5152,7 @@ Studiando i diversi stati si ottiene il seguente schema, ottenuto analizzando la
 \noindent
 \textbf{Osservazione}: Tuttavia, per comprendere il funzionamento del sistema, è necessario comprendere anche il suo comportamento tendendo presente anche lo stato precedente del circuito, come illustrato nella seguente tabella:
 
-\\
+
 Di seguito il funzionamento: Con il vincolo che uno dei due input \(R\) o \(S\) deve essere uguale a \(0\), ovvero \(R \cdot S\), fornendo un impulso di \textit{reset} \(X\) va a \(0\), mentre fornendo un impulso di set \(X\) va a \(1\). Attraverso la mappa di Karnaugh si ottiene la funzione
 \[X = S + x \cdot \overline{R}\]
 Si è detto che non si tollerano due ingressi contemporaneamente a \(1\), in quanto
@@ -4873,7 +5167,7 @@ Con il vincolo \(R \cdot S = 0\), il \textit{flip-flop RS} diventa un dispositiv
 Analogamente a quanto visto per il \textbf{Latch di NOR}, si può procedere per costruire un \textbf{Latch di NAND} che sarà il \textbf{corrispettivo duale} di quanto visto in precedenza.\\
 Infatti, la configurazione \(R\) e \(S\) uguale a \(0\) non è ammissibile per il sistema, mentre tutti gli altri stati prevedono un comportamento esattamente identico. Pertanto
 
-\\Funzionamento: Con il vincolo che \(R + S = 1\), con un impulso \(0\) su \(S\) porta l'uscita \(X\) a \(0\), mentre un impulso a \(0\) su R riporta l'uscita \(X\) a \(1\).
+Funzionamento: Con il vincolo che \(R + S = 1\), con un impulso \(0\) su \(S\) porta l'uscita \(X\) a \(0\), mentre un impulso a \(0\) su R riporta l'uscita \(X\) a \(1\).
 
 \vspace{1em}
 \noindent
@@ -4916,7 +5210,7 @@ I flip-flop costituiscono la circuiteria di base per la memorizzazione di singol
 % Contenitore per immagini
 \begin{figure}[H]
     \centering
-        \includegraphics[scale=0.4]{img/circuiti_sequenziali/image10.png}
+%        \includegraphics[scale=0.4]{img/circuiti_sequenziali/image10.png}
     \caption{Registro di memoria da \(m\)-bit}
     \label{fig:registro_di_memoria_da_m_bit}
 \end{figure}
@@ -4928,7 +5222,7 @@ Viene illustrato di seguito:
 % Contenitore per immagini
 \begin{figure}[H]
     \centering
-        \includegraphics[scale=0.4]{img/circuiti_sequenziali/image11.png}
+%        \includegraphics[scale=0.4]{img/circuiti_sequenziali/image11.png}
     \caption{Registro a scorrimento}
     \label{fig:registro_scorrimento}
 \end{figure}
@@ -5465,7 +5759,7 @@ Se così non è si procede ad incrementare la prima e la terza cella e si esegue
 \vspace{1em}
 \noindent
 \textbf{Esercizio}: Per eseguire la sottrazione tra due numeri si proceda a capire come si esegue la cosiddetta \textbf{somma naturale}, ovvero
-\[f(x) = x \overdotline 1 = \left\{
+\[f(x) = x \overset{\cdot}{-} 1 = \left\{
     \rowcolors{1}{white}{white}
     \begin{array}{ccc}
          x - 1 & \text{se} & x > 0\\
@@ -5581,7 +5875,7 @@ Le istruzione di un calcolatore vengono eseguite secondo un ciclo che prevede di
     \item \(PC \leftarrow 0\);
     \item \textbf{repeat}
     \begin{enumerate}
-        \item istruzione \leftarrow memoria \([PC]\)
+        \item istruzione $\leftarrow$ memoria \([PC]\)
         \item decode(istruzione)
         \item fetch(operandi)
         \item execute
@@ -5601,7 +5895,7 @@ Il funzionamento del computer si può riassumere con il ciclo \textit{fetch-deco
     \item \(PC \leftarrow 0\);
     \item \textbf{repeat}
     \begin{enumerate}
-        \item istruzione \leftarrow memoria \([PC]\)
+        \item istruzione $\leftarrow$ memoria \([PC]\)
         \item decode(istruzione)
         \item fetch(operandi)
         \item execute
