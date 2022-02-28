@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.1.27)  27 FEB 2022 17:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.1.27)  28 FEB 2022 11:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -546,6 +546,9 @@ LaTeX Warning: Label `fig:transistor' multiply defined.
 
 
 LaTeX Warning: Label `tab:codifica_termini_minimi' multiply defined.
+
+
+LaTeX Warning: Label `fig:modulo_selettore_realizzazione_funzione' multiply defined.
 
 
 LaTeX Warning: Label `fig:flip-flop' multiply defined.
@@ -1858,8 +1861,18 @@ Overfull \hbox (33.13062pt too wide) in paragraph at lines 4561--4561
  []
 
 
+Overfull \hbox (0.84605pt too wide) in paragraph at lines 4561--4561
+ []$ 
+ []
+
+
 Overfull \hbox (45.93384pt too wide) in paragraph at lines 4561--4561
  []|[] 
+ []
+
+
+Overfull \hbox (13.64928pt too wide) in paragraph at lines 4561--4561
+ []$ 
  []
 
 
@@ -1887,70 +1900,85 @@ Overfull \hbox (62.6591pt too wide) in alignment at lines 4655--4655
 [][][] 
  []
 
-[75] [76] [77] [78] [79] [80]
-Underfull \hbox (badness 10000) in paragraph at lines 4889--4892
+[75] [76] [77] [78] [79]
+Underfull \hbox (badness 10000) in paragraph at lines 4980--4983
 
  []
 
-[81] [82] [83]
-Underfull \hbox (badness 10000) in paragraph at lines 4990--4992
+
+Overfull \hbox (33.16405pt too wide) in paragraph at lines 5151--5151
+ []|[] 
+ []
+
+
+Overfull \hbox (50.69064pt too wide) in paragraph at lines 5151--5151
+ []|[] 
+ []
+
+[80] [81] [82]
+Underfull \hbox (badness 10000) in paragraph at lines 5232--5235
 
  []
 
-[84] [85] [86] [87] [88]
-Underfull \hbox (badness 10000) in paragraph at lines 5121--5127
+[83] [84] [85]
+Underfull \hbox (badness 10000) in paragraph at lines 5333--5335
 
  []
 
-[89]
+[86] [87] [88] [89] [90]
+Underfull \hbox (badness 10000) in paragraph at lines 5464--5470
+
+ []
+
+[91]
 
 Package tabularx Warning: X Columns too narrow (table too wide)
-(tabularx)                 on input line 5146.
+(tabularx)                 on input line 5489.
 
 
-Overfull \hbox (50.00002pt too wide) in alignment at lines 5146--5146
+Overfull \hbox (50.00002pt too wide) in alignment at lines 5489--5489
 [][] 
  []
 
-[90] [91] [92] [93] [94]
-Overfull \hbox (8.01457pt too wide) in paragraph at lines 5299--5302
+[92] [93] [94] [95] [96]
+Overfull \hbox (8.01457pt too wide) in paragraph at lines 5642--5645
 \OT1/cmr/m/n/10 ben pre-sto, al-la co-di-fi-ca dei ca-rat-te-ri at-tra-ver-so lo stan-dard $\OML/cmm/m/it/10 UTF\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 UnicodeTransformationFormat\OT1/cmr/m/n/10 )$,
  []
 
-[95] [96]
-Underfull \hbox (badness 10000) in paragraph at lines 5346--5349
+[97] [98]
+Underfull \hbox (badness 10000) in paragraph at lines 5689--5692
 
  []
 
-[97] [98] [99]
-Underfull \hbox (badness 10000) in paragraph at lines 5401--5405
+[99] [100] [101]
+Underfull \hbox (badness 10000) in paragraph at lines 5744--5748
 
  []
 
-[100] [101] [102] [103] [104] [105]
-Underfull \hbox (badness 10000) in paragraph at lines 5531--5534
+[102] [103] [104] [105] [106] [107]
+Underfull \hbox (badness 10000) in paragraph at lines 5874--5877
 
  []
 
-[106] [107] [108] [109] [110] [111] [112] [113] [114] [115] [116] [117] [118] [119] [120] (build/Teoria - Fondamenti di Informatica.aux)
+[108] [109] [110] [111] [112] [113] [114] [115] [116] [117] [118] [119] [120] [121] [122] (build/Teoria - Fondamenti di Informatica.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 34432 strings out of 480445
- 845704 string characters out of 5892391
- 1453621 words of memory out of 5000000
- 51278 multiletter control sequences out of 15000+600000
+ 34474 strings out of 480445
+ 846418 string characters out of 5892391
+ 1527329 words of memory out of 5000000
+ 51320 multiletter control sequences out of 15000+600000
  416459 words of font info for 74 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  128i,35n,130p,1094b,1343s stack positions out of 5000i,500n,10000p,200000b,80000s
  </Users/enricopiccin/Library/texlive/2021basic/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmr5.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "build/Teoria - Fondamenti di Informatica.pdf" (120 pages, 663427 bytes).
+Output written on "build/Teoria - Fondamenti di Informatica.pdf" (122 pages, 683140 bytes).
 PDF statistics:
- 471 PDF objects out of 1000 (max. 8388607)
- 324 compressed objects within 4 object streams
+ 478 PDF objects out of 1000 (max. 8388607)
+ 329 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

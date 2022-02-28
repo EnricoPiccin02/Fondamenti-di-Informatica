@@ -4539,9 +4539,9 @@ Nella Figura \ref{fig:tabella_verita_mappa_karnaugh_codificatore_2_bit} vengono 
         \end{KarnaughFunction}
         \hspace{2em}
         \renewcommand{\arraystretch}{1.1}
-        $\begin{array}{l@{}}
-            y_1 = x_2 + x_3\\
-            y_1 = \overline{x_1}\overline{x_0}
+        $\begin{array}{ccccccl@{}}
+             & & & & & & y_1 = x_2 + x_3\\
+             & & & & & & y_1 = \overline{x_1}\overline{x_0}
         \end{array}$
       } & {
         \centering
@@ -4553,9 +4553,9 @@ Nella Figura \ref{fig:tabella_verita_mappa_karnaugh_codificatore_2_bit} vengono 
         \end{KarnaughFunction}
         \hspace{2em}
         \renewcommand{\arraystretch}{1.1}
-        $\begin{array}{l@{}}
-            y_0 = x_1 + x_3\\
-            y_0 = \overline{x_0} \overline{x_2}
+        $\begin{array}{ccccccl@{}}
+             & & & & & & y_0 = x_1 + x_3\\
+             & & & & & & y_0 = \overline{x_0} \overline{x_2}
         \end{array}$
       }
   \end{tabularx}
@@ -4728,89 +4728,432 @@ In entrambi i selettori (d’ingresso e d’uscita) l’$n$-pla binaria della li
 \begin{center}
     27 Ottobre 2021
 \end{center}
-Si consideri un \textbf{display \(7\) segmenti} e si realizzi un sistema per rappresentare dei numeri attraverso proprio \(7\) diodi emettitori di luce, contrassegnati dalle lettere da \textbf{a} a \textbf{g},\\
-Si ottiene
+Si consideri un \textbf{display \(7\) segmenti} e si realizzi un sistema per rappresentare dei numeri attraverso proprio \(7\) diodi emettitori di luce, contrassegnati dalle lettere da \textbf{a} a \textbf{g}, come esposto in Figura \ref{fig:schema_display_7_segmenti}:
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}[scale=2.5]
+    \draw[gray,opacity=.3,line width=4pt] (0,0) --+ (0,.5);
+    \draw (-0.25,0.25) node[]{e};
+
+    \draw[gray,opacity=.3,line width=4pt] (0,.6) --+ (0,.5);
+    \draw (-0.25,0.85) node[]{f};
+
+    \draw[xshift=.7cm,gray,opacity=.3,line width=4pt] (0,0) --+ (0,.5);
+    \draw (0.95,0.25) node[]{c};
+
+    \draw[xshift=.7cm,gray,opacity=.3,line width=4pt] (0,.6) --+ (0,.5);
+    \draw (0.95,0.85) node[]{b};
+
+    \draw[gray,opacity=.3,line width=4pt] (.1,1.18) --+ (.5,0);
+    \draw (0.35,1.43) node[]{a};
+
+    \draw[gray,opacity=.3,line width=4pt] (.1,-.05) --+ (.5,0);
+    \draw (0.35,0.2) node[]{d};
+
+    \draw[gray,opacity=.3,line width=4pt] (.1,.55) --+ (.5,0);
+    \draw (0.35,0.8) node[]{g};
+  \end{tikzpicture}
+  \vspace{0.5em}
+  \caption{Schema display $7$ segmenti}
+  \label{fig:schema_display_7_segmenti}
+\end{figure}
+
+\noindent
+Si ottiene, rappresentando le diverse configurazioni decimali, da $0$ a $9$ sul diuslay, una tabella come quella seguente:
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{cccc|ccccccc}
-         $x$ & $y$ & $z$ & $w$ & a & b & c & d & e & f & g\\
+    \setlength{\tabcolsep}{8pt}
+    \renewcommand{\arraystretch}{1.1}
+    \begin{tabular}{c|cccc|ccccccc}
+         Numero & $x$ & $y$ & $z$ & $w$ & a & b & c & d & e & f & g\\
          \hline
-         $0$ & $0$ & $0$ & $0$ & $0$ & $1$ & $1$ & $0$ & $1$ & $1$ & $1$\\
-         $0$ & $0$ & $0$ & $1$ & $0$ & $0$ & $1$ & $0$ & $0$ & $0$ & $1$ \\
-         $0$ & $0$ & $1$ & $0$ & $1$ & $0$ & $1$ & $1$ & $1$ & $1$ & $0$ \\
-         $0$ & $0$ & $1$ & $1$ & $1$ & $0$ & $1$ & $1$ & $0$ & $1$ & $1$ \\
+         $0$ & $0$ & $0$ & $0$ & $0$ & $1$ & $1$ & $1$ & $1$ & $1$ & $1$ & $0$\\
+         $1$ & $0$ & $0$ & $0$ & $1$ & $0$ & $1$ & $1$ & $0$ & $0$ & $0$ & $0$ \\
+         $2$ & $0$ & $0$ & $1$ & $0$ & $1$ & $0$ & $0$ & $1$ & $1$ & $0$ & $1$ \\
+         $3$ & $0$ & $0$ & $1$ & $1$ & $1$ & $1$ & $1$ & $1$ & $0$ & $0$ & $1$ \\
          \hline
-         $0$ & $1$ & $0$ & $0$ & $0$ & $1$ & $1$ & $1$ & $0$ & $0$ & $1$ \\
-         $0$ & $1$ & $0$ & $1$\\
-         $0$ & $1$ & $1$ & $0$\\
-         $0$ & $1$ & $1$ & $1$\\
+         $4$ & $0$ & $1$ & $0$ & $0$ & $0$ & $1$ & $1$ & $0$ & $0$ & $1$ & $1$ \\
+         $5$ & $0$ & $1$ & $0$ & $1$ & $1$ & $0$ & $1$ & $1$ & $0$ & $1$ & $1$ \\
+         $6$ & $0$ & $1$ & $1$ & $0$ & $1$ & $0$ & $1$ & $1$ & $1$ & $1$ & $1$ \\
+         $7$ & $0$ & $1$ & $1$ & $1$ & $1$ & $1$ & $1$ & $0$ & $0$ & $0$ & $0$ \\
          \hline
-         $1$ & $0$ & $0$ & $0$\\
-         $1$ & $0$ & $0$ & $1$\\
-         $1$ & $0$ & $1$ & $0$\\
-         $1$ & $0$ & $1$ & $1$\\
+         $8$ & $1$ & $0$ & $0$ & $0$ & $1$ & $1$ & $1$ & $1$ & $1$ & $1$ & $1$\\
+         $9$ & $1$ & $0$ & $0$ & $1$ & $1$ & $1$ & $1$ & $1$ & $0$ & $1$ & $1$\\
+         $-$ & $1$ & $0$ & $1$ & $0$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ \\
+         $-$ & $1$ & $0$ & $1$ & $1$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ \\
          \hline
-         $1$ & $1$ & $0$ & $0$\\
-         $1$ & $1$ & $0$ & $1$\\
-         $1$ & $1$ & $1$ & $0$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ \\
-         $1$ & $1$ & $1$ & $1$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ \\
+         $-$ & $1$ & $1$ & $0$ & $0$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ \\
+         $-$ & $1$ & $1$ & $0$ & $1$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ \\
+         $-$ & $1$ & $1$ & $1$ & $0$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ \\
+         $-$ & $1$ & $1$ & $1$ & $1$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ \\
     \end{tabular}
     \caption{Tabella di verità display \(7\) segmenti}
     \label{tab:tabella_verita_display_7_segmenti}
 \end{table}
 
 \noindent
-Si realizzino, ora, le mappe di Karnaugh corrispondenti per ciascuna delle \(7\) funzioni di uscita, al fine di semplificare la funzione logica associata.\\
-Si parta dalla funzione logica \(a\), ovvero:
+Se, ora, si realizzano le mappe di Karnaugh per ciascuna delle \(7\) funzioni di uscita (\quotes{a}, \quotes{b}, \quotes{c}, \quotes{d}, \quotes{e}, \quotes{f} e \quotes{g}), al fine di semplificare la funzione logica associata, si otterrebbero due alternative di rappresentaizone delle medesime, come accade, normalmente, per i codificatori, a seconda che si scelga di semplificare i minterm o i maxterm.
+
+\newpage
+\noindent
+Si, consideri, a titolo esemplificativo, la funzione logica \quotes{a}, a cui viene associata la mappa di Karnaugh di Figura \ref{fig:mappa_karnaugh_16_3} seguente:
 
 % Contenitore per immagini
 \begin{figure}[H]
     \centering
     \begin{Karnaugh}
-        \contingut{1,0,1,X,0,1,1,X,1,1,X,X,1,1,X,X}
-        \implicantcostats{0}{2}{red}
+        \contingut{1,0,1,\times,0,1,1,\times,1,1,\times,\times,1,1,\times,\times}
+        \implicantcantons[2pt]{red}
         \implicant{3}{10}{green}
         \implicant{12}{10}{blue}
-        \implicant{5}{11}{violet}
+        \implicant{5}{15}{violet}
     \end{Karnaugh}
-    \caption{Mappa di Karnaugh a \(16\)}
+    \vspace{-1.5em}
+    \caption{Mappa di Karnaugh associata alla funzione a}
     \label{fig:mappa_karnaugh_16_3}
 \end{figure}
 
 \noindent
-Tale sistema poteva essere effettivamente realizzato anche sfruttando i \textbf{codificatori}. Infatti, com'è noto, un codificatore presenta i ingresso una sola linea a \(1\) corrispondente al numero naturale compreso tra \([0, 9]\) che si vuole rappresentare. Il codificatore provvederà a rappresentare il numero in ingresso in base decimale nella base binaria. E le \(4\) uscite del codificatore rappresenteranno i \(4\) ingressi della rete logica che si è proprio realizzata in questo esercizio che, a sua volta, piloterà il display \(7\) segmenti.\\
+Che produce la semplificazione seguente:
+\begin{flalign*}
+  \text{a} & = \overline{y} \overline{w} + x + z + yw\\
+  \text{a} & = \left(x + y + z + \overline{w}\right) \cdot \left(\overline{y} + z + w\right)
+\end{flalign*}
+
+\noindent
+Tale sistema, poteva essere effettivamente realizzato anche sfruttando i \textbf{codificatori}. Infatti, com'è noto, un codificatore presenta i ingresso una sola linea a \(1\) corrispondente al numero naturale compreso tra \([0, 9]\) che si vuole rappresentare in binario. Il codificatore provvederà a rappresentare il numero in ingresso in base decimale nella base binaria. E le \(4\) uscite del codificatore rappresenteranno i \(4\) ingressi della rete logica che si è proprio realizzata in questo esercizio che, a sua volta, piloterà il display \(7\) segmenti.\\
 Ciò agevolerà l'operazione di input che non sarà più composta da \(4\) linee, ma da una sola, quella del codificatore, che a sua volta provvederà a convertire il numero richiesto in binario.
 
+\vspace{1em}
 \subsection{Riassunto}
 I moduli combinatori sono stati introdotti per razionalizzare la realizzazione dei circuiti logici. I più importanti circuiti combinatori sono i seguenti:
 \begin{itemize}
-    \item \textbf{Decodificatori}, che presentano \(n\) bit in ingresso e \(2^n\) bit in uscita, permettendo la rappresentazione di numeri in base \(10\) di numeri espressi in forma binaria. Naturalmente verrà attivata solamente \(1\) delle \(2^n\) possibili uscite del decodificatore per indicare il valore decimale corrispondente.
+    \item \textbf{Decodificatori}, che presentano \(n\) bit in ingresso e \(2^n\) bit in uscita, permettendo la rappresentazione di numeri in base \(10\), espressi, in ingresso, in forma binaria. Naturalmente verrà attivata solamente \(1\) delle \(2^n\) possibili uscite del decodificatore per indicare il valore decimale corrispondente.
 
     \item \textbf{Codificatori}, che presentano \(2^n\) bit in ingresso e \(n\) bit in uscita, in cui solamente una linea in ingresso verrà portata ad \(1\) per indicare il valore da codificare, mentre saranno \(n\) le uscite che produrranno il valore decimale codificato in binario.\\
-    Naturalmente, in questo caso, se vi sono \(2^n\) ingressi si potranno rappresentare solamente \(n\) valori binari, pertanto \(2^{n} - n\) ingressi saranno inutilizzati e costituiranno delle condizione non specificate.
+    Naturalmente, in questo caso, se vi sono \(2^n\) ingressi si potranno rappresentare solamente \(n\) valori binari, pertanto \(2^{n} - n\) configurazioni degli ingressi saranno inutilizzate e costituiranno delle condizione non specificate.
 
     \item \textbf{Multiplexer}, che presenta \(2^n\) ingressi e \(n\) selettori per selezionare, ovvero dirottare, uno dei \(2^n\) ingressi in un'unica uscita.
 
     \item \textbf{Demultiplexer}, che che presentano un solo ingresso, \(2^n\) uscite e \(n\) selettori.
 \end{itemize}
 
+\vspace{1em}
 \subsection{Costruzione modulare di una funzione Booleana}
-Un impiego particolarmente interessante dei selettori d’ingresso, o multiplexer: la costruzione di qualunque funzione Booleana di \(n\) variabili attraverso un selettore d’ingresso a \(2^n\) vie.\\
-Una qualunque funzione di \(n\) variabili, com'è noto, può essere ricondotta a una somma di \textit{minterm}.\\
-Allora, se si considera una funzione Booleana \(f : n \rightarrow 2^n\) con \(n = 3\) e \(2^n = 8\) uscite, sarà sufficiente porre in ingresso al multiplexer a \(8\) vie le \(8\) costanti dei valori della funzione, mentre gli \(n = 3\) selettori comanderanno quale degli \(8\) ingressi dovrà essere dirottato in uscita.\\
-Tuttavia, si capisce bene che un multiplexer a \(2^n\) vie presenta \(2^n\) porte AND e \(1\) porta OR di uscita, che sono sicuramente maggiori delle porte che si impiegherebbe per realizzare la medesima funzione logica riducendola in forma minima.\\
-Ma allo stesso tempo si osservano i significativi vantaggi:
+Un impiego particolarmente interessante dei selettori d’ingresso, o \emph{multiplexer}, è il seguente: la costruzione di qualunque funzione Booleana di \(n\) variabili attraverso un selettore d’ingresso a \(2^n\) vie.\\
+Una qualunque funzione di \(n\) variabili, com'è noto, può essere ricondotta a una somma di \textit{minterm} (o prodotto di \emph{maxterm}). Allora, se si considera una funzione Booleana
+\[f : n \rightarrow 2^n\]
+con \(n = 3\) e, quindi, \(2^n = 8\) uscite, sarà sufficiente porre in ingresso al multiplexer a \(8\) vie le \(8\) costanti dei valori della funzione, mentre gli \(n = 3\) selettori comanderanno quale degli \(8\) ingressi dovrà essere dirottato in uscita.\\
+Si consideri, a titolo esemplificativo, la funzione Booleana rappresentata nella Tabella \ref{tab:funzione_booleana_multiplexer} seguente:
+
+\begin{table}[H]
+  \centering
+  \setlength{\tabcolsep}{8pt}
+  \renewcommand{\arraystretch}{1.1}
+  \begin{tabular}{c|c||ccc||cc}
+    $ $ & $ $ & $x$ & $y$ & $z$ & $f$\\
+    \hline
+    $m_0$ & $\overline{x}\overline{y}\overline{z}$ & $0$ & $0$ & $0$ & $1$ & $\mu_0$\\
+    $m_1$ & $\overline{x}\overline{y}z$ & $0$ & $0$ & $1$ & $0$ & $\mu_1$\\
+    $m_2$ & $\overline{x}y\overline{z}$ & $0$ & $1$ & $0$ & $0$ & $\mu_2$\\
+    $m_3$ & $\overline{x}yz$ & $0$ & $1$ & $1$ & $1$ & $\mu_3$\\
+    $m_4$ & $x\overline{y}\overline{z}$ & $1$ & $0$ & $0$ & $0$ & $\mu_4$\\
+    $m_5$ & $x\overline{y}z$ & $1$ & $0$ & $1$ & $0$ & $\mu_5$\\
+    $m_6$ & $xy\overline{z}$ & $1$ & $1$ & $0$ & $1$ & $\mu_6$\\
+    $m_7$ & $xyz$ & $1$ & $1$ & $1$ & $1$ & $\mu_7$\\
+  \end{tabular}
+  \caption{Funzione Booleana da realizzare con il \emph{Multiplexer}}
+  \label{tab:funzione_booleana_multiplexer}
+\end{table}
+
+\noindent
+Com'è noto, naturalmente, tale funzione può essere scritta come segue:
+
+\begin{flalign*}
+  f(x,y,z) & = \sum_{i \in \{0,3,6,7\}} m_i = m_0 + m_3 + m_6 + m_7 = \overline{x}\overline{y}\overline{z} + \overline{x}yz + xy\overline{z} + xyz\\
+   & = 1 \cdot \overline{x}\overline{y}\overline{z} + 0 \cdot \overline{x}\overline{y}z + 0 \cdot \overline{x}y\overline{z} + 1 \cdot \overline{x}yz + 0 \cdot x\overline{y}\overline{z} + 0 \cdot x\overline{y}z + 1 \cdot xy\overline{z} + 1 \cdot xyz
+\end{flalign*}
+
+\noindent
+Poiché $0$, $3$, $6$ e $7$ sono le codifiche in base due di $000$, $011$, $110$ e $111$; attraverso tale approccio, nella sommatoria di cui sopra si pone $1$ in corrispondenza dei \emph{minterm} che compaiono nella funzione e $0$ in corrispondenza di quelli che non vi compaiono.\\
+Con un selettore a otto vie la funzione $f$ si ottiene impiegando $x$, $y$, $z$ come linee di selezione e ponendo le otto linee di ingresso a $0$ o a $1$ a seconda che il coefficiente del corrispondente minterm, che corrisponde al valore della funzione per la terna binaria associata, sia a $0$ o a $1$.\\
+In Figura \ref{fig:modulo_selettore_realizzazione_funzione} si vede il circuito per l’attuazione della funzione in oggetto.\\
+Poichè ogni funzione logica può essere ricondotta alla sua prima forma canonica, ne deriva che è possibile realizzare qualunque funzione con il metodo sopra esposto.\\
+Tuttavia, si capisce bene che un multiplexer a \(2^n\) vie presenta \(2^n\) porte AND e \(1\) porta OR di uscita, che sono, generalmente, in numero maggiore delle porte che si impiegherebbe per realizzare la medesima funzione logica riducendola in forma minima.\\
+Ma allo stesso tempo si osservano due \textbf{significativi vantaggi}:
 \begin{enumerate}
-    \item Anche se il circuito è molto complesso, garantisce una straordinaria versatilità
-    \item Un multiplexer è un dispositivo molto comune e prodotto \textbf{in larga scala}, quindi il suo costo sarà inferiore rispetto a quello di un circuito personalizzato e costruito appositamente per il proprio scopo.\\
-    Si consideri, inoltre, che se non si volesse realizzare un circuito con esclusivamente le porte ottenute tramite semplificazione si dovrebbe ripiegare su circuiti integrati con un numero di porte AND e OR che, in ogni caso, sono ormai standardizzati. Pertanto, nella realizzazione del circuito con questa modalità, si avrebbe un risparmio solamente apparente.
+    \item anche se il circuito da realizzare è molto complesso, tale metodo garantisce una straordinaria versatilità: infatti gli ingressi corrispondenti ai coefficienti possono essere considerati come ingressi di programmazione e possono essere aggiustati sulla piastra elettronica anche attraverso collegamenti ad hoc (verso $V_{CC}$ o verso massa, che in logica positiva corrispondono rispettivamente a $1$ e $0$ logico);
+
+    \item un \emph{multiplexer} è un dispositivo molto comune e prodotto \textbf{in larga scala}, quindi il suo costo sarà inferiore rispetto a quello di un circuito personalizzato e costruito appositamente per il proprio scopo.\\
+    Si consideri, inoltre, che se non si volesse realizzare un circuito con esclusivamente le porte ottenute tramite semplificazione (AND-OR-NOT), si dovrebbe ripiegare su circuiti integrati con un numero di porte AND e OR che, in ogni caso, sono ormai standardizzati. Pertanto, anche nella realizzazione del circuito con questa modalità, ovvero la semplificazione, si avrebbe un risparmio solamente apparente.
 \end{enumerate}
 
-\vspace{1em}
+% Contenitore per immagini
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+      % Variabili
+      \coordinate (x) at (0,0);
+      \coordinate (y) at (0.5,0);
+      \coordinate (z) at (1,0);
+
+      % Porte logiche
+      \node [and gate US, draw, logic gate inputs=niii] (and1) at (2,-1){};
+      \node [and gate US, draw, below=of and1, yshift=5.5mm, logic gate inputs=niin] (and2){};
+      \node [and gate US, draw, below=of and2, yshift=5.5mm, logic gate inputs=nini] (and3){};
+      \node [and gate US, draw, below=of and3, yshift=5.5mm, logic gate inputs=ninn] (and4){};
+      \node [and gate US, draw, below=of and4, yshift=5.5mm, logic gate inputs=nnii] (and5){};
+      \node [and gate US, draw, below=of and5, yshift=5.5mm, logic gate inputs=nnin] (and6){};
+      \node [and gate US, draw, below=of and6, yshift=5.5mm, logic gate inputs=nnni] (and7){};
+      \node [and gate US, draw, below=of and7, yshift=5.5mm, logic gate inputs=nnnn] (and8){};
+      \node [or gate US, draw, right=of and4, xshift=10mm, yshift=-5.5mm, logic gate inputs=nnnnnnnn] (or){};
+
+      % INPUT
+      \draw (x) ++(0,-11) -- node[at end, above]{$x$} (x);
+      \draw (y) ++(0,-11) -- node[at end, above]{$y$} (y);
+      \draw (z) ++(0,-11) -- node[at end, above]{$z$} (z);
+
+      % AND 1
+      \draw (and1.input 1) -- ++(-2,0) node[at end, left]{$1$};
+      \draw (and1.input 2) -- (and1.input 2 -| x) node[circ]{};
+      \draw (and1.input 3) -- (and1.input 3 -| y) node[circ]{};
+      \draw (and1.input 4) -- (and1.input 4 -| z) node[circ]{};
+
+      % AND 2
+      \draw (and2.input 1) -- ++(-2,0) node[at end, left]{$0$};
+      \draw (and2.input 2) -- (and2.input 2 -| x) node[circ]{};
+      \draw (and2.input 3) -- (and2.input 3 -| y) node[circ]{};
+      \draw (and2.input 4) -- (and2.input 4 -| z) node[circ]{};
+
+      % AND 3
+      \draw (and3.input 1) -- ++(-2,0) node[at end, left]{$0$};
+      \draw (and3.input 2) -- (and3.input 2 -| x) node[circ]{};
+      \draw (and3.input 3) -- (and3.input 3 -| y) node[circ]{};
+      \draw (and3.input 4) -- (and3.input 4 -| z) node[circ]{};
+
+      % AND 4
+      \draw (and4.input 1) -- ++(-2,0) node[at end, left]{$1$};
+      \draw (and4.input 2) -- (and4.input 2 -| x) node[circ]{};
+      \draw (and4.input 3) -- (and4.input 3 -| y) node[circ]{};
+      \draw (and4.input 4) -- (and4.input 4 -| z) node[circ]{};
+
+      % AND 5
+      \draw (and5.input 1) -- ++(-2,0) node[at end, left]{$0$};
+      \draw (and5.input 2) -- (and5.input 2 -| x) node[circ]{};
+      \draw (and5.input 3) -- (and5.input 3 -| y) node[circ]{};
+      \draw (and5.input 4) -- (and5.input 4 -| z) node[circ]{};
+
+      % AND 6
+      \draw (and6.input 1) -- ++(-2,0) node[at end, left]{$0$};
+      \draw (and6.input 2) -- (and6.input 2 -| x) node[circ]{};
+      \draw (and6.input 3) -- (and6.input 3 -| y) node[circ]{};
+      \draw (and6.input 4) -- (and6.input 4 -| z) node[circ]{};
+
+      % AND 7
+      \draw (and7.input 1) -- ++(-2,0) node[at end, left]{$1$};
+      \draw (and7.input 2) -- (and7.input 2 -| x) node[circ]{};
+      \draw (and7.input 3) -- (and7.input 3 -| y) node[circ]{};
+      \draw (and7.input 4) -- (and7.input 4 -| z) node[circ]{};
+
+      % AND 8
+      \draw (and8.input 1) -- ++(-2,0) node[at end, left]{$1$};
+      \draw (and8.input 2) -- (and8.input 2 -| x) node[circ]{};
+      \draw (and8.input 3) -- (and8.input 3 -| y) node[circ]{};
+      \draw (and8.input 4) -- (and8.input 4 -| z) node[circ]{};
+
+      \draw (and1.output) -- ++(1.5,0)  |- (or.input 1);
+      \draw (and2.output) -- ++(1.25,0) |- (or.input 2);
+      \draw (and3.output) -- ++(1,0)    |- (or.input 3);
+      \draw (and4.output) -- ++(0.75,0) |- (or.input 4);
+      \draw (and5.output) -- ++(0.75,0) |- (or.input 5);
+      \draw (and6.output) -- ++(1,0)    |- (or.input 6);
+      \draw (and7.output) -- ++(1.25,0) |- (or.input 7);
+      \draw (and8.output) -- ++(1.5,0)  |- (or.input 8);
+      \draw (or.output)   -- ++(0.5,0) node[at end, right]{$y$};
+    \end{tikzpicture}
+    \caption{Modulo selettore per la realizzazione della funzione considerata}
+    \label{fig:modulo_selettore_realizzazione_funzione}
+\end{figure}
+
 \noindent
-\textbf{Osservazione}: C’e tuttavia un metodo più economico per costruire, in modo modulare, una qualunque funzione Booleana di \(n\) variabili. Facendo sempre riferimento alla I forma canonica, la sua realizzazione richiede un numero di porte AND a \(n\) ingressi pari al numero di minterm (cioè \(2^n\)) e una porta OR con un numero di ingressi pari al numero di porte AND (cioè sempre \(2^n\)).\\
-Si tratta allora di ”prolungare” le uscite delle porte AND agli ingressi della porta OR per i soli minterm che entrano nella funzione.\\
+\textbf{Osservazione}: Esiste, tuttavia, un metodo più economico per costruire, in modo \textbf{modulare}, una qualunque funzione Booleana di \(n\) variabili. Facendo sempre riferimento alla I forma canonica, la sua realizzazione richiede un numero di porte AND a \(n\) ingressi pari al numero di \emph{minterm} (cioè \(2^n\)) e una porta OR con un numero di ingressi pari al numero di porte AND (cioè sempre \(2^n\)).\\
+La semplificazione che si potrebbe attuare, in tal senso, prevederebbe di \quotes{prolungare} le uscite delle porte AND agli ingressi della porta OR per i soli \emph{minterm} che entrano nella funzione.\\
+
+% Contenitore per immagini
+\begin{figure}[H]
+    \centering
+    \begin{tabularx}{\textwidth}{PP}
+      {
+        \begin{tikzpicture}
+          % Variabili
+          \coordinate (x) at (0,0);
+          \coordinate (y) at (0.5,0);
+          \coordinate (z) at (1,0);
+
+          % Porte logiche
+          \node [and gate US, draw, logic gate inputs=iii] (and1) at (2,-1){};
+          \node [and gate US, draw, below=of and1, yshift=5.5mm, logic gate inputs=iin] (and2){};
+          \node [and gate US, draw, below=of and2, yshift=5.5mm, logic gate inputs=ini] (and3){};
+          \node [and gate US, draw, below=of and3, yshift=5.5mm, logic gate inputs=inn] (and4){};
+          \node [and gate US, draw, below=of and4, yshift=5.5mm, logic gate inputs=nii] (and5){};
+          \node [and gate US, draw, below=of and5, yshift=5.5mm, logic gate inputs=nin] (and6){};
+          \node [and gate US, draw, below=of and6, yshift=5.5mm, logic gate inputs=nni] (and7){};
+          \node [and gate US, draw, below=of and7, yshift=5.5mm, logic gate inputs=nnn] (and8){};
+          \node [or gate US, draw, rotate=270, right=of and8, xshift=10mm, yshift=10mm, logic gate inputs=nnnnnnnn] (or){};
+
+          % INPUT
+          \draw (x) ++(0,-10) -- node[at end, above]{$x$} (x);
+          \draw (y) ++(0,-10) -- node[at end, above]{$y$} (y);
+          \draw (z) ++(0,-10) -- node[at end, above]{$z$} (z);
+
+          % AND 1
+          \draw (and1.input 1) -- (and1.input 1 -| x) node[circ]{};
+          \draw (and1.input 2) -- (and1.input 2 -| y) node[circ]{};
+          \draw (and1.input 3) -- (and1.input 3 -| z) node[circ]{};
+
+          % AND 2
+          \draw (and2.input 1) -- (and2.input 1 -| x) node[circ]{};
+          \draw (and2.input 2) -- (and2.input 2 -| y) node[circ]{};
+          \draw (and2.input 3) -- (and2.input 3 -| z) node[circ]{};
+
+          % AND 3
+          \draw (and3.input 1) -- (and3.input 1 -| x) node[circ]{};
+          \draw (and3.input 2) -- (and3.input 2 -| y) node[circ]{};
+          \draw (and3.input 3) -- (and3.input 3 -| z) node[circ]{};
+
+          % AND 4
+          \draw (and4.input 1) -- (and4.input 1 -| x) node[circ]{};
+          \draw (and4.input 2) -- (and4.input 2 -| y) node[circ]{};
+          \draw (and4.input 3) -- (and4.input 3 -| z) node[circ]{};
+
+          % AND 5
+          \draw (and5.input 1) -- (and5.input 1 -| x) node[circ]{};
+          \draw (and5.input 2) -- (and5.input 2 -| y) node[circ]{};
+          \draw (and5.input 3) -- (and5.input 3 -| z) node[circ]{};
+
+          % AND 6
+          \draw (and6.input 1) -- (and6.input 1 -| x) node[circ]{};
+          \draw (and6.input 2) -- (and6.input 2 -| y) node[circ]{};
+          \draw (and6.input 3) -- (and6.input 3 -| z) node[circ]{};
+
+          % AND 7
+          \draw (and7.input 1) -- (and7.input 1 -| x) node[circ]{};
+          \draw (and7.input 2) -- (and7.input 2 -| y) node[circ]{};
+          \draw (and7.input 3) -- (and7.input 3 -| z) node[circ]{};
+
+          % AND 8
+          \draw (and8.input 1) -- (and8.input 1 -| x) node[circ]{};
+          \draw (and8.input 2) -- (and8.input 2 -| y) node[circ]{};
+          \draw (and8.input 3) -- (and8.input 3 -| z) node[circ]{};
+
+          \draw (and1.output) -- ++(5,0);
+          \draw (and2.output) -- ++(5,0);
+          \draw (and3.output) -- ++(5,0);
+          \draw (and4.output) -- ++(5,0);
+          \draw (and5.output) -- ++(5,0);
+          \draw (and6.output) -- ++(5,0);
+          \draw (and7.output) -- ++(5,0);
+          \draw (and8.output) -- ++(5,0);
+          \draw (and1.output) ++(0.5,0.5) |- ([yshift=2.5mm] or.input 8 |- and1.input 1) -| (or.input 8);
+          \draw (and1.output) ++(1,0.5)   |- ([yshift=5mm] or.input 7);
+          \draw (and1.output) ++(1.5,0.5) |- ([yshift=7.5mm] or.input 6);
+          \draw (and1.output) ++(2,0.5)   |- ([yshift=10mm] or.input 5);
+          \draw (and1.output) ++(2.5,0.5) |- ([yshift=10mm] or.input 4);
+          \draw (and1.output) ++(3,0.5)   |- ([yshift=7.5mm] or.input 3);
+          \draw (and1.output) ++(3.5,0.5) |- ([yshift=5mm] or.input 2);
+          \draw (and1.output) ++(4,0.5)   |- ([yshift=2.5mm] or.input 1);
+          \draw (or.output)   -- ++(0,-0.5) node[at end, below]{$y$};
+        \end{tikzpicture}
+      } & {
+        \begin{tikzpicture}
+          % Variabili
+          \coordinate (x) at (0,0);
+          \coordinate (y) at (0.5,0);
+          \coordinate (z) at (1,0);
+
+          % Porte logiche
+          \node [and gate US, draw, logic gate inputs=niii] (and1) at (2,-1){};
+          \node [and gate US, draw, below=of and1, yshift=5.5mm, logic gate inputs=niin] (and2){};
+          \node [and gate US, draw, below=of and2, yshift=5.5mm, logic gate inputs=nini] (and3){};
+          \node [and gate US, draw, below=of and3, yshift=5.5mm, logic gate inputs=ninn] (and4){};
+          \node [and gate US, draw, below=of and4, yshift=5.5mm, logic gate inputs=nnii] (and5){};
+          \node [and gate US, draw, below=of and5, yshift=5.5mm, logic gate inputs=nnin] (and6){};
+          \node [and gate US, draw, below=of and6, yshift=5.5mm, logic gate inputs=nnni] (and7){};
+          \node [and gate US, draw, below=of and7, yshift=5.5mm, logic gate inputs=nnnn] (and8){};
+          \node [or gate US, draw, right=of and4, xshift=10mm, yshift=-5.5mm, logic gate inputs=nnnnnnnn] (or){};
+
+          % INPUT
+          \draw (x) ++(0,-11) -- node[at end, above]{$x$} (x);
+          \draw (y) ++(0,-11) -- node[at end, above]{$y$} (y);
+          \draw (z) ++(0,-11) -- node[at end, above]{$z$} (z);
+
+          % AND 1
+          \draw (and1.input 1) -- ++(-2,0) node[at end, left]{$1$};
+          \draw (and1.input 2) -- (and1.input 2 -| x) node[circ]{};
+          \draw (and1.input 3) -- (and1.input 3 -| y) node[circ]{};
+          \draw (and1.input 4) -- (and1.input 4 -| z) node[circ]{};
+
+          % AND 2
+          \draw (and2.input 1) -- ++(-2,0) node[at end, left]{$0$};
+          \draw (and2.input 2) -- (and2.input 2 -| x) node[circ]{};
+          \draw (and2.input 3) -- (and2.input 3 -| y) node[circ]{};
+          \draw (and2.input 4) -- (and2.input 4 -| z) node[circ]{};
+
+          % AND 3
+          \draw (and3.input 1) -- ++(-2,0) node[at end, left]{$0$};
+          \draw (and3.input 2) -- (and3.input 2 -| x) node[circ]{};
+          \draw (and3.input 3) -- (and3.input 3 -| y) node[circ]{};
+          \draw (and3.input 4) -- (and3.input 4 -| z) node[circ]{};
+
+          % AND 4
+          \draw (and4.input 1) -- ++(-2,0) node[at end, left]{$1$};
+          \draw (and4.input 2) -- (and4.input 2 -| x) node[circ]{};
+          \draw (and4.input 3) -- (and4.input 3 -| y) node[circ]{};
+          \draw (and4.input 4) -- (and4.input 4 -| z) node[circ]{};
+
+          % AND 5
+          \draw (and5.input 1) -- ++(-2,0) node[at end, left]{$0$};
+          \draw (and5.input 2) -- (and5.input 2 -| x) node[circ]{};
+          \draw (and5.input 3) -- (and5.input 3 -| y) node[circ]{};
+          \draw (and5.input 4) -- (and5.input 4 -| z) node[circ]{};
+
+          % AND 6
+          \draw (and6.input 1) -- ++(-2,0) node[at end, left]{$0$};
+          \draw (and6.input 2) -- (and6.input 2 -| x) node[circ]{};
+          \draw (and6.input 3) -- (and6.input 3 -| y) node[circ]{};
+          \draw (and6.input 4) -- (and6.input 4 -| z) node[circ]{};
+
+          % AND 7
+          \draw (and7.input 1) -- ++(-2,0) node[at end, left]{$1$};
+          \draw (and7.input 2) -- (and7.input 2 -| x) node[circ]{};
+          \draw (and7.input 3) -- (and7.input 3 -| y) node[circ]{};
+          \draw (and7.input 4) -- (and7.input 4 -| z) node[circ]{};
+
+          % AND 8
+          \draw (and8.input 1) -- ++(-2,0) node[at end, left]{$1$};
+          \draw (and8.input 2) -- (and8.input 2 -| x) node[circ]{};
+          \draw (and8.input 3) -- (and8.input 3 -| y) node[circ]{};
+          \draw (and8.input 4) -- (and8.input 4 -| z) node[circ]{};
+
+          \draw (and1.output) -- ++(1.5,0)  |- (or.input 1);
+          \draw (and2.output) -- ++(1.25,0) |- (or.input 2);
+          \draw (and3.output) -- ++(1,0)    |- (or.input 3);
+          \draw (and4.output) -- ++(0.75,0) |- (or.input 4);
+          \draw (and5.output) -- ++(0.75,0) |- (or.input 5);
+          \draw (and6.output) -- ++(1,0)    |- (or.input 6);
+          \draw (and7.output) -- ++(1.25,0) |- (or.input 7);
+          \draw (and8.output) -- ++(1.5,0)  |- (or.input 8);
+          \draw (or.output)   -- ++(0.5,0) node[at end, right]{$y$};
+        \end{tikzpicture}
+      }
+    \end{tabularx}
+    \caption{Modulo selettore per la realizzazione della funzione considerata}
+    \label{fig:modulo_selettore_realizzazione_funzione}
+\end{figure}
+
+
 La figura 5.24a mostra un circuito di questo genere, chiamato matrice di contatti, nel quale
 si evidenzia la presenza di un contatto per i soli minterm che servono per realizzare la funzione z “ x1 x2   x1 x2;
 nella pratica circuitale la configurazione diventa quella di figura 5.24b. Se ora vogliamo usare questa tecnica per
