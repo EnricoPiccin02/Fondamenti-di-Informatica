@@ -42,7 +42,7 @@
 \addtolength{\headheight}{1em}
 \addtolength{\footskip}{-0.5em}
 
-\newcommand{\quotes}[1]{''#1''}
+\newcommand{\quotes}[1]{``#1''}
 \renewcommand\tabularxcolumn[1]{>{\vspace{\fill}}m{#1}<{\vspace{\fill}}}
 \renewcommand\arraystretch{}
 \newcolumntype{P}{>{\centering\arraybackslash}X}
@@ -5001,7 +5001,7 @@ La semplificazione che si potrebbe attuare, in tal senso, prevederebbe di \quote
           \node [and gate US, draw, below=of and5, yshift=5.5mm, logic gate inputs=nin] (and6){};
           \node [and gate US, draw, below=of and6, yshift=5.5mm, logic gate inputs=nni] (and7){};
           \node [and gate US, draw, below=of and7, yshift=5.5mm, logic gate inputs=nnn] (and8){};
-          \node [or gate US, draw, rotate=270, right=of and8, xshift=10mm, yshift=10mm, logic gate inputs=nnnnnnnn] (or){};
+          \node [or gate US, draw, rotate=270, right=of and8, xshift=15mm, yshift=12.6mm, logic gate inputs=nnnnnnnn] (or){};
 
           % INPUT
           \draw (x) ++(0,-10) -- node[at end, above]{$x$} (x);
@@ -5056,15 +5056,20 @@ La semplificazione che si potrebbe attuare, in tal senso, prevederebbe di \quote
           \draw (and6.output) -- ++(5,0);
           \draw (and7.output) -- ++(5,0);
           \draw (and8.output) -- ++(5,0);
-          \draw (and1.output) ++(0.5,0.5) |- ([yshift=2.5mm] or.input 8 |- and1.input 1) -| (or.input 8);
-          \draw (and1.output) ++(1,0.5)   |- ([yshift=5mm] or.input 7);
-          \draw (and1.output) ++(1.5,0.5) |- ([yshift=7.5mm] or.input 6);
-          \draw (and1.output) ++(2,0.5)   |- ([yshift=10mm] or.input 5);
-          \draw (and1.output) ++(2.5,0.5) |- ([yshift=10mm] or.input 4);
-          \draw (and1.output) ++(3,0.5)   |- ([yshift=7.5mm] or.input 3);
-          \draw (and1.output) ++(3.5,0.5) |- ([yshift=5mm] or.input 2);
-          \draw (and1.output) ++(4,0.5)   |- ([yshift=2.5mm] or.input 1);
+          \draw (and1.output) ++(0.5,0.5) |- ([yshift=-10mm] or.input 8 |- and8.output) -| (or.input 8);
+          \draw (and1.output) ++(1,0.5)   |- ([yshift=-7.5mm] or.input 7 |- and8.output) -| (or.input 7);
+          \draw (and1.output) ++(1.5,0.5) |- ([yshift=-5mm] or.input 6 |- and8.output) -| (or.input 6);
+          \draw (and1.output) ++(2,0.5)   |- ([yshift=-2.5mm] or.input 5 |- and8.output) -| (or.input 5);
+          \draw (and1.output) ++(2.5,0.5) |- ([yshift=-2.5mm] or.input 4 |- and8.output) -| (or.input 4);
+          \draw (and1.output) ++(3,0.5)   |- ([yshift=-5mm] or.input 3 |- and8.output) -| (or.input 3);
+          \draw (and1.output) ++(3.5,0.5) |- ([yshift=-7.5mm] or.input 2 |- and8.output) -| (or.input 2);
+          \draw (and1.output) ++(4,0.5)   |- ([yshift=-10mm] or.input 1 |- and8.output) -| (or.input 1);
           \draw (or.output)   -- ++(0,-0.5) node[at end, below]{$y$};
+          \ctikzset{diodes/scale=0.2}
+          \draw (and1.output) ++(0.75,0) node[circ]{} to [full diode] ([xshift=5mm,yshift=-2.5mm]and1.output) node[circ]{};
+          \draw (and4.output) ++(2.25,0) node[circ]{} to [full diode] ([xshift=20mm,yshift=-2.5mm]and4.output) node[circ]{};
+          \draw (and7.output) ++(3.75,0) node[circ]{} to [full diode] ([xshift=35mm,yshift=-2.5mm]and7.output) node[circ]{};
+          \draw (and8.output) ++(4.25,0) node[circ]{} to [full diode] ([xshift=40mm,yshift=-2.5mm]and8.output) node[circ]{};
         \end{tikzpicture}
       } & {
         \begin{tikzpicture}
@@ -5074,110 +5079,113 @@ La semplificazione che si potrebbe attuare, in tal senso, prevederebbe di \quote
           \coordinate (z) at (1,0);
 
           % Porte logiche
-          \node [and gate US, draw, logic gate inputs=niii] (and1) at (2,-1){};
-          \node [and gate US, draw, below=of and1, yshift=5.5mm, logic gate inputs=niin] (and2){};
-          \node [and gate US, draw, below=of and2, yshift=5.5mm, logic gate inputs=nini] (and3){};
-          \node [and gate US, draw, below=of and3, yshift=5.5mm, logic gate inputs=ninn] (and4){};
-          \node [and gate US, draw, below=of and4, yshift=5.5mm, logic gate inputs=nnii] (and5){};
-          \node [and gate US, draw, below=of and5, yshift=5.5mm, logic gate inputs=nnin] (and6){};
-          \node [and gate US, draw, below=of and6, yshift=5.5mm, logic gate inputs=nnni] (and7){};
-          \node [and gate US, draw, below=of and7, yshift=5.5mm, logic gate inputs=nnnn] (and8){};
-          \node [or gate US, draw, right=of and4, xshift=10mm, yshift=-5.5mm, logic gate inputs=nnnnnnnn] (or){};
+          \node [nand gate US, draw, logic gate inputs=niii] (and1) at (2,-1){};
+          \node [nand gate US, draw, below=of and1, yshift=5.5mm, logic gate inputs=niin] (and2){};
+          \node [nand gate US, draw, below=of and2, yshift=5.5mm, logic gate inputs=nini] (and3){};
+          \node [nand gate US, draw, below=of and3, yshift=5.5mm, logic gate inputs=ninn] (and4){};
+          \node [nand gate US, draw, below=of and4, yshift=5.5mm, logic gate inputs=nnii] (and5){};
+          \node [nand gate US, draw, below=of and5, yshift=5.5mm, logic gate inputs=nnin] (and6){};
+          \node [nand gate US, draw, below=of and6, yshift=5.5mm, logic gate inputs=nnni] (and7){};
+          \node [nand gate US, draw, below=of and7, yshift=5.5mm, logic gate inputs=nnnn] (and8){};
 
           % INPUT
-          \draw (x) ++(0,-11) -- node[at end, above]{$x$} (x);
-          \draw (y) ++(0,-11) -- node[at end, above]{$y$} (y);
-          \draw (z) ++(0,-11) -- node[at end, above]{$z$} (z);
+          \draw (x) ++(0,-11) -- node[at end, above]{$x_2$} (x);
+          \draw (y) ++(0,-11) -- node[at end, above]{$x_1$} (y);
+          \draw (z) ++(0,-11) -- node[at end, above]{$x_0$} (z);
 
           % AND 1
-          \draw (and1.input 1) -- ++(-2,0) node[at end, left]{$1$};
-          \draw (and1.input 2) -- (and1.input 2 -| x) node[circ]{};
-          \draw (and1.input 3) -- (and1.input 3 -| y) node[circ]{};
-          \draw (and1.input 4) -- (and1.input 4 -| z) node[circ]{};
+          \draw (and1.input 1) -- (and1.input 1 -| x) node[circ]{};
+          \draw (and1.input 2) -- (and1.input 2 -| y) node[circ]{};
+          \draw (and1.input 3) -- (and1.input 3 -| z) node[circ]{};
 
           % AND 2
-          \draw (and2.input 1) -- ++(-2,0) node[at end, left]{$0$};
-          \draw (and2.input 2) -- (and2.input 2 -| x) node[circ]{};
-          \draw (and2.input 3) -- (and2.input 3 -| y) node[circ]{};
-          \draw (and2.input 4) -- (and2.input 4 -| z) node[circ]{};
+          \draw (and2.input 1) -- (and2.input 1 -| x) node[circ]{};
+          \draw (and2.input 2) -- (and2.input 2 -| y) node[circ]{};
+          \draw (and2.input 3) -- (and2.input 3 -| z) node[circ]{};
 
           % AND 3
-          \draw (and3.input 1) -- ++(-2,0) node[at end, left]{$0$};
-          \draw (and3.input 2) -- (and3.input 2 -| x) node[circ]{};
-          \draw (and3.input 3) -- (and3.input 3 -| y) node[circ]{};
-          \draw (and3.input 4) -- (and3.input 4 -| z) node[circ]{};
+          \draw (and3.input 1) -- (and3.input 1 -| x) node[circ]{};
+          \draw (and3.input 2) -- (and3.input 2 -| y) node[circ]{};
+          \draw (and3.input 3) -- (and3.input 3 -| z) node[circ]{};
 
           % AND 4
-          \draw (and4.input 1) -- ++(-2,0) node[at end, left]{$1$};
-          \draw (and4.input 2) -- (and4.input 2 -| x) node[circ]{};
-          \draw (and4.input 3) -- (and4.input 3 -| y) node[circ]{};
-          \draw (and4.input 4) -- (and4.input 4 -| z) node[circ]{};
+          \draw (and4.input 1) -- (and4.input 1 -| x) node[circ]{};
+          \draw (and4.input 2) -- (and4.input 2 -| y) node[circ]{};
+          \draw (and4.input 3) -- (and4.input 3 -| z) node[circ]{};
 
           % AND 5
-          \draw (and5.input 1) -- ++(-2,0) node[at end, left]{$0$};
-          \draw (and5.input 2) -- (and5.input 2 -| x) node[circ]{};
-          \draw (and5.input 3) -- (and5.input 3 -| y) node[circ]{};
-          \draw (and5.input 4) -- (and5.input 4 -| z) node[circ]{};
+          \draw (and5.input 1) -- (and5.input 1 -| x) node[circ]{};
+          \draw (and5.input 2) -- (and5.input 2 -| y) node[circ]{};
+          \draw (and5.input 3) -- (and5.input 3 -| z) node[circ]{};
 
           % AND 6
-          \draw (and6.input 1) -- ++(-2,0) node[at end, left]{$0$};
-          \draw (and6.input 2) -- (and6.input 2 -| x) node[circ]{};
-          \draw (and6.input 3) -- (and6.input 3 -| y) node[circ]{};
-          \draw (and6.input 4) -- (and6.input 4 -| z) node[circ]{};
+          \draw (and6.input 1) -- (and6.input 1 -| x) node[circ]{};
+          \draw (and6.input 2) -- (and6.input 2 -| y) node[circ]{};
+          \draw (and6.input 3) -- (and6.input 3 -| z) node[circ]{};
 
           % AND 7
-          \draw (and7.input 1) -- ++(-2,0) node[at end, left]{$1$};
-          \draw (and7.input 2) -- (and7.input 2 -| x) node[circ]{};
-          \draw (and7.input 3) -- (and7.input 3 -| y) node[circ]{};
-          \draw (and7.input 4) -- (and7.input 4 -| z) node[circ]{};
+          \draw (and7.input 1) -- (and7.input 1 -| x) node[circ]{};
+          \draw (and7.input 2) -- (and7.input 2 -| y) node[circ]{};
+          \draw (and7.input 3) -- (and7.input 3 -| z) node[circ]{};
 
           % AND 8
-          \draw (and8.input 1) -- ++(-2,0) node[at end, left]{$1$};
-          \draw (and8.input 2) -- (and8.input 2 -| x) node[circ]{};
-          \draw (and8.input 3) -- (and8.input 3 -| y) node[circ]{};
-          \draw (and8.input 4) -- (and8.input 4 -| z) node[circ]{};
+          \draw (and8.input 1) -- (and8.input 1 -| x) node[circ]{};
+          \draw (and8.input 2) -- (and8.input 2 -| y) node[circ]{};
+          \draw (and8.input 3) -- (and8.input 3 -| z) node[circ]{};
 
-          \draw (and1.output) -- ++(1.5,0)  |- (or.input 1);
-          \draw (and2.output) -- ++(1.25,0) |- (or.input 2);
-          \draw (and3.output) -- ++(1,0)    |- (or.input 3);
-          \draw (and4.output) -- ++(0.75,0) |- (or.input 4);
-          \draw (and5.output) -- ++(0.75,0) |- (or.input 5);
-          \draw (and6.output) -- ++(1,0)    |- (or.input 6);
-          \draw (and7.output) -- ++(1.25,0) |- (or.input 7);
-          \draw (and8.output) -- ++(1.5,0)  |- (or.input 8);
-          \draw (or.output)   -- ++(0.5,0) node[at end, right]{$y$};
+          \draw (and1.output) -- ++(3,0) node[at end, right]{$0$ $(8)$};
+          \draw (and2.output) -- ++(3,0) node[at end, right]{$1$ $(13)$};
+          \draw (and3.output) -- ++(3,0) node[at end, right]{$2$ $(2)$};
+          \draw (and4.output) -- ++(3,0) node[at end, right]{$3$ $(9)$};
+          \draw (and5.output) -- ++(3,0) node[at end, right]{$4$ $(0)$};
+          \draw (and6.output) -- ++(3,0) node[at end, right]{$5$ $(10)$};
+          \draw (and7.output) -- ++(3,0) node[at end, right]{$6$ $(0)$};
+          \draw (and8.output) -- ++(3,0) node[at end, right]{$7$ $(4)$};
+
+          \ctikzset{resistors/scale=0.4}
+          \draw (and1.output) ++(1,1.5) ++(3,0) coordinate(start) ++(-0.5,0) node[above]{$+V_{CC}$} ++(0.5,0) -- ++(-3,0) -- ++(0,-0.25) to[R] ++(0,-0.5) -- ++(0,-11) coordinate(n1);
+          \draw (start) ++(-2.5,0) node[circ]{} -- ++(0,-0.25) to[R] ++(0,-0.5) -- ++(0,-11) coordinate(n2);
+          \draw (start) ++(-2,0) node[circ]{} -- ++(0,-0.25) to[R] ++(0,-0.5) -- ++(0,-11) coordinate(n3);
+          \draw (start) ++(-1.5,0) node[circ]{} -- ++(0,-0.25) to[R] ++(0,-0.5) -- ++(0,-11) coordinate(n4);
+
+          \node [not gate US, draw, rotate=270](not1) at ([yshift=-5mm]n1){};
+          \node [not gate US, draw, rotate=270](not2) at ([yshift=-5mm]n2){};
+          \node [not gate US, draw, rotate=270](not3) at ([yshift=-5mm]n3){};
+          \node [not gate US, draw, rotate=270](not4) at ([yshift=-5mm]n4){};
+
+          \draw (n1) -- (not1.input) (not1.output) -- ++(0,-0.5) node[at end, below]{$z_3$};
+          \draw (n2) -- (not2.input) (not2.output) -- ++(0,-0.5) node[at end, below]{$z_2$};
+          \draw (n3) -- (not3.input) (not3.output) -- ++(0,-0.5) node[at end, below]{$z_1$};
+          \draw (n4) -- (not4.input) (not4.output) -- ++(0,-0.5) node[at end, below]{$z_0$};
+
+          \ctikzset{diodes/scale=0.2}
+          \draw (and1.output) ++(1,0.25) node[circ]{} to [full diode] ([xshift=7.5mm]and1.output) node[circ]{};
+          \draw (and2.output) ++(1,0.25) node[circ]{} to [full diode] ([xshift=7.5mm]and2.output) node[circ]{};
+          \draw (and2.output) ++(1.5,0.25) node[circ]{} to [full diode] ([xshift=12.5mm]and2.output) node[circ]{};
+          \draw (and2.output) ++(2.5,0.25) node[circ]{} to [full diode] ([xshift=22.5mm]and2.output) node[circ]{};
+          \draw (and3.output) ++(2,0.25) node[circ]{} to [full diode] ([xshift=17.5mm]and3.output) node[circ]{};
+          \draw (and4.output) ++(1,0.25) node[circ]{} to [full diode] ([xshift=7.5mm]and4.output) node[circ]{};
+          \draw (and4.output) ++(2.5,0.25) node[circ]{} to [full diode] ([xshift=22.5mm]and4.output) node[circ]{};
+          \draw (and6.output) ++(1,0.25) node[circ]{} to [full diode] ([xshift=7.5mm]and6.output) node[circ]{};
+          \draw (and6.output) ++(2,0.25) node[circ]{} to [full diode] ([xshift=17.5mm]and6.output) node[circ]{};
+          \draw (and8.output) ++(1.5,0.25) node[circ]{} to [full diode] ([xshift=12.5mm]and8.output) node[circ]{};
         \end{tikzpicture}
       }
     \end{tabularx}
-    \caption{Modulo selettore per la realizzazione della funzione considerata}
-    \label{fig:modulo_selettore_realizzazione_funzione}
+    \caption{Matrice di contatti e memoria ROM derivabile da essa}
+    \label{fig:matrice_contatti_e_memoria_ROM}
 \end{figure}
 
-
-La figura 5.24a mostra un circuito di questo genere, chiamato matrice di contatti, nel quale
-si evidenzia la presenza di un contatto per i soli minterm che servono per realizzare la funzione z “ x1 x2   x1 x2;
-nella pratica circuitale la configurazione diventa quella di figura 5.24b. Se ora vogliamo usare questa tecnica per
-costruire la funzione (5.4) otteniamo il circuito di figura 5.25a. La sua struttura e estremamente vantaggiosa se
-viene realizzata direttamente dal costruttore di integrati, che privilegia un’alta uniformita nella struttura circuitale.
-Il confronto con la soluzione a selettori di figura 5.23 e chiarificatore: in quel caso, per realizzare una qualunque
-funzione di tre variabili occorre un integrato che abbia almeno 3   8   1 “ 12 piedini (a parte l’alimentazione
-e la massa). Con la soluzione ora illustrata il numero di piedini sarebbe pari a soli 3   1 “ 4. La struttura di
-figura 5.25a fa uso di diodi per realizzare le connessioni della matrice; inoltre essa puo essere estesa in modo tale
-da fornire non una, ma piu funzioni di uscita, passando p.es. a una rete con   n ingressi e k uscite. Una simile rete
-fornisce, per ogni configurazione degli n ingressi, una configurazione sulle k uscite e viene a costituire quella che
-si chiama una memoria ROM, acronimo di Read Only Memory (memoria di sola lettura); la memoria in questione
-ha M “ 2n celle da k bit ciascuna, che vengono indirizzate dalle n linee di indirizzamento. Tenendo conto della
-realizzazione circuitale effettiva illustrata in figura 5.24b, riportiamo in figura 5.25b la struttura di una memoria
-ROM con 23 celle di memoria da 4 bit ciascuna.
-Nella parte destra della figura 5.25b viene riportato l’indirizzo di ciascuna cella e, tra parentesi, il suo contenuto.
-Per capirne il funzionamento supponiamo che si voglia leggere il contenuto della memoria all’indirizzo 3; cio
-significa che deve essere x2x1x0 “ 011. In tal caso ci sara una sola porta NAND che ha un’uscita bassa, la porta
-della riga 3, mentre tutte le altre porte NAND avranno uscita alta. I catodi dei diodi relativi alle due colonne z3 e \(z_0\) vanno allora a massa, inducendo una polarizzazione diretta per i corrispondenti diodi; sui rispettivi anodi si ha
-allora una tensione virtualmente nulla (in pratica ci sara solo la   VAK di saturazione, pari 0, 30, 6 V ). Le linee z3
-e z0 sono allora basse, e a seguito della complementazione finale diventano alte. Gli altri diodi sulle colonne z3
-e z0 risultano invece interdetti, le linee rimangono allo stato alto ( VCC ) e quindi c’e  0 in uscita, a seguito della
-complementazione finale. Dunque z3 “ 1 e z0 “ 1, mentre le altre due linee z2 e z1 si trovano a zero, e dunque
-z “ 1001.
+\noindent
+La Figura \ref{fig:matrice_contatti_e_memoria_ROM} mostra un circuito di questo genere, chiamato \textbf{matrice di contatti}, nel quale si evidenzia la presenza di un contatto per i soli minterm che servono per realizzare la funzione
+\[z = \overline{x}\overline{y}\overline{z} + \overline{x}yz + xy\overline{z} + xyz\]
+La struttura di tale circuito è estremamente vantaggiosa se viene realizzata direttamente dal costruttore di integrati, che privilegia un’\textbf{alta uniformità} nella struttura circuitale.\\
+Il confronto con la soluzione a selettori di Figura \ref{fig:modulo_selettore_realizzazione_funzione} è chiarificatore: in quel caso, per realizzare una qualunque funzione di tre variabili occorre un integrato che abbia almeno $3 + 8 + 1 = 12$ piedini (a parte l’alimentazione e la massa); con la soluzione ora illustrata il numero di piedini sarebbe pari a soli $3 + 1 = 4$.\\
+La struttura di Figura \ref{fig:matrice_contatti_e_memoria_ROM} fa uso di diodi per realizzare le connessioni della matrice; inoltre essa puo essere estesa in modo tale
+da fornire non una, ma piu funzioni di uscita, passando, per esempio, a una rete con $n$ ingressi e $k$ uscite. Una simile rete fornisce, per ogni configurazione degli $n$ ingressi, una configurazione sulle $k$ uscite e viene a costituire quella che
+si chiama una \textbf{memoria ROM}, acronimo di \emph{Read Only Memory} (memoria di sola lettura): la memoria in questione presenta $M = 2^n$ celle da $k$ bit ciascuna, che vengono indirizzate dalle $n$ linee di indirizzamento.\\
+Tenendo conto della realizzazione circuitale appena esposta, si espone in Figura \ref{fig:matrice_contatti_e_memoria_ROM} la struttura di una memoria ROM con $2^3$ celle di memoria da $4$ bit ciascuna. Nella parte destra della Figura \ref{fig:matrice_contatti_e_memoria_ROM} viene riportato l’indirizzo di ciascuna cella e, tra parentesi, il suo contenuto.\\
+Per capirne il funzionamento, si supponga che si voglia leggere il contenuto della memoria all’indirizzo 3; ciò significa che deve essere $x_2x_1x_0 = 011$. In tal caso ci sarà una sola porta NAND che presenterà un’uscita bassa, ovvero la porta della riga $3$, mentre tutte le altre porte NAND presenteranno un'uscita alta. I catodi dei diodi relativi alle due colonne $z_3$ e $z_0$ andranno, allora a massa, inducendo una polarizzazione diretta per i corrispondenti diodi; sui rispettivi anodi si avrà, allora, una tensione virtualmente nulla (in pratica ci sara solo la $V_{AK}$ di saturazione, pari a $0.3 \div 0.6$V). Le linee $z_3$ e $z_0$ sono allora basse e, a seguito della complementazione finale, diventeranno alte. Gli altri diodi sulle colonne $z_2$ e $z_1$ risultano, invece, interdetti, per cui linee rimangono allo stato alto ($V_{CC}$) e quindi c’è $0$ in uscita, a seguito della complementazione finale. Dunque $z_3 = 1$ e $z_0 = 1$, mentre le altre due linee $z_2$ e $z_1$ si trovano a zero, e dunque $z = 1001$.
 
 \subsubsection{Diodi}
 L'idea alla base dell'ottimizzazione appena analizzata è costituita dai diodi. I diodi, in teoria, sono di due tipologie:
