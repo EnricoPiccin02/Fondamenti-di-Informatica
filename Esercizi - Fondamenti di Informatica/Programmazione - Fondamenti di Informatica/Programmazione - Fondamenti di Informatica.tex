@@ -1,0 +1,218 @@
+\documentclass[a4paper]{extarticle}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\selectlanguage{italian}
+\usepackage[table]{xcolor}
+\usepackage{xcolor}
+\usepackage{circuitikz}
+\usetikzlibrary{positioning, circuits.logic.US}
+\usetikzlibrary {shapes.gates.logic.US, shapes.gates.logic.IEC, calc}
+\tikzset {branch/.style={fill, shape = circle, minimum size = 3pt, inner sep = 0pt}}
+\usetikzlibrary{matrix,calc}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{geometry}
+\usepackage{tabularx}
+\usepackage{pgf-pie}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{color, soul}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{subfig}
+\graphicspath{ {./img/} }
+\newtheorem{theorem}{Teorema}[section]
+\newtheorem{corollary}{Corollario}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+
+% Specifiche
+\geometry{
+ a4paper,
+ top=20mm,
+ left=30mm,
+ right=30mm,
+ bottom=30mm
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LO]{\nouppercase{\leftmark}}
+\fancyfoot[CE, CO]{\thepage}
+\addtolength{\headheight}{1em}
+\addtolength{\footskip}{-0.5em}
+
+\newcommand{\quotes}[1]{``#1''}
+\renewcommand\tabularxcolumn[1]{>{\vspace{\fill}}m{#1}<{\vspace{\fill}}}
+\renewcommand\arraystretch{}
+\newcolumntype{P}{>{\centering\arraybackslash}X}
+
+\title{\textbf{Università di Trieste\\ \vspace{1em}
+Laurea in ingegneria elettronica e informatica}}
+\author{Enrico Piccin - Corso di Fondamenti di informatica - Prof. Sylvio Barbon Junior}
+\date{Anno Accademico 2021/2022 - 1 Marzo 2022}
+
+\begin{document}
+
+\vspace{-10mm}
+\maketitle
+
+\tableofcontents
+\newpage
+
+\noindent
+\begin{center}
+  1 Marzo 2022
+\end{center}
+
+\section{Introduzione a Java}
+\textbf{Java} è un linguaggio di programmazione rigido e fortemente tupizzato, ovvero esige la dichiarazione di tutte le vairabili, con il loro tipo e con una loro inizializzazione. La \textbf{struttura formale} del linguaggio, pertanto, è predomincante ed è ciò che caratterizza Java rispetto ad altri linguaggi di programmazione, come \emph{Python} o \emph{PHP}.\\
+Java, inoltre, è un linguaggio che opera al di sopra del sistema operativo, eliminando l'interdipendenza con il substrato software che permette l'esecuzione dei programmi: in altre parole, cambiando il sistema operativo non cambia il \textbf{codice sorgente}, ma solamente la piattaforma sulla quale esso viene eseguito; si dice, in tale caso, che \textbf{Java è un linguaggio portabile}.\\
+Tuttavia, se da un lato tale impostazione costituisce un vantaggio, dall'altro rappresenta anche un limite: a parità di programma da eseguire, un programma scritto in Java sarà più lento, nell'esecuzione, di un programma scritto in C, per esempio, il quale è fortemente dipendente dall'ambiente software di esecuzione e permette di controllarne la gestione della memoria e dell'indirizzamento al fine di ottenere un'ottimizzazione massima. Questo in quanto Java è un \textbf{linguaggio interpretato}, che necessita prima di una \textbf{pseucodifica} per essere seguito su una \textbf{macchina virtuale}, mentre C è un \emph{linguaggio compilato direttamente} sfruttrando la struttura del sistema operativo nativo.
+
+\vspace{1em}
+\subsection{Editor}
+La realizzazione di un programma in Java parte dalla scrittura del \emph{codice sorgente} mediante un \textbf{editor}, anche chiamate \textbf{IDE} (dall'inglese \emph{Integrated Development Environment}), ossia un programma di utilità che consente di inserire e memorizzare un testo e di modificarlo successivamente per effettuare aggiunte o correzioni.
+
+\vspace{1em}
+\subsection{Compilazione}
+Il codice sorgente scritto in Java che, proprio per questo, presenta estensione \textbf{.java}, al fine di poter essere eseguito dalla macchina, deve essere \textbf{compilato} da un \textbf{compilatore} (che nel caso di Java è il \textbf{javac}, o \textbf{JDK}, il quale permette di trasformare delle istruzione elaborate con un linguaggio \emph{user-oriented} (di \textbf{alto livello}) in un linguaggio \emph{machine-oriented} (di \textbf{basso livello}), ovverosia più vicino alla macchina, tale per cui la macchina lo possa comprendere ed eseguire. Nel caso di Java, la \quotes{macchina} che andrà ad eseguire le istruzioni così tradotte è una \textbf{macchina virtuale}, mentre nel caso del linguaggio C, la compilazione serve ad ottimizzare il programma finale, grazie alla forte interdipendenza tra linguaggio di programmazione e hardware sottostante.\\
+Il risultato della compilazione di un codice sorgente .java è il \textbf{codice compilato} (o \textbf{bytecode}), con estensione \textbf{.class}: esso non deve essere più compilato e può essere eseguito su ogni piattaforma hardware-software.
+
+\vspace{1em}
+\subsection{Lettura e interpretazione}
+Il codice compilato (o bytecode), viene letto dal \textbf{loader}, ossia dalla macchina virtuale \textbf{java} \textbf{JRE}, la quale effettua la verifica del codice compilato (\textbf{bytecode verifier}) e ne interpreta le istruzioni.
+
+\vspace{1em}
+\subsection{Ambienti}
+Il linguaggio Java, per quello che si è detto, è un \textbf{linguaggio portabile} (in quanto può essere eseguito in diversi ambienti hardware e software) e un \textbf{linguaggio ad oggetti puro}, in quanto si basa sul \textbf{paradigma di programmazione orientato agli oggetti} (OOL, Object Oriented Language). Due, inolre, sono delle tecnologie che permettono una maggiore gestione dei programmi:
+\begin{enumerate}
+  \item \textbf{Garbage Collector}: tool di gestione della memoria, per motivi di sicurezza e di semplicità di programmazione, pulendo ed elimando locazioni di memoria inutilizzate;
+  \item \textbf{Multithreading}: tecnologia che consente la gestione dell'esecuzione contemporanea di più task all'interno della stessa applicazione. Il processore, tramite la tecnologia \textbf{time sharing} permette di gestire lo scheduling dei processi in modo tale da permettere un'esecuzione quanto più simultanea delle diverse task.
+\end{enumerate}
+La tecnologia Java, infine, si avvale di tre importanti tool per la sua esecuzione:
+\begin{enumerate}
+  \item \textbf{JDK} (Java Development Kit): un set completo di \textbf{API} (librerie di funzioni precostituite che consentono di eseguire operazioni automaticamente) e una serie di tool per lo sviluppo di applicazioni Java;
+  \item \textbf{JSE} (Java Standard Edition): pacchhetto base per lo sviluppo di normali applicazioni Java (che possono andare dagli \textbf{Applets} a \textbf{Desktop applications} con \emph{Swing} o \emph{Java FX} per l'interfaccia grafica). Esistono anche \textbf{JEE} (Java Enterprise Edition) per lo sviluppo di applicazioni server di grandi aziende e \textbf{JME} (Java Mobile Edition) per lo sviluppo di applicazioni mobile.
+  \item \textbf{JRE} (Java Runtime Environment), ambiente per l'esecuzione delle applicazioni Java tramite \textbf{JVM}, o Java Virtual Machine.
+\end{enumerate}
+
+\vspace{1em}
+\subsection{Linguaggi di programmazione}
+I linguaggi di programmazione si possono suddividere in due grandi categorie:
+\begin{enumerate}
+  \item linguaggi di \textbf{basso livello} (\textbf{linguaggi macchina} e Assembly), che sono, quindi, linguaggi che il calcolatore è in grado di comprendere;
+  \item \textbf{linguaggi ad alto livello} o \textbf{linguaggi evoluti}, quindi più vicini al programmatore e che consentono l'uso di \textbf{nomi simbolici} che corrispondono a più set di istruzioni linugaggio macchina.
+\end{enumerate}
+
+\vspace{1em}
+\noindent
+\subsection{Programmi traduttori: compilatore e interprete}
+Di seguito si espone la definzione di \textbf{compilatore}:
+
+% Tabella per le definizione di concetti, etc...
+\vspace{1em}
+\rowcolors{1}{black!5}{black!5}
+\setlength{\tabcolsep}{14pt}
+\renewcommand{\arraystretch}{2}
+\noindent
+\begin{tabularx}{\textwidth}{@{}|P|@{}}
+    \hline
+    {\textbf{COMPILATORE}}\\
+    \parbox{\linewidth}{Il \textbf{compilatore} è un programma che traduce un programma sorgente scritto in linguaggio ad alto livello in un programma oggetto in linguaggio macchina.\\
+    Esso, inoltre, svolge tre importanti funzioni di analisi:
+    \begin{enumerate}
+      \item \textbf{analisi lessicale}: consente di individuare le parole chiave e riservate del linguaggio di programmazione, ccosì come del vocabolario e permette di costruire la tabella dei simboli;
+      \item \textbf{analisi sintattica}: ossia il controllo della correttezza delle istruzioni al fine di verificare se essse sono scritte rispettando la sintassi del linguaggio Java, cioé le regole della grammatica;
+      \item \textbf{analisi semantica}: ovvero il controllo della validità del significato degli elementi in base al contesto (per esempio la presenza delle istruzioni dichiarative necessarie).
+    \end{enumerate}
+    \vspace{-1mm}}\\
+    \hline
+\end{tabularx}
+
+\vspace{1em}
+\noindent
+Pertanto il compilatore individua e segnala tutti gli \textbf{errori formali}: se vi sono errori, la traduzione non può avvenire. Se non ci sono errori, il compilatore passa alla fase di sintesi durante la quale viene generato il codice oggetto, di solito in formato rilocabile.\\
+Sarà poi compito del \textbf{linker} trasformare il programma oggetto in programma eseguibile (con estensione .class), il quale verrà poi eseguito dalla macchina virtuale JVM grazie all'\textbf{interprete} che traduce le istruzioni del linguaggio ad alto livello in linguaggio macchina, una per una, al momento dell’esecuzione.\\
+Durante il \textbf{runtime} vengono anche rilevati degli errori di esecuzione, dovuti non alla scorrettezza formale del codice sorgente, ma ad un uso scorretto del programma.\\
+L'impiego di un compilatore o di un inteprete presenta una serie di vantaggi e di svantaggi:
+
+\begin{figure}[H]
+  \centering
+  \rowcolors{1}{white}{white}
+  \begin{tabularx}{\textwidth}{@{}|P|P|@{}}
+    \hline
+    \textbf{Compilatore} & \textbf{Interprete}\\
+    \hline
+    \rowcolor{blue!5}
+    \multicolumn{2}{|c|}{\textbf{VANTAGGI}}\\
+    \hline
+    \parbox{\linewidth}{maggior velocità di esecuzione} & \parbox{\linewidth}{\vspace{3mm} semplicità di messa a punto dei programmi poiché si lavora in ambiente interattivo \vspace{3mm}}\\
+    \hline
+    \parbox{\linewidth}{risparmio di memoria} & \parbox{\linewidth}{maggior portabilità dei programmi}\\
+    \hline
+    \parbox{\linewidth}{rilevazione di tutti gli errori formali} & \\
+    \hline
+    \parbox{\linewidth}{\vspace{3mm} consente la segretezza del programma sorgente, in quanto dopo essere stato compilato non è possibile risalire al codice di partenza \vspace{3mm}} & \\
+    \hline
+    \parbox{\linewidth}{non è necessario codice aggiuntivo} & \\
+    \hline
+    \rowcolor{red!5}
+    \multicolumn{2}{|c|}{\textbf{SVANTAGGI}}\\
+    \hline
+    \parbox{\linewidth}{\vspace{3mm} tempi di creazione del programma più lunghi, per la ricerche di librerie e funzioni specifiche \vspace{3mm}} & \parbox{\linewidth}{maggiore occupazione di memoria}\\
+    \hline
+    \parbox{\linewidth}{minore portabilità} & \parbox{\linewidth}{l’esecuzione risulta più lenta}\\
+    \hline
+     & \parbox{\linewidth}{non dà garanzia di correttezza sintattica}\\
+    \hline
+     & \parbox{\linewidth}{\vspace{3mm} non consente la segretezza del codice sorgente \vspace{3mm}}\\
+    \hline
+  \end{tabularx}
+  \caption{Vantaggi e svantaggi del compilatore e dell'interprete}
+  \label{fig:vantaggi_svantaggi_compilatore_interprete}
+\end{figure}
+
+\noindent
+\textbf{Osservazione}: Si osservi che Java è \textbf{parzialmente compilato} e \textbf{interpretato}.
+
+\vspace{1em}
+\subsection{Soluzione di problemi con il calcolatore}
+In informatica, un \textbf{problema} è una qualsiasi situazione alla quale è necessario trovare una soluzione. Per la risoluzione di un problema è necessario analizzare diversi elementi
+\begin{enumerate}
+  \item la situazione iniziale (quali sono i dati del problema): i dati che riguardano il problema sono tutte le informazioni disponibili all’inizio e quelle che si desiderano ottenere come soluzione del problema;
+  \item che cosa si desidera ottenere (risultati): le azioni che possono essere eseguite nel processo risolutivo sono le operazioni che il computer è in grado di eseguire; l'insieme delle istruzione costituisce l'\textbf{algoritmo};
+  \item le risorse a disposizione, variabili a seconda dell'hardware sottostante.
+\end{enumerate}
+
+\vspace{1em}
+\noindent
+\subsection{Algoritmo e programma}
+Di seguito si espone la definizione di \textbf{algoritmo}:
+
+% Tabella per le definizione di concetti, etc...
+\vspace{1em}
+\rowcolors{1}{black!5}{black!5}
+\setlength{\tabcolsep}{14pt}
+\renewcommand{\arraystretch}{2}
+\noindent
+\begin{tabularx}{\textwidth}{@{}|P|@{}}
+    \hline
+    {\textbf{ALGORITMO}}\\
+    \parbox{\linewidth}{Un algoritmo è un procedimento che permette di ottenere dei risultati (dati in uscita o di \textbf{output}) partendo da alcuni dati iniziali (dati di ingresso o di \textbf{input}).\\
+    L’algoritmo deve essere
+    \begin{enumerate}
+      \item \textbf{generale}: non deve risolvere un singolo caso particolare, ma tutta una serie di problemi dello stesso tipo;
+      \item \textbf{deterministico}: i risultati devono essere sempre gli stessi, partendo dagli stessi dati iniziali, cioè l'esito dell'esecuzione dell'agoritmo non deve dipendere da aleatorietà o effetti casuali;
+    \end{enumerate}
+    \vspace{-1mm}}\\
+    \hline
+\end{tabularx}
+
+\vspace{1em}
+\noindent
+Il \textbf{programma}, invece, si ottiene codificando l’algoritmo in un \textbf{linguaggio di programmazione}, cioè scrivendo le istruzioni dell’algoritmo secondo la sintassi del linguaggio scelto.
+
+
+
+\end{document}
