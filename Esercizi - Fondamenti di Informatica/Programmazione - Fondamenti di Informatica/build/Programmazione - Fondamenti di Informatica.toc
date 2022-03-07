@@ -10,3 +10,8 @@
 \contentsline {subsection}{\numberline {1.6}Programmi traduttori: compilatore e interprete}{3}{}%
 \contentsline {subsection}{\numberline {1.7}Soluzione di problemi con il calcolatore}{4}{}%
 \contentsline {subsection}{\numberline {1.8}Algoritmo e programma}{5}{}%
+\contentsline {subsection}{\numberline {1.9}Computabilità}{6}{}%
+\contentsline {subsection}{\numberline {1.10}Paradigma di programmazione}{7}{}%
+\contentsline {subsubsection}{\numberline {1.10.1}Paradigma dichiarativo}{7}{}%
+\contentsline {subsubsection}{\numberline {1.10.2}Paradigma procedurale}{7}{}%
+\contentsline {subsection}{\numberline {1.11}Linguaggio imperativo}{7}{}%

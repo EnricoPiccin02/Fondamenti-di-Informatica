@@ -21,6 +21,7 @@
 \usepackage{fancyhdr}
 \usepackage{graphicx}
 \usepackage{subfig}
+\usepackage{listings}
 \graphicspath{ {./img/} }
 \newtheorem{theorem}{Teorema}[section]
 \newtheorem{corollary}{Corollario}[theorem]
@@ -46,6 +47,32 @@
 \renewcommand\tabularxcolumn[1]{>{\vspace{\fill}}m{#1}<{\vspace{\fill}}}
 \renewcommand\arraystretch{}
 \newcolumntype{P}{>{\centering\arraybackslash}X}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
+
+\lstset{style=mystyle}
 
 \title{\textbf{Università di Trieste\\ \vspace{1em}
 Laurea in ingegneria elettronica e informatica}}
@@ -203,7 +230,7 @@ Di seguito si espone la definizione di \textbf{algoritmo}:
     L’algoritmo deve essere
     \begin{enumerate}
       \item \textbf{generale}: non deve risolvere un singolo caso particolare, ma tutta una serie di problemi dello stesso tipo;
-      \item \textbf{deterministico}: i risultati devono essere sempre gli stessi, partendo dagli stessi dati iniziali, cioè l'esito dell'esecuzione dell'agoritmo non deve dipendere da aleatorietà o effetti casuali;
+      \item \textbf{deterministico}: i risultati devono essere sempre gli stessi, partendo dagli stessi dati iniziali, cioè l'esito dell'esecuzione dell'agoritmo non deve dipendere da aleatorietà o effetti casuali.
     \end{enumerate}
     \vspace{-1mm}}\\
     \hline
@@ -212,6 +239,142 @@ Di seguito si espone la definizione di \textbf{algoritmo}:
 \vspace{1em}
 \noindent
 Il \textbf{programma}, invece, si ottiene codificando l’algoritmo in un \textbf{linguaggio di programmazione}, cioè scrivendo le istruzioni dell’algoritmo secondo la sintassi del linguaggio scelto.
+
+\newpage
+\begin{center}
+  4 Marzo 2022
+\end{center}
+
+Si consideri il seguente esempio di codice Java, ovvero il codice sorgente:
+
+\begin{lstlisting}[language=Java, caption=Esempio di codice sorgente in Java]
+  public class Java1
+  {
+    public static void main(String args[]) {
+      System.out.println("Ciao mondo!");
+    }
+  }
+\end{lstlisting}
+
+\vspace{1em}
+\noindent
+Da osservare che il nome del file \textbf{Java1.java} deve essere lo stesso della classe principale. All'interno del codice vi sono diverse \textbf{parole riservate} che vengono opportunamente segnalate con una colorazione differente: essendo riservate, esse non possono essere utilizzate dal programmatore per il proprio codice sorgente, ma solamente per la definizione di codice strutturale.\\
+La parola riservata \emph{class} è la base del paradigma di programazione orientato agli oggetti. Il \textbf{metodo principale} \emph{main} viene così chiamato perché è il metodo centrale del programma; inoltre la sua stringa di definizione serve per indicare che il proramma può richiedere memoria per essere eseguito.\\
+La \textbf{keyword} \emph{void} indica che tale metodo non ritorna nessun valore dopo la sua esecuzione, mentre \emph{static} significa che al metodo viene assegnato un \textbf{indirizzo di memoria fisso} (statico), per cui è possibile richiamare il programma per la sua esecuzione, il quale verrà eseguito in una parte di memoria statica. La \textbf{keyword} \emph{public} sta ad indicare che tale funzione è visibile globalmente e può essere richiamata, quindi eseguita, anche da altri programmi.\\
+Le parentesi graffe servono per racchiudere al loro interno uno \textbf{scope}, ovverosia un'ambiente limitato, in cui le dichiarazioni e le funzioni in esso presenti sono valide solamente all'interno dello scope stesso e non possono essere viste esternamente.\\
+La riga $5$ rappresenta il vero e proprio programma e, richiamando un metodo (\emph{println}) presente all'interno di una sub-libreria (\emph{out}) di una libreria del sistema operativo (\emph{System}), permette di scrivere a schermo la \textbf{stringa} \quotes{Ciao mondo!} (si potrebbe anche stmpare un numero).\\
+Dopo aver elaborato il proprio codice sorgente, si procede alla compilazione dello stesso: ogni possibile errore di sintassi o di struttura del programma viene segnalato dal compilatore stesso.\\
+Per la compilazione è sufficiente scrivere
+
+\begin{lstlisting}[language=Java, caption=Esempio di compilazione in Java]
+  javac Java1.java
+\end{lstlisting}
+
+\vspace{1em}
+\noindent
+Se la compilazione va a buon fine si ottiene il codice compilato \textbf{Java1.class} e per la sua esecuzione è sufficiente scrivere
+
+\begin{lstlisting}[language=Java, caption=Esempio di esecuzione in Java]
+  java Java1
+\end{lstlisting}
+
+\vspace{1em}
+\subsection{Computabilità}
+Di seguito si fornisce la definizione di \textbf{computabilità}:
+
+% Tabella per le definizione di concetti, etc...
+\vspace{1em}
+\rowcolors{1}{black!5}{black!5}
+\setlength{\tabcolsep}{14pt}
+\renewcommand{\arraystretch}{2}
+\noindent
+\begin{tabularx}{\textwidth}{@{}|P|@{}}
+    \hline
+    {\textbf{COMPUTABILITÀ}}\\
+    \parbox{\linewidth}{Un problema si dice \textbf{computabile} se la sua soluzione può essere descritta mediante un algoritmo. Per contro, i problemi che non sono risolvibili con un procedimento algoritmico si dicono \textbf{non computabili}.\vspace{3mm}}\\
+    \hline
+\end{tabularx}
+
+\newpage
+\noindent
+\subsection{Paradigma di programmazione}
+Al fine di permettere una corretta computabilità del proprio codice è necessario presciegliere il paradigma di programmazione più adatto alla risoluzione del problema. Di seguito si fornisce la definizione di \textbf{paradigma di programmazione}:
+
+% Tabella per le definizione di concetti, etc...
+\vspace{1em}
+\rowcolors{1}{black!5}{black!5}
+\setlength{\tabcolsep}{14pt}
+\renewcommand{\arraystretch}{2}
+\noindent
+\begin{tabularx}{\textwidth}{@{}|P|@{}}
+    \hline
+    {\textbf{PARADIGMA DI PROGRAMMAZIONE}}\\
+    \parbox{\linewidth}{Un \textbf{paradigma di programmazione} è un modello che permette di descrivere astrattamente l’algoritmo (cioè il metodo di soluzione di un problema).\vspace{3mm}}\\
+    \hline
+\end{tabularx}
+
+\vspace{1em}
+\noindent
+La  descrizione  dei  dati  e  delle  azioni  per risolvere il problema dipende dal \textbf{paradigma di programmazione} utilizzato e per linguaggi che  usano  lo  stesso  paradigma,  almeno parzialmente  dal  linguaggio  scelto: infatti potrebbero essere disponibili per esempio tipi o strutture di dati diverse.\\
+I principali paradigmi di programmazione sono:
+\begin{itemize}
+  \item il paradigma \textbf{dichiarativo}, il quale descrive \textbf{come} deve essere risolto un problema;
+  \item il paradigma \textbf{procedurale}, il quale descrive \textbf{che cosa} si vuole ottenere;
+\end{itemize}
+
+\vspace{1em}
+\subsubsection{Paradigma dichiarativo}
+La programmazione con il \textbf{paradigma dichiarativo} si può suddividere in:
+\begin{itemize}
+  \item \textbf{programmazione logica}: descrive i fatti e le relazioni tra i fatti e permette di ricavarne delle conseguenze, quale [PROLOG];
+  \item \textbf{programmazione funzionale}: il programma è costituito da un insieme di funzioni che elaborano liste di simboli, quale [LISP];
+  \item \textbf{linguaggi di markup}: usano dei codici (\emph{tag}) per stabilire il ruolo degli elementi, quale [HTML];
+  \item \textbf{linguaggi di interrogazione di database}, quale [SQL].
+\end{itemize}
+
+\vspace{1em}
+\subsubsection{Paradigma procedurale}
+La programmazione con il \textbf{paradigma procedurale} si può suddividere in:
+\begin{itemize}
+  \item \textbf{programmazione imperativa}: si basa su esplicite richieste fatte all’esecutore del programma; la soluzione del problema è descritta come una sequenza di azioni che producono dei cambiamenti di stato nell’ambiente (come la modifica del valore delle variabili); esempi di tali linguaggi sono Assembler, pascal, C, Cobol;
+  \item \textbf{programmazione orientata agli oggetti}: parte dal concetto di oggetto che descrive proprietà e azioni che un oggetto può compiere; la soluzione del problema è descritta dalle interazioni tra gli oggetti; esempi di tali linguaggi sono Java, C++, C\#, Python.
+\end{itemize}
+
+\vspace{1em}
+\subsection{Linguaggio imperativo}
+Il vocabolario usato da ciascun linguaggio comprende delle parole riservate e delle parole che possono essere definite dal programmatore seguendo alcune semplici regole.
+\begin{itemize}
+  \item Le parole \textbf{riservate} permettono di definire i dati e di scrivere le istruzioni;
+  \item Le parole \textbf{definite} dal programmatore (o \textbf{identificatori}) sono in genere i nomi delle variabili e i nomi delle procedure da richiamare.
+\end{itemize}
+
+\vspace{1em}
+\noindent
+\textbf{Esempio}: Si consideri il seguente esempio di codice Java che permette di realizzare una somma tra due numeri costanti ($3+4$):
+
+\begin{lstlisting}[language=Java, caption=Somma di due numeri costanti in Java]
+  public class Somma
+  {
+    public static void main(String args[]) {
+      int num1, num2, somma; // Dichiarazione delle variabili senza inzializzazione
+
+      num1=3; // Assegnazione del valore 3 alla variabile num1
+      num2=4; // Assegnazione del valore 4 alla variabile num2
+
+      somma=num1+num2;
+
+      System.out.println(num1 + "+" + num2 + "=" + Integer.toString(somma));
+    }
+  }
+\end{lstlisting}
+
+\vspace{1em}
+\noindent
+Pertanto, la sintassi di dichiarazione di una variabile è la seguente
+
+\begin{lstlisting}[language=Java, caption=Dichiarazione di una variabile in Java]
+  [modificatore] tipo_di_dato nome_della_variabile [=inizializzazione];
+\end{lstlisting}
 
 
 
