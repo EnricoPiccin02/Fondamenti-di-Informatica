@@ -1,17 +1,26 @@
 \babel@toc {italian}{}
 \babel@toc {italian}{}
 \babel@toc {italian}{}
-\contentsline {section}{\numberline {1}Introduzione a Java}{2}{}%
-\contentsline {subsection}{\numberline {1.1}Editor}{2}{}%
-\contentsline {subsection}{\numberline {1.2}Compilazione}{2}{}%
-\contentsline {subsection}{\numberline {1.3}Lettura e interpretazione}{2}{}%
-\contentsline {subsection}{\numberline {1.4}Ambienti}{2}{}%
-\contentsline {subsection}{\numberline {1.5}Linguaggi di programmazione}{3}{}%
-\contentsline {subsection}{\numberline {1.6}Programmi traduttori: compilatore e interprete}{3}{}%
-\contentsline {subsection}{\numberline {1.7}Soluzione di problemi con il calcolatore}{4}{}%
-\contentsline {subsection}{\numberline {1.8}Algoritmo e programma}{5}{}%
-\contentsline {subsection}{\numberline {1.9}Computabilità}{6}{}%
-\contentsline {subsection}{\numberline {1.10}Paradigma di programmazione}{7}{}%
-\contentsline {subsubsection}{\numberline {1.10.1}Paradigma dichiarativo}{7}{}%
-\contentsline {subsubsection}{\numberline {1.10.2}Paradigma procedurale}{7}{}%
-\contentsline {subsection}{\numberline {1.11}Linguaggio imperativo}{7}{}%
+\contentsline {section}{\numberline {1}Introduzione a Java}{3}{}%
+\contentsline {subsection}{\numberline {1.1}Editor}{3}{}%
+\contentsline {subsection}{\numberline {1.2}Compilazione}{3}{}%
+\contentsline {subsection}{\numberline {1.3}Lettura e interpretazione}{3}{}%
+\contentsline {subsection}{\numberline {1.4}Ambienti}{3}{}%
+\contentsline {subsection}{\numberline {1.5}Linguaggi di programmazione}{4}{}%
+\contentsline {subsection}{\numberline {1.6}Programmi traduttori: compilatore e interprete}{4}{}%
+\contentsline {subsection}{\numberline {1.7}Soluzione di problemi con il calcolatore}{5}{}%
+\contentsline {subsection}{\numberline {1.8}Algoritmo e programma}{6}{}%
+\contentsline {section}{\numberline {2}Error-Handling in Java}{7}{}%
+\contentsline {subsection}{\numberline {2.1}Computabilità}{7}{}%
+\contentsline {subsection}{\numberline {2.2}Paradigma di programmazione}{8}{}%
+\contentsline {subsubsection}{\numberline {2.2.1}Paradigma dichiarativo}{8}{}%
+\contentsline {subsubsection}{\numberline {2.2.2}Paradigma procedurale}{8}{}%
+\contentsline {subsection}{\numberline {2.3}Linguaggio imperativo}{8}{}%
+\contentsline {section}{\numberline {3}I dati in Java}{10}{}%
+\contentsline {subsection}{\numberline {3.1}Booleano}{11}{}%
+\contentsline {subsection}{\numberline {3.2}Intero}{11}{}%
+\contentsline {subsection}{\numberline {3.3}Floating}{13}{}%
+\contentsline {subsection}{\numberline {3.4}Definizione di variabili}{14}{}%
+\contentsline {subsection}{\numberline {3.5}Espressioni}{14}{}%
+\contentsline {subsection}{\numberline {3.6}Operatore condizionale}{15}{}%
+\contentsline {subsection}{\numberline {3.7}Incremento e decremento}{15}{}%

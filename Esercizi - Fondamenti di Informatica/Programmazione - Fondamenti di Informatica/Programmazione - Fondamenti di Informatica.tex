@@ -86,6 +86,8 @@ Laurea in ingegneria elettronica e informatica}}
 
 \tableofcontents
 \newpage
+\lstlistoflistings
+\newpage
 
 \noindent
 \begin{center}
@@ -245,6 +247,7 @@ Il \textbf{programma}, invece, si ottiene codificando l’algoritmo in un \textb
   4 Marzo 2022
 \end{center}
 
+\section{Error-Handling in Java}
 Si consideri il seguente esempio di codice Java, ovvero il codice sorgente:
 
 \begin{lstlisting}[language=Java, caption=Esempio di codice sorgente in Java]
@@ -375,6 +378,308 @@ Pertanto, la sintassi di dichiarazione di una variabile è la seguente
 \begin{lstlisting}[language=Java, caption=Dichiarazione di una variabile in Java]
   [modificatore] tipo_di_dato nome_della_variabile [=inizializzazione];
 \end{lstlisting}
+
+... continua ...
+
+\newpage
+\noindent
+\begin{center}
+  7 Marzo 2022
+\end{center}
+
+\section{I dati in Java}
+L’algoritmo non è soltanto un \textbf{insieme di istruzioni}; una componente fondamentale dell’algoritmo è costituita dai \textbf{dati} e una fase essenziale della stesura dell’algoritmo è la scelta dei dati da utilizzare.\\
+Java è un linguaggio \textbf{strongly typed}, ovvero di \textbf{tipicizzazione stretta}. I dati, in particolare, sono di due tipi
+\begin{itemize}
+  \item dati di \textbf{input}: l'utente deve fornire un input al programma per l'esecuzione
+  \item dati di \textbf{output}: il risultato dell'elaborazione, cioé i dati che il programma restituisce all'utente
+\end{itemize}
+mentre i \textbf{tipi di dati} sono due categorie
+\begin{enumerate}
+  \item Primitivi
+  \begin{enumerate}
+    \item Integral
+    \begin{enumerate}
+      \item Primitivi
+      \item boolean
+      \item byte
+      \item short
+      \item int
+      \item long
+      \item char
+      \item float
+    \end{enumerate}
+    \item Floating
+    \begin{enumerate}
+      \item float
+      \item double
+    \end{enumerate}
+    \item enumerate
+  \end{enumerate}
+  \item Derivati
+  \begin{enumerate}
+    \item array
+    \item class
+    \item interface
+  \end{enumerate}
+\end{enumerate}
+
+\vspace{1em}
+\noindent
+I tipi di dati primitivi maggiormente utilizzati sono
+
+\vspace{1em}
+\noindent
+\rowcolors{1}{white}{white}
+\begin{tabularx}{\textwidth}{|P|P|}
+  \hline
+  \rowcolor{green}
+  Tipo Primitivo & Descrizione\\
+  \hline
+  \textbf{boolean} & valori che possono essere \emph{true} o \emph{false}\\
+  \hline
+  \textbf{char} & caratteri di $16$ bit (UNICODE)\\
+  \hline
+  \textbf{byte} & interi di $8$ bit con segno\\
+  \hline
+  \textbf{short} & interi di $16$ bit con segno\\
+  \hline
+  \textbf{int} & interi di $32$ bit con segno\\
+  \hline
+  \textbf{long} & interi di $64$ bit con segno\\
+  \hline
+  \textbf{float} & reali di $32$ in virgola mobile\\
+  \hline
+  \textbf{double} & reali di $64$ bit\\
+  \hline
+\end{tabularx}
+
+\vspace{1em}
+\noindent
+Da notare che una variabile di tipo primitivo può essere utilizzata direttamente (senza la clausola \textbf{new}).
+
+\vspace{1em}
+\subsection{Booleano}
+Il tipo \textbf{boolean} (booleano) ha come insieme di valori le due costanti simboliche \emph{true} e \emph{false}.\\
+Con elementi di questo tipo si possono effettuare delle operazioni logiche, le quali producono come risultato un valore booleano. Esse sono:
+\begin{enumerate}
+  \item \quotes{$\vert$}, ossia barra verticale o \quotes{pipe}, che corrisponde ad un OR logico (disgiunzione);
+  \item \quotes{\^}, ossia un apice, che corrisponde ad un OR-ESCLUSIVO logico o XOR;
+  \item \quotes{\&}, ossia la \quotes{E} commerciale, che corrisponde ad un AND logico (congiunzione);
+  \item \quotes{!}, ossia il punto esclamativo, che corrisponde ad un NOT logico (negazione);
+  \item \quotes{==}, ossia un \quotes{doppio uguale}, che corrisponde ad un'uguaglianza;
+  \item \quotes{!=}, che corrisponde al \quotes{diverso};
+\end{enumerate}
+
+\vspace{1em}
+\noindent
+Si consideri l'esempio seguente:
+
+\begin{lstlisting}[language=Java, caption=Comparazione tra due numeri costanti in Java]
+  public class Comparazione
+  {
+    public static void main(String args[]) {
+      int x = 5;
+
+      System.out.println(x + "== 4" + (x==4));
+    }
+  }
+\end{lstlisting}
+
+\vspace{1em}
+\subsection{Intero}
+Un tipo \textbf{intero} ha per valori tutti i numeri interi compresi fra $-2^{n-1}$ e $+2^{n-1} - 1$, dove $n$ è il numero di bit usati per la sua rappresentazione.\\
+Con elementi di questo tipo \textbf{int} si possono eseguire operazioni elementari, che sono:
+\begin{enumerate}
+  \item \quotes{$+$}, somma;
+  \item \quotes{$-$}, sottrazione;
+  \item \quotes{$\ast$}, moltiplicazione;
+  \item \quotes{$/$}, quoziente della divisione;
+  \item \quotes{$\%$}, resto della divisione;
+  \item \quotes{$++$}, incremento di una unità;
+  \item \quotes{$--$}, decremento di una unità;
+\end{enumerate}
+È possibile anche eseguire il \textbf{confronto} tra dati di tipo intero, quali
+\begin{enumerate}
+  \item \quotes{$==$}, uguale;
+  \item \quotes{$!=$}, diverso;
+  \item \quotes{$>$}, maggiore;
+  \item \quotes{$>=$}, maggiore o uguale;
+  \item \quotes{$<$}, minore;
+  \item \quotes{$<=$}, minore o uguale;
+\end{enumerate}
+ancora una volta, il risultato di tale comparazione è un valore booleano. I numeri interi possono esssere convertiti anche in caratteri, seguendo la codifica della tabella ASCII, come mostrato di seguito:
+
+\vspace{1em}
+\noindent
+\begin{lstlisting}[language=Java, caption=Conversione da intero a carattere in Java]
+  public class ConversioneASCII
+  {
+    public static void main(String args[]) {
+      int x = 44;
+      int y = 65;
+
+      System.out.println("x = " + x);
+      System.out.println("x = " + char(x));
+      System.out.println("y = " + y);
+      System.out.println("y = " + char(y));
+    }
+  }
+\end{lstlisting}
+\vspace{1em}
+
+\noindent
+Con gli \textbf{interi} è possibile effettuare \textbf{operazioni bit a bit}, che richiedono, in ogni caso, delle conoscenze sulle rappresentazione dei numeri interi e vengono utilizzate raramente: si impiegano quando si necessita di lavorare ad un basso livello:
+
+\vspace{1em}
+\noindent
+\rowcolors{1}{white}{white}
+\begin{tabularx}{\textwidth}{|P|P|}
+  \hline
+  \rowcolor{green}
+  \multicolumn{2}{|c|}{\textbf{Operazioni bit a bit}}\\
+  \hline
+  \textbf{~} & complemento (unario) bit a bit\\
+  \hline
+  \textbf{\&} & AND bit a bit\\
+  \hline
+  \textbf{$\vert$} & OR bit a bit\\
+  \hline
+  \textbf{\^} & OR ESCLUSIVO bit a bit\\
+  \hline
+  \textbf{$<<$} & traslazione a sinistra della distanza specificata inserendo bit uguali a $0$\\
+  \hline
+  \textbf{$>>$} & traslazione a destra della distanza specificata replicando il segno (bit più significativo)\\
+  \hline
+  \textbf{$>>>$} & traslazione a destra della distanza specificata inserendo bit uguali a $0$\\
+  \hline
+\end{tabularx}
+
+\vspace{1em}
+\subsection{Floating}
+Con i dati di tipo \quotes{floating} possono essere rappresentati i tipi reali:
+\begin{enumerate}
+  \item $+,-$, ossia più unario e meno unario
+  \item $++,--$, incremento e decremento
+  \item $+,-$, somma e sottrazione
+  \item $\ast,/$, moltiplicazione e divisione reale
+  \item $\%$ resto $\boldsymbol{r}$ della divisione reale fra $n$ e $d$, ossia
+  \[\boldsymbol{r} = n - d \ast q\]
+\end{enumerate}
+Si consideri, a tal proposito, il seguente esempio:
+
+\vspace{1em}
+\noindent
+\begin{lstlisting}[language=Java, caption=Operazioni reali in Java]
+  public class RealNumbers
+  {
+    public static void main(String args[]) {
+      x1 = 2.8f;
+      x2 = 45.890d;
+      float y = 17f;
+      double z = 3d;
+      double r = y / z;
+
+      System.out.println("y / z = " + r);
+    }
+  }
+\end{lstlisting}
+\vspace{1em}
+
+\vspace{1em}
+\noindent
+In generale non è necessario specificare sempre \quotes{f} o \quotes{d} per \emph{float} o \emph{double}: principalmente si sta specificando quanta memoria utilizzare.
+
+\vspace{1em}
+\subsection{Definizione di variabili}
+Le variabili di un tipo primitivo si definiscono come nei seguenti esempi:
+
+\vspace{1em}
+\noindent
+\begin{lstlisting}[language=Java, caption=Dichiarazione di variabili in Java]
+  public class DichiarazioneVariabili
+  {
+    public static void main(String args[]) {
+      int n;
+      doubled d = 10.0;
+      boolean b, bb = true;
+      charc c = '\t';
+    }
+  }
+\end{lstlisting}
+\vspace{1em}
+
+\noindent
+I dati che descrivono un problema si possono suddividere in \textbf{costanti} e \textbf{variabili}:
+\begin{itemize}
+  \item i dati variabili possono cambiare valore;
+  \item i dati costanti sono dati che hanno un valore predefinito, che non cambia. Una costante è una variabile \emph{final} con valore iniziale specificato, come mostrato di seguito. Generalmente il nome della variabile viene specificato in maiuscolo ed è importante che il valore non cambi, specialmente quando ad uno stesso codice sorgente lavorano più programmatori.
+\end{itemize}
+
+\vspace{1em}
+\noindent
+\begin{lstlisting}[language=Java, caption=Dichiarazione di costanti in Java]
+  public class DichiarazioneCostanti
+  {
+    public static void main(String args[]) {
+      final int CNST_1 = 10;
+      final int CNST_2 = CNST_1*3;
+    }
+  }
+\end{lstlisting}
+\vspace{1em}
+
+\subsection{Espressioni}
+Un’espressione è composta da \textbf{operandi} e \textbf{operatori}, e viene calcolata eseguendo in sequenza una serie di operazioni.\\
+Per ogni operatore, vengono prima valutati gli operandi e quindi applicato l’operatore stesso. Alcuni operatori richiedono esplicitamente che un operando sia una variabile, mentre l’utilizzo dei delimitatori \quotes{parentesi tonde} individua sottoespressioni che vengono considerate operandi e che quindi vengono calcolate per prime.
+
+\vspace{1em}
+\noindent
+\begin{lstlisting}[language=Java, caption=Ordine delle operazioni in Java]
+  public class OrdineOperazioni
+  {
+    public static void main(String args[]) {
+      double x;
+
+      double y1 = x / 3 * 2;
+      double y2 = (x / 3) * 2;
+    }
+  }
+\end{lstlisting}
+\vspace{1em}
+
+\noindent
+\textbf{Osservazione}: Gli operatori $/$ e $\ast$ hanno la stessa precedenza, per cui l'ordine di esecuzione viene determinato dall’associatività: gli operatori aritmetici binari sono associativi a sinistra, e l'espressione $x / 3 * 2$ viene calcolata come se fosse scritta $(x / 3) * 2$.
+
+\vspace{1em}
+\subsection{Operatore condizionale}
+L’operatore condizionale ha la forma:
+
+\vspace{1em}
+\noindent
+\begin{lstlisting}[language=Java, caption=Operatore condizionale in Java]
+  public class OperatoreCondizionale
+  {
+    public static void main(String args[]) {
+      op1 ? op2 : op3;
+    }
+  }
+\end{lstlisting}
+\vspace{1em}
+
+\noindent
+Tale operatore richiede che il primo operando \emph{op1} sia di tipo booleano: se questo vale \emph{true} il risultato è il valore dell’operando \emph{op2}, altrimenti il valore dell’operando \emph{op3}.
+
+\vspace{1em}
+\subsection{Incremento e decremento}
+Gli operatori (unari) \quotes{$++$} e \quotes{$--$} richiedono come operando una variabile:
+\begin{itemize}
+  \item il valore aggiornato della variabile se prefissi;
+  \item il valore originario della variabile se postfissi.
+\end{itemize}
+Quando tali operatori sono prefissi hanno la priorità nell'operazione, mentre se sono postfissi, prima viene eseguita l'operazione e poi dopo l'incremento/decremento.
+
+
 
 
 

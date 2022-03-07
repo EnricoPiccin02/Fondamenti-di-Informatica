@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.1.27)  7 MAR 2022 08:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.1.27)  7 MAR 2022 12:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -663,22 +663,27 @@ Overfull \hbox (1.72937pt too wide) in paragraph at lines 85--85
 
  [1
 
-{/usr/local/texlive/2021basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4] [5] (/usr/local/texlive/2021basic/texmf-dist/tex/latex/listings/lstlang1.sty
+{/usr/local/texlive/2021basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (build/Programmazione - Fondamenti di Informatica.lol)
+\tf@lol=\write5
+\openout5 = `"Programmazione - Fondamenti di Informatica.lol"'.
+
+ [2] [3] [4] [5] [6] (/usr/local/texlive/2021basic/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
-) [6] [7] [8] (build/Programmazione - Fondamenti di Informatica.aux) ) 
+) [7] [8] [9] [10] [11] [12] [13] [14] [15] (build/Programmazione - Fondamenti di Informatica.aux) ) 
 Here is how much of TeX's memory you used:
- 33755 strings out of 480445
- 814384 string characters out of 5892391
- 1610212 words of memory out of 5000000
- 50593 multiletter control sequences out of 15000+600000
- 412930 words of font info for 64 fonts, out of 8000000 for 9000
+ 33807 strings out of 480445
+ 815050 string characters out of 5892391
+ 1654396 words of memory out of 5000000
+ 50634 multiletter control sequences out of 15000+600000
+ 415379 words of font info for 72 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  128i,14n,130p,944b,1817s stack positions out of 5000i,500n,10000p,200000b,80000s
- </Users/enricopiccin/Library/texlive/2021basic/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on "build/Programmazione - Fondamenti di Informatica.pdf" (8 pages, 122949 bytes).
+ </Users/enricopiccin/Library/texlive/2021basic/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2021basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
+Output written on "build/Programmazione - Fondamenti di Informatica.pdf" (15 pages, 189675 bytes).
 PDF statistics:
- 67 PDF objects out of 1000 (max. 8388607)
- 48 compressed objects within 1 object stream
+ 113 PDF objects out of 1000 (max. 8388607)
+ 81 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
