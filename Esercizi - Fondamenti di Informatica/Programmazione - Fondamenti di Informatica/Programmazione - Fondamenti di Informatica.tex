@@ -247,7 +247,7 @@ Il \textbf{programma}, invece, si ottiene codificando l’algoritmo in un \textb
   4 Marzo 2022
 \end{center}
 
-\section{Error-Handling in Java}
+\section{Pratica di programmazione in Java}
 Si consideri il seguente esempio di codice Java, ovvero il codice sorgente:
 
 \begin{lstlisting}[language=Java, caption=Esempio di codice sorgente in Java]
@@ -379,7 +379,28 @@ Pertanto, la sintassi di dichiarazione di una variabile è la seguente
   [modificatore] tipo_di_dato nome_della_variabile [=inizializzazione];
 \end{lstlisting}
 
-... continua ...
+\noindent
+Per \emph{[modificatore]} è da intendersi una specifica della visibilità della variabile (protected, private o public).\\
+Il \emph{tipo di dato} da specificare è essenziale, in quanto in base ad esso si ha una differente gestione della memoria.\\
+Anche il \emph{nome della variabile} è fondamentale, in quanto esso deve essere \textbf{significativo} e deve aiutare il prgorammatore nella memorizzazione delle variabili dichiarate e da impiegare. È molto utile in questo l'utilizzo della notazione \textbf{camelCase}, che prevede di indicare la prima letterea di una parola in maiuscolo e il restante in minuscolo:
+se si considera una \emph{variabile}, essa deve essere scritta con iniziale minuscola e poi impiegando la notazione camelCase, così come per una \emph{funzione}; se si consiera una \emph{costante}, essa vine scritta tutta in maisucolo; se si considera una \emph{classe}, essa avrà l'iniziale maiucola: questo anche perché il linguaggio Java è \textbf{case-sensitive}.\\
+Le variabili, naturalmente, devono essere interpretate come delle regioni di memoria, limitate e non immutabili, in cui vengono memorizzate informazioni di diversa natura. È possibile, naturalmente, riservare al proprio programma diverse regioni di memoria, con un limite di dimensione, ovviamente, e specificando in maniera esplicita la tipologia di informazione da memorizzare.
+Ovviamente esiste una sostanziale differenza tra dichiarazione di una variabile e innizializzazione della stessa: infatti, è possibile dichiarare una variabile senza bisogno di inizializzarla.\\
+Da notare, tuttavia, che la dichiarazione deve sempre essere preceduta dalla specifica della tipologia di dato; ogni assegnazione (che rappresenta un aggiornamento del contenuto informativo della variabile), invece, eccezion fatta per l'inizializzazione, non deve mai essere preceduta dalla specifica della tipologia del dato.\\
+Naturalmente, una variabile viene utilizzata per contenere delle informazioni, le quali possono essere recuperate semplicemente specificando il nome della variabiele di interesse all'interno del programma.
+
+\vspace{1em}
+\noindent
+\textbf{Osservazione}: Naturalmente le stringhe esplicite, all'interno del progrmma, devono essere sempre rcchiuse dalle dalle virgolette, mentre affinché una variabile venga letta e interpretata come tale deve essere specificata con solo il suio nome e non tra le virgolette.\\
+La concatenazione delle stringhe, nel linguaggio Java, avviene tramite il simbolo di addizione \quotes{$+$}.\\
+Naturalmente, per commentare parti di codice si utilizza una sequenza di caratteri racchiusa tra \quotes{/*} e \quotes{*/} (\textbf{commento tradizionale}), oppure tra \quotes{//} e un terminatore di linea (commento di fine linea). Naturalmente, le parti di codice che vengono contrassegnate come commento, all'interno del programma verranno totalmente ignorate e non compilate dal compilatore stesso.\\
+La conversione da stringa a intero avviene grazie al metodo \textbf{toString()} della libreria \textbf{Integer}, il quale prende come parametro proprio la stringa da convertire. In questo caso, la libreria impiegata è stata elaborata da un'altro svilupatore, il quale l'ha messa a disposizione del linguaggio Java e fancendo sì che essa possa essere richiamata senza bisogno di codice aggiuntivo.
+
+\vspace{1em}
+\subsection{Errori in Java}
+Un esempio molto comune di \textbf{errore} in Java è quello \textbf{di sintassi}, che recita: \quotes{\textbf{cannot find symbol}}: tale errore si verifica quando viene utilizzato all'interno del codice una variabile non dichiarata o un comando non previsto dal liguaggio Java stesso; Il messaggio di errore \quotes{; expected} indica che un'istruzione non è stata terminata correttamente dal punto-vrigola, il quale è un elemento fondameentale nella programmazione per segnalare a Java che un'istruzione è stata terminata.\\
+Un \textbf{errore}, invece, \textbf{di esecuzione}, a differenza di un errore di programmazione o sintassi come quelli precedenti, come una \textbf{Exception}, è un errore che il programmatore commette nel definire le operazioni del programma (come dividere zero per zero o aprire un file inesistente, o accedere a delle posizioni di un array fuori range, per esempio) e, quindi, non genera un messaggio di errore da parte del compilatore in fase di compilazione, ma è un errore che si palesa durante l'esecuzione (si parla, in questo caso, di \textbf{Runtime Exception}).\\
+Un \textbf{errore logico}, invece, è un errore che il programmatore commette nel definire la logica della programmazione: pertanto la sintassi è corretta e le operzioni che il programma deve svolgere sono corrette; tuttavia ciò che il programma deve fare non è corretto in termini logici. Questo, ovviamente, è il più difficile da individuare: è il cosiddetto \textbf{bug};
 
 \newpage
 \noindent
@@ -677,7 +698,152 @@ Gli operatori (unari) \quotes{$++$} e \quotes{$--$} richiedono come operando una
   \item il valore aggiornato della variabile se prefissi;
   \item il valore originario della variabile se postfissi.
 \end{itemize}
-Quando tali operatori sono prefissi hanno la priorità nell'operazione, mentre se sono postfissi, prima viene eseguita l'operazione e poi dopo l'incremento/decremento.
+Quando tali operatori sono prefissi hanno la priorità nell'operazione, mentre se sono postfissi, prima viene eseguita l'operazione e poi dopo l'incremento/decremento, come mostrato di seguito
+
+\vspace{1em}
+\noindent
+\begin{lstlisting}[language=Java, caption=Incremento in Java]
+  public class Incremento
+  {
+    public static void main(String args[]) {
+      int a = 5;
+			System.out.println("Il valore di a e' uguale a" + a++);
+			a = 5;
+			System.out.println("Il valore di a e' uguale a" + ++a);
+    }
+  }
+\end{lstlisting}
+\vspace{1em}
+
+\newpage
+\noindent
+\begin{center}
+  8 Marzo 2022
+\end{center}
+
+\subsection{Altri operatori}
+Di seguito si espongono ulteriori operatori utili alla programazione in Java
+
+\vspace{1em}
+\noindent
+\rowcolors{1}{white}{white}
+\begin{tabularx}{\textwidth}{|>{\hsize=0.1\textwidth}P|P|}
+  \hline
+  \rowcolor{blue!5}
+  \textbf{Operatore} & \textbf{Descrizione}\\
+  \hline
+  \textbf{[]} & Definisce un array, come \textbf{char[]}\\
+  \hline
+  \textbf{.} & Riferisce a un membro di un oggetto\\
+  \hline
+  \textbf{(tipo)} & \parbox{\linewidth}{\vspace{3mm} Converte, ossia effettua un \textbf{casting} dela variabile alla quale quale è affiancato in base al \emph{tipo} specificato, se il tipo di dato da convertire è compatibile con tale conversione (che non altera il contenuto informativo della variabile, ma solo la sua interpretazione, come numero o carattere, per esempio).
+	La conversione deve rispettare una specifica gerarchia e può essere eseguita in modo diretto solamente tra i tipi di dato primitivo. Per i dati derivati è necessario impiegare metodoi opportuni di classi specifiche. Un programma interno alla macchina virtuale, che prende il nome di \textbf{Garbage-Collector}, opera all'interno dell'\textbf{heap} di memoria  dinamica per cercare di ottimizzare lo spazio (come quando si istanza un oggetto senza poi disfarsene al termine del suo utilizzo).\vspace{3mm}}\\
+  \hline
+  \textbf{new} & \parbox{\linewidth}{\vspace{3mm} Crea un nuovo oggetto e lo alloca in una parte dinamica della memoria dell'elaboratore, chiamata \textbf{heap}, più libera e non controllata dal sistema operativo, che differisce dall'area di memoria più contenuta, ma più veloce, riservata alle variabili primitive, chiamata \textbf{stack}, maggiormanete controllata dal sistema operativo. \vspace{3mm}}\\
+  \hline
+  \textbf{instanceof} & \parbox{\linewidth}{\vspace{3mm}restituisce \emph{true} se $op1$ è una istanza di $op2$, come nel caso di $op1$ $instanceof$  $op2$\vspace{3mm}}\\
+  \hline
+\end{tabularx}
+
+\vspace{1em}
+\subsection{Casting - Conversione di tipo}
+Una conversione di tipo consente:
+\begin{itemize}
+  \item nel caso di un \textbf{operatore aritmetico binario}, di trasformare il tipo di un operando nel tipo dell’altro operando;
+  \item nel caso dell’\textbf{operatore di assegnazione}, di trasformare il tipo del risultato di una espressione nel tipo della variabile a cui il nuovo valore deve essere assegnato;
+  \item nell’ambito dei tipi “integral” e “floating”, rispettivamente, verso il tipo che \textbf{usa un maggior numero di bit per la rappresentazione}, con nessuna perdita di informazione.
+\end{itemize}
+
+\vspace{1em}
+\subsection{Classe Math}
+La classe \textbf{Math} fa parte del package \textbf{java.lang}, contiene come \textbf{membri statici} (per cui non c'è bisogno di istanziare un nuovo oggetto Math con \textbf{new} per accedervi) alcune \emph{costanti} e diverse \emph{funzioni matematiche} di uso comune, come il valore assoluto, la radice $n$-esima, operazioni trigonometriche, arrotondamento, etc.
+
+\vspace{1em}
+\subsection{Classe String}
+Una \textbf{stringa} è una sequenza di caratteri, che può anche non avere alcun carattere (\textbf{stringa vuota}). Una variabile appartenente a questo tipo, detta variabile stringa, rappresenta il riferimento di un oggetto stringa che memorizza una stringa costante.
+
+\vspace{1em}
+\noindent
+\begin{lstlisting}[language=Java, caption=Inizializzazione di una stringa in Java]
+  public class ClasseStringa
+  {
+    public static void main(String args[]) {
+      // Inizializzazione della stringa primaStringa con il parametro "Ciao mondo!"
+      String primaStringa = new String("Ciao mondo!");
+    }
+  }
+\end{lstlisting}
+\vspace{1em}
+
+\noindent
+All'interno della inizializzazione è presente il metodo costruttore \textbf{new String()} che permette di istanziare un oggetto della classe String specificata, allocandovi uno spazio di memoria nell'heap di memoria.\\
+La classe \textbf{String} è una classe le cui istanze rappresentano dellle stringhe di caratteri alfanumerici. Tutte le stringhe nei programmi Java, come \quotes{abc}, vengono implementate come istanze della classe \emph{String}.
+
+\vspace{1em}
+\subsection{Classe Integer}
+La classe \textbf{Integer} consente di creare un oggetto classe a partire da un valore del tipo primitivo \textbf{int}: pertanto la classe \emph{Integer} è è un \textbf{wrapper}: le classi wrapper sono predefinite nel linguaggio e servono a racchiudere in oggetti i valori di un tipo primitivo al fine di ottimizzarne i metodi e la manipolazione, come mostrato di seguito:
+
+\vspace{1em}
+\noindent
+\begin{lstlisting}[language=Java, caption=Classe Integer in Java]
+  public class ClasseInteger
+  {
+    public static void main(String args[]) {
+      // Istanza di un Integer senza new, ma direttamente attraverso il metodo
+      // della classe Integer
+      Integer numero = Integer.parseInt("300");
+      System.out.println(numero * 2);
+    }
+  }
+\end{lstlisting}
+\vspace{1em}
+
+\noindent
+Altri esempi di classi wrapper sono
+\begin{enumerate}
+  \item Boolean
+  \item Byte
+  \item Character
+  \item Integer
+  \item Long
+  \item Float
+  \item Double
+\end{enumerate}
+
+\vspace{1em}
+\subsection{Classe Console}
+All'interno della classe \textbf{Console} sono presenti le funzioni atte ad effettuare una emulazione dell'ambiente di linea di comando al fine di effettuare \textbf{letture da tastiera e scritture su video} di valori appartenenti ai principali tipi di dato primitivo (tipi boolean, char, int, double) e al tipo stringa (String).\\
+Tale classe è estremamemente utile per ottimizzare il codice, facilitando l'interazione con l'utente, e renderlo versatile, ossia capace di adattarsi a diversi tipi di input e output che possono derivare dell'esecuzione del programma.\\
+I programmi Java, infatti, possono utilizzare classi predefinite, ma anche e soprattuto facenti parte di un \textbf{package} esterno, tipicamente dei package che costituiscono le \textbf{Java API}, attraverso la loro importazione, come nel caso della libreria \textbf{java.io.Console} mostrata di seguito:
+
+\vspace{1em}
+\noindent
+\begin{lstlisting}[language=Java, caption=Classe Console in Java]
+  import java.io.Console;
+
+  public class ClasseConsole
+  {
+    public static void main(String args[]) {
+      Console console = System.console(); // Inizializzazione oggetto Console
+
+      System.out.println("Inserisci il primo numero:");
+      String input = console.readLine();  // Lettura dato da tastiera
+      int pNum = Integer.parseInt(input); // Conversione in intero del dato letto
+      System.out.println("Il primo numero e': " + pNum);
+
+      System.out.println("Inserisci il secondo numero:");
+      input = console.readLine();         // Lettura dato da tastiera
+      int sNum = Integer.parseInt(input); // Conversione in intero del dato letto
+      System.out.println("Il primo numero e': " + sNum);
+
+      System.out.println("La somma tra i due numeri e': " + (pNum+sNum));
+    }
+  }
+\end{lstlisting}
+\vspace{1em}
+
+
+
 
 
 

@@ -10,17 +10,24 @@
 \contentsline {subsection}{\numberline {1.6}Programmi traduttori: compilatore e interprete}{4}{}%
 \contentsline {subsection}{\numberline {1.7}Soluzione di problemi con il calcolatore}{5}{}%
 \contentsline {subsection}{\numberline {1.8}Algoritmo e programma}{6}{}%
-\contentsline {section}{\numberline {2}Error-Handling in Java}{7}{}%
+\contentsline {section}{\numberline {2}Pratica di programmazione in Java}{7}{}%
 \contentsline {subsection}{\numberline {2.1}Computabilità}{7}{}%
 \contentsline {subsection}{\numberline {2.2}Paradigma di programmazione}{8}{}%
 \contentsline {subsubsection}{\numberline {2.2.1}Paradigma dichiarativo}{8}{}%
 \contentsline {subsubsection}{\numberline {2.2.2}Paradigma procedurale}{8}{}%
 \contentsline {subsection}{\numberline {2.3}Linguaggio imperativo}{8}{}%
-\contentsline {section}{\numberline {3}I dati in Java}{10}{}%
-\contentsline {subsection}{\numberline {3.1}Booleano}{11}{}%
-\contentsline {subsection}{\numberline {3.2}Intero}{11}{}%
-\contentsline {subsection}{\numberline {3.3}Floating}{13}{}%
-\contentsline {subsection}{\numberline {3.4}Definizione di variabili}{14}{}%
-\contentsline {subsection}{\numberline {3.5}Espressioni}{14}{}%
-\contentsline {subsection}{\numberline {3.6}Operatore condizionale}{15}{}%
-\contentsline {subsection}{\numberline {3.7}Incremento e decremento}{15}{}%
+\contentsline {subsection}{\numberline {2.4}Errori in Java}{10}{}%
+\contentsline {section}{\numberline {3}I dati in Java}{11}{}%
+\contentsline {subsection}{\numberline {3.1}Booleano}{12}{}%
+\contentsline {subsection}{\numberline {3.2}Intero}{12}{}%
+\contentsline {subsection}{\numberline {3.3}Floating}{14}{}%
+\contentsline {subsection}{\numberline {3.4}Definizione di variabili}{15}{}%
+\contentsline {subsection}{\numberline {3.5}Espressioni}{15}{}%
+\contentsline {subsection}{\numberline {3.6}Operatore condizionale}{16}{}%
+\contentsline {subsection}{\numberline {3.7}Incremento e decremento}{16}{}%
+\contentsline {subsection}{\numberline {3.8}Altri operatori}{17}{}%
+\contentsline {subsection}{\numberline {3.9}Casting - Conversione di tipo}{17}{}%
+\contentsline {subsection}{\numberline {3.10}Classe Math}{17}{}%
+\contentsline {subsection}{\numberline {3.11}Classe String}{18}{}%
+\contentsline {subsection}{\numberline {3.12}Classe Integer}{18}{}%
+\contentsline {subsection}{\numberline {3.13}Classe Console}{19}{}%
