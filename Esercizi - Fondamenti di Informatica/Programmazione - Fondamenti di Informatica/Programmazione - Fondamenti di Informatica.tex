@@ -6,6 +6,7 @@
 \usepackage{xcolor}
 \usepackage{circuitikz}
 \usetikzlibrary{positioning, circuits.logic.US}
+\usetikzlibrary{shapes.geometric, arrows}
 \usetikzlibrary {shapes.gates.logic.US, shapes.gates.logic.IEC, calc}
 \tikzset {branch/.style={fill, shape = circle, minimum size = 3pt, inner sep = 0pt}}
 \usetikzlibrary{matrix,calc}
@@ -840,12 +841,266 @@ I programmi Java, infatti, possono utilizzare classi predefinite, ma anche e sop
     }
   }
 \end{lstlisting}
+
+\newpage
+\noindent
+\begin{center}
+  14 Marzo 2022
+\end{center}
+In Java esistono $3$ principali tipi di input
+\begin{itemize}
+  \item System.in (java.lang.System);
+  \item String[] args, tramite il terminale;
+  \item Console (java.io.Console);
+  \item Scanner (java.util.Scanner);
+\end{itemize}
+
 \vspace{1em}
+\subsection{Classe Scanner}
+La \textbf{lettura formattata} di valori di un tipo primitivo (escluso il tipo byte) o di tipo stringa, si effettuano comunemente utilizzando stream appartenenti alla classe \textbf{Scanner}.\\
+La classe Scanner presenta diverse funzionalità:
+\begin{itemize}
+  \item Lettura della \textbf{password} senza fare eco ai caratteri inseriti.
+  \item I metodi di lettura \textbf{sono sincronizzati}.
+  \item È possibile utilizzare la \textbf{sintassi della stringa di formato}.
+  \item Non funziona in un ambiente non interattivo (come in un IDE).
+\end{itemize}
+A differenza della classe Console, la quale
+\begin{itemize}
+  \item presenta metodi convenienti per analizzare le primitive (nextInt(), nextFloat(), ...).
+  \item presenta metodi di lettura \textbf{non sincronizzati}.
+\end{itemize}
+Per impiegare la classe Scanner è necessario procedere all'importazione della libreria \textbf{java.util.Scanner}:
 
+\vspace{1em}
+\noindent
+\begin{lstlisting}[language=Java, caption=Classe Scanner in Java]
+  import java.io.Console;
+  import java.util.Scanner;
 
+  public class ClasseScanner
+  {
+    public static void main(String args[]) {
+      Console console = System.console();     // Inizializzazione oggetto Console
+      Scanner sc = new Scanner(con.reader()); // Inizializzazione oggetto Scanner
 
+      con.printf("****************************\n");
+      con.printf("Un altro programma! \n");
+      con.printf("****************************\n");
 
+      con.printf("Qual e' il tuo nome? \n >>>");
+      String nome = sc.nextLine();                 // Lettura dato da tastiera
 
+      con.printf("Ciao " + nome + "! Quanti anni hai? \n >>>");
+      int anni = Integer.parseInt(sc.nextLine());  // Lettura dato da tastiera
+
+      con.printf("Ok, grazie dell'informazione!");
+    }
+  }
+\end{lstlisting}
+
+\vspace{1em}
+\noindent
+In cui è noto che \textbf{Integer} è un \textbf{wrapper}, ossia una classe che ingloba il tipo di dato primitivo \textbf{int} e ne amplia l'utilizzo, grazie a nuovi metodi complessi e l'utilizzo di memoria dinamica.\\
+È possibile, tramite la classe Scanner, impiegare metodi per analizzare le primitive (nextInt(), nextFloat(), ...), come mostrato di seguito:
+
+\vspace{1em}
+\noindent
+\begin{lstlisting}[language=Java, caption=Calcolo Indice Massa Corporea in Java]
+  import java.io.Console;
+  import java.util.Scanner;
+
+  public class IMC
+  {
+    public static void main(String args[]) {
+      Console console = System.console();     // Inizializzazione oggetto Console
+      Scanner sc = new Scanner(con.reader()); // Inizializzazione oggetto Scanner
+
+      con.printf("****************************\n");
+      con.printf("Calcolo - Indice Massa Corporea (IMC)");
+      con.printf("****************************\n");
+
+      con.printf("Altezza: \n >>>");
+      double altezza = sc.nextDouble();// Lettura dato da tastiera
+
+      con.printf("Peso: \n >>>");
+      int altezza = sc.nextInt();      // Lettura dato da tastiera
+
+      con.printf("IMC = %.2f", (peso / (altezza*altezza)));
+    }
+  }
+\end{lstlisting}
+
+\vspace{1em}
+\noindent
+In cui \quotes{\%.2f} specifica il formato con due cifre decimali.
+
+\vspace{1em}
+\subsection{Classi e Oggetti}
+I \textbf{tipi primitivi} prevedono la definizione di \textbf{variabili} di un dato tipo; com'è noto, una variabile di un tipo primitivo ha un nome e un valore e il tempo di vita di una tale variabile \textbf{dipende dal luogo in cui è definita} (per esempio, le variabili definite nel corpo di una funzione sono automatiche).\\
+Per esempio, un oggetto \textbf{Stringa} viene creato (e allocato in memoria dinamica \textbf{heap}) per mezzo dell’operatore \emph{new} seguito da un \textbf{costruttore}.\\
+Il recupero della \textbf{memoria dinamica} non più utilizzata viene effettuata dalla piattaforma \textbf{Java} per mezzo di una specifica routine (chiamata \textbf{Garbage Collector}), che periodicamente libera quelle zone di memoria della macchina virtuale occupate da oggetti per i quali non esiste più alcuna variabile/oggetto che li riferisce.\\
+Pertanto, mentre per le variabili di tipo primitivo è il sistema a gestirne l'allocazione, per gli oggetti, istanze di opportune classi, è il programmatore a dover fare un buon uso della memoria, coadiuvato dal programma \textbf{Garbage Collector}.
+
+\newpage
+\section{Istruzioni in Java}
+Di seguito si espongono le principali istruzioni in linguaggio Java, che permettono di strutturare in maniera più complessa il programma:
+\begin{itemize}
+  \item Istruzioni codizionali
+  \item Istruzioni ripetitive
+  \item Istruzioni di salto
+\end{itemize}
+
+\vspace{1em}
+\subsection{Istruzioni condizionali}
+Si consideri il seguente codice sorgente Java:
+
+\vspace{1em}
+\noindent
+\begin{lstlisting}[language=Java, caption=Esempio istruzione condiziale in Java]
+  import java.io.Console;
+  import java.util.Scanner;
+
+  public class IMC2
+  {
+    public static void main(String args[]) {
+      Console console = System.console();     // Inizializzazione oggetto Console
+      Scanner sc = new Scanner(con.reader()); // Inizializzazione oggetto Scanner
+
+      con.printf("****************************\n");
+      con.printf("Calcolo - Indice Massa Corporea (IMC) (V2)");
+      con.printf("****************************\n");
+
+      con.printf("Altezza: \n >>>");
+      double altezza = sc.nextDouble(); // Lettura dato da tastiera
+
+      con.printf("Peso: \n >>>");
+      int altezza = sc.nextInt();       // Lettura dato da tastiera
+
+      float imc = (peso / (float)(altezza*altezza));
+      con.printf("Il tuo IMC e' %.2f, questo significa che sei ", IMC);
+
+      if(imc<16)
+        con.printf("sottopeso grave\n");
+      else if(imc<18.8)
+        con.printf("sottopeso\n");
+      else if(imc<25)
+        con.printf("normale\n");
+      else if(imc<30)
+        con.printf("sovrappeso\n");
+      else
+        con.printf("obeso\n");
+    }
+  }
+\end{lstlisting}
+
+\vspace{1em}
+\noindent
+Come si può notare, le \textbf{istruzioni condizionali} comprendono l’istruzione \textbf{if} e l’istruzione \textbf{switch}. La \textbf{condizione} è un’espressione che deve produrre un risultato di tipo \textbf{booleano} (notare che non è possibile nessuna conversione di tipo fra intero e booleano, né implicita né indicata esplicitamente dal programmatore).
+Da notare che la parte \textbf{else} può anche mancare, per cui se la condizione è vera, viene eseguita l’istruzione che segue \textbf{if}, altrimenti quella che segue \textbf{else} (se presente).
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}[node distance=2cm]
+    % start
+    \tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=red!30]
+    % input/output
+    \tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
+    % process
+    \tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30]
+
+    % if
+    \tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30]
+    % arrow
+    \tikzstyle{arrow} = [thick,->,>=stealth]
+
+    \node (start) [startstop] {Inzio};
+    \node (dec1)  [decision, below of=start, yshift=-4em] {Condizione};
+    \node (istV)  [process, right of=dec1, xshift=8em] {Istruzione se vero};
+    \node (istF)  [process, left of=dec1, xshift=-8em] {Istruzione se falso};
+    \node (end)   [startstop, below of=start, yshift=-14em] {Fine};
+
+    \draw [arrow] (start) -- (dec1);
+    \draw [arrow] (dec1) -- node[midway, above]{vero}  (istV);
+    \draw [arrow] (dec1) -- node[midway, above]{falso} (istF);
+    \draw [arrow] (istV) |- (end);
+    \draw [arrow] (istF) |- (end);
+  \end{tikzpicture}
+  \caption{Diagramma di flusso con istruzione condizionale}
+  \label{fig:diagramma_flusso_istruzione_condizionale}
+\end{figure}
+
+\vspace{1em}
+\noindent
+Naturalmente, è possibile anche concatenare fra di loro diverse istruzioni condizionali, come mostrato di seguito:
+
+\vspace{1em}
+\noindent
+\begin{lstlisting}[language=Java, caption=Calcolo delle radici in Java]
+  public class Radici
+  {
+    public static void main(String args[]) {
+      double a,b,c,delta;
+      a = Float.parseFloat(args[0]);
+      b = Float.parseFloat(args[1]);
+      c = Float.parseFloat(args[2]);
+
+      if(a==0 && b==0)
+        System.out.println("Equazione degenere");
+      else if(a==0) {
+        System.out.println("Equazione di primo grado");
+        System.out.println(-c/b);
+      } else {
+        delta = b*b - 4*a*c;
+        if(delta<0)
+          System.out.println("Determinante negativo!");
+        else {
+          delta = Math.sqrt(delta);
+          System.out.println("Equazione di secondo grado");
+          System.out.println((-b+delta)/(2a));
+          System.out.println((-b-delta)/(2a));
+        }
+      }
+    }
+  }
+\end{lstlisting}
+
+\vspace{1em}
+\noindent
+In cui, naturalmente, se non vengono poste delle partesi graffe per delmitare lo \emph{scope} dell'istruzione condizionale significa implicitamente che lo \emph{scope} è costituito da una sola riga di codice.
+
+\vspace{1em}
+\noindent
+Usando l'istruzione \textbf{switch}, la condizione deve essere un'espressione di tipo \emph{byte}, \emph{char}, \emph{short} o \emph{int}, ed ogni espressione costante (\emph{constant-expression}), valutata durante la compilazione.\\
+La sequenza di istruzioni contenute nell’alternativa selezionata viene quindi eseguita con la seguente logica:
+\begin{itemize}
+  \item l’ultima istruzione della sequenza deve produrre la terminazione dell’istruzione \textbf{switch}.
+  \item tale terminazione può essere ottenuta con un’istruzione \textbf{break}.
+\end{itemize}
+
+\vspace{1em}
+\noindent
+Si consideri l'esempio seguente:
+
+\vspace{1em}
+\noindent
+\begin{lstlisting}[language=Java, caption=Esempio istruzione condiziale in Java]
+  public class NumeroPari
+  {
+    public static void main(String args[]) {
+      int numero = Integer.parseInt(args[0]);
+      switch(numero%2){
+        case 0:
+          System.out.println("Il numero " + numero + " e' pari");
+        break;
+
+        default:
+          System.out.println("Il numero " + numero + " e' dispari");
+        break;
+      }
+    }
+  }
+\end{lstlisting}
 
 
 

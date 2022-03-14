@@ -14,3 +14,8 @@
 \contentsline {lstlisting}{\numberline {14}Inizializzazione di una stringa in Java}{18}{}%
 \contentsline {lstlisting}{\numberline {15}Classe Integer in Java}{18}{}%
 \contentsline {lstlisting}{\numberline {16}Classe Console in Java}{19}{}%
+\contentsline {lstlisting}{\numberline {17}Classe Scanner in Java}{20}{}%
+\contentsline {lstlisting}{\numberline {18}Calcolo Indice Massa Corporea in Java}{21}{}%
+\contentsline {lstlisting}{\numberline {19}Esempio istruzione condiziale in Java}{22}{}%
+\contentsline {lstlisting}{\numberline {20}Calcolo delle radici in Java}{23}{}%
+\contentsline {lstlisting}{\numberline {21}Esempio istruzione condiziale in Java}{24}{}%
