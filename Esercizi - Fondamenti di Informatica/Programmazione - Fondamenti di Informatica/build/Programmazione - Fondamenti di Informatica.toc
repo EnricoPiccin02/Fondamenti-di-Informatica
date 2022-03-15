@@ -35,3 +35,5 @@
 \contentsline {subsection}{\numberline {3.15}Classi e Oggetti}{21}{}%
 \contentsline {section}{\numberline {4}Istruzioni in Java}{22}{}%
 \contentsline {subsection}{\numberline {4.1}Istruzioni condizionali}{22}{}%
+\contentsline {subsection}{\numberline {4.2}Istruzioni ripetitive}{25}{}%
+\contentsline {subsection}{\numberline {4.3}Istruzioni di salto}{26}{}%

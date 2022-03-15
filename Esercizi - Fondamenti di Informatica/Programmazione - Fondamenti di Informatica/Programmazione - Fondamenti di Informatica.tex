@@ -1047,7 +1047,7 @@ Naturalmente, è possibile anche concatenare fra di loro diverse istruzioni cond
 
       if(a==0 && b==0)
         System.out.println("Equazione degenere");
-      else if(a==0) {
+      else if(a==0) {
         System.out.println("Equazione di primo grado");
         System.out.println(-c/b);
       } else {
@@ -1074,8 +1074,8 @@ In cui, naturalmente, se non vengono poste delle partesi graffe per delmitare lo
 Usando l'istruzione \textbf{switch}, la condizione deve essere un'espressione di tipo \emph{byte}, \emph{char}, \emph{short} o \emph{int}, ed ogni espressione costante (\emph{constant-expression}), valutata durante la compilazione.\\
 La sequenza di istruzioni contenute nell’alternativa selezionata viene quindi eseguita con la seguente logica:
 \begin{itemize}
-  \item l’ultima istruzione della sequenza deve produrre la terminazione dell’istruzione \textbf{switch}.
-  \item tale terminazione può essere ottenuta con un’istruzione \textbf{break}.
+  \item l'ultima istruzione della sequenza deve produrre la terminazione dell’istruzione \textbf{switch}.
+  \item tale terminazione può essere ottenuta con un'istruzione \textbf{break}.
 \end{itemize}
 
 \vspace{1em}
@@ -1102,6 +1102,190 @@ Si consideri l'esempio seguente:
   }
 \end{lstlisting}
 
+\newpage
+\noindent
+\begin{center}
+  15 Marzo 2022
+\end{center}
+\subsection{Istruzioni ripetitive}
+Le \textbf{istruzioni ripetitive} comprendono l’istruzione \emph{while}, l’istruzione \emph{do-while} e l’istruzione \emph{for}:
+\begin{itemize}
+  \item \textbf{While}: La condizione è un’espressione che deve produrre un risultato di tipo booleano. Se la condizione è vera, viene eseguita l’istruzione che costituisce il corpo del costrutto e l’istruzione while viene ripetuta, altrimenti l’istruzione while termina.
 
+  \item \textbf{Do-While}: La condizione viene valutata dopo che è stata eseguita l’istruzione che costituisce il corpo del costrutto, e, se vera, l’istruzione do-while viene ripetuta.
 
+  \item \textbf{For}: L'inizializzazione è un’espressione di assegnamento che inizializza una variabile di controllo (eventualmente con definizione di tale variabile), e l’aggiornamento (o passo) è un’espressione che dà un nuovo valore alla variabile di controllo stessa (la incrementa o la decrementa).
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}[node distance=2cm]
+    % start
+    \tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=red!30]
+    % input/output
+    \tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
+    % process
+    \tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30]
+
+    % if
+    \tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30]
+    % arrow
+    \tikzstyle{arrow} = [thick,->,>=stealth]
+
+    \node (start) [startstop] {Inzio};
+    \node (dec1)  [decision, below of=start, yshift=-4em] {Condizione};
+    \node (istV)  [process, right of=dec1, xshift=8em] {Istruzione se vero};
+    \node (end)   [startstop, below of=start, yshift=-14em] {Fine};
+
+    \draw [arrow] (start) -- (dec1);
+    \draw [arrow] (dec1) -- node[midway, above]{vero} (istV) -- ++(2,0) -- ++(0,2) -| (dec1);
+    \draw [arrow] (dec1) -- node[midway, right]{falso} (end);
+  \end{tikzpicture}
+  \caption{Diagramma di flusso con istruzione ripetitiva}
+  \label{fig:diagramma_flusso_istruzione_ripetitiva}
+\end{figure}
+
+\vspace{0.5em}
+\noindent
+\textbf{Esempio}: Si espone di seguito un programma che mostra un primo utilizzo dell'istruzione ripetitiva \textbf{while}:
+
+\vspace{1em}
+\noindent
+\begin{lstlisting}[language=Java, caption=Istruzione ripetitiva while in Java]
+  public class MCD
+  {
+    public static void main(String args[]) {
+      int alfa,beta,mcd;
+      alfa = Integer.parseInt(args[0]);
+      beta = Integer.parseInt(args[1]);
+
+      while(alfa != beta) {
+        System.out.println(":alfa"+alfa);
+        System.out.println(":beta"+beta);
+        if(alfa > beta)
+          alfa -= beta;
+        else
+          beta -= alfa;
+      }
+      mcd = alfa;
+      System.out.println("**************** MCD:"+mcd);
+    }
+  }
+\end{lstlisting}
+
+\vspace{1em}
+\noindent
+\textbf{Esempio}: Si espone di seguito un programma che mostra un primo utilizzo dell'istruzione ripetitiva \textbf{do-while}:
+
+\vspace{1em}
+\noindent
+\begin{lstlisting}[language=Java, caption=Istruzione ripetitiva do-while in Java]
+  import java.io.Console;
+  import java.util.Scanner;
+
+  public class InputPari
+  {
+    public static void main(String args[]) {
+      int c;
+
+      Console con = System.console();
+      Scanner sc = new Scanner(con.reader());
+
+      do{
+        con.printf("Immettere un numero pari:");
+        c = Integer.parseInt(sc.next());
+        System.out.println(":beta"+beta);
+      }while(c%2!=0);
+      mcd = alfa;
+      con.printf("Grazie!"\n);
+    }
+  }
+\end{lstlisting}
+
+\vspace{1em}
+\noindent
+\textbf{Esempio}: Si espone di seguito un programma che mostra un primo utilizzo dell'istruzione ripetitiva \textbf{do-while}:
+
+\vspace{1em}
+\noindent
+\begin{lstlisting}[language=Java, caption=Istruzione ripetitiva for in Java]
+  public class Fatt
+  {
+    public static void main(String args[]) {
+      int num, fattoriale=1;
+
+      for(int i=1;i<=num;i++){
+        System.out.println(fattoriale);
+        fattoriale*=i;
+      }
+      System.out.println(fattoriale);
+    }
+  }
+\end{lstlisting}
+
+\vspace{1em}
+\subsection{Istruzioni di salto}
+Un'\textbf{istruzione di salto} cambia il flusso di ripetizioni di esecuzioni dei codice. Le istruzioni di salto sono le seguenti:
+\begin{itemize}
+  \item Istruzione \textbf{break}: Se l’identificatore è omesso, essa produce la terminazione del costrutto \textbf{switch}, \textbf{while}, \textbf{do-while} o \textbf{for} in cui compare;
+  \item Istruzione \textbf{continue}: Se l’identificatore è omesso, essa produce la terminazione della iterazione corrente del ciclo \textbf{while}, \textbf{do-while} o \textbf{for} in cui compare, con esecuzione della iterazione successiva;
+  \item Istruzione \textbf{return}: Essa produce la terminazione della funzione in cui compare.
+\end{itemize}
+
+\newpage
+\noindent
+\textbf{Esempio}: Si espone di seguito un programma che mostra un primo utilizzo dell'istruzione di salto \textbf{break}:
+
+\vspace{1em}
+\noindent
+\begin{lstlisting}[language=Java, caption=Istruzione di salto break in Java]
+  public class EsempioBreak
+  {
+    public static void main(String args[]) {
+      for(int i=1;i<=10;i++){
+        System.out.println("i:"+i);
+        if(i==5) break;
+      }
+      System.out.println("Fine!");
+    }
+  }
+\end{lstlisting}
+
+\vspace{1em}
+\noindent
+\textbf{Esempio}: Si espone di seguito un programma che mostra un primo utilizzo dell'istruzione di salto \textbf{continue}:
+
+\vspace{1em}
+\noindent
+\begin{lstlisting}[language=Java, caption=Istruzione di salto continue in Java]
+  public class EsempioContinue
+  {
+    public static void main(String args[]) {
+      for(int i=1;i<=10;i++){
+        if(i==5) continue;
+        System.out.println("i:"+i);
+      }
+      System.out.println("Fine!");
+    }
+  }
+\end{lstlisting}
+
+\vspace{1em}
+\noindent
+\textbf{Esempio}: Si espone di seguito un programma che mostra un primo utilizzo dell'istruzione di salto \textbf{return}:
+
+\vspace{1em}
+\noindent
+\begin{lstlisting}[language=Java, caption=Istruzione di salto return in Java]
+  public class EsempioReturn
+  {
+    public static void main(String args[]) {
+      for(int i=1;i<=10;i++){
+        System.out.println("i:"+i);
+        if(i==5) return;
+      }
+      System.out.println("Fine!");
+    }
+  }
+\end{lstlisting}
 \end{document}

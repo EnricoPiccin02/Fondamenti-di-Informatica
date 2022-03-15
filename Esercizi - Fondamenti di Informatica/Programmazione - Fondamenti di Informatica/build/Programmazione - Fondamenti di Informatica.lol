@@ -19,3 +19,9 @@
 \contentsline {lstlisting}{\numberline {19}Esempio istruzione condiziale in Java}{22}{}%
 \contentsline {lstlisting}{\numberline {20}Calcolo delle radici in Java}{23}{}%
 \contentsline {lstlisting}{\numberline {21}Esempio istruzione condiziale in Java}{24}{}%
+\contentsline {lstlisting}{\numberline {22}Istruzione ripetitiva while in Java}{25}{}%
+\contentsline {lstlisting}{\numberline {23}Istruzione ripetitiva do-while in Java}{26}{}%
+\contentsline {lstlisting}{\numberline {24}Istruzione ripetitiva for in Java}{26}{}%
+\contentsline {lstlisting}{\numberline {25}Istruzione di salto break in Java}{27}{}%
+\contentsline {lstlisting}{\numberline {26}Istruzione di salto continue in Java}{27}{}%
+\contentsline {lstlisting}{\numberline {27}Istruzione di salto return in Java}{27}{}%
