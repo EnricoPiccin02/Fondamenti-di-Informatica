@@ -957,7 +957,7 @@ Si consideri il seguente codice sorgente Java:
 
 \vspace{1em}
 \noindent
-\begin{lstlisting}[language=Java, caption=Esempio istruzione condiziale in Java]
+\begin{lstlisting}[language=Java, caption=Esempio dell'istruzione condizionale if in Java]
   import java.io.Console;
   import java.util.Scanner;
 
@@ -1075,7 +1075,7 @@ Usando l'istruzione \textbf{switch}, la condizione deve essere un'espressione di
 La sequenza di istruzioni contenute nell’alternativa selezionata viene quindi eseguita con la seguente logica:
 \begin{itemize}
   \item l'ultima istruzione della sequenza deve produrre la terminazione dell’istruzione \textbf{switch}.
-  \item tale terminazione può essere ottenuta con un'istruzione \textbf{break}.
+  \item tale terminazione può essere ottenuta con un'istruzione \textbf{break}. Se tale istruzione viene a mancare, verranno eseguiti tutti i case sottostanti, fino a che non viene incontrato un \textbf{break}.
 \end{itemize}
 
 \vspace{1em}
@@ -1084,7 +1084,7 @@ Si consideri l'esempio seguente:
 
 \vspace{1em}
 \noindent
-\begin{lstlisting}[language=Java, caption=Esempio istruzione condiziale in Java]
+\begin{lstlisting}[language=Java, caption=Esempio dell'istruzione condizionale switch in Java]
   public class NumeroPari
   {
     public static void main(String args[]) {
@@ -1102,6 +1102,38 @@ Si consideri l'esempio seguente:
   }
 \end{lstlisting}
 
+\vspace{1em}
+\noindent
+\textbf{Osservazione}: Si osservi che è anche possibile ripetere uno stesso \textbf{case} più volte, ma verrà sempre eseguito il primo per ordine di precedenza.\\
+Inoltre si possono raggruppare anche più \textbf{case} insieme, come mostrato di seguito:
+
+\vspace{1em}
+\noindent
+\begin{lstlisting}[language=Java, caption=Esempio di multiple-case switch in Java]
+public class NumeroPari
+{
+  public static void main(String args[]) {
+    int numero = Integer.parseInt(args[0]);
+    switch(numero){
+      case 0: case 2: case 4: case 6: case 8: case 10:
+        System.out.println("Il numero " + numero + " e' pari");
+      break;
+
+      case 1: case 3: case 5:
+      System.exit(1);
+
+      default:
+        System.out.println("Il numero " + numero + " e' dispari");
+      break;
+    }
+  }
+}
+\end{lstlisting}
+
+\vspace{1em}
+\noindent
+\textbf{Osservazione}: Si osservi che l'istruzione \textbf{System.exit(1)} permette di terminare l'esecuzione del programma corrente (esattamente come l'istruzione \textbf{return}).
+
 \newpage
 \noindent
 \begin{center}
@@ -1110,11 +1142,11 @@ Si consideri l'esempio seguente:
 \subsection{Istruzioni ripetitive}
 Le \textbf{istruzioni ripetitive} comprendono l’istruzione \emph{while}, l’istruzione \emph{do-while} e l’istruzione \emph{for}:
 \begin{itemize}
-  \item \textbf{While}: La condizione è un’espressione che deve produrre un risultato di tipo booleano. Se la condizione è vera, viene eseguita l’istruzione che costituisce il corpo del costrutto e l’istruzione while viene ripetuta, altrimenti l’istruzione while termina.
+  \item \textbf{While}: La \textbf{condizione viene valutata come prima istruzione} ed è un’espressione che deve produrre un risultato di tipo booleano. Se la condizione è vera, viene eseguita l’istruzione che costituisce il corpo del costrutto e l’istruzione while viene ripetuta, altrimenti l’istruzione while termina.
 
-  \item \textbf{Do-While}: La condizione viene valutata dopo che è stata eseguita l’istruzione che costituisce il corpo del costrutto, e, se vera, l’istruzione do-while viene ripetuta.
+  \item \textbf{Do-While}: La \textbf{condizione viene valutata dopo} che è stata eseguita l’istruzione che costituisce il corpo del costrutto, e, se vera, l’istruzione do-while viene ripetuta.
 
-  \item \textbf{For}: L'inizializzazione è un’espressione di assegnamento che inizializza una variabile di controllo (eventualmente con definizione di tale variabile), e l’aggiornamento (o passo) è un’espressione che dà un nuovo valore alla variabile di controllo stessa (la incrementa o la decrementa).
+  \item \textbf{For}: L'inizializzazione è un’espressione di assegnamento che inizializza una variabile di controllo (eventualmente con definizione di tale variabile), e l’aggiornamento (o passo) è un’espressione che dà un nuovo valore alla variabile di controllo stessa (la incrementa o la decrementa, generalmente).
 \end{itemize}
 
 \begin{figure}[H]
@@ -1145,11 +1177,11 @@ Le \textbf{istruzioni ripetitive} comprendono l’istruzione \emph{while}, l’i
   \label{fig:diagramma_flusso_istruzione_ripetitiva}
 \end{figure}
 
-\vspace{0.5em}
+\vspace{0.1em}
 \noindent
 \textbf{Esempio}: Si espone di seguito un programma che mostra un primo utilizzo dell'istruzione ripetitiva \textbf{while}:
 
-\vspace{1em}
+\vspace{0.3em}
 \noindent
 \begin{lstlisting}[language=Java, caption=Istruzione ripetitiva while in Java]
   public class MCD
@@ -1197,7 +1229,7 @@ Le \textbf{istruzioni ripetitive} comprendono l’istruzione \emph{while}, l’i
         System.out.println(":beta"+beta);
       }while(c%2!=0);
       mcd = alfa;
-      con.printf("Grazie!"\n);
+      con.printf("Grazie!\n");
     }
   }
 \end{lstlisting}
@@ -1213,10 +1245,11 @@ Le \textbf{istruzioni ripetitive} comprendono l’istruzione \emph{while}, l’i
   {
     public static void main(String args[]) {
       int num, fattoriale=1;
+      num = Integer.parseInt(args[0]);
 
       for(int i=1;i<=num;i++){
-        System.out.println(fattoriale);
         fattoriale*=i;
+        System.out.println(fattoriale);
       }
       System.out.println(fattoriale);
     }
@@ -1227,8 +1260,8 @@ Le \textbf{istruzioni ripetitive} comprendono l’istruzione \emph{while}, l’i
 \subsection{Istruzioni di salto}
 Un'\textbf{istruzione di salto} cambia il flusso di ripetizioni di esecuzioni dei codice. Le istruzioni di salto sono le seguenti:
 \begin{itemize}
-  \item Istruzione \textbf{break}: Se l’identificatore è omesso, essa produce la terminazione del costrutto \textbf{switch}, \textbf{while}, \textbf{do-while} o \textbf{for} in cui compare;
-  \item Istruzione \textbf{continue}: Se l’identificatore è omesso, essa produce la terminazione della iterazione corrente del ciclo \textbf{while}, \textbf{do-while} o \textbf{for} in cui compare, con esecuzione della iterazione successiva;
+  \item Istruzione \textbf{break}: Se l’identificatore viene inserito, esso produce la terminazione del costrutto \textbf{switch}, \textbf{while}, \textbf{do-while} o \textbf{for} in cui compare;
+  \item Istruzione \textbf{continue}: Se l’identificatore viene inserito, esso produce la terminazione della iterazione corrente del ciclo \textbf{while}, \textbf{do-while} o \textbf{for} in cui compare, con esecuzione della iterazione successiva;
   \item Istruzione \textbf{return}: Essa produce la terminazione della funzione in cui compare.
 \end{itemize}
 

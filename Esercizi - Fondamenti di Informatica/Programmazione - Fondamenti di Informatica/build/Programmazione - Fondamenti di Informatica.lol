@@ -16,12 +16,13 @@
 \contentsline {lstlisting}{\numberline {16}Classe Console in Java}{19}{}%
 \contentsline {lstlisting}{\numberline {17}Classe Scanner in Java}{20}{}%
 \contentsline {lstlisting}{\numberline {18}Calcolo Indice Massa Corporea in Java}{21}{}%
-\contentsline {lstlisting}{\numberline {19}Esempio istruzione condiziale in Java}{22}{}%
+\contentsline {lstlisting}{\numberline {19}Esempio dell'istruzione condizionale if in Java}{22}{}%
 \contentsline {lstlisting}{\numberline {20}Calcolo delle radici in Java}{23}{}%
-\contentsline {lstlisting}{\numberline {21}Esempio istruzione condiziale in Java}{24}{}%
-\contentsline {lstlisting}{\numberline {22}Istruzione ripetitiva while in Java}{25}{}%
-\contentsline {lstlisting}{\numberline {23}Istruzione ripetitiva do-while in Java}{26}{}%
-\contentsline {lstlisting}{\numberline {24}Istruzione ripetitiva for in Java}{26}{}%
-\contentsline {lstlisting}{\numberline {25}Istruzione di salto break in Java}{27}{}%
-\contentsline {lstlisting}{\numberline {26}Istruzione di salto continue in Java}{27}{}%
-\contentsline {lstlisting}{\numberline {27}Istruzione di salto return in Java}{27}{}%
+\contentsline {lstlisting}{\numberline {21}Esempio dell'istruzione condizionale switch in Java}{24}{}%
+\contentsline {lstlisting}{\numberline {22}Esempio di multiple-case switch in Java}{24}{}%
+\contentsline {lstlisting}{\numberline {23}Istruzione ripetitiva while in Java}{25}{}%
+\contentsline {lstlisting}{\numberline {24}Istruzione ripetitiva do-while in Java}{26}{}%
+\contentsline {lstlisting}{\numberline {25}Istruzione ripetitiva for in Java}{26}{}%
+\contentsline {lstlisting}{\numberline {26}Istruzione di salto break in Java}{27}{}%
+\contentsline {lstlisting}{\numberline {27}Istruzione di salto continue in Java}{27}{}%
+\contentsline {lstlisting}{\numberline {28}Istruzione di salto return in Java}{27}{}%
