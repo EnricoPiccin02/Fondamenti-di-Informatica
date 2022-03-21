@@ -1321,4 +1321,267 @@ Un'\textbf{istruzione di salto} cambia il flusso di ripetizioni di esecuzioni de
     }
   }
 \end{lstlisting}
+
+\newpage
+\begin{center}
+  21 Marzo 2022
+\end{center}
+\section{Array}
+Com'è noto, in Java esistono \textbf{tipi di dato primitivi}, i quali prevedono la definizione di variabili di un dato tipo, ove per variabile di tipo primitivo è da intendersi una locazione di memoria nello \textbf{stack} avente un \textbf{nome} e un \textbf{valore}; il \textbf{tempo di vita} di una variabile dipende dal luogo (\emph{scope}) in cui è definita.\\
+I \textbf{tipi derivati} (enumerazioni, array, stringhe, ecc) prevedono la definizione del tipo, la definizione di variabili di quel tipo e la creazione di oggetti di quel tipo: un tipo derivato è costituito da più componenti (anche una sola) raggruppate in un’unica entità; una variabile di un tipo derivato ha le stesse caratteristiche di una variabile di un tipo primitivo, con la differenza che il suo valore è un indirizzo, quello di un oggetto di quel tipo. Un oggetto di un tipo derivato ha un tempo di vita dinamico: viene creato esplicitamente quando serve (per mezzo dell’operatore new), allocato in una zona di memoria, detta, appunto, \textbf{memoria dinamica} (o \textbf{heap}).
+
+\vspace{1em}
+\subsection{Enumerazione}
+I tipi \textbf{enumerazione} vengono usati per rappresentare un numero limitato di valori associati a informazioni non numeriche, per cui gli enumeratori sono identificatori di costanti e gli oggetti riferiti dagli enumeratori vengono creati implicitamente nel momento in cui viene definito il tipo.
+
+\vspace{1em}
+\noindent
+\begin{lstlisting}[language=Java, caption=Enumerazione in Java]
+  public class Semaforo
+  {
+    public static void main(String args[]) {
+      enum SemaforoEnum {verde,giallo,rosso};
+      SemaforoEnum attuale = SemaforoEnum.verde;
+      System.out.println("Il valore attuale e': "+attuale);
+      for(SemaforoEnum i : SemaforoEnum.values())
+        System.out.println(i);
+    }
+  }
+\end{lstlisting}
+
+\vspace{1em}
+\subsection{Array monodimensionale}
+Il tipo di dato \textbf{aray} rappresenta un \textbf{aggregato} di elementi di uno \textbf{stesso tipo}: ogni elemento si accede mediante un indice che ne individua la posizione (un numero intero positivo $n$ di elementi, il cui indice va da $0$ a $n-1$); gli elementi di un array vengono selezionati per mezzo dell’operatore di indicizzazione \quotes{[]}.
+
+\vspace{1em}
+\noindent
+\begin{lstlisting}[language=Java, caption=Esempio di array in Java]
+  public class EsempioArray
+  {
+    public static void main(String args[]) {
+      int[] numArray1 = new int[5]; // Dichiarazione e inizializzazione dell'array
+      int[] numArray2[];            // Dichiarazione dell'array
+      int numArray3 = {1,2,3,4,5};  // Dichiarazione e inizializzazione dell'array
+
+      numArray1[1] = 300;           // Modifica di un valore dell'array
+      numArray2 = new int[100];     // Allocazione dell'array
+
+      System.out.println(numArray1[1]);
+      System.out.println(numArray2[99]);
+      System.out.println(numArray3[0]);
+    }
+  }
+\end{lstlisting}
+
+\vspace{1em}
+\noindent
+L’\textbf{operatore di assegnamento} (=) può essere applicato anche a variabili array dello stesso tipo: vengono però coinvolti i riferimenti, e non gli oggetti array, come mostrato di seguito:
+
+\vspace{1em}
+\noindent
+\begin{lstlisting}[language=Java, caption=Operazioni di assegnamento tra array in Java]
+  public class EsempioArray2
+  {
+    public static void main(String args[]) {
+      int[] numArray1 = {1,2,3,4}; // Dichiarazione e inizializzazione dell'array
+      int[] numArray2[];            // Dichiarazione dell'array
+
+      numArray2 = numArray1;
+      System.out.println("numArray1:"+numArray1[0]);
+      System.out.println("numArray2:"+numArray2[0]);
+
+      numArray2[0] = 256;
+      System.out.println("numArray1:"+numArray1[0]);
+      System.out.println("numArray2:"+numArray2[0]);
+    }
+  }
+\end{lstlisting}
+
+\vspace{1em}
+\noindent
+In cui \emph{numArray1} e \emph{numArray2} puntano alla stessa locazione di memoria: ogni modifica che riguarda uno dei due array viene riflesso anche nell'altro.\\
+Per avere una copia dell'array e del suo contenuto e non sono dell'indirizzo di memoria bisogna impiegare il metodo \textbf{System.arraycopy(arr1,pStart,arr2,pStart,pEnd)}.
+
+\vspace{1em}
+\subsection{Array multidimensionale}
+Un oggetto array (\textbf{array primario}) può avere come elementi altri oggetti array (\textbf{array secondari}): in questo caso negli elementi dell’array primario sono memorizzati i riferimenti degli array secondari (e non direttamente gli array secondari), come mostrato di seguito:
+
+\vspace{1em}
+\noindent
+\begin{lstlisting}[language=Java, caption=Array multidimensionale in Java]
+  public class EsempioArray2D
+  {
+    public static void main(String args[]) {
+      int[][] numArray2D = {{1,2,3,4}, {5,6}, {7}}; // Array bidimensionale
+
+      for(int i=0;i<numArray2D.length;i++){
+        for(int j=0;j<numArray2D[i].length;j++)
+          System.out.println("["+i+"]["+j+"]:"+numArray2D[i][j]);
+      }
+    }
+  }
+\end{lstlisting}
+
+\vspace{1em}
+\noindent
+\textbf{Osservazione}: Per ricercare se un dato elemento è presente all’interno di un array, ed eventualmente conoscerne la posizione, occorre precisare se l’array è o meno ordinato: se l’array non è ordinato, non si può fare altro che una ricerca completa, come esposto di seguito:
+
+\vspace{1em}
+\noindent
+\begin{lstlisting}[language=Java, caption=Array multidimensionale in Java]
+  public class RicercaArray2D
+  {
+    public static void main(String args[]) {
+      int[][] numArray2D = new int[3][4]; // Inizializzazione array bidimensionale a 0
+
+      numArray2D[1][3]=1;
+      for(int i=0;i<numArray2D.length;i++){
+        for(int j=0;j<numArray2D[i].length;j++)
+          if(numArray2D[i][j]!=0)
+            System.out.println("Found numArray2D["+i+"]["+j+"]:"+numArray2D[i][j]);
+      }
+    }
+  }
+\end{lstlisting}
+
+\newpage
+\section{Stringa}
+Una stringa è una \emph{sequenza di caratteri}, che può anche non avere alcun carattere (stringa vuota); in Java esiste come classe il tipo String (package java.lang): una variabile appartenente a questo tipo, detta variabile stringa, rappresenta il riferimento di un oggetto stringa.\\
+Un oggetto stringa viene creato (e allocato in memoria dinamica) per mezzo dell’operatore \textbf{new} seguito da un costruttore:
+
+\vspace{1em}
+\noindent
+\begin{lstlisting}[language=Java, caption=Esempio dichiarazione stringa in Java]
+  public class DichiarazioneStringa
+  {
+    public static void main(String args[]) {
+      String str1 = "Prima stringa";
+      String str2 = new String();
+      str2 = "Seconda stringa";
+      String str3 = new String("Terza stringa");
+
+      System.out.println(str1);
+      System.out.println(str2);
+      System.out.println(str2);
+    }
+  }
+\end{lstlisting}
+
+\vspace{1em}
+\subsection{Concatenazione}
+La concatenazione di stringhe avviene tramite l'operatore $+$:
+
+\vspace{1em}
+\noindent
+\begin{lstlisting}[language=Java, caption=Dichiarazione di una stringa in Java]
+  public class DichiarazioneStringa
+  {
+    public static void main(String args[]) {
+      String str1 = new String("ABC");
+      String str2 = new String("DEF");
+      String conc = str1+str2;
+      System.out.println(conc);
+
+      conc+=100+"";
+      System.out.println(conc);
+    }
+  }
+\end{lstlisting}
+
+\vspace{1em}
+\subsection{Lunghezza}
+La lunghezza di una stringa è determinata dal valore restituito dalla funzione \textbf{length()}:
+
+\vspace{1em}
+\noindent
+\begin{lstlisting}[language=Java, caption=Lunghezza di una stringa in Java]
+  public class LunghezzaStringa
+  {
+    public static void main(String args[]) {
+      String str1 = new String("Ciao mondo!");
+      System.out.println("La lunghezza della stringa str1 e'"+str1.length);
+    }
+  }
+\end{lstlisting}
+
+\newpage
+\subsection{Uguaglianza}
+Per confrontare le stringhe memorizzate in due oggetti stringa si utilizza la funzione \textbf{equals()};
+
+\vspace{1em}
+\noindent
+\begin{lstlisting}[language=Java, caption=Uguaglianza fra stringhe in Java]
+  public class ConfrontaStringhe
+  {
+    public static void main(String args[]) {
+      String str1 = "Italia";
+      String str2 = "Italia";
+      String str3 = "Brasile";
+
+      System.out.println(str1==str2);
+      System.out.println(str1.equals(str2));
+
+      System.out.println(str1==str3);
+      System.out.println(str1.equals(str3));
+    }
+  }
+\end{lstlisting}
+
+\vspace{1em}
+\subsection{Selezione di un carattere}
+Per conoscere il carattere di una stringa ad una specifica posizione bisogna impiegare la funzione \textbf{charAt()}:
+
+\vspace{1em}
+\noindent
+\begin{lstlisting}[language=Java, caption=Uguaglianza fra stringhe in Java]
+  public class CarattereStringa
+  {
+    public static void main(String args[]) {
+      String str1 = "123456789";
+      System.out.println("Il sesto carattere di "+str1+" e': " + str1.charAt(6));
+    }
+  }
+\end{lstlisting}
+
+\vspace{1em}
+\subsection{Confronto}
+Le stringhe memorizzate in due oggetti stringa possono essere confrontate fra loro (lessicograficamente) per mezzo della funzione compareTo().\\
+Il risultato del confronto è
+\begin{itemize}
+  \item negativo, se la prima stringa è più corta della seconda (e il valore di ritorno specifica il numero di caratteri di differenza);
+  \item positivo, se la prima stringa è più lunga della seconda (e il valore di ritorno specifica il numero di caratteri di differenza);
+  \item zero, se la prima stringa è uguale alla seconda.
+\end{itemize}
+
+\vspace{1em}
+\noindent
+\begin{lstlisting}[language=Java, caption=Uguaglianza fra stringhe in Java]
+  public class ConfrontoStringhe
+  {
+    public static void main(String args[]) {
+      String str1 = "abc";
+      String str1 = "abcd";
+      String str1 = "abcdef";
+
+      System.out.println(strP.compareTo(strM));
+      System.out.println(strP.compareTo(strL));
+      System.out.println(strL.compareTo(strM));
+      System.out.println(strL.compareTo(strP));
+      System.out.println(strP.compareTo("123"));
+    }
+  }
+\end{lstlisting}
+
+\newpage
+\noindent
+\begin{center}
+  22 Marzo 2022
+\end{center}
+
+
+
+
+
+
+
 \end{document}

@@ -1,39 +1,49 @@
 \babel@toc {italian}{}
 \babel@toc {italian}{}
 \babel@toc {italian}{}
-\contentsline {section}{\numberline {1}Introduzione a Java}{3}{}%
-\contentsline {subsection}{\numberline {1.1}Editor}{3}{}%
-\contentsline {subsection}{\numberline {1.2}Compilazione}{3}{}%
-\contentsline {subsection}{\numberline {1.3}Lettura e interpretazione}{3}{}%
-\contentsline {subsection}{\numberline {1.4}Ambienti}{3}{}%
-\contentsline {subsection}{\numberline {1.5}Linguaggi di programmazione}{4}{}%
-\contentsline {subsection}{\numberline {1.6}Programmi traduttori: compilatore e interprete}{4}{}%
-\contentsline {subsection}{\numberline {1.7}Soluzione di problemi con il calcolatore}{5}{}%
-\contentsline {subsection}{\numberline {1.8}Algoritmo e programma}{6}{}%
-\contentsline {section}{\numberline {2}Pratica di programmazione in Java}{7}{}%
-\contentsline {subsection}{\numberline {2.1}Computabilità}{7}{}%
-\contentsline {subsection}{\numberline {2.2}Paradigma di programmazione}{8}{}%
-\contentsline {subsubsection}{\numberline {2.2.1}Paradigma dichiarativo}{8}{}%
-\contentsline {subsubsection}{\numberline {2.2.2}Paradigma procedurale}{8}{}%
-\contentsline {subsection}{\numberline {2.3}Linguaggio imperativo}{8}{}%
-\contentsline {subsection}{\numberline {2.4}Errori in Java}{10}{}%
-\contentsline {section}{\numberline {3}I dati in Java}{11}{}%
-\contentsline {subsection}{\numberline {3.1}Booleano}{12}{}%
-\contentsline {subsection}{\numberline {3.2}Intero}{12}{}%
-\contentsline {subsection}{\numberline {3.3}Floating}{14}{}%
-\contentsline {subsection}{\numberline {3.4}Definizione di variabili}{15}{}%
-\contentsline {subsection}{\numberline {3.5}Espressioni}{15}{}%
-\contentsline {subsection}{\numberline {3.6}Operatore condizionale}{16}{}%
-\contentsline {subsection}{\numberline {3.7}Incremento e decremento}{16}{}%
-\contentsline {subsection}{\numberline {3.8}Altri operatori}{17}{}%
-\contentsline {subsection}{\numberline {3.9}Casting - Conversione di tipo}{17}{}%
-\contentsline {subsection}{\numberline {3.10}Classe Math}{17}{}%
-\contentsline {subsection}{\numberline {3.11}Classe String}{18}{}%
-\contentsline {subsection}{\numberline {3.12}Classe Integer}{18}{}%
-\contentsline {subsection}{\numberline {3.13}Classe Console}{19}{}%
-\contentsline {subsection}{\numberline {3.14}Classe Scanner}{20}{}%
-\contentsline {subsection}{\numberline {3.15}Classi e Oggetti}{21}{}%
-\contentsline {section}{\numberline {4}Istruzioni in Java}{22}{}%
-\contentsline {subsection}{\numberline {4.1}Istruzioni condizionali}{22}{}%
-\contentsline {subsection}{\numberline {4.2}Istruzioni ripetitive}{25}{}%
-\contentsline {subsection}{\numberline {4.3}Istruzioni di salto}{26}{}%
+\contentsline {section}{\numberline {1}Introduzione a Java}{4}{}%
+\contentsline {subsection}{\numberline {1.1}Editor}{4}{}%
+\contentsline {subsection}{\numberline {1.2}Compilazione}{4}{}%
+\contentsline {subsection}{\numberline {1.3}Lettura e interpretazione}{4}{}%
+\contentsline {subsection}{\numberline {1.4}Ambienti}{4}{}%
+\contentsline {subsection}{\numberline {1.5}Linguaggi di programmazione}{5}{}%
+\contentsline {subsection}{\numberline {1.6}Programmi traduttori: compilatore e interprete}{5}{}%
+\contentsline {subsection}{\numberline {1.7}Soluzione di problemi con il calcolatore}{6}{}%
+\contentsline {subsection}{\numberline {1.8}Algoritmo e programma}{7}{}%
+\contentsline {section}{\numberline {2}Pratica di programmazione in Java}{8}{}%
+\contentsline {subsection}{\numberline {2.1}Computabilità}{8}{}%
+\contentsline {subsection}{\numberline {2.2}Paradigma di programmazione}{9}{}%
+\contentsline {subsubsection}{\numberline {2.2.1}Paradigma dichiarativo}{9}{}%
+\contentsline {subsubsection}{\numberline {2.2.2}Paradigma procedurale}{9}{}%
+\contentsline {subsection}{\numberline {2.3}Linguaggio imperativo}{9}{}%
+\contentsline {subsection}{\numberline {2.4}Errori in Java}{11}{}%
+\contentsline {section}{\numberline {3}I dati in Java}{12}{}%
+\contentsline {subsection}{\numberline {3.1}Booleano}{13}{}%
+\contentsline {subsection}{\numberline {3.2}Intero}{13}{}%
+\contentsline {subsection}{\numberline {3.3}Floating}{15}{}%
+\contentsline {subsection}{\numberline {3.4}Definizione di variabili}{16}{}%
+\contentsline {subsection}{\numberline {3.5}Espressioni}{16}{}%
+\contentsline {subsection}{\numberline {3.6}Operatore condizionale}{17}{}%
+\contentsline {subsection}{\numberline {3.7}Incremento e decremento}{17}{}%
+\contentsline {subsection}{\numberline {3.8}Altri operatori}{18}{}%
+\contentsline {subsection}{\numberline {3.9}Casting - Conversione di tipo}{18}{}%
+\contentsline {subsection}{\numberline {3.10}Classe Math}{18}{}%
+\contentsline {subsection}{\numberline {3.11}Classe String}{19}{}%
+\contentsline {subsection}{\numberline {3.12}Classe Integer}{19}{}%
+\contentsline {subsection}{\numberline {3.13}Classe Console}{20}{}%
+\contentsline {subsection}{\numberline {3.14}Classe Scanner}{21}{}%
+\contentsline {subsection}{\numberline {3.15}Classi e Oggetti}{22}{}%
+\contentsline {section}{\numberline {4}Istruzioni in Java}{23}{}%
+\contentsline {subsection}{\numberline {4.1}Istruzioni condizionali}{23}{}%
+\contentsline {subsection}{\numberline {4.2}Istruzioni ripetitive}{26}{}%
+\contentsline {subsection}{\numberline {4.3}Istruzioni di salto}{27}{}%
+\contentsline {section}{\numberline {5}Array}{29}{}%
+\contentsline {subsection}{\numberline {5.1}Enumerazione}{29}{}%
+\contentsline {subsection}{\numberline {5.2}Array monodimensionale}{29}{}%
+\contentsline {subsection}{\numberline {5.3}Array multidimensionale}{30}{}%
+\contentsline {section}{\numberline {6}Stringa}{31}{}%
+\contentsline {subsection}{\numberline {6.1}Concatenazione}{31}{}%
+\contentsline {subsection}{\numberline {6.2}Lunghezza}{31}{}%
+\contentsline {subsection}{\numberline {6.3}Uguaglianza}{32}{}%
+\contentsline {subsection}{\numberline {6.4}Selezione di un carattere}{32}{}%
+\contentsline {subsection}{\numberline {6.5}Confronto}{32}{}%

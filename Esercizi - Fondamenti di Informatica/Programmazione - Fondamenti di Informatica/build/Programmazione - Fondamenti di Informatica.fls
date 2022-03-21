@@ -770,9 +770,9 @@ INPUT /usr/local/texlive/2021basic/texmf-dist/fonts/tfm/public/amsfonts/symbols/
 INPUT /usr/local/texlive/2021basic/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/local/texlive/2021basic/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /usr/local/texlive/2021basic/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
-OUTPUT build/Programmazione - Fondamenti di Informatica.toc
 OUTPUT build/Programmazione - Fondamenti di Informatica.pdf
 INPUT /usr/local/texlive/2021basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+OUTPUT build/Programmazione - Fondamenti di Informatica.toc
 INPUT build/Programmazione - Fondamenti di Informatica.lol
 INPUT build/Programmazione - Fondamenti di Informatica.lol
 INPUT build/Programmazione - Fondamenti di Informatica.lol
