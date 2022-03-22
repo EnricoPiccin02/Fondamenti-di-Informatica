@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1647861722 "Programmazione - Fondamenti di Informatica.tex" "build/Programmazione - Fondamenti di Informatica.pdf" "Programmazione - Fondamenti di Informatica" 1647861723
+["pdflatex"] 1647964206 "Programmazione - Fondamenti di Informatica.tex" "build/Programmazione - Fondamenti di Informatica.pdf" "Programmazione - Fondamenti di Informatica" 1647964207
   "/Users/enricopiccin/Library/texlive/2021basic/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk" 1643364959 11524 2df7d3388477aff28c2fab5169faa2c5 ""
   "/usr/local/texlive/2021basic/texmf-dist/fonts/tfm/jknappen/ec/ectt1000.tfm" 1136768653 1536 06717a2b50de47d4087ac0e6cd759455 ""
   "/usr/local/texlive/2021basic/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -206,10 +206,10 @@
   "/usr/local/texlive/2021basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1616691443 79187 72c3adcacc8085f6390cf80c64ac00e5 ""
   "/usr/local/texlive/2021basic/texmf-var/web2c/pdftex/pdflatex.fmt" 1643302228 2057433 28863b3cbca3a1e9d798e67601f03c47 ""
   "/usr/local/texlive/2021basic/texmf.cnf" 1616691442 628 e23d78b1be89c53495d66eec94d2300d ""
-  "Programmazione - Fondamenti di Informatica.tex" 1647861721 73225 5d0157c1b6f4553d1f10428824de88bc ""
-  "build/Programmazione - Fondamenti di Informatica.aux" 1647861723 10908 cad1be322147fb5d1dc53f29f161aa19 "pdflatex"
-  "build/Programmazione - Fondamenti di Informatica.lol" 1647861723 3306 76dec9c155bd902ab1e9cd452d9f6af4 "pdflatex"
-  "build/Programmazione - Fondamenti di Informatica.toc" 1647861723 3294 ae0fbc4e2ea26197fe861687c7045442 "pdflatex"
+  "Programmazione - Fondamenti di Informatica.tex" 1647964205 74671 ffab54a6cc92f49c13ecc19ac8ba60c9 ""
+  "build/Programmazione - Fondamenti di Informatica.aux" 1647964207 10906 7c3713cd22b8d4a96f797788eec70382 "pdflatex"
+  "build/Programmazione - Fondamenti di Informatica.lol" 1647964207 3304 b2ee4c2d13b0bc71cc9cf3d82aa1d73a "pdflatex"
+  "build/Programmazione - Fondamenti di Informatica.toc" 1647964207 3294 8276c99bd7564eaa220e204c71f5bf10 "pdflatex"
   (generated)
   "build/Programmazione - Fondamenti di Informatica.aux"
   "build/Programmazione - Fondamenti di Informatica.log"

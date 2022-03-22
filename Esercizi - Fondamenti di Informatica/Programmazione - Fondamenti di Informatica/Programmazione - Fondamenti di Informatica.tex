@@ -1384,7 +1384,7 @@ L’\textbf{operatore di assegnamento} (=) può essere applicato anche a variabi
   {
     public static void main(String args[]) {
       int[] numArray1 = {1,2,3,4}; // Dichiarazione e inizializzazione dell'array
-      int[] numArray2[];            // Dichiarazione dell'array
+      int[] numArray2[];           // Dichiarazione dell'array
 
       numArray2 = numArray1;
       System.out.println("numArray1:"+numArray1[0]);
@@ -1400,7 +1400,14 @@ L’\textbf{operatore di assegnamento} (=) può essere applicato anche a variabi
 \vspace{1em}
 \noindent
 In cui \emph{numArray1} e \emph{numArray2} puntano alla stessa locazione di memoria: ogni modifica che riguarda uno dei due array viene riflesso anche nell'altro.\\
-Per avere una copia dell'array e del suo contenuto e non sono dell'indirizzo di memoria bisogna impiegare il metodo \textbf{System.arraycopy(arr1,pStart,arr2,pStart,pEnd)}.
+Per avere una copia dell'array e del suo contenuto e non solo dell'indirizzo di memoria bisogna impiegare il metodo \textbf{System.arraycopy(arr1,pStartOrig,arr2,pStartDest,len)}, in cui
+\begin{itemize}
+  \item \emph{arr1}: è l'array di origine;
+  \item \emph{pStartOrig}: è la posizione iniziale nell'array di origine;
+  \item \emph{arr2}: è l'array di destinazione;
+  \item \emph{pStartDest}: è la posizione iniziale nei dati di destinazione;
+  \item \emph{len}: è il numero di elementi dell'array da copiare.
+\end{itemize}
 
 \vspace{1em}
 \subsection{Array multidimensionale}
@@ -1426,13 +1433,13 @@ Un oggetto array (\textbf{array primario}) può avere come elementi altri oggett
 \noindent
 \textbf{Osservazione}: Per ricercare se un dato elemento è presente all’interno di un array, ed eventualmente conoscerne la posizione, occorre precisare se l’array è o meno ordinato: se l’array non è ordinato, non si può fare altro che una ricerca completa, come esposto di seguito:
 
-\vspace{1em}
+\newpage
 \noindent
 \begin{lstlisting}[language=Java, caption=Array multidimensionale in Java]
   public class RicercaArray2D
   {
     public static void main(String args[]) {
-      int[][] numArray2D = new int[3][4]; // Inizializzazione array bidimensionale a 0
+      int[][] numArray2D = new int[3][4]; // Inizializzazione array a 0
 
       numArray2D[1][3]=1;
       for(int i=0;i<numArray2D.length;i++){
@@ -1490,7 +1497,7 @@ La concatenazione di stringhe avviene tramite l'operatore $+$:
 
 \vspace{1em}
 \subsection{Lunghezza}
-La lunghezza di una stringa è determinata dal valore restituito dalla funzione \textbf{length()}:
+La lunghezza di una stringa è determinata dal valore restituito dalla funzione \textbf{length()}, la quale è più propriamente un metodo della classe \textbf{String}:
 
 \vspace{1em}
 \noindent
@@ -1503,6 +1510,10 @@ La lunghezza di una stringa è determinata dal valore restituito dalla funzione 
     }
   }
 \end{lstlisting}
+
+\vspace{1em}
+\noindent
+Anche gli array presentano una propria lunghezza, la quale, però, non cosituisce un metodo di una classe precisa, ma rappresenta un attributo dell'array stesso, per cui si può richiamare come \textbf{arr.length}.
 
 \newpage
 \subsection{Uguaglianza}
@@ -1526,6 +1537,10 @@ Per confrontare le stringhe memorizzate in due oggetti stringa si utilizza la fu
     }
   }
 \end{lstlisting}
+
+\vspace{1em}
+\noindent
+\textbf{Osservazione}: La ragione della differenza tra $==$ e \emph{equals} è dovuta al fatto che $==$ confronta l'indirizzo di memoria di due stringhe che è, ovviamente, differente, mentre \emph{equals} confronta il contenuto memorizzato all'interno delle stringhe che può essere anche uguale.
 
 \vspace{1em}
 \subsection{Selezione di un carattere}
@@ -1553,15 +1568,15 @@ Il risultato del confronto è
   \item zero, se la prima stringa è uguale alla seconda.
 \end{itemize}
 
-\vspace{1em}
+\newpage
 \noindent
-\begin{lstlisting}[language=Java, caption=Uguaglianza fra stringhe in Java]
+\begin{lstlisting}[language=Java, caption=Confronto fra stringhe in Java]
   public class ConfrontoStringhe
   {
     public static void main(String args[]) {
-      String str1 = "abc";
-      String str1 = "abcd";
-      String str1 = "abcdef";
+      String strP = "abc";
+      String strM = "abcd";
+      String strL = "abcdef";
 
       System.out.println(strP.compareTo(strM));
       System.out.println(strP.compareTo(strL));
@@ -1571,6 +1586,10 @@ Il risultato del confronto è
     }
   }
 \end{lstlisting}
+
+\vspace{1em}
+\noindent
+\textbf{Osservazione}: Si osservi che, generalmente, per deteminare il risultato del confronto tra stringhe, si converte ciascun carattere secondo la tabella ASCII e si esegue la differenza fra i valori ottenuti: il risultato è proprio l'esito di tale operazione di differenza, come nell'ultimo caso sopra descritto, in cui il risultato della comparazione è $48$ in quanto la differenza tra ciascun carattere alfanumerico è $48$, secondo la tabella ASCII.
 
 \newpage
 \noindent

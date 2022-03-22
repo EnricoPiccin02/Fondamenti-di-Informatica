@@ -30,10 +30,10 @@
 \contentsline {lstlisting}{\numberline {30}Esempio di array in Java}{29}{}%
 \contentsline {lstlisting}{\numberline {31}Operazioni di assegnamento tra array in Java}{30}{}%
 \contentsline {lstlisting}{\numberline {32}Array multidimensionale in Java}{30}{}%
-\contentsline {lstlisting}{\numberline {33}Array multidimensionale in Java}{30}{}%
-\contentsline {lstlisting}{\numberline {34}Esempio dichiarazione stringa in Java}{31}{}%
-\contentsline {lstlisting}{\numberline {35}Dichiarazione di una stringa in Java}{31}{}%
-\contentsline {lstlisting}{\numberline {36}Lunghezza di una stringa in Java}{31}{}%
-\contentsline {lstlisting}{\numberline {37}Uguaglianza fra stringhe in Java}{32}{}%
-\contentsline {lstlisting}{\numberline {38}Uguaglianza fra stringhe in Java}{32}{}%
-\contentsline {lstlisting}{\numberline {39}Uguaglianza fra stringhe in Java}{32}{}%
+\contentsline {lstlisting}{\numberline {33}Array multidimensionale in Java}{31}{}%
+\contentsline {lstlisting}{\numberline {34}Esempio dichiarazione stringa in Java}{32}{}%
+\contentsline {lstlisting}{\numberline {35}Dichiarazione di una stringa in Java}{32}{}%
+\contentsline {lstlisting}{\numberline {36}Lunghezza di una stringa in Java}{32}{}%
+\contentsline {lstlisting}{\numberline {37}Uguaglianza fra stringhe in Java}{33}{}%
+\contentsline {lstlisting}{\numberline {38}Uguaglianza fra stringhe in Java}{33}{}%
+\contentsline {lstlisting}{\numberline {39}Confronto fra stringhe in Java}{34}{}%
