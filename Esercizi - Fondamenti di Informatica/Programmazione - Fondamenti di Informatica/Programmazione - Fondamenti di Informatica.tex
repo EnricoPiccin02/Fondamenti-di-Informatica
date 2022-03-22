@@ -1596,6 +1596,114 @@ Il risultato del confronto è
 \begin{center}
   22 Marzo 2022
 \end{center}
+\section{Funzioni in Java}
+Com'è noto, la classe principale di un programma è la funzione \emph{main()}; tuttavia, è possibile creare delle nuove funzioni che saranno richiamata dalla funzione \emph{main()} o da altre classi.\\
+Nella definizione di una funzione occorre indicare:
+\begin{itemize}
+  \item il modificatore di visibilità;
+  \item il tipo di istanziazione (static o meno);
+  \item il tipo di ritorno;
+  \item il nome;
+  \item eventuali parametri in ingresso;
+  \item le istruzioni da eseguire
+\end{itemize}
+
+\vspace{1em}
+\noindent
+\textbf{Osservazione}: Si osservi che metodo \emph{Java main()} è sempre statico, in modo tale che il compilatore possa richiamarlo senza la creazione di un oggetto o prima della creazione di un oggetto della classe.
+
+\vspace{1em}
+\subsection{Struttura}
+Il corpo di una funzione (essendo un blocco) non può contenere altre definizioni di funzione, ma solo definizioni di:
+\begin{itemize}
+  \item variabili;
+  \item classi.
+\end{itemize}
+Una funzione può restituire come valore un risultato, oppure non avere nessun risultato (in tale caso verrà specificato il tipo di ritorno tramite la parola chiave \textbf{void}); il corpo, inoltre, deve prevedere almeno una istruzione \textbf{return}, con la specifica dell’espressione il cui valore rappresenta il risultato stesso.
+
+\vspace{1em}
+\subsection{Visibilità}
+Le funzioni, come le stesse variabili, possono presentare differenti visibilità:
+\begin{itemize}
+  \item \textbf{public}: sono accessibili sia dall’interno che dall’esterno della classe;
+  \item \textbf{protected}: possono essere utilizzate all’interno della classe stessa e all’interno delle classi derivate;
+  \item \textbf{private}: possono essere utilizzate soltanto all’interno della classe stessa.
+  \item \textbf{default} (ossia senza specificazione): sono accessibili solo da tutte le classi nel medesimo package.
+\end{itemize}
+
+\vspace{1em}
+\noindent
+Si ricordi che lo \emph{scope} di una variabile rappresenta l’area di codice nella quale un identificatore resta associato ad un indirizzo di memoria: ogni blocco (cioè ogni gruppo di linee di codice racchiuso tra parentesi graffe) definisce uno \emph{scope} e ogni variabile locale ha come scope l’area di codice che inizia dalla definizione della variabile stessa e termina con il blocco corrente.\\
+In Java, a tal proposito, si distinguono quattro tipi di variabili:
+\begin{itemize}
+  \item \textbf{variabili locali}: valide solamente all’interno di un metodo, di un ciclo, etc.;
+  \item \textbf{variabili di istanza o globali}: variabili dichiarate all’esterno di ogni metodo e quindi visibili da ciascuna funzione;
+  \item \textbf{variabili di classe}: variabili \textbf{static} di una classe che possono essere impiegate senza istanziare un oggetto della classe stessa; tali variabili sono condivise da tutte le istanze della classe, in quanto per le variabili statiche esiste \textbf{un'unica locazione di memoria};
+  \item \textbf{variabili static + final}: sono costanti di classe; infatti tramite il modificatore \textbf{final} è possibile specificare che una variabile viene inizializzata una sola volta;
+\end{itemize}
+
+\vspace{1em}
+\subsection{Overloading}
+Si osservi che funzioni differenti possono avere lo \textbf{stesso identificatore} (\emph{sovrapposizione} o \emph{overloading}): esse devono, però, avere una differente firma (\emph{signature}):
+\begin{itemize}
+  \item parametri formali differenti in numero;
+  \item e/o tipo;
+  \item e/o ordine.
+\end{itemize}
+Si consideri l'esempio seguente:
+
+\vspace{1em}
+\noindent
+\begin{lstlisting}[language=Java, caption=Overloading in Java]
+  public class Overloading
+  {
+    public static final double PI = 3.141592;
+
+    public static void main(String args[]) {
+      double raggio = Double.parseDouble(args[0]);
+
+      System.out.println("Il volume della sfera e': "+vSfera(raggio));
+      System.out.println("Il volume della sfera e': "+vSfera(args[0]);
+    }
+
+    public static double vSfera(double raggio){
+      return (4/3 * PI * raggio * raggio * raggio);
+    }
+
+    public static double vSfera(int raggio){
+      return (4/3 * PI * raggio * raggio * raggio);
+    }
+
+    public static double volumeSphera(String str){
+      double raggio = Double.parseDouble(str);
+      return (4/3 * PI * raggio * raggio * raggio);
+    }
+
+  }
+\end{lstlisting}
+
+\vspace{1em}
+\subsection{Ricorsione}
+Una funzione può invocare non solo un’altra funzione, ma anche se stessa: in questo caso si dice che la funzione è \textbf{ricorsiva} (ovvero si ha una nuova istanza della medesima funzione mentre l’istanza attuale non è ancora conclusa).
+Un classico esempio è quello del calcolo del fattoriale di un numero intero positivo $n$, che può essere espresso ricorsivamente nel seguente modo:
+
+\newpage
+\noindent
+\begin{lstlisting}[language=Java, caption=Funzione ricorsiva in Java]
+  public class Fattoriale
+  {
+    public static void main(String args[]) {
+      int n = Integer.parseInt(args[0]);
+
+      System.out.println("Il fattoriale di "+n+" e': "+fact(n));
+    }
+
+    public int fact(int n){
+      if(n==0) return 1;
+      return n*fact(n-1);
+    }
+  }
+\end{lstlisting}
 
 
 

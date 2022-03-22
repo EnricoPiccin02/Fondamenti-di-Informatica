@@ -47,3 +47,8 @@
 \contentsline {subsection}{\numberline {6.3}Uguaglianza}{33}{}%
 \contentsline {subsection}{\numberline {6.4}Selezione di un carattere}{33}{}%
 \contentsline {subsection}{\numberline {6.5}Confronto}{33}{}%
+\contentsline {section}{\numberline {7}Funzioni in Java}{35}{}%
+\contentsline {subsection}{\numberline {7.1}Struttura}{35}{}%
+\contentsline {subsection}{\numberline {7.2}Visibilità}{35}{}%
+\contentsline {subsection}{\numberline {7.3}Overloading}{36}{}%
+\contentsline {subsection}{\numberline {7.4}Ricorsione}{36}{}%
