@@ -39,3 +39,6 @@
 \contentsline {lstlisting}{\numberline {39}Confronto fra stringhe in Java}{34}{}%
 \contentsline {lstlisting}{\numberline {40}Overloading in Java}{36}{}%
 \contentsline {lstlisting}{\numberline {41}Funzione ricorsiva in Java}{37}{}%
+\contentsline {lstlisting}{\numberline {42}Esempio di classe Java}{38}{}%
+\contentsline {lstlisting}{\numberline {43}Esempio variabile e oggetto di classe Java}{38}{}%
+\contentsline {lstlisting}{\numberline {44}Esempio di multiclasse in Java}{39}{}%

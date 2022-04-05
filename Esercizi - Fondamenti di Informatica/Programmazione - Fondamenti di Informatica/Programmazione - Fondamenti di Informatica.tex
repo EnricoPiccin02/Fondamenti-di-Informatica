@@ -1708,8 +1708,102 @@ Un classico esempio è quello del calcolo del fattoriale di un numero intero pos
 \newpage
 \noindent
 \begin{center}
-  28 Marzo 2022
+  4 Aprile 2022
 \end{center}
+\section{Classi e Oggetti}
+Una classe è un \textbf{modello} che \textbf{descrive} una certa categoria di oggetti. Essa comprende un certo numero di membri:
+\begin{itemize}
+  \item variabili membro o campi dati;
+  \item funzioni membro o metodi;
+  \item costruttori (metodo chiamato per la creazione degli oggetti);
+\end{itemize}
+come viene mostrato nell'esempio seguente:
+
+\vspace{1em}
+\noindent
+\begin{lstlisting}[language=Java, caption=Esempio di classe Java]
+  class MiaClasse   // Dichiarazione della classe
+  {
+    int n;          // Dichiarazione della variabile
+
+    MiaClasse(){    // Dichiarazione del costruttore
+      /* ... */
+    }
+
+    int fai(int a){ // Dichiarazione del metodo
+      /* .. */
+    }
+  }
+\end{lstlisting}
+
+\vspace{1em}
+\noindent
+Una variabile di un tipo classe (brevemente chiamata \textbf{variabile classe}) è un riferimento di oggetto di quella classe.\\
+Un oggetto di un tipo classe (brevemente chiamato \textbf{oggetto classe}) è un’istanza della classe (oggetto istanza): viene ottenuto per mezzo dell’operatore \textbf{new}:
+
+\vspace{1em}
+\noindent
+\begin{lstlisting}[language=Java, caption=Esempio variabile e oggetto di classe Java]
+  MiaClasse varA;                   // Variabile di tipo classe non istanziata
+  varA = new MiaClasse();           // Oggetto di tipo classe istanziato
+  MiaClasse varB = new MiaClasse(); // Oggetto di tipo classe istanziato
+\end{lstlisting}
+
+\vspace{1em}
+\subsection{Visibilità}
+L’\textbf{identificatore} della classe e quello dei membri della classe sono sempre visibili all’interno della classe; tuttavia, un membro di una classe può avere uno dei modificatori seguenti:
+\begin{itemize}
+  \item \textbf{modificatore public}: membro visibile alle altre classi;
+  \item \textbf{modificatore private}: membro \textbf{non} visibile alle altre classi.
+\end{itemize}
+
+\vspace{1em}
+\subsection{Distruttori}
+In Java \textbf{non esistono distruttori} (come per esempio in C++), per cui non avviene (come per la creazione) una distruzione esplicita degli oggetti ad opera del programmatore; il recupero della memoria dinamica non più utilizzata viene effettuata dalla piattaforma Java per mezzo di una specifica routine (il \textbf{Garbage Collector}).
+
+\newpage
+\noindent
+\begin{lstlisting}[language=Java, caption=Esempio di multiclasse in Java]
+  public class UsaConto
+  {
+    public static void main(String args[]) {
+      ContoCorrente cc = new ContoCorrente(1000);
+
+      cc.versa(700);
+
+      if(cc.saldo>200)
+        cc.preleva(200);
+      if(cc.saldo>900)
+        cc.preleva(900);
+
+      System.out.println("Il saldo finale e': " + cc.saldo;
+    }
+  }
+
+  public class ContoCorrente
+  {
+    public double saldo;
+
+    public ContoCorrente(double saldoIniziale){
+      this.saldo=saldoIniziale;
+    }
+
+    public void versa(double somma){
+      this.saldo*=somma;
+    }
+
+    public void preleva(double somma){
+      this.saldo-=somma;
+    }
+  }
+\end{lstlisting}
+
+\newpage
+\noindent
+\begin{center}
+  5 Aprile 2022
+\end{center}
+
 
 
 

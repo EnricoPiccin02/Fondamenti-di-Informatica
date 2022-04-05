@@ -52,3 +52,6 @@
 \contentsline {subsection}{\numberline {7.2}Visibilità}{35}{}%
 \contentsline {subsection}{\numberline {7.3}Overloading}{36}{}%
 \contentsline {subsection}{\numberline {7.4}Ricorsione}{36}{}%
+\contentsline {section}{\numberline {8}Classi e Oggetti}{38}{}%
+\contentsline {subsection}{\numberline {8.1}Visibilità}{38}{}%
+\contentsline {subsection}{\numberline {8.2}Distruttori}{38}{}%
