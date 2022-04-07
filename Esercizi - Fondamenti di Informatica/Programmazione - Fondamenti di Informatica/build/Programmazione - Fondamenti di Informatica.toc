@@ -55,3 +55,6 @@
 \contentsline {section}{\numberline {8}Classi e Oggetti}{38}{}%
 \contentsline {subsection}{\numberline {8.1}Visibilità}{38}{}%
 \contentsline {subsection}{\numberline {8.2}Distruttori}{38}{}%
+\contentsline {subsection}{\numberline {8.3}Incapsulamento}{40}{}%
+\contentsline {subsection}{\numberline {8.4}Ereditarietà}{43}{}%
+\contentsline {subsection}{\numberline {8.5}Polimorfismo}{43}{}%

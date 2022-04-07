@@ -1776,7 +1776,7 @@ In Java \textbf{non esistono distruttori} (come per esempio in C++), per cui non
       if(cc.saldo>900)
         cc.preleva(900);
 
-      System.out.println("Il saldo finale e': " + cc.saldo;
+      System.out.println("Il saldo finale e': " + cc.saldo);
     }
   }
 
@@ -1803,6 +1803,179 @@ In Java \textbf{non esistono distruttori} (come per esempio in C++), per cui non
 \begin{center}
   5 Aprile 2022
 \end{center}
+Nella programmazione orientata agli oggetti, lo stato non è più uno stato unico globale (come nel caso della programmazione imperativa): esso, infatti, è composto da \textbf{tutti gli stati interni di tutti gli oggetti attivi}.\\
+Naturalmente, la programmazione orientata agli oggetti \textbf{semplifica la realizzazione di programmi complessi}, in quanto
+\begin{enumerate}
+  \item si identificano le varie \textbf{entità} da rappresentare tramite \textbf{classi} e \textbf{oggetti};
+  \item zi specificano gli \textbf{attributi} e i \textbf{metodi} di ogni classe accessibili dalle altre classi (ossia l’interfaccia pubblica della classe);
+  \item si implementano le varie classi separatamente, concentrandosi su unaper volta;
+  \item Le varie classi possono essere implementate da programmatori diversi, indipendentemente dallo scopo del progetto;
+  \item la manutenzione e gli aggiornamenti dei programmi è più agevole e sistematica.
+\end{enumerate}
+
+\vspace{1em}
+\noindent
+\subsection{Incapsulamento}
+L'\textbf{incapsulamento} consiste nella \textbf{protezione dell’implementazione}; infatti, in base a questa logica
+\begin{itemize}
+  \item \textbf{ogni oggetto è indipendente} e comunica con gli altri attraverso lo \textbf{scambio di messaggi};
+  \item il grande vantaggio è dato dalla \textbf{flessibilità} e dalla sistematicità di costruzione di un oggetto e del suo successivo riutilizzo.
+\end{itemize}
+Nella programmazione orientata agli oggetti, solitamente, si pone in stretta relazione un'informazione con il comportamento specifico, che agisce (tramite opportuni \textbf{metodi}) su tale informazione.\\
+L’incapsulamento è proprio legato al concetto di \quotes{impacchettare} in un oggetto i dati e le azioni che sono riconducibili ad un singolo componente; in questo modo, quando si vuole evitare che gli attributi di una classe siano modificabili dall’esterno della classe, è opportuno impostare il modificatore di visibilità della classe da public a \textbf{private} (ossia privato); in questo modo, non potendo più accedere a tali attributi direttamente, sarà necessario impostare degli opportuni metodi per impostare (\textbf{set}) il valore dell'attributo e per ottenerne (\textbf{get}) il valore, come mostrato di seguito:
+
+\vspace{1em}
+\noindent
+\begin{lstlisting}[language=Java, caption=Esempio di incapsulamento in Java]
+  public class UsaConto
+  {
+    public static void main(String args[]) {
+      ContoCorrente cc = new ContoCorrente(1000);
+
+      cc.versa(700);
+
+      if(cc.getSaldo()>200)
+        cc.preleva(200);
+      if(cc.getSaldo()>900)
+        cc.preleva(900);
+
+      System.out.println("Il saldo finale e': " + cc.getSaldo());
+    }
+  }
+
+  public class ContoCorrente
+  {
+    private double saldo; // Attributo private e non accessibile dall'esterno
+
+    public ContoCorrente(double saldoIniziale){
+      this.saldo=saldoIniziale;
+    }
+
+    public void versa(double somma){
+      this.saldo*=somma;
+    }
+
+    public void preleva(double somma){
+      this.saldo-=somma;
+    }
+
+    public void setSaldo(double saldo){
+      // Utilizzo della parola riservata this per refernziare l'attributo della classe
+      this.saldo=saldo;
+    }
+
+    public double getSaldo(){
+      // Utilizzo della parola riservata this per refernziare l'attributo della classe
+      return this.saldo;
+    }
+  }
+\end{lstlisting}
+
+\vspace{1em}
+\noindent
+\textbf{Esempio}: Si consideri un altro esempio di incapsulamento:
+
+\vspace{0.5em}
+\noindent
+\begin{lstlisting}[language=Java, caption=Esempio esteso di incapsulamento in Java]
+  public class AvviaMacchina
+  {
+    public static void main(String args[]) {
+      new AvviaMacchina();
+    }
+
+    AvviaMacchina(){
+      Macchina m500 = new Macchina("500");
+      Macchina mPunto = new Macchina("Punto");
+      Macchina mFerrari = new Macchina("Ferrari",340);
+
+      Macchina[] garage = {m500,mPunto,mFerrari};
+
+      float lim=120.0f;
+      for(int vel=0;vel<lim;vel++){
+        for(int m=0;m<garage.length;m++){
+          garage[m].piuVel();
+        }
+      }
+
+      for(int m=0;m<garage.length;m++){
+        System.out.println("La macchina "+garage[m].getName()+" viaggia a "+garage[m].velAt()+"km/h");
+      }
+    }
+  }
+
+  public class Macchina
+  {
+    private String nome;
+    private double velMax, velAt;
+
+    public Macchina(String nome){
+      this.nome=nome;
+      this.velMax=200;
+      this.velAt=0;
+    }
+
+    public Macchina(String nome, double velMax){
+      this.nome=nome;
+      this.velMax=velMax;
+      this.velAt=0;
+    }
+
+    public String getNome(){
+      return this.nome;
+    }
+
+    public void setNome(String nome){
+      this.nome=nome;
+    }
+
+    public void piuVel(){
+      this.velAt++;
+    }
+
+    public void menoVel(){
+      this.velAt--;
+    }
+
+    public double getVelAt(){
+      return this.velAt;
+    }
+  }
+\end{lstlisting}
+
+\newpage
+\noindent
+\begin{center}
+   11 Aprile 2022
+\end{center}
+\subsection{Ereditarietà}
+L'ereditarietà permette essenzialmente di definire delle classi a partire da altre già definite, per mezzo di una opprtuna \textbf{gerarchia};
+
+
+\vspace{1em}
+\noindent
+\subsection{Polimorfismo}
+Il polimorfismopermette di scrivere un client che può servirsi di oggetti di classi diverse;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

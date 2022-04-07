@@ -42,3 +42,5 @@
 \contentsline {lstlisting}{\numberline {42}Esempio di classe Java}{38}{}%
 \contentsline {lstlisting}{\numberline {43}Esempio variabile e oggetto di classe Java}{38}{}%
 \contentsline {lstlisting}{\numberline {44}Esempio di multiclasse in Java}{39}{}%
+\contentsline {lstlisting}{\numberline {45}Esempio di incapsulamento in Java}{40}{}%
+\contentsline {lstlisting}{\numberline {46}Esempio esteso di incapsulamento in Java}{41}{}%
